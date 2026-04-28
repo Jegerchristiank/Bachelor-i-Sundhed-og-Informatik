@@ -1,0 +1,24 @@
+sequenceDiagram
+    autonumber
+    participant User as Bruger
+    participant Widget as Live Activity / Dynamic Island
+    participant Intent as App Intent
+    participant Store as App Group Snapshot
+    participant Supabase as Supabase anon client
+    participant SQL as trackerlog + unique client_action_id
+    participant App as iOS Tracker
+
+    App->>Store: Gemmer TrackerLiveActivitySessionSnapshot
+    App->>Widget: Starter/opdaterer ActivityKit state
+    User->>Widget: Trykker reps/vægt/udført
+    Widget->>Intent: Kører interaktiv App Intent
+    Intent->>Store: Læser session snapshot og bearer token
+    Intent->>Intent: Genererer client_action_id
+    Intent->>Supabase: Insert trackerlog med anon key + user token
+    Supabase->>SQL: RLS validerer auth.uid() og workout access
+    SQL->>SQL: Unique index blokerer duplicate client_action_id
+    SQL-->>Supabase: Insert success eller idempotent conflict
+    Supabase-->>Intent: Resultat
+    Intent->>Widget: Opdaterer projection/rest state
+    App->>Supabase: Henter næste tracker-state ved foreground
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_TraeningsmesterTracker" targetNamespace="https://traeningsmester.local/bpmn">
+  <process id="WorkoutTrackerFlow" name="Workout tracker flow" isExecutable="false">
+    <startEvent id="Start" name="Bruger starter workout" />
+    <task id="ResolveSession" name="AppState validerer auth og profile mode" />
+    <exclusiveGateway id="TrackerEnabledGateway" name="Tracker enabled?" />
+    <task id="OpenTracker" name="Aabn workoutTracker route" />
+    <task id="OpenNoTracker" name="Aabn workoutTrackerWithoutLogging route" />
+    <task id="FetchRows" name="TrackerRepository henter workout_exercises og historik" />
+    <task id="StartLiveActivity" name="Synkroniser Live Activity snapshot via App Group" />
+    <subProcess id="LogSetLoop" name="Log saet loop">
+      <startEvent id="LoopStart" name="Naeste saet" />
+      <task id="EnterSet" name="Bruger indtaster reps, vaegt eller varighed" />
+      <task id="PersistSet" name="TrackerRepository skriver trackerlog med anon session" />
+      <task id="UpdateProjection" name="Opdater next-set/rest projection" />
+      <exclusiveGateway id="MoreSetsGateway" name="Flere saet?" />
+      <endEvent id="LoopEnd" name="Saet faerdige" />
+      <sequenceFlow id="f_loop_1" sourceRef="LoopStart" targetRef="EnterSet" />
+      <sequenceFlow id="f_loop_2" sourceRef="EnterSet" targetRef="PersistSet" />
+      <sequenceFlow id="f_loop_3" sourceRef="PersistSet" targetRef="UpdateProjection" />
+      <sequenceFlow id="f_loop_4" sourceRef="UpdateProjection" targetRef="MoreSetsGateway" />
+      <sequenceFlow id="f_loop_5" sourceRef="MoreSetsGateway" targetRef="EnterSet" name="ja" />
+      <sequenceFlow id="f_loop_6" sourceRef="MoreSetsGateway" targetRef="LoopEnd" name="nej" />
+    </subProcess>
+    <task id="CompleteWorkout" name="WorkoutCompletionService gemmer completion event" />
+    <task id="ProgressCycle" name="Hvis aktiv cyklus: kald progression RPC" />
+    <task id="UpdateHistoryHome" name="Historik og Home bruger completion/trackerlog data" />
+    <endEvent id="End" name="Workout afsluttet" />
+
+    <sequenceFlow id="f1" sourceRef="Start" targetRef="ResolveSession" />
+    <sequenceFlow id="f2" sourceRef="ResolveSession" targetRef="TrackerEnabledGateway" />
+    <sequenceFlow id="f3" sourceRef="TrackerEnabledGateway" targetRef="OpenTracker" name="ja" />
+    <sequenceFlow id="f4" sourceRef="TrackerEnabledGateway" targetRef="OpenNoTracker" name="nej" />
+    <sequenceFlow id="f5" sourceRef="OpenTracker" targetRef="FetchRows" />
+    <sequenceFlow id="f6" sourceRef="FetchRows" targetRef="StartLiveActivity" />
+    <sequenceFlow id="f7" sourceRef="StartLiveActivity" targetRef="LogSetLoop" />
+    <sequenceFlow id="f8" sourceRef="OpenNoTracker" targetRef="CompleteWorkout" />
+    <sequenceFlow id="f9" sourceRef="LogSetLoop" targetRef="CompleteWorkout" />
+    <sequenceFlow id="f10" sourceRef="CompleteWorkout" targetRef="ProgressCycle" />
+    <sequenceFlow id="f11" sourceRef="ProgressCycle" targetRef="UpdateHistoryHome" />
+    <sequenceFlow id="f12" sourceRef="UpdateHistoryHome" targetRef="End" />
+  </process>
+</definitions>
+

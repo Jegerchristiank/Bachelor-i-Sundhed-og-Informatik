@@ -1,0 +1,20 @@
+flowchart LR
+  UI["SwiftUI / watchOS / Live Activity clients"] --> ENV["AppEnvironment validates anon config"]
+  ENV --> ANON["Supabase anon client + user session"]
+  ANON --> RLS["Postgres RLS / RPC / views"]
+  UI --> EF["Edge Function call with bearer token"]
+  EF --> VALIDATE["Server validates user token"]
+  VALIDATE --> PRIV["Service-role / external secret only inside function runtime"]
+  PRIV --> DB["Supabase Postgres / Storage"]
+  RLS --> DB
+
+  BAD["Invalid env or service_role in client"] --> DENY["Fail closed"]
+  CROSS["Cross-user request without relation"] --> RLS_DENY["RLS denies access"]
+
+  classDef client fill:#EAF4FF,stroke:#3178C6,color:#111;
+  classDef backend fill:#FFF4E5,stroke:#B45F06,color:#111;
+  classDef deny fill:#FCE8E6,stroke:#A61B1B,color:#111;
+  class UI,ENV,ANON client;
+  class RLS,EF,VALIDATE,PRIV,DB backend;
+  class BAD,DENY,CROSS,RLS_DENY deny;
+

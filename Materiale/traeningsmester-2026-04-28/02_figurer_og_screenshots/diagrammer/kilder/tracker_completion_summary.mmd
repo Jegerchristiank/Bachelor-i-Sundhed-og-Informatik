@@ -1,0 +1,20 @@
+flowchart TD
+  A["Bruger starter dagens workout"] --> B{"Tracker slået til?"}
+  B -->|Ja| C["WorkoutTracker logger sæt i trackerlog"]
+  B -->|Nej| D["No-tracker workout viser dagens øvelser"]
+  C --> E["Bruger afslutter workout"]
+  D --> E
+  E --> F["WorkoutCompletionService skriver completion-event"]
+  F --> G{"Aktiv training cycle runtime?"}
+  G -->|Ja| H["RPC progressActiveRuntimeAfterWorkout vælger næste slot"]
+  G -->|Nej| I["Planflow bevarer eller flytter normal næste dag"]
+  H --> J["Home, Watch og Tracker viser næste handling"]
+  I --> J
+
+  classDef user fill:#EAF4FF,stroke:#3178C6,color:#111;
+  classDef data fill:#FFF4E5,stroke:#B45F06,color:#111;
+  classDef decision fill:#EEF7EA,stroke:#38761D,color:#111;
+  class A,E,J user;
+  class C,D,F,H,I data;
+  class B,G decision;
+
