@@ -1,0 +1,21 @@
+flowchart LR
+    User["Bruger med gammelt program eller historik"] --> Client["SwiftUI klient"]
+    Client --> ImportUI["Onboarding / Premium import UI"]
+    ImportUI --> Edge["training-import-manage Edge Function"]
+    ImportUI --> Normalize["program/history-import-normalize Edge Functions"]
+    Normalize --> OpenAI["OpenAI OCR/normalisering\nserver-side, store=false"]
+    Normalize --> Edge
+    Edge --> Jobs["training_import_jobs"]
+    Edge --> Storage["Supabase Storage signed URLs"]
+    Edge --> Catalog["Exercise catalog matcher"]
+    Catalog --> PrivateExercises["Private exercises ved manglende match"]
+    Edge --> Preview["Pagineret preview til klient"]
+    Preview --> User
+    User --> Apply["Bruger godkender apply"]
+    Apply --> Edge
+    Edge --> ProgramData["plan / workout / workout_exercises"]
+    Edge --> HistoryData["trackerlog manual history rows"]
+    ProgramData --> RLS["RLS + auth.uid boundaries"]
+    HistoryData --> RLS
+    RLS --> App["Aktiv appstruktur uden service-role i klient"]
+

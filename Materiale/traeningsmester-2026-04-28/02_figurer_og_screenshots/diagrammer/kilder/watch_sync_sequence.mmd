@@ -1,0 +1,23 @@
+sequenceDiagram
+    autonumber
+    participant User as Bruger
+    participant iOS as iOS App
+    participant AppState as AppState
+    participant Bridge as WatchAppSyncBridge
+    participant WC as WatchConnectivity
+    participant WatchBridge as watchOS WatchAuthSyncBridge
+    participant WatchStore as WatchWorkoutStore
+    participant Supabase as Supabase anon + RLS
+
+    User->>iOS: Logger ind / ændrer profiltilstand / completion state
+    iOS->>AppState: Opdaterer session, settings og profile_mode
+    AppState->>Bridge: Bygger WatchAuthSyncPayload
+    Bridge->>WC: updateApplicationContext(payload)
+    Bridge-->>WC: fallback transferUserInfo(payload)
+    WC->>WatchBridge: Leverer payload til watchOS
+    WatchBridge->>WatchBridge: Validerer schemaVersion og gemmer lokalt
+    WatchBridge->>WatchStore: Payload til repository bootstrap
+    WatchStore->>Supabase: Restore session med user token + anon key
+    Supabase-->>WatchStore: RLS-scoped workout, trackerlog og cycle data
+    WatchStore-->>User: Dagens træning og log/afslut flow på watch
+

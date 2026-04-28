@@ -1,0 +1,94 @@
+@startuml
+title Traeningsmester container architecture
+
+actor "Personlig bruger" as User
+actor "Traener" as Coach
+actor "Admin" as Admin
+actor "Watch-bruger" as WatchUser
+
+rectangle "iOS App: Traeningsmester" as IOS {
+  component "SwiftUI Features\nAuth, Home, Plans, Exercises,\nMatch, Tracker, History,\nSettings, Premium, Clients" as Features
+  component "RootView + AppState\nbootstrap, auth, navigation,\nprofile mode, settings, runtime" as AppState
+  component "Domain Models + Payloads" as Domain
+  component "Repository Protocols" as RepoProtocols
+  component "Supabase Repositories" as SupabaseRepos
+  component "Support Services\nProgramReview, TrainerClient,\nWorkoutCompletion, StoreKit,\nWatch sync" as Support
+  component "Design System\nTMTheme, TMComponents,\nTMMotionPrimitives" as DesignSystem
+}
+
+rectangle "watchOS App" as WatchApp {
+  component "WatchRootView" as WatchUI
+  component "WatchWorkoutStore" as WatchStore
+  component "WatchAuthSyncBridge" as WatchAuth
+}
+
+rectangle "Extensions" as Extensions {
+  component "Live Activity Widget" as LiveWidget
+  component "Live Activity Intents" as LiveIntents
+  component "Watch Widget/Complication" as WatchWidget
+}
+
+database "Supabase Postgres\nRLS + views + RPC" as DB
+cloud "Supabase Auth" as Auth
+folder "Supabase Storage" as Storage
+rectangle "Supabase Edge Functions" as Edge {
+  component "admin-control-center" as AdminFn
+  component "trainer-client-manage" as TrainerFn
+  component "program/import/analyse functions" as ImportFn
+  component "billing functions" as BillingFn
+}
+
+cloud "Apple Platform Services" as Apple {
+  component "StoreKit 2" as StoreKit
+  component "WatchConnectivity" as WC
+  component "ActivityKit/WidgetKit" as ActivityKit
+  component "HealthKit" as HealthKit
+}
+
+User --> Features
+Coach --> Features
+Admin --> Features
+WatchUser --> WatchUI
+
+Features --> AppState
+Features --> RepoProtocols
+Features --> DesignSystem
+AppState --> RepoProtocols
+AppState --> Support
+RepoProtocols <|.. SupabaseRepos
+SupabaseRepos --> Auth
+SupabaseRepos --> DB
+SupabaseRepos --> Storage
+Support --> Edge
+Support --> StoreKit
+Support --> WC
+Support --> ActivityKit
+Support --> HealthKit
+
+WC --> WatchAuth
+WatchAuth --> WatchStore
+WatchUI --> WatchStore
+WatchStore --> SupabaseRepos
+
+LiveWidget --> LiveIntents
+LiveIntents --> DB
+LiveIntents --> Auth
+WatchWidget --> WatchUI
+
+Edge --> DB
+Edge --> Storage
+
+note right of DB
+  Primary security boundary:
+  auth.uid()-based RLS,
+  security definer RPC,
+  server-side admin guards.
+end note
+
+note bottom of IOS
+  Client uses anon key only.
+  AppEnvironment rejects service_role tokens.
+end note
+
+@enduml
+

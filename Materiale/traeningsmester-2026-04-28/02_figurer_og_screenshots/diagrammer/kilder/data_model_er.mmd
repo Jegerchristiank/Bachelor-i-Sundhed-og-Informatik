@@ -1,0 +1,135 @@
+erDiagram
+  AUTH_USERS ||--o{ PLAN : owns
+  AUTH_USERS ||--o{ WORKOUT : owns
+  AUTH_USERS ||--o{ USER_SETTINGS : has
+  AUTH_USERS ||--o{ TRACKERLOG : writes
+  AUTH_USERS ||--o{ MATCH : swipes
+  AUTH_USERS ||--o{ WORKOUT_COMPLETION_EVENTS : completes
+  AUTH_USERS ||--o{ TRAINER_CLIENTS : trainer_or_client
+  AUTH_USERS ||--o{ TRAINING_CYCLES : owns
+
+  PLAN ||--o{ PLAN_WORKOUTS : contains
+  WORKOUT ||--o{ PLAN_WORKOUTS : assigned_to
+  WORKOUT ||--o{ WORKOUT_EXERCISES : contains
+  EXERCISES ||--o{ WORKOUT_EXERCISES : referenced_by
+  EXERCISES ||--o{ MATCH : liked_or_unliked
+  WORKOUT_EXERCISES ||--o{ TRACKERLOG : logged_for
+  EXERCISES ||--o{ TRACKERLOG : denormalized_exercise
+  WORKOUT ||--o{ WORKOUT_COMPLETION_EVENTS : completed
+
+  PLAN ||--o{ PLAN_SHARE_CODES : exposes
+  PLAN ||--o{ PLAN_SHARED_USERS : shared_with
+  PLAN ||--o{ PLAN_SHARE_INVITES : invited_for
+
+  TRAINING_CYCLES ||--o{ TRAINING_CYCLE_MESOCYCLES : has
+  TRAINING_CYCLES ||--o{ TRAINING_CYCLE_WEEKS : has
+  TRAINING_CYCLES ||--o{ TRAINING_CYCLE_DAY_SLOTS : has
+  TRAINING_CYCLES ||--o{ TRAINING_CYCLE_EXERCISE_RULES : has
+  TRAINING_CYCLES ||--o{ TRAINING_CYCLE_RUNTIME_STATE : runtime
+
+  AUTH_USERS {
+    uuid id PK
+  }
+
+  USER_SETTINGS {
+    uuid id PK
+    uuid user_id FK
+    text profile_fields
+    text subscription_tier
+    boolean is_admin
+    jsonb tracker_runtime_state
+  }
+
+  PLAN {
+    uuid id PK
+    uuid user_id FK
+    text profile_mode
+    text name
+    boolean isPrimary
+    int current_index
+  }
+
+  WORKOUT {
+    uuid id PK
+    uuid user_id FK
+    text profile_mode
+    text name
+  }
+
+  PLAN_WORKOUTS {
+    uuid id PK
+    uuid plan_id FK
+    uuid workout_id FK
+    text dayOfTheWeek
+    int Index
+  }
+
+  WORKOUT_EXERCISES {
+    uuid id PK
+    uuid workout_day_id FK
+    uuid exercise_id FK
+    uuid superset_group_id
+    int superset_position
+    int sets
+    int gentagelser
+    int rest_seconds
+  }
+
+  EXERCISES {
+    uuid id PK
+    uuid user_id FK
+    text navn
+    text name_en
+    boolean is_private
+    boolean erGodkendt
+  }
+
+  TRACKERLOG {
+    uuid id PK
+    uuid userID FK
+    uuid workoutexcerciseID FK
+    uuid exercise_id FK
+    int reps
+    numeric weight
+    uuid client_action_id
+  }
+
+  WORKOUT_COMPLETION_EVENTS {
+    uuid id PK
+    uuid user_id FK
+    uuid workout_id FK
+    timestamptz completed_at
+    uuid client_action_id
+    timestamptz reverted_at
+  }
+
+  MATCH {
+    uuid id PK
+    uuid user_id FK
+    uuid exercise_id FK
+    boolean liked
+    boolean unliked
+  }
+
+  TRAINER_CLIENTS {
+    uuid id PK
+    uuid trainer_user_id FK
+    uuid client_user_id FK
+    text status
+  }
+
+  TRAINING_CYCLES {
+    uuid id PK
+    uuid user_id FK
+    text profile_mode
+    text status
+  }
+
+  TRAINING_CYCLE_RUNTIME_STATE {
+    uuid id PK
+    uuid user_id FK
+    uuid cycle_id FK
+    uuid active_workout_id FK
+    text status
+  }
+

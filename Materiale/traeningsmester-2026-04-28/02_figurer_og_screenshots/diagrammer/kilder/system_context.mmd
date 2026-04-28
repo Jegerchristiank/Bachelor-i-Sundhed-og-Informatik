@@ -1,0 +1,50 @@
+flowchart TB
+  bruger["Personlig bruger"]
+  traener["Traener"]
+  klient["Klient"]
+  admin["Admin"]
+  watchUser["Watch-bruger"]
+
+  ios["Traeningsmester iOS app\nSwiftUI + AppState + repositories"]
+  watch["Traeningsmester watchOS app\nWatchWorkoutStore"]
+  live["Live Activity extension\nActivityKit/WidgetKit intents"]
+  widget["Watch widget/komplikation\nShortcut til watch app"]
+
+  supabase["Supabase\nAuth + Postgres + RLS + Storage + RPC"]
+  edge["Supabase Edge Functions\nadmin, trainer-client, import, analyse, billing"]
+  storekit["Apple StoreKit 2"]
+  healthkit["Apple HealthKit"]
+  wc["WatchConnectivity"]
+  activitykit["ActivityKit"]
+  appgroup["App Group shared store"]
+
+  bruger --> ios
+  traener --> ios
+  klient --> ios
+  admin --> ios
+  watchUser --> watch
+  watchUser --> widget
+
+  ios --> supabase
+  ios --> edge
+  ios --> storekit
+  ios --> healthkit
+  ios --> wc
+  ios --> activitykit
+  ios --> appgroup
+
+  wc --> watch
+  widget --> watch
+  watch --> supabase
+  live --> appgroup
+  live --> supabase
+  activitykit --> live
+  edge --> supabase
+
+  classDef client fill:#EAF4FF,stroke:#3178C6,color:#111;
+  classDef backend fill:#FFF4E5,stroke:#B45F06,color:#111;
+  classDef platform fill:#EEF7EA,stroke:#38761D,color:#111;
+  class ios,watch,live,widget client;
+  class supabase,edge backend;
+  class storekit,healthkit,wc,activitykit,appgroup platform;
+
