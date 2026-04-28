@@ -33,6 +33,7 @@ De offentlige artefakter bruger ikke personnavne. Testere omtales som `P01`, `P0
 | Motivation i selve træningssituationen | Lock screen/Live Activity blev testet og bekræftet som fungerende i praksis | Understøtter argumentet om lav friktion under workout og mindre behov for at åbne appen |
 | Øvelsesforståelse | Dialogen viste tydeligt behov for rigtige øvelsesvideoer frem for generiske eller AI-genererede klip | Kobler appens designintention til interaktionsdesign og sundheds-/træningsdataformidling |
 | Dækning af øvelseskatalog | Testerdialogen peger på udfordringen ved at filme mange øvelser og have adgang til korrekt udstyr | Understøtter prioritering af katalogkvalitet, søgning og media-pipeline |
+| Træningscenter-samarbejde | Mail-/Messenger-sporet viser outreach og korrespondance om at kunne filme øvelsesvideoer i lokale centre | Bruges som projektledelses- og designrationale, men ikke som dokumentation for en færdig aftale |
 | TestFlight onboarding | Testere skulle forstå TestFlight-app, beta-link, Apple review-status og manuel opdatering | Viser at beta-friktion også ligger uden for selve app-UI |
 | Søgning på tværs af flows | En tester fandt forskel på øvelsessøgning i øvelsesmenu og programdag | Understøtter fælles søgelogik og regressionstest på tværs af features |
 | Admin-governance | Tidlig feedback foreslog private øvelser adskilt fra offentligt katalog via godkendelse | Kobler brugerfeedback til datakvalitet, moderation og RLS/admin-flow |
@@ -45,7 +46,7 @@ De offentlige artefakter bruger ikke personnavne. Testere omtales som `P01`, `P0
 
 Se `messenger_dybdeanalyse.md` for en mere detaljeret, anonymiseret analyse af Messenger-forløbet fra oktober 2025 til marts 2026. Den udvider denne rapport med kronologi, kodning og designimplikationer uden at gengive råbeskeder.
 
-Supplerende temaudtræk fra den fortsatte run ligger i `messenger_temaudtraek_extended.md`. Kodede observationer ligger i `feedbackkatalog.md` og `beta_observations_matrix.csv`.
+Supplerende traeningscenter- og videooptagelsesspor ligger i `traeningscenter_korrespondance.md`. Kodede observationer ligger i `feedbackkatalog.md` og `beta_observationsmatrix.csv`.
 
 ## Spørgeramme Til Rapportmetode
 

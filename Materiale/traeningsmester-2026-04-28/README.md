@@ -35,7 +35,7 @@ Brug `NAVIGATOR.md` som detaljeret strukturkort, hvis du skal finde rundt i mapp
 | Appens UI | `02_figurer_og_screenshots/app_screenshots/aktuel_ios26/`, `screenshot_daekning.md`, `screenshot_kontaktark.md` |
 | Diagrammer | `02_figurer_og_screenshots/diagrammer/renderede_svg/`, `diagramkatalog.md`, `figurindeks.md` |
 | Kursus- og metodekobling | `03_kursus_og_metode/kursusmapping.md`, `absalon_download_audit.md`, `absalon_filindeks.md` |
-| Beta/evaluering | `04_brugerindsigt_beta/beta_tester_rapport.md`, `feedbackkatalog.md`, `beta_observationsmatrix.csv`, `messenger_dybdeanalyse.md`, `testflight_tidslinje.md` |
+| Beta/evaluering | `04_brugerindsigt_beta/beta_tester_rapport.md`, `feedbackkatalog.md`, `beta_observationsmatrix.csv`, `messenger_dybdeanalyse.md`, `traeningscenter_korrespondance.md`, `testflight_tidslinje.md` |
 | Arkitektur og design | `05_arkitektur_data_sikkerhed/arkitektur/systembeskrivelse.md`, `use_cases.md`, `krav_traceability.md`, `beslutningslog.md`, `arkitekturfortaelling.md` |
 | Data og sikkerhed | `05_arkitektur_data_sikkerhed/data_og_sikkerhed/data_og_sikkerhed_rapportklar.md`, `sikkerhedsnotat.md`, `rls_matrix.md`, `sql_schema_overblik.md`, `edge_functions_overblik.md` |
 | Test/verifikation | `06_verifikation/verifikationsrapport.md`, `test_traceability_matrix.md`, `screenshot_qa.md`, `quality_gate_review.md` |
