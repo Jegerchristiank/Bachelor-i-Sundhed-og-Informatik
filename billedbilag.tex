@@ -3,11 +3,17 @@
 
 \sloppy
 
-Dette bilag samler de rapportklare billeder, figurer, diagramkilder og tabeller fra den kuraterede Træningsmester-materialepakke pr. 28. april 2026. Bilaget omfatter de 13 aktuelle iOS 26.4-screenshots, de 7 renderede arkitekturdiagrammer og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Historiske audit-screenshots fra app-repoet er ikke medtaget, fordi de kan vise ældre UI og derfor ikke bør bruges som dokumentation for den aktuelle appversion.
+Dette bilag samler de rapportklare billeder, figurer, diagramkilder og tabeller fra den kuraterede Træningsmester-materialepakke pr. 28. april 2026. Bilaget omfatter de 13 aktuelle iOS 26.4-screenshots, de 7 arkitektur- og dataflowfigurer og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Historiske audit-screenshots fra app-repoet er ikke medtaget, fordi de kan vise ældre UI og derfor ikke bør bruges som dokumentation for den aktuelle appversion.
 
 Alle figurer og tabeller er forsynet med labels, så de kan henvises fra rapportteksten med \verb|\ref{...}|. De supplerende tabeller er kondenseret fra materialepakkens rapportklare summaries; private rådata, rå Messenger-/mailtekster og personhenførbare detaljer er ikke kopieret ind i bilaget.
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt plus 2pt minus 2pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
 
 \newcommand{\tmscreenshot}[3]{%
 \begin{figure}[p]
@@ -25,6 +31,92 @@ Alle figurer og tabeller er forsynet med labels, så de kan henvises fra rapport
     \caption{#2}
     \label{#3}
 \end{figure}
+}
+
+\newcommand{\tmlandscapediagramwithsection}[5]{%
+\clearpage
+\begin{landscape}
+\subsection{#1}
+\vspace*{\fill}
+\begin{center}
+    \includegraphics[width=0.96\linewidth,height=0.62\textheight,keepaspectratio,trim=#3,clip]{#2}
+    \captionof{figure}{#4}
+    \label{#5}
+\end{center}
+\vspace*{\fill}
+\end{landscape}
+\clearpage
+}
+
+\newcommand{\tmlandscapediagram}[4]{%
+\begin{landscape}
+\vspace*{\fill}
+\begin{center}
+    \makebox[\linewidth][c]{\includegraphics[width=1.04\linewidth,height=0.72\textheight,keepaspectratio,trim=#2,clip]{#1}}
+    \captionof{figure}{#3}
+    \label{#4}
+\end{center}
+\vspace*{\fill}
+\end{landscape}
+\clearpage
+}
+
+\newcommand{\tmlandscapewidediagram}[4]{%
+\begin{landscape}
+\vspace*{\fill}
+\begin{center}
+    \makebox[\linewidth][c]{\includegraphics[width=1.08\linewidth,height=0.76\textheight,keepaspectratio,trim=#2,clip]{#1}}
+    \captionof{figure}{#3}
+    \label{#4}
+\end{center}
+\vspace*{\fill}
+\end{landscape}
+\clearpage
+}
+
+\newcommand{\tmtrackercompletiondiagram}{%
+\begin{landscape}
+\vspace*{\fill}
+\begin{center}
+\resizebox{0.96\linewidth}{!}{%
+\begin{tikzpicture}[
+    >={Latex[length=3mm]},
+    node distance=12mm,
+    tmuser/.style={draw=blue!70!black, fill=blue!8, rounded corners=2pt, align=center, minimum width=30mm, minimum height=13mm, font=\footnotesize},
+    tmdata/.style={draw=orange!80!black, fill=orange!10, rounded corners=2pt, align=center, minimum width=34mm, minimum height=13mm, font=\footnotesize},
+    tmdecision/.style={diamond, aspect=2.1, draw=green!45!black, fill=green!8, align=center, inner sep=1.5pt, minimum width=24mm, minimum height=15mm, font=\footnotesize},
+    tmarrow/.style={->, line width=0.8pt}
+]
+\node[tmuser] (start) at (0,0) {Bruger starter\\dagens workout};
+\node[tmdecision] (tracker) at (3.7,0) {Tracker\\slået til?};
+\node[tmdata] (logging) at (7.7,1.25) {WorkoutTracker\\logger sæt\\i trackerlog};
+\node[tmdata] (notracker) at (7.7,-1.25) {No-tracker workout\\viser dagens\\øvelser};
+\node[tmuser] (finish) at (11.8,0) {Bruger afslutter\\workout};
+\node[tmdata] (completion) at (15.9,0) {WorkoutCompletion\\Service skriver\\completion-event};
+\node[tmdecision] (cycle) at (20.2,0) {Aktiv training\\cycle runtime?};
+\node[tmdata] (rpc) at (24.6,1.25) {RPC vælger\\næste slot};
+\node[tmdata] (planflow) at (24.6,-1.25) {Planflow bevarer\\eller flytter\\normal næste dag};
+\node[tmuser] (next) at (28.9,0) {Home, Watch\\og Tracker viser\\næste handling};
+
+\draw[tmarrow] (start) -- (tracker);
+\draw[tmarrow] (tracker) -- node[above, font=\scriptsize] {Ja} (logging);
+\draw[tmarrow] (tracker) -- node[below, font=\scriptsize] {Nej} (notracker);
+\draw[tmarrow] (logging) -- (finish);
+\draw[tmarrow] (notracker) -- (finish);
+\draw[tmarrow] (finish) -- (completion);
+\draw[tmarrow] (completion) -- (cycle);
+\draw[tmarrow] (cycle) -- node[above, font=\scriptsize] {Ja} (rpc);
+\draw[tmarrow] (cycle) -- node[below, font=\scriptsize] {Nej} (planflow);
+\draw[tmarrow] (rpc) -- (next);
+\draw[tmarrow] (planflow) -- (next);
+\end{tikzpicture}%
+}
+\captionof{figure}{Opsummering af tracker-on/off, completion-event og progression i træningscyklus.}
+\label{fig:tm-tracker-completion-summary}
+\end{center}
+\vspace*{\fill}
+\end{landscape}
+\clearpage
 }
 
 \subsection{App-screenshots}
@@ -55,25 +147,19 @@ Alle figurer og tabeller er forsynet med labels, så de kan henvises fra rapport
 
 \tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-13-home-current-xcode-mcp-qa-2026-04-28.jpg}{Home-skærm fra QA-capture efter dybere gennemløb med Dagens træning synlig.}{fig:tm-ios-home-current-qa}
 
-\clearpage
+\tmlandscapediagramwithsection{Arkitektur- og dataflowdiagrammer}{assets/bilag/diagrammer/system_context.pdf}{0bp 532bp 0bp 0bp}{Systemkontekst for Træningsmester på iOS, watchOS, Supabase og Apple-services.}{fig:tm-system-context}
 
-\subsection{Arkitektur- og dataflowdiagrammer}
+\tmlandscapewidediagram{assets/bilag/diagrammer/data_model_er.pdf}{0bp 610bp 0bp 0bp}{ER-diagram for programmer, workouts, tracker, completion, settings og cyklusdata.}{fig:tm-data-model-er}
 
-\tmdiagram{assets/bilag/diagrammer/system_context.pdf}{Systemkontekst for Træningsmester på iOS, watchOS, Supabase og Apple-services.}{fig:tm-system-context}
+\tmtrackercompletiondiagram
 
-\tmdiagram{assets/bilag/diagrammer/data_model_er.pdf}{ER-diagram for programmer, workouts, tracker, completion, settings og cyklusdata.}{fig:tm-data-model-er}
+\tmlandscapediagram{assets/bilag/diagrammer/security_boundary_summary.pdf}{0bp 590bp 0bp 0bp}{Sikkerhedsgrænse mellem mobil klient, RLS og Edge Functions.}{fig:tm-security-boundary-summary}
 
-\tmdiagram{assets/bilag/diagrammer/tracker_completion_summary.pdf}{Opsummering af tracker-on/off, completion-event og progression i træningscyklus.}{fig:tm-tracker-completion-summary}
+\tmlandscapediagram{assets/bilag/diagrammer/watch_sync_sequence.pdf}{10bp 610bp 10bp 0bp}{Sekvens for iOS/watchOS auth-sync, token-cache og RLS-baseret workoutdata.}{fig:tm-watch-sync-sequence}
 
-\tmdiagram{assets/bilag/diagrammer/security_boundary_summary.pdf}{Sikkerhedsgrænse mellem mobil klient, RLS og Edge Functions.}{fig:tm-security-boundary-summary}
+\tmlandscapediagram{assets/bilag/diagrammer/live_activity_idempotency_sequence.pdf}{15bp 515bp 15bp 5bp}{Sekvens for Live Activity intent-write, App Group snapshot og idempotent trackerlog.}{fig:tm-live-activity-idempotency-sequence}
 
-\tmdiagram{assets/bilag/diagrammer/watch_sync_sequence.pdf}{Sekvens for iOS/watchOS auth-sync, token-cache og RLS-baseret workoutdata.}{fig:tm-watch-sync-sequence}
-
-\tmdiagram{assets/bilag/diagrammer/live_activity_idempotency_sequence.pdf}{Sekvens for Live Activity intent-write, App Group snapshot og idempotent trackerlog.}{fig:tm-live-activity-idempotency-sequence}
-
-\tmdiagram{assets/bilag/diagrammer/import_ai_edge_boundary.pdf}{Import/AI-grænse mellem klient, Edge Functions, OpenAI og Supabase.}{fig:tm-import-ai-edge-boundary}
-
-\clearpage
+\tmlandscapediagram{assets/bilag/diagrammer/import_ai_edge_boundary.pdf}{0bp 585bp 0bp 0bp}{Import/AI-grænse mellem klient, Edge Functions, OpenAI og Supabase.}{fig:tm-import-ai-edge-boundary}
 
 \subsection{Materialegennemgang}
 
