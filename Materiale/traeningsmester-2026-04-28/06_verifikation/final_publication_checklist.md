@@ -13,7 +13,7 @@ Dato: 2026-04-28
 | Build/test summaries inkluderet | Ok |
 | Rå buildlogs/tool-output fravalgt | Ok |
 | Manuel visuel screenshot-review | Mangler |
-| GitHub push | Ikke udført |
+| GitHub push | Ok, pushed til `codex/traeningsmester-bachelor-materiale` |
 
 Anbefalet commitbesked:
 
