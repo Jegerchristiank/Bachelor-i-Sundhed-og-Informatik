@@ -30,8 +30,11 @@ Start med disse filer i rækkefølge:
 - KU-forsidebaggrund: `KU-logo.pdf` som original og `assets/ku-cover-background.png` som Overleaf-brugt rasterbaggrund uden aktiv tekst fra matematiktemplaten
 - Træningsmester-logo på forsiden: `assets/traeningsmester-logo-uden-baggrund.svg` og Overleaf-kompatibel `assets/traeningsmester-logo-uden-baggrund.pdf`
 - Oprindelig template-grafik: `billede.png`
+- Git-attributter: `.gitattributes` markerer PDF-filer som binære, så kilde-PDF'er ikke tekst-diffes.
 - Lokal template-vejledning: `README.md`
 - Agentstyring: `AGENTS.md`
+- Referencebibliotek: `referencer.bib`, `referencer.md` og lokale åbne PDF-kopier i `referencer/`
+- Kildesøgningsafsnit: `kildesoegning.tex`
 - Materialepakke: `Materiale/traeningsmester-2026-04-28/`
 - Materialepakkens navigator: `Materiale/traeningsmester-2026-04-28/NAVIGATOR.md`
 - Autoritativ problemformulering: `Materiale/traeningsmester-2026-04-28/01_rapportgrundlag/problemformulering/problemformulering_autoritativ.md`
@@ -51,10 +54,15 @@ Start med disse filer i rækkefølge:
 | --- | --- | --- |
 | `main.tex` | Bachelorrapportens LaTeX-hovedfil | Skrivning og struktur |
 | `KUstyle.sty` | KU-forside og layoutmakroer | Skal sjældent ændres |
+| `.gitattributes` | Git diff-/merge-attributter | Marker PDF-filer som binære |
 | `assets/` | Rapportens egne billedaktiver | Logoer, figurer og konverterede Overleaf-aktiver |
 | `README.md` | Template-vejledning | Overleaf-opsætning |
 | `AGENTS.md` | Arbejdsregler for LLM-agenter | Skal læses ved opstart |
 | `NAVIGATOR.md` | Dette strukturkort | Skal opdateres ved strukturændringer |
+| `referencer.bib` | Eksternt referencebibliotek | BibTeX-nøgler til rapportcitater |
+| `referencer.md` | Referencevejledning | Skal læses før nye skrive-/redigeringsiterationer |
+| `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af kilder, navngivet efter BibTeX-stems |
+| `kildesoegning.tex` | Metodeafsnit om kildesøgning | Kan inputtes i rapportens metodekapitel |
 | `Materiale/traeningsmester-2026-04-28/` | Kurateret rapportmateriale | Kilder, bilag og argumentation |
 
 ## Rapportens Nuværende Canvas
@@ -81,11 +89,17 @@ Start med disse filer i rækkefølge:
 
 ```text
 .
+├── .gitattributes
 ├── AGENTS.md
 ├── KU-logo.pdf
 ├── KUstyle.sty
 ├── NAVIGATOR.md
 ├── README.md
+├── kildesoegning.tex
+├── referencer.bib
+├── referencer.md
+├── referencer
+│   └── åbne PDF-kopier af eksterne kilder
 ├── assets
 │   ├── traeningsmester-logo-uden-baggrund.pdf
 │   ├── traeningsmester-logo-uden-baggrund.svg
