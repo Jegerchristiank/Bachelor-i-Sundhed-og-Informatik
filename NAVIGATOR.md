@@ -26,7 +26,7 @@ Start med disse filer i rækkefølge:
 ## Kritiske Pointers
 
 - Hovedrapport: `main.tex`
-- KU-style og forsidemakroer: `KUstyle.sty` (overstyrer den oprindelige matematik-template med SUND-header)
+- KU-style og forsidemakroer: `KUstyle.sty` (overstyrer den oprindelige matematik-template med SUND-header og styrbar headerbaggrundsbredde)
 - KU-forsidebaggrund: `KU-logo.pdf` som original, `assets/ku-cover-background.png` som rød rasterbaggrund og `assets/ku-cover-background-blue.png` som blå SUND-valgt rasterbaggrund
 - Træningsmester-logo på forsiden: `assets/traeningsmester-logo-uden-baggrund.svg` og Overleaf-kompatibel `assets/traeningsmester-logo-uden-baggrund.pdf`
 - Oprindelig template-grafik: `billede.png`
@@ -56,7 +56,7 @@ Start med disse filer i rækkefølge:
 | Mappe/fil | Ansvar | Primær brug |
 | --- | --- | --- |
 | `main.tex` | Bachelorrapportens LaTeX-hovedfil | Skrivning og struktur |
-| `KUstyle.sty` | KU-forside og layoutmakroer | Forsidebaggrund, headertekst og headerfarve styres fra `main.tex` |
+| `KUstyle.sty` | KU-forside og layoutmakroer | Forsidebaggrund, headertekst, headerfarve og headerbaggrundsbredde styres fra `main.tex` |
 | `.gitignore` | Git ignore-regler | Ignorerer lokale LaTeX build-artefakter |
 | `.gitattributes` | Git diff-/merge-attributter | Marker PDF-filer som binære |
 | `assets/` | Rapportens egne billedaktiver | Logoer, figurer og konverterede Overleaf-aktiver |

@@ -25,19 +25,21 @@
 \newcommand*{\kuheadertwo}[1]{\def\@kuheadertwo{#1}}
 \newcommand*{\kucoverbackground}[1]{\def\@kucoverbackground{#1}}
 \newcommand*{\kuheadercolor}[1]{\def\@kuheadercolor{#1}}
+\newcommand*{\kuheaderbackgroundwidth}[1]{\def\@kuheaderbackgroundwidth{#1}}
 
 \kuheaderone{KØBENHAVNS UNIVERSITET}
 \kuheadertwo{DET SUNDHEDSVIDENSKABELIGE FAKULTET}
 \kucoverbackground{assets/ku-cover-background.png}
 \kuheadercolor{black}
+\kuheaderbackgroundwidth{120mm}
 
 \def\maketitle{
 	    \thispagestyle{empty}
 	    \AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{\@kucoverbackground}}
 	    \ 
 
-	    \begin{textblock*}{170mm}(15mm,10mm)
-	    \noindent{\color{white}\rule{170mm}{28mm}}
+	    \begin{textblock*}{\@kuheaderbackgroundwidth}(15mm,10mm)
+	    \noindent{\color{white}\rule{\@kuheaderbackgroundwidth}{28mm}}
 	    \end{textblock*}
 	    \begin{textblock*}{170mm}(19mm,17mm)
 	    \noindent{\color{\@kuheadercolor}\fontsize{13}{13}\selectfont\addfontfeatures{LetterSpace=18}\@kuheaderone\\[5pt]
