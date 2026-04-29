@@ -4,6 +4,7 @@
 \RequirePackage{graphicx}
 \RequirePackage[absolute]{textpos}
 \RequirePackage{hyperref}
+\RequirePackage{xcolor}
 
 \definecolor{KUrod}{RGB}{144,26,30}
 
@@ -19,13 +20,26 @@
 \newcommand*{\ptype}[1]{\def\@ptype{#1}}
 \newcommand*{\subtitle}[1]{\def\@subtitle{#1}}
 \newcommand*{\fpimage}[1]{\def\@fpimage{#1}}
+\newcommand*{\kuheaderone}[1]{\def\@kuheaderone{#1}}
+\newcommand*{\kuheadertwo}[1]{\def\@kuheadertwo{#1}}
+
+\kuheaderone{KØBENHAVNS UNIVERSITET}
+\kuheadertwo{DET SUNDHEDSVIDENSKABELIGE FAKULTET}
 
 \def\maketitle{
-    \thispagestyle{empty}
-    \AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{KU-logo.pdf}}
-    \ 
-    
-    \ifdefined\@fpimage
+	    \thispagestyle{empty}
+	    \AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{assets/ku-cover-background.png}}
+	    \ 
+
+	    \begin{textblock*}{170mm}(15mm,10mm)
+	    \noindent{\color{white}\rule{170mm}{28mm}}
+	    \end{textblock*}
+	    \begin{textblock*}{170mm}(19mm,17mm)
+	    \noindent\fontsize{13}{13}\selectfont\addfontfeatures{LetterSpace=18}\@kuheaderone\\[5pt]
+	    \fontsize{9}{9}\selectfont\addfontfeatures{LetterSpace=14}\@kuheadertwo
+	    \end{textblock*}
+	    
+	    \ifdefined\@fpimage
         \begin{textblock}{10}(1.5,4.7)
         \noindent\includegraphics*[width=\textwidth, height=80mm, keepaspectratio]{\@fpimage}
         \end{textblock}

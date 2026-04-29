@@ -23,15 +23,18 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 
 ## Kendte Metadata
 
-- Forfatter: Christian Kristensen.
+- Forfatter: Christian Kristensen, TDH522.
 - Projekt/case: Træningsmester.
 - Projekttype: Bachelorprojekt.
 - Uddannelse: Bachelor i Sundhed og Informatik.
+- Fakultet: Det Sundhedsvidenskabelige Fakultet.
+- Institut: Institut for Folkesundhedsvidenskab.
+- Afdeling: Afdeling for Sundhedstjenesteforskning.
 - Vejleder: Karsten Vrangbæk.
 - Arbejdstitel i LaTeX: `Træningsmester`.
 - Arbejdssubtitle i LaTeX: `Design og implementering af en digital træningsapp til fleksibel progression og motivation`.
 - Afleveringsdato: afventer.
-- Institut og afdeling: afventer eksplicit bekræftelse.
+- Forsidens KU-header skal pege på Det Sundhedsvidenskabelige Fakultet, ikke den oprindelige matematik-template.
 
 ## Rapportens Autoritative Spor
 
@@ -52,6 +55,7 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 - Brug kun screenshots efter manuel godkendelse i screenshot-approval-materialet.
 - Bevar LaTeX-kompatibilitet med Overleaf. Undgå lokale absolute paths i `main.tex`.
 - Revertér aldrig brugerens ændringer uden eksplicit instruktion.
+- Efter hver afsluttet ændring skal ændringen committes og pushes til `main`, medmindre brugeren eksplicit beder om noget andet.
 
 ## Centrale Filer
 

@@ -26,8 +26,10 @@ Start med disse filer i rækkefølge:
 ## Kritiske Pointers
 
 - Hovedrapport: `main.tex`
-- KU-style og forsidemakroer: `KUstyle.sty`
-- Forsidegrafik: `KU-logo.pdf` og `billede.png`
+- KU-style og forsidemakroer: `KUstyle.sty` (overstyrer den oprindelige matematik-template med SUND-header)
+- KU-forsidebaggrund: `KU-logo.pdf` som original og `assets/ku-cover-background.png` som Overleaf-brugt rasterbaggrund uden aktiv tekst fra matematiktemplaten
+- Træningsmester-logo på forsiden: `assets/traeningsmester-logo-uden-baggrund.svg` og Overleaf-kompatibel `assets/traeningsmester-logo-uden-baggrund.pdf`
+- Oprindelig template-grafik: `billede.png`
 - Lokal template-vejledning: `README.md`
 - Agentstyring: `AGENTS.md`
 - Materialepakke: `Materiale/traeningsmester-2026-04-28/`
@@ -49,6 +51,7 @@ Start med disse filer i rækkefølge:
 | --- | --- | --- |
 | `main.tex` | Bachelorrapportens LaTeX-hovedfil | Skrivning og struktur |
 | `KUstyle.sty` | KU-forside og layoutmakroer | Skal sjældent ændres |
+| `assets/` | Rapportens egne billedaktiver | Logoer, figurer og konverterede Overleaf-aktiver |
 | `README.md` | Template-vejledning | Overleaf-opsætning |
 | `AGENTS.md` | Arbejdsregler for LLM-agenter | Skal læses ved opstart |
 | `NAVIGATOR.md` | Dette strukturkort | Skal opdateres ved strukturændringer |
@@ -59,7 +62,8 @@ Start med disse filer i rækkefølge:
 `main.tex` er ryddet for synlig skabelon- og fyldtekst. Det indeholder:
 
 - udfyldt forfatter, projekttype, arbejdstitel, arbejdssubtitle og vejleder,
-- `Afventer` for dato, institut og afdeling,
+- `Afventer` for dato,
+- udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
 - kapiteloverskrifter baseret på rapportafsnit-mappingen,
 - skjulte TODO-kommentarer som skrivehjælp.
@@ -82,6 +86,10 @@ Start med disse filer i rækkefølge:
 ├── KUstyle.sty
 ├── NAVIGATOR.md
 ├── README.md
+├── assets
+│   ├── traeningsmester-logo-uden-baggrund.pdf
+│   ├── traeningsmester-logo-uden-baggrund.svg
+│   └── ku-cover-background.png
 ├── billede.png
 ├── main.tex
 └── Materiale
