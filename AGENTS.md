@@ -73,7 +73,7 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 - `referencer.md`: læsevejledning, kildeforklaring og link mellem BibTeX-nøgler, DOI/webkilder og lokale PDF'er.
 - `referencer/`: lokale åbne PDF-kopier navngivet efter BibTeX-kilderne.
 - `kildesoegning.tex`: metodeklart LaTeX-afsnit, der redegør for kildesøgning og referenceudvælgelse.
-- `billedbilag.tex`: LaTeX-bilag med labels til de 13 aktuelle Træningsmester-screenshots og 7 arkitekturdiagrammer.
+- `billedbilag.tex`: LaTeX-bilag med labels til de 13 aktuelle Træningsmester-screenshots, 7 arkitekturdiagrammer og supplerende materialetabeller om use cases, krav, SQL/RLS, procesmodeller, beta og verifikation.
 - `Materiale/traeningsmester-2026-04-28/README.md`: kort vejledning til materialepakken.
 - `Materiale/traeningsmester-2026-04-28/NAVIGATOR.md`: detaljeret strukturkort for materialepakken.
 

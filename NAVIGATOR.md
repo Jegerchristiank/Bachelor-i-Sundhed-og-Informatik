@@ -36,7 +36,7 @@ Start med disse filer i rækkefølge:
 - Agentstyring: `AGENTS.md`
 - Referencebibliotek: `referencer.bib`, `referencer.md` og lokale åbne PDF-kopier i `referencer/`
 - Kildesøgningsafsnit: `kildesoegning.tex`
-- Billedbilag: `billedbilag.tex` med labels til de aktuelle Træningsmester-screenshots og arkitekturdiagrammer
+- Billed- og materialebilag: `billedbilag.tex` med labels til aktuelle Træningsmester-screenshots, arkitekturdiagrammer og supplerende tabeller fra materialepakken
 - Konverterede diagrammer til Overleaf: `assets/bilag/diagrammer/`
 - Materialepakke: `Materiale/traeningsmester-2026-04-28/`
 - Materialepakkens navigator: `Materiale/traeningsmester-2026-04-28/NAVIGATOR.md`
@@ -67,7 +67,7 @@ Start med disse filer i rækkefølge:
 | `referencer.md` | Referencevejledning | Skal læses før nye skrive-/redigeringsiterationer |
 | `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af kilder, navngivet efter BibTeX-stems |
 | `kildesoegning.tex` | Metodeafsnit om kildesøgning | Kan inputtes i rapportens metodekapitel |
-| `billedbilag.tex` | Figur- og screenshotbilag | Bilag med alle aktuelle, kuraterede Træningsmester-billeder og labels |
+| `billedbilag.tex` | Billed- og materialebilag | Bilag med aktuelle, kuraterede Træningsmester-billeder, diagrammer, materialetabeller og labels |
 | `Materiale/traeningsmester-2026-04-28/` | Kurateret rapportmateriale | Kilder, bilag og argumentation |
 
 ## Rapportens Nuværende Canvas
@@ -80,7 +80,7 @@ Start med disse filer i rækkefølge:
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
 - kapiteloverskrifter baseret på rapportafsnit-mappingen,
 - bilag med kildesøgning via `\input{kildesoegning}`,
-- billedbilag med aktuelle Træningsmester-screenshots og arkitekturdiagrammer via `\input{billedbilag}`,
+- billed- og materialebilag med aktuelle Træningsmester-screenshots, arkitekturdiagrammer og supplerende tabeller via `\input{billedbilag}`,
 - BibTeX-referenceafsnit baseret på `referencer.bib`,
 - skjulte TODO-kommentarer som skrivehjælp.
 
