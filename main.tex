@@ -1,6 +1,7 @@
 % VIGTIGT! For at dokumentet kan compile, skal man benytte XeLaTeX eller LuaLaTeX som compiler. Dette kan gøres i Overleaf ved at gå til Menu -> Settings -> Compiler -> Vælg XeLaTeX/LuaLaTeX
 \documentclass[12pt]{article}
 
+\usepackage[numbers]{natbib} % Referencehåndtering til referencer.bib
 \usepackage{KUstyle}
 \usepackage[margin=0.8in]{geometry} % Pakke til sidemargin
 \usepackage{setspace} % Pakke til halvanden linjeafstand
@@ -12,6 +13,8 @@
 % Nedenstående ændrer indholdet på forsiden
 \kuheaderone{KØBENHAVNS UNIVERSITET}
 \kuheadertwo{DET SUNDHEDSVIDENSKABELIGE FAKULTET}
+\kucoverbackground{assets/ku-cover-background-blue.png}
+\kuheadercolor{black}
 \ptype{Bachelorprojekt}
 \author{Christian Kristensen, TDH522}
 \title{Træningsmester}
@@ -21,6 +24,7 @@
 \fpimage{assets/traeningsmester-logo-uden-baggrund.pdf} % Kilde-SVG ligger i assets/traeningsmester-logo-uden-baggrund.svg
 
 \renewcommand{\contentsname}{Indholdsfortegnelse}
+\renewcommand{\refname}{Referencer}
 
 \begin{document}
 
@@ -90,5 +94,17 @@ Dato: & Afventer
 
 \section{Konklusion}
 % TODO: Besvar problemformuleringen kort og præcist.
+
+\newpage
+\appendix
+\section*{Bilag}
+\addcontentsline{toc}{section}{Bilag}
+\input{kildesoegning}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Referencer}
+\bibliographystyle{plainnat}
+\bibliography{referencer}
 
 \end{document}

@@ -11,4 +11,6 @@ For at ændre detaljerne på forsiden, skal man ændre på flg. kommandoers vær
 'date' angiver datoen.
 'advisor' angiver vejlederen.
 'fpimage' angiver billedefilen på forsiden. Her indsættes adressen til billedet. Hvis intet billede ønskes, fjernes denne kommando.
-
+'kuheaderone' og 'kuheadertwo' styrer KU-teksten øverst på forsiden.
+'kucoverbackground' angiver forsidebaggrunden. Brug fx `assets/ku-cover-background-blue.png` for blå KU-grafik.
+'kuheadercolor' styrer farven på KU-teksten øverst på forsiden.

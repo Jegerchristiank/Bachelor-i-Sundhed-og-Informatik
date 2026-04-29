@@ -27,9 +27,10 @@ Start med disse filer i rækkefølge:
 
 - Hovedrapport: `main.tex`
 - KU-style og forsidemakroer: `KUstyle.sty` (overstyrer den oprindelige matematik-template med SUND-header)
-- KU-forsidebaggrund: `KU-logo.pdf` som original og `assets/ku-cover-background.png` som Overleaf-brugt rasterbaggrund uden aktiv tekst fra matematiktemplaten
+- KU-forsidebaggrund: `KU-logo.pdf` som original, `assets/ku-cover-background.png` som rød rasterbaggrund og `assets/ku-cover-background-blue.png` som blå SUND-valgt rasterbaggrund
 - Træningsmester-logo på forsiden: `assets/traeningsmester-logo-uden-baggrund.svg` og Overleaf-kompatibel `assets/traeningsmester-logo-uden-baggrund.pdf`
 - Oprindelig template-grafik: `billede.png`
+- Git-ignore: `.gitignore` holder lokale LaTeX build-artefakter ude af repoet.
 - Git-attributter: `.gitattributes` markerer PDF-filer som binære, så kilde-PDF'er ikke tekst-diffes.
 - Lokal template-vejledning: `README.md`
 - Agentstyring: `AGENTS.md`
@@ -53,7 +54,8 @@ Start med disse filer i rækkefølge:
 | Mappe/fil | Ansvar | Primær brug |
 | --- | --- | --- |
 | `main.tex` | Bachelorrapportens LaTeX-hovedfil | Skrivning og struktur |
-| `KUstyle.sty` | KU-forside og layoutmakroer | Skal sjældent ændres |
+| `KUstyle.sty` | KU-forside og layoutmakroer | Forsidebaggrund, headertekst og headerfarve styres fra `main.tex` |
+| `.gitignore` | Git ignore-regler | Ignorerer lokale LaTeX build-artefakter |
 | `.gitattributes` | Git diff-/merge-attributter | Marker PDF-filer som binære |
 | `assets/` | Rapportens egne billedaktiver | Logoer, figurer og konverterede Overleaf-aktiver |
 | `README.md` | Template-vejledning | Overleaf-opsætning |
@@ -74,6 +76,8 @@ Start med disse filer i rækkefølge:
 - udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
 - kapiteloverskrifter baseret på rapportafsnit-mappingen,
+- bilag med kildesøgning via `\input{kildesoegning}`,
+- BibTeX-referenceafsnit baseret på `referencer.bib`,
 - skjulte TODO-kommentarer som skrivehjælp.
 
 ## Vedligeholdelsesregler
@@ -90,6 +94,7 @@ Start med disse filer i rækkefølge:
 ```text
 .
 ├── .gitattributes
+├── .gitignore
 ├── AGENTS.md
 ├── KU-logo.pdf
 ├── KUstyle.sty
@@ -103,7 +108,8 @@ Start med disse filer i rækkefølge:
 ├── assets
 │   ├── traeningsmester-logo-uden-baggrund.pdf
 │   ├── traeningsmester-logo-uden-baggrund.svg
-│   └── ku-cover-background.png
+│   ├── ku-cover-background.png
+│   └── ku-cover-background-blue.png
 ├── billede.png
 ├── main.tex
 └── Materiale

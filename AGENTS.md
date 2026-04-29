@@ -8,6 +8,8 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - Repoet er en Overleaf/LaTeX-mappe til bachelorrapporten om Træningsmester.
 - Hovedfilen er `main.tex`; layoutet styres af `KUstyle.sty`.
 - Dokumentet skal compiles med XeLaTeX eller LuaLaTeX, fordi templaten bruger `fontspec`.
+- `main.tex` indlæser `kildesoegning.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
+- Forsidens KU-header, fakultetstekst, headerfarve og coverbaggrund styres fra `main.tex` via KUstyle-makroer.
 - `Materiale/traeningsmester-2026-04-28/` er den kuraterede materialepakke til rapportarbejdet.
 - `referencer.bib`, `referencer.md` og `referencer/` er referencebiblioteket med BibTeX-nøgler, kildebeskrivelser og lokale åbne PDF-kopier.
 - Rå Messenger-, Facebook-, Gmail-, KU webmail-, Absalon- og Xcode-logdata er bevidst ikke inkluderet i den kuraterede mappe.
