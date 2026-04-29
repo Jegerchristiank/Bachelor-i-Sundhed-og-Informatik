@@ -3,6 +3,8 @@
 Dato: 2026-04-28  
 Formål: foreslå et fokuseret figurudvalg til bacheloren, så hele screenshotmappen ikke skal afleveres ukritisk.
 
+Note 2026-04-29: På eksplicit brugerønske er alle 13 aktuelle iOS 26.4-screenshots og de 7 renderede diagrammer indsat i rapportens `billedbilag.tex` med labels. Den anbefalede figurpakke her bør stadig bruges som prioritering for hovedteksten, så rapporten ikke bliver afhængig af alle bilagsfigurer.
+
 ## Anbefalet Figurpakke
 
 | Figur | Kilde | Formål | Status |

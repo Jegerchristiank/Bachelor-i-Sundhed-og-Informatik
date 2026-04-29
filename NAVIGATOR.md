@@ -36,6 +36,8 @@ Start med disse filer i rækkefølge:
 - Agentstyring: `AGENTS.md`
 - Referencebibliotek: `referencer.bib`, `referencer.md` og lokale åbne PDF-kopier i `referencer/`
 - Kildesøgningsafsnit: `kildesoegning.tex`
+- Billedbilag: `billedbilag.tex` med labels til de aktuelle Træningsmester-screenshots og arkitekturdiagrammer
+- Konverterede diagrammer til Overleaf: `assets/bilag/diagrammer/`
 - Materialepakke: `Materiale/traeningsmester-2026-04-28/`
 - Materialepakkens navigator: `Materiale/traeningsmester-2026-04-28/NAVIGATOR.md`
 - Autoritativ problemformulering: `Materiale/traeningsmester-2026-04-28/01_rapportgrundlag/problemformulering/problemformulering_autoritativ.md`
@@ -65,6 +67,7 @@ Start med disse filer i rækkefølge:
 | `referencer.md` | Referencevejledning | Skal læses før nye skrive-/redigeringsiterationer |
 | `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af kilder, navngivet efter BibTeX-stems |
 | `kildesoegning.tex` | Metodeafsnit om kildesøgning | Kan inputtes i rapportens metodekapitel |
+| `billedbilag.tex` | Figur- og screenshotbilag | Bilag med alle aktuelle, kuraterede Træningsmester-billeder og labels |
 | `Materiale/traeningsmester-2026-04-28/` | Kurateret rapportmateriale | Kilder, bilag og argumentation |
 
 ## Rapportens Nuværende Canvas
@@ -77,6 +80,7 @@ Start med disse filer i rækkefølge:
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
 - kapiteloverskrifter baseret på rapportafsnit-mappingen,
 - bilag med kildesøgning via `\input{kildesoegning}`,
+- billedbilag med aktuelle Træningsmester-screenshots og arkitekturdiagrammer via `\input{billedbilag}`,
 - BibTeX-referenceafsnit baseret på `referencer.bib`,
 - skjulte TODO-kommentarer som skrivehjælp.
 
@@ -100,12 +104,16 @@ Start med disse filer i rækkefølge:
 ├── KUstyle.sty
 ├── NAVIGATOR.md
 ├── README.md
+├── billedbilag.tex
 ├── kildesoegning.tex
 ├── referencer.bib
 ├── referencer.md
 ├── referencer
 │   └── åbne PDF-kopier af eksterne kilder
 ├── assets
+│   ├── bilag
+│   │   └── diagrammer
+│   │       └── Overleaf-kompatible PDF-renderinger af Mermaid-diagrammer
 │   ├── traeningsmester-logo-uden-baggrund.pdf
 │   ├── traeningsmester-logo-uden-baggrund.svg
 │   ├── ku-cover-background.png

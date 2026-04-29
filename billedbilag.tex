@@ -1,0 +1,72 @@
+\section{Billedbilag: Træningsmester}
+\label{app:traeningsmester-billedbilag}
+
+Dette bilag samler de rapportklare billeder fra den kuraterede Træningsmester-materialepakke pr. 28. april 2026. Bilaget omfatter de 13 aktuelle iOS 26.4-screenshots og de 7 renderede arkitekturdiagrammer, som er udvalgt i materialepakkens figur- og screenshotspor. Historiske audit-screenshots fra app-repoet er ikke medtaget, fordi de kan vise ældre UI og derfor ikke bør bruges som dokumentation for den aktuelle appversion.
+
+Alle figurer er forsynet med labels, så de kan henvises fra rapportteksten med \verb|\ref{...}|.
+
+\newcommand{\tmscreenshot}[3]{%
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=0.95\textwidth,height=0.74\textheight,keepaspectratio]{#1}
+    \caption{#2}
+    \label{#3}
+\end{figure}
+}
+
+\newcommand{\tmdiagram}[3]{%
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{#1}
+    \caption{#2}
+    \label{#3}
+\end{figure}
+}
+
+\subsection{App-screenshots}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-01-home-stale-session-testkonto-2026-04-28.jpg}{Home-skærm med advarsel om en forældet tracker-session og mulighed for at fortsætte eller rydde sessionen.}{fig:tm-ios-home-stale-session}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-02-home-ready-testkonto-2026-04-28.jpg}{Home-skærm med aktuel træningshandling og næste planlagte træningspas.}{fig:tm-ios-home-ready}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-03-programmer-testkonto-2026-04-28.jpg}{Programoversigt med aktiv programstruktur og brugerens valgte progression.}{fig:tm-ios-programmer}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-04-oevelser-testkonto-2026-04-28.jpg}{Øvelseskatalog med søgning, filtrering og øvelsesliste i den aktuelle iOS-version.}{fig:tm-ios-oevelser}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-05-match-card-testkonto-2026-04-28.jpg}{Match-flow med swipe-kort til inspiration og valg af øvelser.}{fig:tm-ios-match-card}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-06-indstillinger-testkonto-2026-04-28.jpg}{Indstillingsoversigt med kontosektion og brugerens aktuelle app-tilstande.}{fig:tm-ios-indstillinger}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-07-konto-loginmetoder-testkonto-2026-04-28.jpg}{Kontoens loginmetoder i indstillingsflowet.}{fig:tm-ios-konto-loginmetoder}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-08-premium-abonnement-testkonto-2026-04-28.jpg}{Premium- og abonnementsvisning med appens betalingsrelaterede funktionsadgang.}{fig:tm-ios-premium-abonnement}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-09-historik-testkonto-2026-04-28.jpg}{Historikvisning med tidligere træningslog og gennemførte pas.}{fig:tm-ios-historik}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-10-tracker-active-testkonto-2026-04-28.jpg}{Aktiv tracker-session med planlagte sæt og løbende registrering under træning.}{fig:tm-ios-tracker-active}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-11-home-completion-delay-testkonto-2026-04-28.jpg}{Home-skærm efter gennemført pas med forsinket completion-feedback og fortrydelsesvindue.}{fig:tm-ios-home-completion-delay}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-12-home-next-training-testkonto-2026-04-28.jpg}{Home-skærm efter completion, hvor næste træningshandling er rykket frem.}{fig:tm-ios-home-next-training}
+
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-13-home-current-xcode-mcp-qa-2026-04-28.jpg}{Home-skærm fra QA-capture efter dybere gennemløb med Dagens træning synlig.}{fig:tm-ios-home-current-qa}
+
+\clearpage
+
+\subsection{Arkitektur- og dataflowdiagrammer}
+
+\tmdiagram{assets/bilag/diagrammer/system_context.pdf}{Systemkontekst for Træningsmester på iOS, watchOS, Supabase og Apple-services.}{fig:tm-system-context}
+
+\tmdiagram{assets/bilag/diagrammer/data_model_er.pdf}{ER-diagram for programmer, workouts, tracker, completion, settings og cyklusdata.}{fig:tm-data-model-er}
+
+\tmdiagram{assets/bilag/diagrammer/tracker_completion_summary.pdf}{Opsummering af tracker-on/off, completion-event og progression i træningscyklus.}{fig:tm-tracker-completion-summary}
+
+\tmdiagram{assets/bilag/diagrammer/security_boundary_summary.pdf}{Sikkerhedsgrænse mellem mobil klient, RLS og Edge Functions.}{fig:tm-security-boundary-summary}
+
+\tmdiagram{assets/bilag/diagrammer/watch_sync_sequence.pdf}{Sekvens for iOS/watchOS auth-sync, token-cache og RLS-baseret workoutdata.}{fig:tm-watch-sync-sequence}
+
+\tmdiagram{assets/bilag/diagrammer/live_activity_idempotency_sequence.pdf}{Sekvens for Live Activity intent-write, App Group snapshot og idempotent trackerlog.}{fig:tm-live-activity-idempotency-sequence}
+
+\tmdiagram{assets/bilag/diagrammer/import_ai_edge_boundary.pdf}{Import/AI-grænse mellem klient, Edge Functions, OpenAI og Supabase.}{fig:tm-import-ai-edge-boundary}
+
+\clearpage

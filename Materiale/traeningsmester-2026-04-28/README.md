@@ -56,6 +56,6 @@ Det betyder ikke, at de aldrig fandtes. De er bare ikke egnede som direkte bache
 
 ## Caveats
 
-- De 13 iOS screenshots kræver stadig manuel visuel godkendelse, før de bruges endeligt i rapporten.
+- De 13 iOS screenshots er registreret som godkendt til bilagsbrug i `02_figurer_og_screenshots/app_screenshots/manifester/screenshot_approval_matrix.csv` pr. 2026-04-29 efter eksplicit brugerønske; en afsluttende forfattergennemgang før aflevering anbefales stadig.
 - watchOS, Live Activity, admin, onboarding og fejlstates er dokumenteret via kode/test/arkitektur, men ikke med runtime screenshots i denne mappe.
 - Integrationstest med fulde Supabase credentials og Edge Function helper tests er dokumenteret som rest-gaps.

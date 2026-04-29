@@ -47,6 +47,7 @@ Start med disse filer i rækkefølge:
 | `01_rapportgrundlag/rapportstruktur/rapportafsnit_mapping.md` | Kobler rapportafsnit til konkrete kilder i materialemappen |
 | `01_rapportgrundlag/rapportstruktur/figurudvalg_udkast.md` | Foreslår de figurer, der bør bruges i rapporten |
 | `02_figurer_og_screenshots/app_screenshots/screenshot_daekning.md` | Forklarer hvad de 13 aktuelle iOS 26.4 screenshots dækker og ikke dækker |
+| `02_figurer_og_screenshots/app_screenshots/manifester/screenshot_approval_matrix.csv` | Registrerer screenshot-godkendelse; de 13 aktuelle iOS 26.4 screenshots er godkendt til bilagsbrug pr. 2026-04-29 |
 | `02_figurer_og_screenshots/diagrammer/diagramkatalog.md` | Oversigt over diagramkilder og renderede diagrammer |
 | `03_kursus_og_metode/kursusmapping.md` | Kobler Absalon-fagstof til bachelorens metode, design, arkitektur og dataafsnit |
 | `04_brugerindsigt_beta/feedbackkatalog.md` | Tematisk katalog over brugerfeedback |
