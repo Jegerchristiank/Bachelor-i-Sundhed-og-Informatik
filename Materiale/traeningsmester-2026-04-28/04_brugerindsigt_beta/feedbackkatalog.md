@@ -11,6 +11,7 @@ Kildegrundlag: anonymiserede temaer fra Messenger, TestFlight-tidslinje, Faceboo
 | B02 | Messenger | `MEDIEKVALITET` | Dialogen pegede på ønske om rigtige øvelsesvideoer frem for generiske/AI-klip. | Middel | Øvelsesmedier skal være troværdige og kropsligt genkendelige. | Designrationale for medie-pipeline. |
 | B03 | Messenger | `KATALOG` | Et stærkt katalog kræver adgang til udstyr og personer, der kan udføre svære øvelser korrekt. | Middel | Kataloget er både data-, indholds- og governanceproblem, ikke kun UI. | Diskussion af scope og videre arbejde. |
 | B04 | Messenger | `BETA_PROCESS` | Tester tilbød praktisk hjælp til øvelsesvideoer og udstyr. | Lav-middel | Beta-test kan fungere som co-design og indholdsvalidering. | Metodeafsnit om brugerinddragelse. |
+| B04A | Gmail/Messenger | `CENTER_OUTREACH` | Outreach-/korrespondancespor om at filme øvelsesvideoer i lokale træningscentre. | Middel | Ekstern centeradgang er en projekt- og privacy-afhængighed, ikke kun et UI-valg. | Projektledelse, etik og designrationale. |
 | B05 | TestFlight | `BETA_PROCESS` | Build 4-12 blev distribueret i perioden 2026-03-31 til 2026-04-25. | Høj for distribution, lav for effekt | Dokumenterer iterationstempo, men ikke brugerudbytte alene. | Projektledelse og verifikation. |
 | B06 | Facebook | `REKRUTTERING` | Facebook fitnessgrupper blev brugt/undersøgt som kanal til bredere beta-rekruttering. | Lav i public materiale | Skal redigeres manuelt, hvis opslag skal bruges som bilag. | Rekrutteringsmetode og bias. |
 | B07 | Spørgeramme | `SAMTYKKE` | Spørgerammen dækkede brug, værdi, friktion, betalingsvillighed, prioriteringer og anonymiseret brug af svar. | Middel | Giver struktur til semistruktureret evaluering. | Metode og etik. |
@@ -31,6 +32,7 @@ Kildegrundlag: anonymiserede temaer fra Messenger, TestFlight-tidslinje, Faceboo
 | Prioritet | Forbedring | Begrundelse | Koblet appområde |
 | --- | --- | --- | --- |
 | P1 | Flere rigtige øvelsesvideoer | Øger tillid og forståelse i øvelseskataloget. | Øvelser, media upload, kataloggovernance |
+| P1 | Afklar centeradgang og filming-samtykke | Rigtige videoer kræver adgang til udstyr og sikker privacy-praksis i træningsrum. | Projektledelse, øvelsesmedier, etik |
 | P1 | Styrk lock screen/Live Activity-stabilitet | Reducerer friktion under træning. | Tracker, Live Activity, timers |
 | P1 | Gør tracker-off completion tydelig i UI/rapport | Understøtter adherence uden tvungen logging. | Home, Tracker, Historik |
 | P1 | Ensret øvelsessøgning på tværs af flows | Beta viste forskel på søgning i øvelsesmenu og programdag. | Øvelser, Plans, `ExerciseSearchCatalog` |

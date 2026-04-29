@@ -50,6 +50,7 @@ Start med disse filer i rækkefølge:
 | `02_figurer_og_screenshots/diagrammer/diagramkatalog.md` | Oversigt over diagramkilder og renderede diagrammer |
 | `03_kursus_og_metode/kursusmapping.md` | Kobler Absalon-fagstof til bachelorens metode, design, arkitektur og dataafsnit |
 | `04_brugerindsigt_beta/feedbackkatalog.md` | Tematisk katalog over brugerfeedback |
+| `04_brugerindsigt_beta/traeningscenter_korrespondance.md` | Anonymiseret opsummering af center-outreach og videooptagelsesrationale |
 | `05_arkitektur_data_sikkerhed/arkitektur/systembeskrivelse.md` | Teknisk systembeskrivelse af app, watchOS, Live Activity, Supabase og Edge Functions |
 | `05_arkitektur_data_sikkerhed/data_og_sikkerhed/data_og_sikkerhed_rapportklar.md` | Rapportklar fortælling om data, RLS, privacy og sikkerhedsgrænser |
 | `06_verifikation/verifikationsrapport.md` | Kort build/test-summary uden rå logs |
@@ -104,6 +105,7 @@ Materiale/traeningsmester-2026-04-28
 │   ├── mail_og_webmail_evidens.md
 │   ├── messenger_dybdeanalyse.md
 │   ├── private_messenger_followup_audit.md
+│   ├── traeningscenter_korrespondance.md
 │   └── testflight_tidslinje.md
 ├── 05_arkitektur_data_sikkerhed
 │   ├── arkitektur

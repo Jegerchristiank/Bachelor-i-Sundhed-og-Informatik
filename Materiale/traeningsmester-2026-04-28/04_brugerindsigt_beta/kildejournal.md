@@ -19,9 +19,9 @@ Rå snapshots: gemt privat under `BachelorPrivateRaw/.../absalon/`, inkl. deep-r
 
 Status: tilgængelig i in-app browser uden nyt login ved access-check. Beta-gruppen `TræningsMester Betatestere IOS` blev åbnet, og relevante temaer blev noteret anonymiseret.
 
-Privat capture: `BachelorPrivateRaw/.../messenger/00-access-check.png`, `01-beta-thread-visible.png`, `02-beta-group-current-view.png` og tilhørende DOM snapshots. Deep-run supplerede med private filtrerede DOM-udtræk for oktober 2025-prototype, marts 2026-TestFlight, søge-/øvelsesfeedback, bench-variationer og kg/lbs.
+Privat capture: `BachelorPrivateRaw/.../messenger/00-access-check.png`, `01-beta-thread-visible.png`, `02-beta-group-current-view.png` og tilhørende DOM snapshots. Deep-run supplerede med private filtrerede DOM-udtræk for oktober 2025-prototype, marts 2026-TestFlight, søge-/øvelsesfeedback, bench-variationer, kg/lbs og træningscenter-/videooptagelsesdialog.
 
-Public brug: kun anonymiserede temaer i `beta_tester_rapport.md`, `messenger_dybdeanalyse.md`, `feedbackkatalog.md` og `beta_observations_matrix.csv`. Rå chats, navne og profilbilleder er ikke kopieret ind i repoet.
+Public brug: kun anonymiserede temaer i `beta_tester_rapport.md`, `messenger_dybdeanalyse.md`, `feedbackkatalog.md`, `traeningscenter_korrespondance.md` og `beta_observationsmatrix.csv`. Rå chats, navne og profilbilleder er ikke kopieret ind i repoet.
 
 ## Facebook
 
@@ -48,6 +48,7 @@ Fund uden rå body-indhold i repoet:
 - Vejleder-/bachelor-/Træningsmester-søgning gav ingen relevante hits i tilsluttet Gmail.
 - Træningsmester/TestFlight-søgning fandt invitation 2026-03-25 og build/test-mails fra version 1.0 build 5/6/8 samt 2.0 build 1-12 i perioden 2026-03-26 til 2026-04-25.
 - Træningsvideo-dialog 2026-04-28 gav en rapportrelevant målgruppeparafrase, men rå modpartskontaktdata er ikke gengivet.
+- Træningscenter-/fitnesscenter-søgning fandt en test-/outreach-mail 2026-04-13 om mulighed for at filme øvelsesvideoer i et lokalt center. Den er kun brugt som anonymiseret indholds- og stakeholder-kontekst.
 - Supplerende teknisk mail-evidens: Xcode Cloud build-success og Supabase security-advisor mail i april 2026.
 
 Se også `mail_og_webmail_evidens.md`.

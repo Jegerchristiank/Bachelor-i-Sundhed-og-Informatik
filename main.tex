@@ -10,12 +10,12 @@
 \setmainfont{Arial}
 
 % Nedenstående ændrer indholdet på forsiden
-\ptype{[Kandidatspeciale/Ph.d.-afhandling]}
-\author{[Navn Navnsen]}
-\title{[Titel på afhandling]}
-\subtitle{[Undertitel]}
-\date{Dato: {[Juni 2021]}}
-\advisor{Vejleder: {[Navn Navnsen]}}
+\ptype{Bachelorprojekt}
+\author{Christian Kristensen}
+\title{Træningsmester}
+\subtitle{Design og implementering af en digital træningsapp til fleksibel progression og motivation}
+\date{Dato: Afventer}
+\advisor{Vejleder: Karsten Vrangbæk}
 \fpimage{billede.png} % Hvis intet billede ønskes, skal kommandoen fjernes
 
 \renewcommand{\contentsname}{Indholdsfortegnelse}
@@ -26,17 +26,17 @@
 
 \onehalfspacing
 
-\noindent Dette er en skabelon for selve opstillingen. Kravene til hvilke oplysninger, der skal medtages, varierer fra fag til fag. Du kan derfor ikke uden videre benytte skabelonen til din egen afhandling. Du får nærmere oplysninger om kravene på dit eget studiekontor!
 \begin{table}[h]
 \def\arraystretch{1.5}
-\begin{tabularx}{\textwidth}{l X}
-Institutnavn: & {[Institut for Xxxxx]}  \\
-Afdelingsnavn & {[Afdeling for Xxxxx]} \\
-Forfatter(e): & {[Navn Navnsen]} \\
-Titel og evt. undertitel: & {[Titel på afhandling, evt. undertitel]} \\
-Emnebeskrivelse: & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor rhoncus dui, vehicula pellentesque odio convallis id. Vestibulum mollis nulla ut sem luctus dictum. Sed scelerisque feugiat arcu, quis faucibus lorem viverra id. Aenean dignissim metus eu ligula sagittis, at commodo magna suscipit. \\
-Vejleder: & {[Navn Navnsen]} \\
-Dato: & XX XX XXXX
+\begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X}
+Institutnavn: & Afventer \\
+Afdelingsnavn: & Afventer \\
+Uddannelse: & Bachelor i Sundhed og Informatik \\
+Forfatter(e): & Christian Kristensen \\
+Titel og evt. undertitel: & Træningsmester: Design og implementering af en digital træningsapp til fleksibel progression og motivation \\
+Emnebeskrivelse: & Projektet undersøger, hvordan en digital træningsapp kan designes og implementeres, så programstruktur, progression og feedback understøtter vedvarende motivation og fleksibel håndtering af afvigelser fra et planlagt træningsforløb uden at øge risikoen for demotivation og frafald. \\
+Vejleder: & Karsten Vrangbæk \\
+Dato: & Afventer
 \end{tabularx}
 \end{table}
 \newpage
@@ -44,30 +44,48 @@ Dato: & XX XX XXXX
 \tableofcontents
 \newpage
 
-{\fontfamily{ptm}\selectfont
+\section{Indledning}
+% TODO: Introducer problemfeltet: lineære træningsapps, motivation, adherence og realistiske afvigelser fra træningsplaner.
 
-\section{[Overskrift 1]}
+\section{Problemformulering og afgrænsning}
 
-\subsection{[Overskrift 2]}
+\subsection{Problemformulering}
+% TODO: Brug Materiale/traeningsmester-2026-04-28/01_rapportgrundlag/problemformulering/problemformulering_autoritativ.md.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur faucibus nulla, eu egestas libero fringilla eget. Mauris sollicitudin velit quis magna malesuada sagittis. Fusce ut metus imperdiet, cursus nunc sit amet, gravida orci. Morbi lacinia, velit nec venenatis maximus, enim tortor semper odio, eget volutpat leo dui ut sem. Nullam tincidunt tellus vel sem sollicitudin, vestibulum iaculis sem dictum. 
+\subsection{Caseafgrænsning: Træningsmester}
+% TODO: Forklar Træningsmester som design- og implementeringscase, ikke som konkurrerende hovedproblem.
 
-\subsection{[Overskrift 2]}
+\section{Teoretisk og faglig ramme}
+% TODO: Kobl projektet til softwareudvikling, interaktionsdesign, metode, projektledelse og sundhedsdata/interoperabilitet.
 
-Morbi turpis dui, iaculis id augue quis, imperdiet ultricies metus. Nullam eget ante sed nulla placerat efficitur. Nullam vestibulum, nisi vulputate mattis auctor, neque magna ornare justo, sit amet ultrices libero enim eget erat. Nullam sit amet arcu ac arcu eleifend cursus a non sapien. Sed in nibh quam. Donec fringilla sit amet nibh sed aliquam. Etiam ut semper libero. Integer pellentesque augue quis ante auctor laoreet.
+\section{Metode}
+% TODO: Beskriv materialer, beta-feedback, dokumentanalyse, anonymisering og afgrænsning af rådata.
 
-\section{[Overskrift 1]}
+\section{Krav og use cases}
+% TODO: Oversæt problemformuleringen til funktionelle krav, use cases og sporbarhed.
 
-Fusce lorem ipsum, venenatis porttitor dui at, dapibus varius tortor. Nam in tempor odio, at feugiat nunc. Curabitur ut tellus at sem ornare interdum quis quis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada ex vitae metus posuere feugiat. Nam vitae efficitur orci. Donec eu purus sed orci pharetra accumsan et sed nunc. Nunc nec diam lacus.
+\section{Systemarkitektur}
+% TODO: Beskriv SwiftUI, Supabase, watchOS, Live Activity, Edge Functions og centrale dataflows.
 
-\subsection{[Overskrift 2]}
+\section{Interaktionsdesign}
+% TODO: Forklar designvalg for home, tracker, tracker-off flow, watchOS, Live Activity og feedback loops.
 
-Suspendisse nec augue lectus. Curabitur risus neque, iaculis sit amet dui in, pellentesque vestibulum libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras tincidunt aliquam ultricies. Cras eget nibh at leo placerat tristique. Proin ut tristique sapien. Curabitur non congue mauris.
+\section{Data, sikkerhed og interoperabilitet}
+% TODO: Beskriv datamodel, RLS, Edge Functions, privacy, HealthKit-afgrænsning og DCR/BPMN-perspektiver.
 
-\subsubsection{[Overskrift 3]}
+\section{Implementering}
+% TODO: Udfold de tekniske valg, der understøtter fleksibel progression og reduceret friktion.
 
-Nam volutpat nulla non est posuere porta. Ut sit amet ipsum malesuada, aliquam magna eget, semper mi. In felis tortor, convallis nec eros a, aliquet interdum nisl. Pellentesque auctor sapien odio, id dapibus dolor elementum quis. Vivamus bibendum posuere sodales.
+\section{Test og verifikation}
+% TODO: Brug build/test summaries, screenshot-QA, traceability og kendte skips.
 
-}
+\section{Evaluering og brugerindsigt}
+% TODO: Brug anonymiseret beta-feedback som kvalitativt supplement, ikke statistisk evidens.
+
+\section{Diskussion}
+% TODO: Diskuter styrker, begrænsninger, rest-gaps og alternative løsningsvalg.
+
+\section{Konklusion}
+% TODO: Besvar problemformuleringen kort og præcist.
 
 \end{document}
