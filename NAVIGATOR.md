@@ -79,9 +79,9 @@ Start med disse filer i rækkefølge:
 - udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
 - kapiteloverskrifter baseret på rapportafsnit-mappingen,
-- bilag med kildesøgning via `\input{kildesoegning}`,
-- billed- og materialebilag med aktuelle Træningsmester-screenshots, arkitekturdiagrammer og supplerende tabeller via `\input{billedbilag}`,
 - BibTeX-referenceafsnit baseret på `referencer.bib`,
+- bilag efter referenceafsnittet med kildesøgning via `\input{kildesoegning}`,
+- billed- og materialebilag efter referenceafsnittet med aktuelle Træningsmester-screenshots, arkitekturdiagrammer og supplerende tabeller via `\input{billedbilag}`,
 - skjulte TODO-kommentarer som skrivehjælp.
 
 ## Vedligeholdelsesregler
