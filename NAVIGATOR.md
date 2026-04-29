@@ -34,7 +34,7 @@ Start med disse filer i rækkefølge:
 - Git-attributter: `.gitattributes` markerer PDF-filer som binære, så kilde-PDF'er ikke tekst-diffes.
 - Lokal template-vejledning: `README.md`
 - Agentstyring: `AGENTS.md`
-- Referencebibliotek: `referencer.bib`, `referencer.md` og lokale åbne PDF-kopier i `referencer/`
+- Referencebibliotek: `referencer.bib`, `referencer.md` og lokale åbne PDF-kopier i `referencer/`; udvalgt kursusmateriale registreres med præcise slide-/sidetal uden at kopiere lukkede kursusfiler
 - Kildesøgningsafsnit: `kildesoegning.tex`
 - Billed- og materialebilag: `billedbilag.tex` med labels til aktuelle Træningsmester-screenshots, arkitekturdiagrammer og supplerende tabeller fra materialepakken
 - Konverterede diagrammer til Overleaf: `assets/bilag/diagrammer/`
@@ -63,9 +63,9 @@ Start med disse filer i rækkefølge:
 | `README.md` | Template-vejledning | Overleaf-opsætning |
 | `AGENTS.md` | Arbejdsregler for LLM-agenter | Skal læses ved opstart |
 | `NAVIGATOR.md` | Dette strukturkort | Skal opdateres ved strukturændringer |
-| `referencer.bib` | Eksternt referencebibliotek | BibTeX-nøgler til rapportcitater |
-| `referencer.md` | Referencevejledning | Skal læses før nye skrive-/redigeringsiterationer |
-| `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af kilder, navngivet efter BibTeX-stems |
+| `referencer.bib` | Referencebibliotek | BibTeX-nøgler til eksterne kilder og verificeret kursusmateriale |
+| `referencer.md` | Referencevejledning | Skal læses før nye skrive-/redigeringsiterationer; binder kildevalg, slide-/sidetal og PDF-status sammen |
+| `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af åbne kilder, navngivet efter BibTeX-stems; lukkede kursusfiler kopieres ikke hertil |
 | `kildesoegning.tex` | Metodeafsnit om kildesøgning | Kan inputtes i rapportens metodekapitel |
 | `billedbilag.tex` | Billed- og materialebilag | Bilag med aktuelle, kuraterede Træningsmester-billeder, diagrammer, materialetabeller og labels |
 | `Materiale/traeningsmester-2026-04-28/` | Kurateret rapportmateriale | Kilder, bilag og argumentation |
@@ -109,7 +109,7 @@ Start med disse filer i rækkefølge:
 ├── referencer.bib
 ├── referencer.md
 ├── referencer
-│   └── åbne PDF-kopier af eksterne kilder
+│   └── åbne PDF-kopier af kilder
 ├── assets
 │   ├── bilag
 │   │   └── diagrammer

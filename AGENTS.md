@@ -55,7 +55,9 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 - Skriv rapporttekst på dansk, medmindre brugeren beder om andet.
 - Hold rapporten problemstyret. Undgå at gøre den til en produktpitch eller featureliste.
 - Brug materialepakkens kuraterede summaries før private rådata.
-- Brug `referencer.bib` og `referencer.md` som primære eksterne kildeindeks; tilføj nye kilder begge steder og gem kun PDF'er, når de er åbent tilgængelige.
+- Brug `referencer.bib` og `referencer.md` som primære kildeindeks for eksterne kilder og udvalgt kursusmateriale; tilføj nye kilder begge steder og gem kun PDF'er, når de er åbent tilgængelige.
+- Kursusmateriale må registreres i `referencer.bib` og `referencer.md`, når titel, underviser/ophav, kursus, år og præcise slide-, side- eller afsnitshenvisninger kan verificeres. Kopiér ikke lukkede KU-/Absalon-PDF'er, slides eller dokumenter til `referencer/`; brug kun åbne PDF-kopier. Brug ikke kursusmateriale som empirisk effektbevis for Træningsmester.
+- Husk at `note`-felter i `referencer.bib` kan blive synlige i rapportens referenceliste. Skriv derfor aldrig noter om lokale PDF'er, downloadforsøg, terminalresultater, private stier, mapper eller arbejdsflow i BibTeX-felter, der kan blive trykt.
 - Kopier ikke lange passager fra kursusmateriale, mails, Messenger, Facebook eller andre lukkede kilder.
 - Anonymiser beta- og brugerindsigt, og undgå personhenførbare detaljer i `main.tex`.
 - Nedton claims, hvor `Materiale/traeningsmester-2026-04-28/06_verifikation/quality_gate_review.md` markerer åbne gaps.
