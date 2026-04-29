@@ -3,9 +3,9 @@
 
 \sloppy
 
-Dette bilag samler de rapportklare billeder, figurer, diagramkilder og tabeller fra den kuraterede Træningsmester-materialepakke pr. 28. april 2026. Bilaget omfatter de 13 aktuelle iOS 26.4-screenshots, de 7 arkitektur- og dataflowfigurer og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Historiske audit-screenshots fra app-repoet er ikke medtaget, fordi de kan vise ældre UI og derfor ikke bør bruges som dokumentation for den aktuelle appversion.
+Dette bilag samler rapportens udvalgte billeder, figurer og tabeller om Træningsmester pr. 28. april 2026. Bilaget omfatter 13 aktuelle iOS 26.4-screenshots, 7 arkitektur- og dataflowfigurer og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Ældre screenshots fra tidligere UI-versioner er ikke medtaget, fordi de ikke bør bruges som dokumentation for den aktuelle appversion.
 
-Alle figurer og tabeller er forsynet med labels, så de kan henvises fra rapportteksten med \verb|\ref{...}|. De supplerende tabeller er kondenseret fra materialepakkens rapportklare summaries; private rådata, rå Messenger-/mailtekster og personhenførbare detaljer er ikke kopieret ind i bilaget.
+Figurerne og tabellerne er udvalgt, så rapportteksten kan henvise til det materiale, censor faktisk kan se i rapportens bilag. De supplerende tabeller er kondenserede og anonymiserede; private rådata, rå kommunikation og personhenførbare detaljer er ikke kopieret ind i bilaget.
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
@@ -167,18 +167,18 @@ Alle figurer og tabeller er forsynet med labels, så de kan henvises fra rapport
 \small
 \renewcommand{\arraystretch}{1.18}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.23\textwidth} >{\raggedright\arraybackslash}p{0.28\textwidth} Y}
-\textbf{Materialespor} & \textbf{Bilagsstatus} & \textbf{Begrundelse} \\
+\textbf{Bilagsspor} & \textbf{Bilagsstatus} & \textbf{Begrundelse} \\
 \hline
-Aktuelle app-screenshots & Indsat som figur \ref{fig:tm-ios-home-stale-session}--\ref{fig:tm-ios-home-current-qa} & Alle 13 screenshots er markeret som godkendt til bilagsbrug i screenshot-approval-matrixen. De dokumenterer den aktuelle iOS 26.4-version. \\
+Aktuelle app-screenshots & Indsat som figur \ref{fig:tm-ios-home-stale-session}--\ref{fig:tm-ios-home-current-qa} & De dokumenterer den aktuelle iOS 26.4-version af Træningsmester. \\
 Renderede arkitekturdiagrammer & Indsat som figur \ref{fig:tm-system-context}--\ref{fig:tm-import-ai-edge-boundary} & De dækker systemkontekst, datamodel, tracker/completion, RLS, watchOS, Live Activity og import/AI-grænser. \\
-Containerarkitektur & Indsat som tabel \ref{tab:tm-container-architecture} & PlantUML-kilden er relevant, men ikke renderet i materialepakken. Indholdet er derfor omsat til et rapportklart komponentoverblik. \\
-Trackerproces og DCR-regler & Indsat som tabel \ref{tab:tm-tracker-flow-bpmn} og \ref{tab:tm-authorization-dcr} & BPMN- og DCR-kilderne beskriver proces- og autorisationslogik, som er velegnet som teksttabeller i bilaget. \\
-Use cases og kravsporbarhed & Indsat som tabel \ref{tab:tm-use-cases} og \ref{tab:tm-krav-traceability} & Materialet kobler funktionalitet til implementering og test uden at kræve private rådata. \\
+Containerarkitektur & Indsat som tabel \ref{tab:tm-container-architecture} & Indholdet er omsat til et komponentoverblik, så arkitekturens hovedlag kan læses direkte i bilaget. \\
+Trackerproces og autorisationsregler & Indsat som tabel \ref{tab:tm-tracker-flow-bpmn} og \ref{tab:tm-authorization-dcr} & Proces- og autorisationslogikken er gengivet som teksttabeller, fordi de er centrale for appens træningsflow og sikkerhedsmodel. \\
+Use cases og kravsporbarhed & Indsat som tabel \ref{tab:tm-use-cases} og \ref{tab:tm-krav-traceability} & Tabellerne kobler funktionalitet til implementering og test uden at kræve private rådata. \\
 SQL, RLS og sikkerhed & Indsat som tabel \ref{tab:tm-sql-domain-overblik}, \ref{tab:tm-sql-fields} og \ref{tab:tm-rls-matrix} & Tabellerne dokumenterer datamodellen, idempotency-felter og sikkerhedsgrænser. \\
-Beta- og TestFlight-spor & Indsat som tabel \ref{tab:tm-testflight-timeline} og \ref{tab:tm-beta-feedback} & De anonymiserede summaries dokumenterer iteration, brugerfeedback og begrænsninger uden direkte citater eller persondata. \\
-Private rådata og historiske screenshots & Ikke indsat & Rå Messenger-, mail-, Facebook- og historiske audit-screenshots er bevidst fravalgt af hensyn til anonymisering, samtykke og versionsklarhed. \\
+Beta- og TestFlight-spor & Indsat som tabel \ref{tab:tm-testflight-timeline} og \ref{tab:tm-beta-feedback} & De anonymiserede observationspunkter dokumenterer iteration, brugerfeedback og begrænsninger uden direkte citater eller persondata. \\
+Private rådata og ældre UI-screenshots & Ikke indsat & Lukkede kommunikationsdata og ældre visuelle optagelser er fravalgt af hensyn til anonymisering, samtykke og versionsklarhed. \\
 \end{tabularx}
-\caption{Gennemgang af materialepakken og beslutning om, hvilke artefakter der er indsat i bilaget.}
+\caption{Gennemgang af rapportens bilagsmateriale og afgrænsning.}
 \label{tab:tm-bilag-materialegennemgang}
 \end{table}
 
@@ -204,7 +204,7 @@ UC-09 Træner administrerer klient & Træner ser klienter, aktivitet og programl
 UC-10 Admin håndterer bruger eller aktivitet & Admin-center gennem Edge Function og server-side admin guard. & Underbygger governance, katalogkvalitet og sikkerhedsdesign. \\
 UC-11 Importer program eller historik & Importjob, normalisering, preview og gem af program/historikkladder. & Viser AI/import som afgrænset server-side flow. \\
 \end{tabularx}
-\caption{Kondenseret use case-overblik fra materialepakkens \texttt{use\_cases.md}.}
+\caption{Kondenseret use case-overblik for Træningsmester.}
 \label{tab:tm-use-cases}
 \end{table}
 
@@ -226,7 +226,7 @@ UC-09 Træner administrerer klient & F-16, NF-02, NF-08 & ClientsView, TrainerCl
 UC-10 Admin håndterer bruger & F-17, NF-01, NF-02 & SettingsView, admin-control-center og admin SQL functions. \\
 UC-11 Importer program/historik & F-12, NF-08 & PremiumView, ProgramReviewService og import Edge Functions. \\
 \end{tabularx}
-\caption{Traceability mellem use cases, krav og implementeringsspor fra materialepakkens kravmatrix.}
+\caption{Traceability mellem use cases, krav og implementeringsspor.}
 \label{tab:tm-krav-traceability}
 \end{table}
 
@@ -247,7 +247,7 @@ Supabase & Auth, Postgres med RLS/views/RPC og Storage. & Viser backendens rolle
 Edge Functions & Admin, trainer-client, program/import/analyse og billing functions. & Afgrænser privilegerede operationer til server-side runtime. \\
 Apple services & StoreKit 2, WatchConnectivity, ActivityKit/WidgetKit og HealthKit. & Placering af platformservices og afgrænsning af integrationer. \\
 \end{tabularx}
-\caption{Komponentoverblik kondenseret fra materialepakkens PlantUML-kilde \texttt{container\_architecture.puml}.}
+\caption{Komponentoverblik for Træningsmesters arkitektur.}
 \label{tab:tm-container-architecture}
 \end{table}
 
@@ -255,7 +255,7 @@ Apple services & StoreKit 2, WatchConnectivity, ActivityKit/WidgetKit og HealthK
 \small
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}p{0.34\textwidth} Y}
-\textbf{Procespunkt} & \textbf{Indhold i BPMN-kilden} & \textbf{Rapportbrug} \\
+\textbf{Procespunkt} & \textbf{Kondenseret procesindhold} & \textbf{Rapportbrug} \\
 \hline
 Start og session & Brugeren starter workout; AppState validerer auth og profile mode. & Viser at træningsflowet er brugerbundet og sessionafhængigt. \\
 Tracker-valg & Gateway afgør, om tracker er aktiveret. & Gør tracker-off completion til en legitim vej gennem flowet. \\
@@ -266,7 +266,7 @@ Completion & WorkoutCompletionService gemmer completion event. & Adskiller genne
 Progression & Aktiv cyklus kalder progression RPC efter completion. & Kobler completion til næste træningshandling og cyklusprogression. \\
 Historik/Home & Historik og Home bruger completion- og trackerlogdata efter afslutning. & Viser feedback tilbage til brugerens næste app-state. \\
 \end{tabularx}
-\caption{Tracker- og completionproces kondenseret fra materialepakkens BPMN-kilde \texttt{tracker\_flow.bpmn}.}
+\caption{Tracker- og completionproces for Træningsmester.}
 \label{tab:tm-tracker-flow-bpmn}
 \end{table}
 
@@ -274,7 +274,7 @@ Historik/Home & Historik og Home bruger completion- og trackerlogdata efter afsl
 \small
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}p{0.40\textwidth} Y}
-\textbf{DCR-spor} & \textbf{Kondenseret regel} & \textbf{Rapportbrug} \\
+\textbf{Autorisationsspor} & \textbf{Kondenseret regel} & \textbf{Rapportbrug} \\
 \hline
 Miljø og klient & Appen loader miljø, afviser placeholder- eller service-role keys og opretter derefter anon Supabase client. & Underbygger beslutningen om, at service-role ikke må ligge i klienten. \\
 Session og brugerdata & AuthenticateUser og ResolveSession er forudsætning for ReadOwnData, WriteOwnData og delt planadgang. & Viser auth som betingelse for brugerbundne læse-/skrivehandlinger. \\
@@ -283,7 +283,7 @@ Trainer/import & Service-role er kun legal inside Edge Function runtime for trai
 Tracker og Live Activity & WriteTrackerLog kræver session; Live Activity write kræver session og deduplicering via client action. & Understøtter idempotency og RLS i træningslogging. \\
 Afvisning og audit & Cross-user access afvises, og privilegerede mutationer bør persistere audit event. & Kobler sikkerhed, governance og sporbarhed. \\
 \end{tabularx}
-\caption{Autorisationsregler kondenseret fra materialepakkens DCR-tekstmodel \texttt{authorization\_dcr.md}.}
+\caption{Autorisationsregler for Træningsmester.}
 \label{tab:tm-authorization-dcr}
 \end{table}
 
@@ -306,7 +306,7 @@ Tracker/historik & trackerlog, workout completion events og active workout sessi
 Settings/admin & user settings, activity events, feedback, version history og error reports & Profiltilstand, subscription, admin, feedback og diagnostics. \\
 Cykler/import & training cycles, cycle runtime-tabeller og training import jobs & Makro/meso/deload, runtime progression og importjobs. \\
 \end{tabularx}
-\caption{Centrale SQL-domæner kondenseret fra materialepakkens \texttt{sql\_schema\_overblik.md}.}
+\caption{Centrale SQL-domæner i Træningsmesters datamodel.}
 \label{tab:tm-sql-domain-overblik}
 \end{table}
 
@@ -324,7 +324,7 @@ rest override & Workout exercises & Skelner standardpause fra bevidst pauseoverr
 subscription tier & User settings & Binder StoreKit-køb til appens featureadgang. \\
 is admin & User settings & Bruges sammen med servervalidering, ikke som eneste adminbevis. \\
 \end{tabularx}
-\caption{Særligt rapportrelevante SQL-felter fra materialepakkens schemaoverblik.}
+\caption{Særligt rapportrelevante SQL-felter i Træningsmesters datamodel.}
 \label{tab:tm-sql-fields}
 \end{table}
 
@@ -346,7 +346,7 @@ Admin & Edge Function og SQL guard & UI viser kun adminflow efter server-backed 
 Trainer/client & Edge Function og RLS & TrainerClientService. & Related-user policies og trainer-client function. \\
 AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function runtime styrer service-role/OpenAI. \\
 \end{tabularx}
-\caption{RLS- og sikkerhedsmatrix kondenseret fra materialepakkens \texttt{rls\_matrix.md}.}
+\caption{RLS- og sikkerhedsmatrix for Træningsmester.}
 \label{tab:tm-rls-matrix}
 \end{table}
 
@@ -375,9 +375,9 @@ AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function run
 2026-04-20 00:57 UTC & 2.0 (9) & iOS + watchOS & Pre-audit/releasekandidat. \\
 2026-04-23 15:19 UTC & 2.0 (10) & iOS + watchOS & Sen beta med fortsat polish. \\
 2026-04-23 23:37 UTC & 2.0 (11) & iOS + watchOS & Samme døgn som build 10; kort releasecyklus. \\
-2026-04-25 21:01 UTC & 2.0 (12) & iOS + watchOS & Seneste observerede beta-build i Gmail-scope. \\
+2026-04-25 21:01 UTC & 2.0 (12) & iOS + watchOS & Seneste observerede beta-build i den gennemgåede betaperiode. \\
 \end{tabularx}
-\caption{TestFlight-tidslinje kondenseret fra materialepakkens anonymiserede TestFlight-summary. Tabellen dokumenterer distribution og iteration, ikke sundhedseffekt.}
+\caption{TestFlight-tidslinje for Træningsmester. Tabellen dokumenterer distribution og iteration, ikke sundhedseffekt.}
 \label{tab:tm-testflight-timeline}
 \end{table}
 
@@ -398,7 +398,7 @@ B15 & Enheder & Tester ønskede kg/lbs, fordi nogle maskiner bruger lbs. & Tilby
 B16 & Watch & Apple Watch blev positioneret som telefonfri træningsflade med stabilitetsforbehold. & Prioriter oversigt, hurtig logging og robust session-sync. \\
 B18 & Noter & Feedback pegede på behov for noter til teknik, udstyr eller sædeindstilling. & Øvelsesnoter bør behandles som træningskontekst, ikke kun fritekst. \\
 \end{tabularx}
-\caption{Udvalgte anonymiserede betaobservationer fra materialepakkens feedbackkatalog. Direkte citater og personhenførbare detaljer er fravalgt.}
+\caption{Udvalgte anonymiserede betaobservationer. Direkte citater og personhenførbare detaljer er fravalgt.}
 \label{tab:tm-beta-feedback}
 \end{table}
 
@@ -406,17 +406,17 @@ B18 & Noter & Feedback pegede på behov for noter til teknik, udstyr eller sæde
 \small
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.26\textwidth} >{\raggedright\arraybackslash}p{0.25\textwidth} Y}
-\textbf{Påstand i rapporten} & \textbf{Status i materialepakken} & \textbf{Begrænsning} \\
+\textbf{Påstand i rapporten} & \textbf{Dokumenteret status} & \textbf{Begrænsning} \\
 \hline
-Appen kan bygges som iOS-klient & Bestået & Ikke clean checkout proof, fordi verifikationen skete i en aktiv worktree. \\
+Appen kan bygges som iOS-klient & Bestået & Ikke dokumenteret som uafhængig reproducerbar build. \\
 Central forretningslogik er unit-testet & Bestået & Dækker unit-lag, ikke alle live backendscenarier. \\
 Supabase anon read path fungerer & Delvist bestået & Admin/non-admin credential-tests var skipped. \\
-watchOS targetet kan bygges & Bestået & Runtime screenshots mangler. \\
-Live Activity targetet kan bygges & Bestået & Dynamic Island runtime screenshots mangler. \\
-Aktuel iOS UI er dokumenteret visuelt & Bestået & Screenshots kræver endelig manuel visuel godkendelse før aflevering. \\
+watchOS targetet kan bygges & Bestået & Runtime-forløb er ikke dokumenteret visuelt i bilaget. \\
+Live Activity targetet kan bygges & Bestået & Dynamic Island-forløb er ikke dokumenteret visuelt i bilaget. \\
+Aktuel iOS UI er dokumenteret visuelt & Bestået & Bygger på de aktuelle screenshots, der er indsat i bilaget. \\
 Data-/sikkerhedsmodellen er dokumenteret & Stærk dokumentation & Fuld security proof kræver flere integrationstests. \\
 \end{tabularx}
-\caption{Verifikationsspor kondenseret fra materialepakkens test traceability matrix.}
+\caption{Verifikationsspor for rapportens tekniske claims.}
 \label{tab:tm-test-traceability}
 \end{table}
 

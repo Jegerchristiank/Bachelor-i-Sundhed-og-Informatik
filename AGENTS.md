@@ -51,6 +51,7 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 
 - Opfind ikke datoer, institutionsnavne, censoroplysninger eller vejlederdetaljer. Marker usikre felter som `Afventer`.
 - Fjern synlig template- og fyldtekst fra rapporten. Brug kun skjulte LaTeX-kommentarer til arbejdsnoter.
+- Synlig rapporttekst, bilagstekst, billedtekster, tabeltekster og captions må aldrig henvise til interne filnavne, mapper, Overleaf, LaTeX/BibTeX-arbejdsflow, `\ref`/labels, lokale referencebiblioteker, materialepakker, approval-matricer eller andre redaktionelle arbejdsartefakter. Censor kan kun se rapport, referencer og bilag; skriv derfor kun om artikler, appen, synlige figurer/tabeller eller anonymiserede undersøgelser, der faktisk er indsat i bilag.
 - Skriv rapporttekst på dansk, medmindre brugeren beder om andet.
 - Hold rapporten problemstyret. Undgå at gøre den til en produktpitch eller featureliste.
 - Brug materialepakkens kuraterede summaries før private rådata.
