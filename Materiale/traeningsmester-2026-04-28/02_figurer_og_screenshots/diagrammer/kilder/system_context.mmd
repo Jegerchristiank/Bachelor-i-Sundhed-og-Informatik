@@ -1,12 +1,12 @@
 flowchart TB
   bruger["Personlig bruger"]
-  traener["Traener"]
+  traener["Træner"]
   klient["Klient"]
   admin["Admin"]
   watchUser["Watch-bruger"]
 
-  ios["Traeningsmester iOS app\nSwiftUI + AppState + repositories"]
-  watch["Traeningsmester watchOS app\nWatchWorkoutStore"]
+  ios["Træningsmester iOS app\nSwiftUI + AppState + repositories"]
+  watch["Træningsmester watchOS app\nWatchWorkoutStore"]
   live["Live Activity extension\nActivityKit/WidgetKit intents"]
   widget["Watch widget/komplikation\nShortcut til watch app"]
 
@@ -47,4 +47,3 @@ flowchart TB
   class ios,watch,live,widget client;
   class supabase,edge backend;
   class storekit,healthkit,wc,activitykit,appgroup platform;
-

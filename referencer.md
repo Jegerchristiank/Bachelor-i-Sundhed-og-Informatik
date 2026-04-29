@@ -1,17 +1,17 @@
 # Referencer
 
 Dato: 2026-04-30
-Formaal: samlet referencebibliotek til bachelorrapporten om Traeningsmester.
+Formål: samlet referencebibliotek til bachelorrapporten om Træningsmester.
 
-Denne fil binder `referencer.bib`, lokale PDF'er i `referencer/`, den omskrevne kildesøgning i `kildesoegning.tex` og de autoritative web-/DOI-links sammen. Laes den inden nye skrive- eller redigeringsiterationer, saa rapportens argumenter forbliver koblet til de rigtige BibTeX-noegler.
+Denne fil binder `referencer.bib`, lokale PDF'er i `referencer/`, den omskrevne kildesøgning i `kildesoegning.tex` og de autoritative web-/DOI-links sammen. Læs den inden nye skrive- eller redigeringsiterationer, så rapportens argumenter forbliver koblet til de rigtige BibTeX-nøgler.
 
 ## Brug
 
 - Brug `referencer.bib` som LaTeX/BibTeX-kildebibliotek.
-- Brug BibTeX-noeglerne i tabellen, naar kilder citeres i `main.tex`.
-- Brug lokale PDF'er som arbejds- og laesekopier, men lad DOI/udgiverside vaere den autoritative reference.
-- Tilfoej nye kilder baade i `referencer.bib` og her, og gem kun PDF'er naar de er aabent tilgaengelige.
-- Nye kildesøgninger maa ikke kun baseres paa PubMed. Brug som minimum en bred discovery-soegning, fx KB.dk/Primo, samt PubMed/PMC, DOI/Crossref og relevante udgiversider.
+- Brug BibTeX-nøglerne i tabellen, når kilder citeres i `main.tex`.
+- Brug lokale PDF'er som arbejds- og læsekopier, men lad DOI/udgiverside være den autoritative reference.
+- Tilføj nye kilder både i `referencer.bib` og her, og gem kun PDF'er når de er åbent tilgængelige.
+- Nye kildesøgninger må ikke kun baseres på PubMed. Brug som minimum en bred discovery-søgning, fx KB.dk/Primo, samt PubMed/PMC, DOI/Crossref og relevante udgiversider.
 - Brug `kildesoegning.tex` som dokumentation for søgespor, søgestrenge, resultater, fravalg og kildekritik.
 - Nedton claims om effekt, adherence og sikkerhed, hvis kilden kun dokumenterer designprincipper eller kortvarige interventioner.
 - Brug app-effektkilderne som samlet evidensspor; ingen enkelt kilde dokumenterer Træningsmesters effekt direkte.
@@ -32,7 +32,7 @@ Denne fil binder `referencer.bib`, lokale PDF'er i `referencer/`, den omskrevne 
 
 ## Kildeliste
 
-| BibTeX-noegle | Kilde | Hvorfor den er relevant | Autoritativt link | Lokal PDF |
+| BibTeX-nøgle | Kilde | Hvorfor den er relevant | Autoritativt link | Lokal PDF |
 | --- | --- | --- | --- | --- |
 | `teixeira2012_sdt_exercise` | Teixeira et al. (2012), SDT og fysisk aktivitet | Underbygger autonom motivation, behovsstøtte og vedvarende motion. | [DOI](https://doi.org/10.1186/1479-5868-9-78) / [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC3441783/) | [PDF](referencer/teixeira2012_sdt_exercise.pdf) |
 | `michie2011_behaviour_change_wheel` | Michie et al. (2011), Behaviour Change Wheel/COM-B | Giver en ramme for at analysere capability, opportunity og motivation bag træningsadfærd. | [DOI](https://doi.org/10.1186/1748-5908-6-42) | [PDF](referencer/michie2011_behaviour_change_wheel.pdf) |
@@ -108,8 +108,8 @@ Denne fil binder `referencer.bib`, lokale PDF'er i `referencer/`, den omskrevne 
 
 ## PDF-status
 
-Lokale PDF'er er gemt i `referencer/` med samme stem som BibTeX-noeglen. Den udvidede app-søgning tilføjede PDF'er for `romeo2019_smartphone_apps_pa_meta`, `floresmateo2015_mobile_apps_weight_pa_meta`, `bondaronek2018_quality_pa_apps`, `kebede2018_evidence_informed_pa_apps`, `direito2015_aimfit_rct`, `chaudhry2020_step_count_meta` og `thorsen2022_interwalk_app_rct`. Genkontrollen den 30. april 2026 tilføjede desuden PDF'er for `stoyanov2015_mobile_app_rating_scale` og `rethlefsen2021_prisma_s`. Kursusgennemgangen den 30. april 2026 tilføjede åbne PDF'er for `mohammed2025_five_facets_data_quality` og `vanderalst2009_declarative_workflows`.
+Lokale PDF'er er gemt i `referencer/` med samme stem som BibTeX-nøglen. Den udvidede app-søgning tilføjede PDF'er for `romeo2019_smartphone_apps_pa_meta`, `floresmateo2015_mobile_apps_weight_pa_meta`, `bondaronek2018_quality_pa_apps`, `kebede2018_evidence_informed_pa_apps`, `direito2015_aimfit_rct`, `chaudhry2020_step_count_meta` og `thorsen2022_interwalk_app_rct`. Genkontrollen den 30. april 2026 tilføjede desuden PDF'er for `stoyanov2015_mobile_app_rating_scale` og `rethlefsen2021_prisma_s`. Kursusgennemgangen den 30. april 2026 tilføjede åbne PDF'er for `mohammed2025_five_facets_data_quality` og `vanderalst2009_declarative_workflows`.
 
-Kilder uden lokal PDF er stadig præcist registreret med DOI, PMID/PMCID hvor relevant og autoritativt link. Det gælder aktuelt `martin2015_mactive`, `laranjo2021_apps_trackers_meta`, `conroy2014_bct_top_ranked_pa_apps`, `plotnikoff2023_ecofit_rct`, `metzendorf2024_mhealth_obesity_cochrane`, `acsm2009_progression_models`, `currier2026_acsm_resistance_training`, `larsen2021_autoregulation_systematic_review` og `mcgowan2016_press_guideline_statement`. PDF'er gemmes kun, naar downloadet er en reel PDF og ikke HTML, browserkontrol, repository-landingsside eller betalingsmur.
+Kilder uden lokal PDF er stadig præcist registreret med DOI, PMID/PMCID hvor relevant og autoritativt link. Det gælder aktuelt `martin2015_mactive`, `laranjo2021_apps_trackers_meta`, `conroy2014_bct_top_ranked_pa_apps`, `plotnikoff2023_ecofit_rct`, `metzendorf2024_mhealth_obesity_cochrane`, `acsm2009_progression_models`, `currier2026_acsm_resistance_training`, `larsen2021_autoregulation_systematic_review` og `mcgowan2016_press_guideline_statement`. PDF'er gemmes kun, når downloadet er en reel PDF og ikke HTML, browserkontrol, repository-landingsside eller betalingsmur.
 
 Lukkede KU-kursus-PDF'er, slides og dokumenter er ikke kopieret til `referencer/`. De er kun registreret med kursus, titel, ophav, år og præcise slide-/sidetal, så de kan bruges som kursusmaterialereferencer uden private stier eller lokale filnavne i rapporten.
