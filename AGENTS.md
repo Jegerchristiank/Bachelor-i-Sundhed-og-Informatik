@@ -8,7 +8,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - Repoet er en Overleaf/LaTeX-mappe til bachelorrapporten om Træningsmester.
 - Hovedfilen er `main.tex`; layoutet styres af `KUstyle.sty`.
 - Dokumentet skal kompileres med XeLaTeX eller LuaLaTeX, fordi templaten bruger `fontspec`, og hovedrapporten er sat op til A4.
-- `main.tex` indlæser `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `metode.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex`, `test_og_verifikation.tex`, `evaluering_og_brugerindsigt.tex` og `diskussion.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
+- `main.tex` indlæser `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `metode.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex`, `test_og_verifikation.tex`, `evaluering_og_brugerindsigt.tex`, `diskussion.tex` og `konklusion.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
 - `skrivematrix.md` er internt styringsdokument for hele rapportens kapitelstruktur og må ikke inputtes eller omtales synligt i rapporten.
 - Forsidens KU-header, fakultetstekst, headerfarve, headerbaggrundsbredde og coverbaggrund styres fra `main.tex` via KUstyle-makroer.
 - `Materiale/traeningsmester-2026-04-28/` er den kuraterede materialepakke til rapportarbejdet.
@@ -90,6 +90,7 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 - `test_og_verifikation.tex`: kapitelinput med færdig rapporttekst for Test og verifikation.
 - `evaluering_og_brugerindsigt.tex`: kapitelinput med færdig rapporttekst for Evaluering og brugerindsigt.
 - `diskussion.tex`: kapitelinput med færdig rapporttekst for Diskussion.
+- `konklusion.tex`: kapitelinput med færdig rapporttekst for Konklusion.
 - `kildesoegning.tex`: metodeklart LaTeX-afsnit, der redegør for kildesøgning og referenceudvælgelse.
 - `billedbilag.tex`: LaTeX-bilag med labels til de 13 aktuelle Træningsmester-screenshots, 7 arkitekturdiagrammer med supplerende ER-udsnit og materialetabeller om use cases, krav, SQL/RLS, procesmodeller, beta og verifikation.
 - `Materiale/traeningsmester-2026-04-28/README.md`: kort vejledning til materialepakken.
