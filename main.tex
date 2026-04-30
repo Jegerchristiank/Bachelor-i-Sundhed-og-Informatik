@@ -1,9 +1,9 @@
-% VIGTIGT! For at dokumentet kan compile, skal man benytte XeLaTeX eller LuaLaTeX som compiler. Dette kan gøres i Overleaf ved at gå til Menu -> Settings -> Compiler -> Vælg XeLaTeX/LuaLaTeX
-\documentclass[12pt]{article}
+% VIGTIGT! For at dokumentet kan kompilere, skal man benytte XeLaTeX eller LuaLaTeX som compiler. Dette kan gøres i Overleaf ved at gå til Menu -> Settings -> Compiler -> Vælg XeLaTeX/LuaLaTeX
+\documentclass[12pt,a4paper]{article}
 
 \usepackage[numbers]{natbib} % Referencehåndtering til referencer.bib
 \usepackage{KUstyle}
-\usepackage[margin=0.8in]{geometry} % Pakke til sidemargin
+\usepackage[a4paper,margin=0.8in]{geometry} % Pakke til sidemargin
 \usepackage{setspace} % Pakke til halvanden linjeafstand
 \usepackage{tabularx} % Pakke til tabel
 \usepackage{fontspec}
@@ -92,7 +92,7 @@ Dato: & Afventer
 % TODO: Udfold de tekniske valg, der understøtter fleksibel progression og reduceret friktion.
 
 \section{Test og verifikation}
-% TODO: Brug build/test summaries, screenshot-QA, traceability og kendte skips.
+% TODO: Brug build-/testopsummeringer, screenshot-kontrol, sporbarhed og kendte testafgrænsninger.
 
 \section{Evaluering og brugerindsigt}
 % TODO: Brug anonymiseret beta-feedback som kvalitativt supplement, ikke statistisk evidens.
@@ -114,6 +114,7 @@ Dato: & Afventer
 \section*{Bilag}
 \addcontentsline{toc}{section}{Bilag}
 \input{kildesoegning}
+\clearpage
 \input{billedbilag}
 
 \end{document}

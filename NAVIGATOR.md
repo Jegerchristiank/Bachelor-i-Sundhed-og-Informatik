@@ -7,7 +7,7 @@ Dette er navigationsfilen for Overleaf-mappen til bachelorrapporten om Trænings
 Repoet indeholder:
 
 - en KU LaTeX-template,
-- en ryddet `main.tex` som blankt rapport-canvas,
+- en ryddet `main.tex` som blankt rapport-canvas på A4-format,
 - en kurateret materialepakke for Træningsmester pr. 2026-04-28,
 - agentinstruktioner for fremtidigt rapportarbejde.
 
@@ -36,7 +36,7 @@ Start med disse filer i rækkefølge:
 - Agentstyring: `AGENTS.md`
 - Referencebibliotek: `referencer.bib`, `referencer.md` og lokale åbne PDF-kopier i `referencer/`; udvalgt kursusmateriale registreres med præcise slide-/sidetal uden at kopiere lukkede kursusfiler
 - Kildesøgningsafsnit: `kildesoegning.tex`
-- Billed- og materialebilag: `billedbilag.tex` med labels til aktuelle Træningsmester-screenshots, arkitekturdiagrammer og supplerende tabeller fra materialepakken
+- Billed- og materialebilag: `billedbilag.tex` med labels til aktuelle Træningsmester-screenshots, arkitekturdiagrammer, supplerende ER-udsnit og tabeller fra materialepakken
 - Konverterede diagrammer til Overleaf: `assets/bilag/diagrammer/`
 - Materialepakke: `Materiale/traeningsmester-2026-04-28/`
 - Materialepakkens navigator: `Materiale/traeningsmester-2026-04-28/NAVIGATOR.md`
@@ -74,6 +74,7 @@ Start med disse filer i rækkefølge:
 
 `main.tex` er ryddet for synlig skabelon- og fyldtekst. Det indeholder:
 
+- A4-opsætning med XeLaTeX/LuaLaTeX-kompatibel fontopsætning,
 - udfyldt forfatter, projekttype, arbejdstitel, arbejdssubtitle og vejleder,
 - `Afventer` for dato,
 - udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,

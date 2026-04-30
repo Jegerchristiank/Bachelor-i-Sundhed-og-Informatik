@@ -3,9 +3,9 @@
 
 \sloppy
 
-Dette bilag samler rapportens udvalgte billeder, figurer og tabeller om Træningsmester pr. 28. april 2026. Bilaget omfatter 13 aktuelle iOS 26.4-screenshots, 7 arkitektur- og dataflowfigurer og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Ældre screenshots fra tidligere UI-versioner er ikke medtaget, fordi de ikke bør bruges som dokumentation for den aktuelle appversion.
+Dette bilag samler rapportens udvalgte billeder, figurer og tabeller om Træningsmester pr. 28. april 2026. Bilaget omfatter 13 aktuelle iOS 26.4-screenshots, 7 arkitektur- og dataflowfigurer med supplerende ER-udsnit og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Ældre screenshots fra tidligere UI-versioner er ikke medtaget, fordi de ikke bør bruges som dokumentation for den aktuelle appversion.
 
-Figurerne og tabellerne er udvalgt, så rapportteksten kan henvise til det materiale, censor faktisk kan se i rapportens bilag. De supplerende tabeller er kondenserede og anonymiserede; private rådata, rå kommunikation og personhenførbare detaljer er ikke kopieret ind i bilaget.
+Figurerne og tabellerne er udvalgt, så rapportens argumentation kun henviser til materiale, der er indsat i bilaget. De supplerende tabeller er kondenserede og anonymiserede; private rådata, rå kommunikation og personhenførbare detaljer er ikke kopieret ind i bilaget.
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
@@ -66,6 +66,19 @@ Figurerne og tabellerne er udvalgt, så rapportteksten kan henvise til det mater
 \vspace*{\fill}
 \begin{center}
     \makebox[\linewidth][c]{\includegraphics[width=1.08\linewidth,height=0.76\textheight,keepaspectratio,trim=#2,clip]{#1}}
+    \captionof{figure}{#3}
+    \label{#4}
+\end{center}
+\vspace*{\fill}
+\end{landscape}
+\clearpage
+}
+
+\newcommand{\tmlandscapeerdetail}[4]{%
+\begin{landscape}
+\vspace*{\fill}
+\begin{center}
+    \makebox[\linewidth][c]{\includegraphics[width=1.10\linewidth,height=0.79\textheight,keepaspectratio,trim=#2,clip]{#1}}
     \captionof{figure}{#3}
     \label{#4}
 \end{center}
@@ -145,11 +158,17 @@ Figurerne og tabellerne er udvalgt, så rapportteksten kan henvise til det mater
 
 \tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-12-home-next-training-testkonto-2026-04-28.jpg}{Home-skærm efter completion, hvor næste træningshandling er rykket frem.}{fig:tm-ios-home-next-training}
 
-\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-13-home-current-xcode-mcp-qa-2026-04-28.jpg}{Home-skærm fra QA-capture efter dybere gennemløb med Dagens træning synlig.}{fig:tm-ios-home-current-qa}
+\tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-13-home-current-xcode-mcp-qa-2026-04-28.jpg}{Home-skærm efter gennemløb med Dagens træning synlig.}{fig:tm-ios-home-current-qa}
 
 \tmlandscapediagramwithsection{Arkitektur- og dataflowdiagrammer}{assets/bilag/diagrammer/system_context.pdf}{0bp 532bp 0bp 0bp}{Systemkontekst for Træningsmester på iOS, watchOS, Supabase og Apple-services.}{fig:tm-system-context}
 
 \tmlandscapewidediagram{assets/bilag/diagrammer/data_model_er.pdf}{0bp 610bp 0bp 0bp}{ER-diagram for programmer, workouts, tracker, completion, settings og cyklusdata.}{fig:tm-data-model-er}
+
+\tmlandscapeerdetail{assets/bilag/diagrammer/data_model_er.pdf}{0bp 610bp 360bp 0bp}{ER-diagram, venstre udsnit: bruger, programmer, workouts og deling.}{fig:tm-data-model-er-left}
+
+\tmlandscapeerdetail{assets/bilag/diagrammer/data_model_er.pdf}{180bp 610bp 180bp 0bp}{ER-diagram, midterudsnit: settings, workouts, øvelser, trackerlog og completion-events.}{fig:tm-data-model-er-middle}
+
+\tmlandscapeerdetail{assets/bilag/diagrammer/data_model_er.pdf}{360bp 610bp 0bp 0bp}{ER-diagram, højre udsnit: træner-/klientrelationer og træningscyklusdata.}{fig:tm-data-model-er-right}
 
 \tmtrackercompletiondiagram
 
@@ -167,16 +186,16 @@ Figurerne og tabellerne er udvalgt, så rapportteksten kan henvise til det mater
 \small
 \renewcommand{\arraystretch}{1.18}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.23\textwidth} >{\raggedright\arraybackslash}p{0.28\textwidth} Y}
-\textbf{Bilagsspor} & \textbf{Bilagsstatus} & \textbf{Begrundelse} \\
+\textbf{Bilagsspor} & \textbf{Faglig funktion} & \textbf{Begrundelse} \\
 \hline
-Aktuelle app-screenshots & Indsat som figur \ref{fig:tm-ios-home-stale-session}--\ref{fig:tm-ios-home-current-qa} & De dokumenterer den aktuelle iOS 26.4-version af Træningsmester. \\
-Renderede arkitekturdiagrammer & Indsat som figur \ref{fig:tm-system-context}--\ref{fig:tm-import-ai-edge-boundary} & De dækker systemkontekst, datamodel, tracker/completion, RLS, watchOS, Live Activity og import/AI-grænser. \\
-Containerarkitektur & Indsat som tabel \ref{tab:tm-container-architecture} & Indholdet er omsat til et komponentoverblik, så arkitekturens hovedlag kan læses direkte i bilaget. \\
-Trackerproces og autorisationsregler & Indsat som tabel \ref{tab:tm-tracker-flow-bpmn} og \ref{tab:tm-authorization-dcr} & Proces- og autorisationslogikken er gengivet som teksttabeller, fordi de er centrale for appens træningsflow og sikkerhedsmodel. \\
-Use cases og kravsporbarhed & Indsat som tabel \ref{tab:tm-use-cases} og \ref{tab:tm-krav-traceability} & Tabellerne kobler funktionalitet til implementering og test uden at kræve private rådata. \\
-SQL, RLS og sikkerhed & Indsat som tabel \ref{tab:tm-sql-domain-overblik}, \ref{tab:tm-sql-fields} og \ref{tab:tm-rls-matrix} & Tabellerne dokumenterer datamodellen, idempotency-felter og sikkerhedsgrænser. \\
-Beta- og TestFlight-spor & Indsat som tabel \ref{tab:tm-testflight-timeline} og \ref{tab:tm-beta-feedback} & De anonymiserede observationspunkter dokumenterer iteration, brugerfeedback og begrænsninger uden direkte citater eller persondata. \\
-Private rådata og ældre UI-screenshots & Ikke indsat & Lukkede kommunikationsdata og ældre visuelle optagelser er fravalgt af hensyn til anonymisering, samtykke og versionsklarhed. \\
+Aktuelle app-screenshots & Dokumenterer den aktuelle brugerflade & Figurerne \ref{fig:tm-ios-home-stale-session}--\ref{fig:tm-ios-home-current-qa} viser centrale flows i iOS 26.4-versionen af Træningsmester. \\
+Arkitektur- og dataflowdiagrammer & Dokumenterer systemets tekniske hovedstruktur & Figurerne \ref{fig:tm-system-context}--\ref{fig:tm-import-ai-edge-boundary} dækker systemkontekst, datamodel med forstørrede ER-udsnit, tracker/completion, RLS, watchOS, Live Activity og import/AI-grænser. \\
+Containerarkitektur & Samler arkitekturen i komponentlag & Tabel \ref{tab:tm-container-architecture} gør hovedlagene læsbare som tekstligt overblik. \\
+Trackerproces og autorisationsregler & Forklarer træningsflow og sikkerhedsmodel & Tabel \ref{tab:tm-tracker-flow-bpmn} og \ref{tab:tm-authorization-dcr} viser de centrale proces- og adgangsregler. \\
+Use cases og kravsporbarhed & Kobler funktionalitet til implementering og test & Tabel \ref{tab:tm-use-cases} og \ref{tab:tm-krav-traceability} viser sammenhængen mellem brugerhandlinger, krav og implementeringsspor. \\
+SQL, RLS og sikkerhed & Dokumenterer data- og adgangsmodellen & Tabel \ref{tab:tm-sql-domain-overblik}, \ref{tab:tm-sql-fields} og \ref{tab:tm-rls-matrix} beskriver datadomæner, idempotency-felter og sikkerhedsgrænser. \\
+Beta- og TestFlight-spor & Dokumenterer iteration og brugerindsigt & Tabel \ref{tab:tm-testflight-timeline} og \ref{tab:tm-beta-feedback} samler anonymiserede observationspunkter uden direkte citater eller persondata. \\
+Afgrænset råmateriale & Understøtter anonymisering og versionsklarhed & Private rådata, lukkede kommunikationsspor og ældre UI-optagelser er fravalgt af hensyn til samtykke, dataminimering og klarhed om den dokumenterede appversion. \\
 \end{tabularx}
 \caption{Gennemgang af rapportens bilagsmateriale og afgrænsning.}
 \label{tab:tm-bilag-materialegennemgang}
@@ -226,7 +245,7 @@ UC-09 Træner administrerer klient & F-16, NF-02, NF-08 & ClientsView, TrainerCl
 UC-10 Admin håndterer bruger & F-17, NF-01, NF-02 & SettingsView, admin-control-center og admin SQL functions. \\
 UC-11 Importer program/historik & F-12, NF-08 & PremiumView, ProgramReviewService og import Edge Functions. \\
 \end{tabularx}
-\caption{Traceability mellem use cases, krav og implementeringsspor.}
+\caption{Sporbarhed mellem use cases, krav og implementeringsspor.}
 \label{tab:tm-krav-traceability}
 \end{table}
 
@@ -338,12 +357,12 @@ Auth/session & Supabase Auth og anon key & AppEnvironment afviser placeholders/s
 Egne programmer & RLS på plan/workout-tabeller & Repositories kræver session og typed payloads. & Owner policies og helper functions. \\
 Delte programmer & RLS og share views & UI viser kun accessible resources. & Read/edit helpers for delt planadgang. \\
 Trackerlog & RLS og immutable field trigger & Tracker repositories sender brugerbundne writes. & Immutable trigger og unik client action. \\
-Completion events & RLS og idempotency & WorkoutCompletionService centraliserer writes. & Unik user/action og reverted-at-felt. \\
+Completion events & RLS og idempotency & Completion-service centraliserer skrivninger. & Unik user/action og reverted-at-felt. \\
 Active session & RLS og forced RLS & App state og Live Activity snapshot. & Unique user/profile session og constraints. \\
 Watch sync & App Group/local cache og anon session & Watch token payload model. & RLS for backend reads/writes. \\
 Live Activity intents & App Group snapshot og anon Supabase client & SharedStore og projectionmodel. & RLS og idempotente writes. \\
 Admin & Edge Function og SQL guard & UI viser kun adminflow efter server-backed state. & Admin guards og service-role kun i function runtime. \\
-Trainer/client & Edge Function og RLS & TrainerClientService. & Related-user policies og trainer-client function. \\
+Trainer/client & Edge Function og RLS & Trainer-client-service. & Related-user policies og trainer-client function. \\
 AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function runtime styrer service-role/OpenAI. \\
 \end{tabularx}
 \caption{RLS- og sikkerhedsmatrix for Træningsmester.}
@@ -410,7 +429,7 @@ B18 & Noter & Feedback pegede på behov for noter til teknik, udstyr eller sæde
 \hline
 Appen kan bygges som iOS-klient & Bestået & Ikke dokumenteret som uafhængig reproducerbar build. \\
 Central forretningslogik er unit-testet & Bestået & Dækker unit-lag, ikke alle live backendscenarier. \\
-Supabase anon read path fungerer & Delvist bestået & Admin/non-admin credential-tests var skipped. \\
+Supabase anon read path fungerer & Delvist bestået & Tests med admin- og ikke-admin-legitimationsoplysninger blev sprunget over. \\
 watchOS targetet kan bygges & Bestået & Runtime-forløb er ikke dokumenteret visuelt i bilaget. \\
 Live Activity targetet kan bygges & Bestået & Dynamic Island-forløb er ikke dokumenteret visuelt i bilaget. \\
 Aktuel iOS UI er dokumenteret visuelt & Bestået & Bygger på de aktuelle screenshots, der er indsat i bilaget. \\

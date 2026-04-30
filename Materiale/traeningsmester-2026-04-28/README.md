@@ -1,4 +1,4 @@
-# Traeningsmester Bachelormateriale
+# Træningsmester Bachelormateriale
 
 Dato: 2026-04-28  
 Formål: kurateret materiale til bachelorrapporten. Denne mappe er ryddet op, så den kun indeholder rapportnære filer, aktuelle screenshots, diagrammer, brugerindsigt, arkitektur/data/sikkerhed og verifikationssummaries.

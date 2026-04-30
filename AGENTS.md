@@ -7,7 +7,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 
 - Repoet er en Overleaf/LaTeX-mappe til bachelorrapporten om Træningsmester.
 - Hovedfilen er `main.tex`; layoutet styres af `KUstyle.sty`.
-- Dokumentet skal compiles med XeLaTeX eller LuaLaTeX, fordi templaten bruger `fontspec`.
+- Dokumentet skal kompileres med XeLaTeX eller LuaLaTeX, fordi templaten bruger `fontspec`, og hovedrapporten er sat op til A4.
 - `main.tex` indlæser `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
 - Forsidens KU-header, fakultetstekst, headerfarve, headerbaggrundsbredde og coverbaggrund styres fra `main.tex` via KUstyle-makroer.
 - `Materiale/traeningsmester-2026-04-28/` er den kuraterede materialepakke til rapportarbejdet.
@@ -77,7 +77,7 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 - `referencer.md`: læsevejledning, kildeforklaring og link mellem BibTeX-nøgler, DOI/webkilder og lokale PDF'er.
 - `referencer/`: lokale åbne PDF-kopier navngivet efter BibTeX-kilderne.
 - `kildesoegning.tex`: metodeklart LaTeX-afsnit, der redegør for kildesøgning og referenceudvælgelse.
-- `billedbilag.tex`: LaTeX-bilag med labels til de 13 aktuelle Træningsmester-screenshots, 7 arkitekturdiagrammer og supplerende materialetabeller om use cases, krav, SQL/RLS, procesmodeller, beta og verifikation.
+- `billedbilag.tex`: LaTeX-bilag med labels til de 13 aktuelle Træningsmester-screenshots, 7 arkitekturdiagrammer med supplerende ER-udsnit og materialetabeller om use cases, krav, SQL/RLS, procesmodeller, beta og verifikation.
 - `Materiale/traeningsmester-2026-04-28/README.md`: kort vejledning til materialepakken.
 - `Materiale/traeningsmester-2026-04-28/NAVIGATOR.md`: detaljeret strukturkort for materialepakken.
 

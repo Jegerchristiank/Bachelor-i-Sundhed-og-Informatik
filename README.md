@@ -1,8 +1,8 @@
-En LaTeX skabelon til specialer, Ph.D.-afhandlinger og rapporter. Skabelonen består af et logo, en billedefil, en KUstyle.sty fil og en main.tex fil.
+En LaTeX-skabelon til specialer, ph.d.-afhandlinger og rapporter. Skabelonen består af et logo, en billedefil, en KUstyle.sty-fil og en main.tex-fil.
 
-VIGTIGT! For at dokumentet kan compile, skal man benytte XeLaTeX eller LuaLaTeX som compiler. Dette kan gøres i Overleaf ved at gå til Menu -> Settings -> Compiler -> Vælg XeLaTeX/LuaLaTeX
+VIGTIGT! For at dokumentet kan kompilere, skal man benytte XeLaTeX eller LuaLaTeX som compiler. Dette kan gøres i Overleaf ved at gå til Menu -> Settings -> Compiler -> Vælg XeLaTeX/LuaLaTeX.
 
-For at ændre detaljerne på forsiden, skal man ændre på flg. kommandoers værdi inden document-miløet:
+For at ændre detaljerne på forsiden skal man ændre værdien af følgende kommandoer inden document-miljøet:
 
 'title' angiver titlen på projektet.
 'subtitle' angiver undertitlen på projektet.
