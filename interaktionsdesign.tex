@@ -1,0 +1,59 @@
+\section{Interaktionsdesign}
+
+Dette kapitel analyserer Træningsmesters centrale brugerflader og flows som interaktionsdesign i en faktisk træningssituation. Hvor systemarkitekturen viste, hvordan appens tekniske lag hænger sammen, handler dette kapitel om, hvad brugeren møder: næste handling, aktiv tracker, completion, øvelsessøgning, historik, indstillinger, watchOS og Live Activity.
+
+Kapitlet vurderer ikke designet som dokumenteret effekt på motivation eller adherence. Designet analyseres som et sæt af valg, der kan reducere friktion, gøre feedback forståelig og behandle afvigelser fra planen som normale tilstande i stedet for fejl.
+
+\subsection{Træningssituationen som designkontekst}
+
+Træning er en brugskontekst med begrænset opmærksomhed. Brugeren skifter øvelser, holder pauser, justerer belastning og skal ofte handle hurtigt uden at forlade træningssituationen mentalt. Derfor skal interaktionsdesignet prioritere tydelig status, få nødvendige handlinger og feedback, der kan forstås uden lang fortolkning.
+
+Kursusgrundlaget for interaktionsdesign peger på, at brugerundersøgelser, prototyper og evaluering bør bruges til at forstå brugerens situation og omsætte behov til designvalg \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering,hornbaek2024_taenkehoejt_eksperimenter}. I Træningsmester betyder det, at skærme og flows ikke kun skal være teknisk mulige, men også passe til en kontekst, hvor appen bruges mellem sæt, under pauser og efter afsluttet træning.
+
+Dette gør lav friktion til et fagligt krav. Hvis brugeren skal bruge for mange tryk, forstå for meget systemlogik eller reparere fejltilstande manuelt, kan appen komme til at modarbejde den træningsadfærd, den skal understøtte. Designet skal derfor gøre det let at komme fra intention til handling og videre til næste relevante træningsskridt.
+
+\subsection{Home som næste-handling-flade}
+
+Home-skærmen er appens centrale næste-handling-flade. Figur~\ref{fig:tm-ios-home-ready} viser en Home-tilstand med aktuel træningshandling og næste planlagte pas, mens Figur~\ref{fig:tm-ios-home-current-qa} viser Home efter et gennemløb med dagens træning synlig. Designpointen er, at brugeren ikke først skal rekonstruere sin plan, før en træning kan startes.
+
+Home skal også kunne rumme brud i det forventede flow. Figur~\ref{fig:tm-ios-home-stale-session} viser en forældet tracker-session, hvor brugeren kan fortsætte eller rydde sessionen. Det er et vigtigt designvalg, fordi afbrudte sessioner ikke bør blive skjulte systemfejl. De skal vises som forståelige tilstande, hvor brugeren kan træffe et enkelt valg.
+
+Completion-flowet viser samme princip. Figur~\ref{fig:tm-ios-home-completion-delay} viser feedback og fortrydelsesvindue efter gennemført pas, mens Figur~\ref{fig:tm-ios-home-next-training} viser næste træningshandling. Home fungerer dermed som bindeled mellem plan, faktisk træning og næste skridt. Det understøtter feedback uden at gøre den til en dom over brugerens præstation.
+
+\subsection{Trackerflow, completion og afvigelser}
+
+Trackerflowet er den mest krævende interaktionssituation i appen. Figur~\ref{fig:tm-ios-tracker-active} viser aktiv tracker med planlagte sæt og løbende registrering. Her skal designet balancere detaljeret datalogging med hurtig brug. Hvis logging kræver for meget opmærksomhed, risikerer trackeren at blive en barriere; hvis logging er for svag, mister historik og progression værdi.
+
+Appkvalitet og evidensinformeret design i fysiske aktivitetsapps handler blandt andet om funktionalitet, engagement, information, selvmonitorering og adfærdsændringsteknikker \cite{stoyanov2015_mobile_app_rating_scale,kebede2018_evidence_informed_pa_apps,michie2013_bct_taxonomy_v1}. I Træningsmester ses dette i koblingen mellem aktiv tracker, completion og næste handling. Trackeren giver detaljeret selvmonitorering, mens completion gør det muligt at registrere gennemført træning, selv når alle sæt ikke er logget.
+
+Figur~\ref{fig:tm-tracker-completion-summary} og Tabel~\ref{tab:tm-tracker-flow-bpmn} viser, hvordan tracker-on, tracker-off, completion-event og progression hænger sammen. Interaktionsdesignet skal gøre disse flows forståelige for brugeren, men uden at synliggøre unødig systemkompleksitet. Afvigelser fra planen skal fremstå som håndterbare forløb, ikke som tegn på at brugeren har brugt appen forkert.
+
+\subsection{Øvelseskatalog, match og historik som feedbackflader}
+
+Øvelseskatalog, match-flow og historik fungerer som støtteflader for forståelse og feedback. Figur~\ref{fig:tm-ios-programmer} viser programoversigten, hvor aktiv programstruktur og progression kan ses. Figur~\ref{fig:tm-ios-oevelser} viser øvelseskataloget med søgning og filtrering, og Figur~\ref{fig:tm-ios-match-card} viser et inspirationsflow til valg af øvelser.
+
+Disse skærme skal ikke vurderes isoleret som ekstra funktioner. De skal vurderes efter, om de hjælper brugeren med at forstå, vælge og fortsætte træning. Katalog og match-flow kan reducere friktion ved at gøre øvelsesvalg lettere, men de stiller også krav til datakvalitet, navngivning og sortering. Hvis øvelser ikke kan findes eller forstås, bliver et bredt katalog hurtigt til en ny barriere.
+
+Figur~\ref{fig:tm-ios-historik} viser tidligere træningslog og gennemførte pas. Historik er en feedbackflade, fordi den giver brugeren mulighed for at se, hvad der faktisk er gennemført. Figur~\ref{fig:tm-ios-indstillinger} viser indstillingsflowet, som samler kontorelaterede og appnære valg. Samlet understøtter disse flader brugerens forståelse af både progression, tidligere handlinger og appens aktuelle tilstand.
+
+\subsection{watchOS og Live Activity som lav-friktionsspor}
+
+watchOS og Live Activity skal forstås som lav-friktionsspor under træning. De er ikke hovedformålet i sig selv, men de kan reducere behovet for fuld appåbning, når brugeren kun har brug for status, hurtig logging eller adgang til den aktuelle træning. Apple beskriver Live Activities som status for tidsfølsomme aktiviteter, og Watch Connectivity som en mekanisme til koordinering mellem iPhone og Apple Watch \cite{apple_hig_live_activities,apple_activitykit_live_data_docs,apple_watchconnectivity_docs}.
+
+Figur~\ref{fig:tm-watch-sync-sequence} viser watchOS-sporets kobling til auth-sync og workoutdata, mens Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser Live Activity-sporets kobling til snapshot og idempotent trackerlog. I interaktionsdesignkapitlet er pointen ikke at dokumentere en fuld visuel ur- eller låseskærmsoplevelse. Pointen er, at ekstra flader kan være relevante, når de reducerer friktion uden at skabe nye datamæssige eller sikkerhedsmæssige sandheder.
+
+Denne afgrænsning er vigtig. Flere platforme betyder ikke automatisk bedre engagement. De er kun relevante, hvis de gør den centrale træningshandling lettere og fastholder samme model for session, completion og progression som hovedappen.
+
+\subsection{Beta-feedback som designkorrektion}
+
+Anonymiseret beta-feedback bruges som designindsigt, ikke som statistisk dokumentation. Metodisk kan feedback og interviewlignende brugerindsigt bruges til at identificere temaer, friktion og behov, men materialet kan ikke generaliseres til alle brugere \cite{gjoedsboel_grundtvig2025_interview,grundtvig2025_analyse_data}.
+
+Tabel~\ref{tab:tm-beta-feedback} viser feedbacktemaer om blandt andet søgning, enheder, katalogkvalitet, medieindhold, watch og friktion i betaadgang. Disse observationer peger på konkrete designprioriteringer: søgning og katalog skal gøre øvelser lettere at finde, enheder skal fremstå entydigt, og statusflader skal være nyttige uden at skabe flere steder, hvor brugeren kan blive i tvivl.
+
+Tabel~\ref{tab:tm-testflight-timeline} viser samtidig et iterationsspor, hvor feedback og builds ligger tæt. Det understøtter en designproces, hvor brugerindsigt kan omsættes til prioriteringer, men det beviser ikke, at løsningerne virker for en bred brugergruppe. Beta-feedbackens styrke er, at den synliggør friktion og konkrete behov; dens begrænsning er, at den er smal, kontekstafhængig og ikke et effektstudie.
+
+\subsection{Overgang til data, sikkerhed og interoperabilitet}
+
+Interaktionsdesignet viser, hvad brugeren møder: Home, tracker, completion, katalog, historik, settings, watchOS og Live Activity. Men disse flows kan kun fungere, hvis de bæres af en datamodel, der kan skelne mellem planlagt træning, faktisk træning, completion-events, sessioner og progression.
+
+Det leder videre til data, sikkerhed og interoperabilitet. Næste kapitel skal derfor vise, hvilke datafelter, adgangsregler og integrationsafgrænsninger der gør de beskrevne flows mulige uden at gøre brugerfladen til den endelige sikkerheds- eller datagrænse.
