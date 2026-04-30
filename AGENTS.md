@@ -9,6 +9,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - Hovedfilen er `main.tex`; layoutet styres af `KUstyle.sty`.
 - Dokumentet skal kompileres med XeLaTeX eller LuaLaTeX, fordi templaten bruger `fontspec`, og hovedrapporten er sat op til A4.
 - `main.tex` indlæser `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
+- `skrivematrix.md` er internt styringsdokument for de første fundamentkapitler og må ikke inputtes eller omtales synligt i rapporten.
 - Forsidens KU-header, fakultetstekst, headerfarve, headerbaggrundsbredde og coverbaggrund styres fra `main.tex` via KUstyle-makroer.
 - `Materiale/traeningsmester-2026-04-28/` er den kuraterede materialepakke til rapportarbejdet.
 - `referencer.bib`, `referencer.md` og `referencer/` er referencebiblioteket med BibTeX-nøgler, kildebeskrivelser og lokale åbne PDF-kopier.
@@ -21,6 +22,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - Læs `Materiale/traeningsmester-2026-04-28/NAVIGATOR.md`, når du bruger materialepakken.
 - Brug `Materiale/traeningsmester-2026-04-28/01_rapportgrundlag/problemformulering/problemformulering_autoritativ.md` som primær kilde til problemformulering.
 - Brug `Materiale/traeningsmester-2026-04-28/01_rapportgrundlag/rapportstruktur/rapportafsnit_mapping.md` som primær kilde til rapportens kapitelstruktur.
+- Læs `skrivematrix.md`, inden der skrives eller omskrives i Indledning, Problemformulering og afgrænsning, Teoretisk og faglig ramme eller Metode.
 - Læs `referencer.md` inden nye skrive- eller redigeringsiterationer, så rapportens kildevalg, BibTeX-nøgler og lokale PDF'er holdes konsistente.
 - Læs `billedbilag.tex` og `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/manifester/screenshot_approval_matrix.csv` inden nye figur- eller screenshotiterationer.
 - Hvis mapper, filer, rapportafsnit eller kildeansvar ændrer sig, skal `NAVIGATOR.md` opdateres i samme omgang.
@@ -76,6 +78,7 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 - `referencer.bib`: BibTeX-bibliotek for eksterne artikler, standarder, tekniske docs og juridiske kilder.
 - `referencer.md`: læsevejledning, kildeforklaring og link mellem BibTeX-nøgler, DOI/webkilder og lokale PDF'er.
 - `referencer/`: lokale åbne PDF-kopier navngivet efter BibTeX-kilderne.
+- `skrivematrix.md`: intern skrivematrix for Indledning, Problemformulering og afgrænsning, Teoretisk og faglig ramme og Metode.
 - `kildesoegning.tex`: metodeklart LaTeX-afsnit, der redegør for kildesøgning og referenceudvælgelse.
 - `billedbilag.tex`: LaTeX-bilag med labels til de 13 aktuelle Træningsmester-screenshots, 7 arkitekturdiagrammer med supplerende ER-udsnit og materialetabeller om use cases, krav, SQL/RLS, procesmodeller, beta og verifikation.
 - `Materiale/traeningsmester-2026-04-28/README.md`: kort vejledning til materialepakken.

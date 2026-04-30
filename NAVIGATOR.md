@@ -34,6 +34,7 @@ Start med disse filer i rækkefølge:
 - Git-attributter: `.gitattributes` markerer PDF-filer som binære, så kilde-PDF'er ikke tekst-diffes.
 - Lokal template-vejledning: `README.md`
 - Agentstyring: `AGENTS.md`
+- Skrivematrix for første fundamentkapitler: `skrivematrix.md` (internt arbejdsdokument, ikke rapportinput)
 - Referencebibliotek: `referencer.bib`, `referencer.md` og lokale åbne PDF-kopier i `referencer/`; udvalgt kursusmateriale registreres med præcise slide-/sidetal uden at kopiere lukkede kursusfiler
 - Kildesøgningsafsnit: `kildesoegning.tex`
 - Billed- og materialebilag: `billedbilag.tex` med labels til aktuelle Træningsmester-screenshots, arkitekturdiagrammer, supplerende ER-udsnit og tabeller fra materialepakken
@@ -63,6 +64,7 @@ Start med disse filer i rækkefølge:
 | `README.md` | Template-vejledning | Overleaf-opsætning |
 | `AGENTS.md` | Arbejdsregler for LLM-agenter | Skal læses ved opstart |
 | `NAVIGATOR.md` | Dette strukturkort | Skal opdateres ved strukturændringer |
+| `skrivematrix.md` | Intern skrivematrix | Låser rød tråd, kilder, kursusspor, bilag og faldgruber for de første fundamentkapitler |
 | `referencer.bib` | Referencebibliotek | BibTeX-nøgler til eksterne kilder og verificeret kursusmateriale |
 | `referencer.md` | Referencevejledning | Skal læses før nye skrive-/redigeringsiterationer; binder kildevalg, slide-/sidetal og PDF-status sammen |
 | `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af åbne kilder, navngivet efter BibTeX-stems; lukkede kursusfiler kopieres ikke hertil |
@@ -80,6 +82,7 @@ Start med disse filer i rækkefølge:
 - udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
 - kapiteloverskrifter baseret på rapportafsnit-mappingen,
+- en separat intern skrivematrix i `skrivematrix.md` for de første fundamentkapitler,
 - BibTeX-referenceafsnit baseret på `referencer.bib`,
 - bilag efter referenceafsnittet med kildesøgning via `\input{kildesoegning}`,
 - billed- og materialebilag efter referenceafsnittet med aktuelle Træningsmester-screenshots, arkitekturdiagrammer og supplerende tabeller via `\input{billedbilag}`,
@@ -107,6 +110,7 @@ Start med disse filer i rækkefølge:
 ├── README.md
 ├── billedbilag.tex
 ├── kildesoegning.tex
+├── skrivematrix.md
 ├── referencer.bib
 ├── referencer.md
 ├── referencer
