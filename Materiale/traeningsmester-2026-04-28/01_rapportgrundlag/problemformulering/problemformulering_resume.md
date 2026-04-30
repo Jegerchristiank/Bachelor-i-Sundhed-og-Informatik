@@ -10,9 +10,9 @@ Bachelorens centrale spørgsmål er, hvordan en digital træningsapp kan designe
 
 Udgangspunktet er, at mange træningsapps behandler progression som et lineært forløb, hvor brugeren forventes at følge programmet kontinuerligt. Når brugeren misser træningspas eller holder uplanlagte pauser, kan appens struktur derfor komme til at markere afvigelsen som nederlag fremfor som en normal variation i træningsadfærd.
 
-## Træningsmester Som Egenudviklet Designcase
+## TræningsMester Som Egenudviklet Designcase
 
-I bachelorprojektet adresserer den udviklede Træningsmester-app problemfeltet gennem flere konkrete design- og arkitekturvalg:
+I bachelorprojektet adresserer den udviklede TræningsMester-app problemfeltet gennem flere konkrete design- og arkitekturvalg:
 
 - Aktiv cyklus-runtime kan overstyre normal planindeks-logik, så programmet kan styres af makro/meso/deload fremfor én lineær tæller.
 - Completion-events gemmes separat fra trackerlog, så tracker-off træninger og afsluttede pas stadig kan tælle med i progression og motivation.

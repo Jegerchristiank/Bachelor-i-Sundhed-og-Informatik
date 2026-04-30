@@ -5,7 +5,7 @@ Scope: anonymiseret metodeprotokol for Messenger, Facebook, TestFlight, Gmail og
 
 ## Formål
 
-Indsamlingen skal understøtte rapportens vurdering af Træningsmester som designcase. Formålet er ikke at lave en statistisk repræsentativ brugerundersøgelse, men at samle kvalitativ evidens om:
+Indsamlingen skal understøtte rapportens vurdering af TræningsMester som designcase. Formålet er ikke at lave en statistisk repræsentativ brugerundersøgelse, men at samle kvalitativ evidens om:
 
 - faktisk brug og friktion,
 - værdien af lav interaktionsfriktion under træning,

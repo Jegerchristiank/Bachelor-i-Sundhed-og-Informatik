@@ -37,7 +37,7 @@ Status: tilgængelig efter login i in-app browser.
 
 Privat capture: access-check samt scoped vejleder-/bachelor-søgeresultat og opsummering i privat råmappe. Deep-run gemte private filtrerede søgeudtræk og screenshots under `BachelorPrivateRaw/.../ku-webmail/deep/`.
 
-Scoped søgning efter `Karsten Vrangbæk bachelor Træningsmester` gav ingen resultater. Bredere søgning efter `Karsten Vrangbæk` og `bachelorprojekt` gav bacheloraccept/registrering i februar 2026 og viste samtidig ældre ESG/valgfag-korrespondance, som skal holdes metodisk adskilt fra bachelorprojektet. Søgning efter Træningsmester/Taeningsmester i KU webmail gav ingen app-specifikke resultater.
+Scoped søgning efter `Karsten Vrangbæk bachelor TræningsMester` gav ingen resultater. Bredere søgning efter `Karsten Vrangbæk` og `bachelorprojekt` gav bacheloraccept/registrering i februar 2026 og viste samtidig ældre ESG/valgfag-korrespondance, som skal holdes metodisk adskilt fra bachelorprojektet. Søgning efter TræningsMester/Taeningsmester i KU webmail gav ingen app-specifikke resultater.
 
 ## Gmail Connector
 
@@ -45,8 +45,8 @@ Status: scoped søgninger gennem Gmail-connector.
 
 Fund uden rå body-indhold i repoet:
 
-- Vejleder-/bachelor-/Træningsmester-søgning gav ingen relevante hits i tilsluttet Gmail.
-- Træningsmester/TestFlight-søgning fandt invitation 2026-03-25 og build/test-mails fra version 1.0 build 5/6/8 samt 2.0 build 1-12 i perioden 2026-03-26 til 2026-04-25.
+- Vejleder-/bachelor-/TræningsMester-søgning gav ingen relevante hits i tilsluttet Gmail.
+- TræningsMester/TestFlight-søgning fandt invitation 2026-03-25 og build/test-mails fra version 1.0 build 5/6/8 samt 2.0 build 1-12 i perioden 2026-03-26 til 2026-04-25.
 - Træningsvideo-dialog 2026-04-28 gav en rapportrelevant målgruppeparafrase, men rå modpartskontaktdata er ikke gengivet.
 - Træningscenter-/fitnesscenter-søgning fandt en test-/outreach-mail 2026-04-13 om mulighed for at filme øvelsesvideoer i et lokalt center. Den er kun brugt som anonymiseret indholds- og stakeholder-kontekst.
 - Supplerende teknisk mail-evidens: Xcode Cloud build-success og Supabase security-advisor mail i april 2026.

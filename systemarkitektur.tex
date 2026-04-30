@@ -1,12 +1,12 @@
 \section{Systemarkitektur}
 
-Systemarkitekturen skal forbinde brugerflade, state, datamodel og backend, så Træningsmester kan håndtere både planlagt og faktisk træning. Figur~\ref{fig:tm-system-context} viser systemet som en native iOS-app med watchOS, Live Activity, Supabase og udvalgte Apple-services. Arkitekturen vurderes på tre valg: lagdeling, backend som sikkerhedsgrænse og støtteflader under træning.
+Systemarkitekturen skal forbinde brugerflade, state, datamodel og backend, så TræningsMester kan håndtere både planlagt og faktisk træning. Figur~\ref{fig:tm-system-context} viser systemet som en native iOS-app med watchOS, Live Activity, Supabase og udvalgte Apple-services. Arkitekturen vurderes på tre valg: lagdeling, backend som sikkerhedsgrænse og støtteflader under træning.
 
 Arkitekturen er derfor ikke kun en teknisk beskrivelse. Den afgør, om appen kan bevare samme træningsforløb på tværs af Home, tracker, database, Apple Watch og Live Activity. Hvis disse flader udvikler hver deres sandhed om session og completion, bliver fleksibel progression usikker.
 
 \subsection{Lagdeling mellem brugerflade, state og data}
 
-SwiftUI understøtter deklarative, state-drevne brugerflader \cite{apple_swiftui_docs}. I Træningsmester betyder det, at skærme viser aktuel session, aktivt program, træningsstatus og næste handling, men ikke selv er datamæssig autoritet. AppState, domænemodeller og repositories placerer logikken mellem brugerflade og backend.
+SwiftUI understøtter deklarative, state-drevne brugerflader \cite{apple_swiftui_docs}. I TræningsMester betyder det, at skærme viser aktuel session, aktivt program, træningsstatus og næste handling, men ikke selv er datamæssig autoritet. AppState, domænemodeller og repositories placerer logikken mellem brugerflade og backend.
 
 Lagdelingen er nødvendig, fordi træningsflowet ikke bør afhænge af, at én skærm husker al kontekst. Når workoutstatus, trackerlog, completion og progression ligger i fælles state- og datalag, kan iOS, watchOS og Live Activity arbejde med samme træningsforløb. Tabel~\ref{tab:tm-container-architecture} viser komponentlagene i kondenseret form.
 

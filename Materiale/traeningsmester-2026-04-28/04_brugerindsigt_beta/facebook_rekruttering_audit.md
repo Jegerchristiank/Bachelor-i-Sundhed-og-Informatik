@@ -9,8 +9,8 @@ Denne fil er en statusaudit. Den gengiver ikke opslag, navne, profiloplysninger,
 
 | Handling | Resultat | Evidensstyrke |
 | --- | --- | --- |
-| Facebook search: `Træningsmester beta` | Gav søgeresultater, men første observerede resultater var ikke et tydeligt eget rekrutteringsopslag | Lav |
-| Facebook search: `Træningsmester app fitness beta tester` | Gav ingen relevante resultater i synligt søgeresultat | Lav |
+| Facebook search: `TræningsMester beta` | Gav søgeresultater, men første observerede resultater var ikke et tydeligt eget rekrutteringsopslag | Lav |
+| Facebook search: `TræningsMester app fitness beta tester` | Gav ingen relevante resultater i synligt søgeresultat | Lav |
 | Profilåbning og synlig scankontrol | Profil kunne åbnes, men synligt DOM/screenshot viste ikke rekrutteringsopslag eller relevante søgehits | Lav |
 | Tidligere rå screenshot/access-check | Dokumenterer at Facebook blev åbnet og undersøgt som kanal | Lav-middel for kanal, lav for opslagets indhold |
 

@@ -3,7 +3,7 @@
 | Figur | Kilde | Foreslået billedtekst |
 | --- | --- | --- |
 | F1 | `02_figurer_og_screenshots/app_screenshots/screenshot_kontaktark.md` | Screenshotmatrix for centrale iOS-flows, audit-states og Xcode MCP capture |
-| F2 | `02_figurer_og_screenshots/diagrammer/renderede_svg/system_context.svg` | Systemkontekst for Træningsmester på iOS, watchOS, Supabase og Apple services |
+| F2 | `02_figurer_og_screenshots/diagrammer/renderede_svg/system_context.svg` | Systemkontekst for TræningsMester på iOS, watchOS, Supabase og Apple services |
 | F3 | `02_figurer_og_screenshots/diagrammer/renderede_svg/data_model_er.svg` | ERD for programmer, workouts, tracker, completion, settings og cyklusdata |
 | F4 | `02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg` | Tracker-on/off, completion-event og træningscyklusprogression |
 | F5 | `02_figurer_og_screenshots/diagrammer/renderede_svg/security_boundary_summary.svg` | Sikkerhedsgrænse mellem klient, RLS og Edge Functions |

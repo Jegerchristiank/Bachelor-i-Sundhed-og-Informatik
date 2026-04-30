@@ -22,7 +22,7 @@ Denne kravlogik ændrer også fejlforståelsen. En afbrudt tracker, en manglende
 
 \subsection{Lav friktion og sikker adgang}
 
-Lav friktion er et krav, fordi træning foregår mellem øvelser, pauser og fysisk belastning. Apple-dokumentationen for Live Activities og Watch Connectivity understøtter brugen af status- og companionflader til tidsfølsom aktivitet \cite{apple_activitykit_live_data_docs,apple_watchconnectivity_docs}. I Træningsmester er pointen ikke flere platforme i sig selv, men færre nødvendige afbrydelser under træning.
+Lav friktion er et krav, fordi træning foregår mellem øvelser, pauser og fysisk belastning. Apple-dokumentationen for Live Activities og Watch Connectivity understøtter brugen af status- og companionflader til tidsfølsom aktivitet \cite{apple_activitykit_live_data_docs,apple_watchconnectivity_docs}. I TræningsMester er pointen ikke flere platforme i sig selv, men færre nødvendige afbrydelser under træning.
 
 Samtidig må lav friktion ikke svække sikkerheden. OWASP MASVS og Supabase RLS-dokumentationen understøtter princippet om, at mobilklienten ikke må være eneste adgangsgrænse \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}. Figur~\ref{fig:tm-security-boundary-summary} viser derfor en model, hvor brugerfladen starter handlinger, mens RLS og Edge Functions håndhæver adgang. Import, admin, billing og trænerfunktioner er støttefunktioner og kun centrale, når de påvirker progression, datakvalitet eller sikker adgang.
 

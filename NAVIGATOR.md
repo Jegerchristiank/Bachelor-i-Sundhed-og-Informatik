@@ -1,6 +1,6 @@
 # Navigator
 
-Dette er navigationsfilen for Overleaf-mappen til bachelorrapporten om Træningsmester. Brug den som første stop, når rapporten skal skrives, struktureres eller vedligeholdes.
+Dette er navigationsfilen for Overleaf-mappen til bachelorrapporten om TræningsMester. Brug den som første stop, når rapporten skal skrives, struktureres eller vedligeholdes.
 
 ## Kort Formål
 
@@ -8,7 +8,7 @@ Repoet indeholder:
 
 - en KU LaTeX-template,
 - en ryddet `main.tex` som samler rapportens kapitelinput på A4-format,
-- en kurateret materialepakke for Træningsmester pr. 2026-04-28,
+- en kurateret materialepakke for TræningsMester pr. 2026-04-28,
 - agentinstruktioner for fremtidigt rapportarbejde.
 
 ## Læserute
@@ -29,7 +29,7 @@ Start med disse filer i rækkefølge:
 - Kapitelinput: `indledning.tex` for afsnittet Indledning, `problemformulering_og_afgraensning.tex` for afsnittet Problemformulering og afgrænsning, `teoretisk_og_faglig_ramme.tex` for afsnittet Teoretisk og faglig ramme, `metode.tex` for afsnittet Metode, `krav_og_use_cases.tex` for afsnittet Krav og use cases, `systemarkitektur.tex` for afsnittet Systemarkitektur, `interaktionsdesign.tex` for afsnittet Interaktionsdesign, `data_sikkerhed_og_interoperabilitet.tex` for afsnittet Data, sikkerhed og interoperabilitet, `implementering.tex` for afsnittet Implementering, `test_og_verifikation.tex` for afsnittet Test og verifikation, `evaluering_og_brugerindsigt.tex` for afsnittet Evaluering og brugerindsigt, `diskussion.tex` for afsnittet Diskussion og `konklusion.tex` for afsnittet Konklusion
 - KU-style, rapporttypografi og forsidemakroer: `KUstyle.sty` (styrer både projektrapportforsiden og den officielle KU-forside med SUND-header og styrbar headerbaggrundsbredde)
 - KU-forsidebaggrund: `KU-logo.pdf` som original, `assets/ku-cover-background.png` som rød rasterbaggrund og `assets/ku-cover-background-blue.png` som blå SUND-valgt rasterbaggrund
-- Træningsmester-logo på forsiden: `assets/traeningsmester-logo-uden-baggrund.svg` og Overleaf-kompatibel `assets/traeningsmester-logo-uden-baggrund.pdf`
+- TræningsMester-logo på forsiden: `assets/traeningsmester-logo-uden-baggrund.svg` og Overleaf-kompatibel `assets/traeningsmester-logo-uden-baggrund.pdf`
 - Oprindelig template-grafik: `billede.png`
 - Git-ignore: `.gitignore` holder lokale LaTeX build-artefakter ude af repoet.
 - Git-attributter: `.gitattributes` markerer PDF-filer som binære, så kilde-PDF'er ikke tekst-diffes.
@@ -38,7 +38,7 @@ Start med disse filer i rækkefølge:
 - Skrivematrix for hele rapporten: `skrivematrix.md` (internt arbejdsdokument, ikke rapportinput)
 - Referencebibliotek: `referencer.bib`, `referencer.md` og lokale åbne PDF-kopier i `referencer/`; udvalgt kursusmateriale registreres med præcise slide-/sidetal uden at kopiere lukkede kursusfiler
 - Kildesøgningsafsnit: `kildesoegning.tex`
-- Billed- og materialebilag: `billedbilag.tex` med labels til aktuelle Træningsmester-screenshots, arkitekturdiagrammer, supplerende ER-udsnit og tabeller fra materialepakken
+- Billed- og materialebilag: `billedbilag.tex` med labels til aktuelle TræningsMester-screenshots, arkitekturdiagrammer, supplerende ER-udsnit og tabeller fra materialepakken
 - Konverterede diagrammer til Overleaf: `assets/bilag/diagrammer/`
 - Materialepakke: `Materiale/traeningsmester-2026-04-28/`
 - Materialepakkens navigator: `Materiale/traeningsmester-2026-04-28/NAVIGATOR.md`
@@ -83,7 +83,7 @@ Start med disse filer i rækkefølge:
 | `referencer.md` | Referencevejledning | Skal læses før nye skrive-/redigeringsiterationer; binder kildevalg, slide-/sidetal og PDF-status sammen |
 | `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af åbne kilder, navngivet efter BibTeX-stems; lukkede kursusfiler kopieres ikke hertil |
 | `kildesoegning.tex` | Metodeafsnit om kildesøgning | Kan inputtes i rapportens metodekapitel |
-| `billedbilag.tex` | Billed- og materialebilag | Bilag med aktuelle, kuraterede Træningsmester-billeder, diagrammer, materialetabeller og labels |
+| `billedbilag.tex` | Billed- og materialebilag | Bilag med aktuelle, kuraterede TræningsMester-billeder, diagrammer, materialetabeller og labels |
 | `Materiale/traeningsmester-2026-04-28/` | Kurateret rapportmateriale | Kilder, bilag og argumentation |
 
 ## Rapportens Nuværende Canvas
@@ -114,7 +114,7 @@ Start med disse filer i rækkefølge:
 - en separat intern skrivematrix i `skrivematrix.md` for hele rapporten fra Indledning til Konklusion,
 - BibTeX-referenceafsnit baseret på `referencer.bib`,
 - bilag efter referenceafsnittet med kildesøgning via `\input{kildesoegning}`,
-- billed- og materialebilag efter referenceafsnittet med aktuelle Træningsmester-screenshots, arkitekturdiagrammer og supplerende tabeller via `\input{billedbilag}`.
+- billed- og materialebilag efter referenceafsnittet med aktuelle TræningsMester-screenshots, arkitekturdiagrammer og supplerende tabeller via `\input{billedbilag}`.
 
 ## Vedligeholdelsesregler
 

@@ -5,7 +5,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 
 ## Kort Status
 
-- Repoet er en Overleaf/LaTeX-mappe til bachelorrapporten om Træningsmester.
+- Repoet er en Overleaf/LaTeX-mappe til bachelorrapporten om TræningsMester.
 - Hovedfilen er `main.tex`; rapporttypografi og forsider styres af `KUstyle.sty`.
 - Dokumentet skal kompileres med XeLaTeX eller LuaLaTeX, fordi templaten bruger `fontspec`, og hovedrapporten er sat op til A4.
 - `main.tex` indlæser `indledning.tex`, `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `metode.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex`, `test_og_verifikation.tex`, `evaluering_og_brugerindsigt.tex`, `diskussion.tex` og `konklusion.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
@@ -33,14 +33,14 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 ## Kendte Metadata
 
 - Forfatter: Christian Kristensen, TDH522.
-- Projekt/egenudviklet app: Træningsmester.
+- Projekt/egenudviklet app: TræningsMester.
 - Projekttype: Bachelorprojekt.
 - Uddannelse: Bachelor i Sundhed og Informatik.
 - Fakultet: Det Sundhedsvidenskabelige Fakultet.
 - Institut: Institut for Folkesundhedsvidenskab.
 - Afdeling: Afdeling for Sundhedstjenesteforskning.
 - Vejleder: Karsten Vrangbæk.
-- Arbejdstitel i LaTeX: `Træningsmester`.
+- Arbejdstitel i LaTeX: `TræningsMester`.
 - Arbejdssubtitle i LaTeX: `Design og implementering af en digital træningsapp til fleksibel progression og motivation`.
 - Afleveringsdato: afventer.
 - Den officielle KU-forsides KU-header skal pege på Det Sundhedsvidenskabelige Fakultet, ikke den oprindelige matematik-template.
@@ -49,7 +49,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 
 Bachelorens centrale spørgsmål er, hvordan en digital træningsapp kan designes og implementeres, så programstruktur, progression og feedback understøtter vedvarende motivation og fleksibel håndtering af afvigelser fra et planlagt træningsforløb uden at øge risikoen for demotivation og frafald.
 
-Træningsmester skal behandles som bachelorprojektets egenudviklede design- og implementeringscase. SwiftUI, Supabase, watchOS, Live Activity og træner-/adminfunktioner er tekniske midler i appen til at undersøge problemformuleringen, ikke konkurrerende hovedproblemer.
+TræningsMester skal behandles som bachelorprojektets egenudviklede design- og implementeringscase. SwiftUI, Supabase, watchOS, Live Activity og træner-/adminfunktioner er tekniske midler i appen til at undersøge problemformuleringen, ikke konkurrerende hovedproblemer.
 
 ## Arbejdsregler
 
@@ -61,7 +61,7 @@ Træningsmester skal behandles som bachelorprojektets egenudviklede design- og i
 - Hold rapporten problemstyret. Undgå at gøre den til en produktpitch eller featureliste.
 - Brug materialepakkens kuraterede summaries før private rådata.
 - Brug `referencer.bib` og `referencer.md` som primære kildeindeks for eksterne kilder og udvalgt kursusmateriale; tilføj nye kilder begge steder og gem kun PDF'er, når de er åbent tilgængelige.
-- Kursusmateriale må registreres i `referencer.bib` og `referencer.md`, når titel, underviser/ophav, kursus, år og præcise slide-, side- eller afsnitshenvisninger kan verificeres. Kopiér ikke lukkede KU-/Absalon-PDF'er, slides eller dokumenter til `referencer/`; brug kun åbne PDF-kopier. Brug ikke kursusmateriale som empirisk effektbevis for Træningsmester.
+- Kursusmateriale må registreres i `referencer.bib` og `referencer.md`, når titel, underviser/ophav, kursus, år og præcise slide-, side- eller afsnitshenvisninger kan verificeres. Kopiér ikke lukkede KU-/Absalon-PDF'er, slides eller dokumenter til `referencer/`; brug kun åbne PDF-kopier. Brug ikke kursusmateriale som empirisk effektbevis for TræningsMester.
 - Husk at `note`-felter i `referencer.bib` kan blive synlige i rapportens referenceliste. Skriv derfor aldrig noter om lokale PDF'er, downloadforsøg, terminalresultater, private stier, mapper eller arbejdsflow i BibTeX-felter, der kan blive trykt.
 - Kopier ikke lange passager fra kursusmateriale, mails, Messenger, Facebook eller andre lukkede kilder.
 - Anonymiser beta- og brugerindsigt, og undgå personhenførbare detaljer i `main.tex`.
@@ -95,7 +95,7 @@ Træningsmester skal behandles som bachelorprojektets egenudviklede design- og i
 - `diskussion.tex`: kapitelinput med færdig rapporttekst for Diskussion.
 - `konklusion.tex`: kapitelinput med færdig rapporttekst for Konklusion.
 - `kildesoegning.tex`: metodeklart LaTeX-afsnit, der redegør for kildesøgning og referenceudvælgelse.
-- `billedbilag.tex`: LaTeX-bilag med labels til de 13 aktuelle Træningsmester-screenshots, 7 arkitekturdiagrammer med supplerende ER-udsnit og materialetabeller om use cases, krav, SQL/RLS, procesmodeller, beta og verifikation.
+- `billedbilag.tex`: LaTeX-bilag med labels til de 13 aktuelle TræningsMester-screenshots, 7 arkitekturdiagrammer med supplerende ER-udsnit og materialetabeller om use cases, krav, SQL/RLS, procesmodeller, beta og verifikation.
 - `Materiale/traeningsmester-2026-04-28/README.md`: kort vejledning til materialepakken.
 - `Materiale/traeningsmester-2026-04-28/NAVIGATOR.md`: detaljeret strukturkort for materialepakken.
 

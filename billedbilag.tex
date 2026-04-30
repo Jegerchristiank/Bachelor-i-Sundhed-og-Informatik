@@ -1,9 +1,9 @@
-\section{Billed- og materialebilag: Træningsmester}
+\section{Billed- og materialebilag: TræningsMester}
 \label{app:traeningsmester-billedbilag}
 
 \sloppy
 
-Dette bilag samler udvalgte billeder, figurer og tabeller om Træningsmester pr. 28. april 2026. Bilaget omfatter 13 aktuelle iOS 26.4-screenshots, 7 arkitektur- og dataflowfigurer med supplerende ER-udsnit og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Ældre screenshots fra tidligere UI-versioner er ikke medtaget, fordi de ikke bør bruges som dokumentation for den aktuelle appversion.
+Dette bilag samler udvalgte billeder, figurer og tabeller om TræningsMester pr. 28. april 2026. Bilaget omfatter 13 aktuelle iOS 26.4-screenshots, 7 arkitektur- og dataflowfigurer med supplerende ER-udsnit og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Ældre screenshots fra tidligere UI-versioner er ikke medtaget, fordi de ikke bør bruges som dokumentation for den aktuelle appversion.
 
 Figurerne og tabellerne er udvalgt, så argumentationen kun henviser til materiale, der er indsat i bilaget. De supplerende tabeller er kondenserede og anonymiserede; private rådata, rå kommunikation og personhenførbare detaljer er ikke kopieret ind i bilaget.
 
@@ -158,7 +158,7 @@ Figurerne og tabellerne er udvalgt, så argumentationen kun henviser til materia
 
 \tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-13-home-current-xcode-mcp-qa-2026-04-28.jpg}{Home-skærm efter gennemløb med Dagens træning synlig.}{fig:tm-ios-home-current-qa}
 
-\tmlandscapediagramwithsection{Arkitektur- og dataflowdiagrammer}{assets/bilag/diagrammer/system_context.pdf}{0bp 532bp 0bp 0bp}{Systemkontekst for Træningsmester på iOS, watchOS, Supabase og Apple-services.}{fig:tm-system-context}
+\tmlandscapediagramwithsection{Arkitektur- og dataflowdiagrammer}{assets/bilag/diagrammer/system_context.pdf}{0bp 532bp 0bp 0bp}{Systemkontekst for TræningsMester på iOS, watchOS, Supabase og Apple-services.}{fig:tm-system-context}
 
 \tmlandscapewidediagram{assets/bilag/diagrammer/data_model_er.pdf}{0bp 610bp 0bp 0bp}{ER-diagram for programmer, workouts, tracker, completion, settings og cyklusdata.}{fig:tm-data-model-er}
 
@@ -187,7 +187,7 @@ Figurerne og tabellerne er udvalgt, så argumentationen kun henviser til materia
 \toprule
 \tmthead{Bilagsspor} & \tmthead{Faglig funktion} & \tmthead{Begrundelse} \\
 \midrule
-Aktuelle app-screenshots & Dokumenterer den aktuelle brugerflade & Figurerne \ref{fig:tm-ios-home-stale-session}--\ref{fig:tm-ios-home-current-qa} viser centrale flows i iOS 26.4-versionen af Træningsmester. \\
+Aktuelle app-screenshots & Dokumenterer den aktuelle brugerflade & Figurerne \ref{fig:tm-ios-home-stale-session}--\ref{fig:tm-ios-home-current-qa} viser centrale flows i iOS 26.4-versionen af TræningsMester. \\
 Arkitektur- og dataflowdiagrammer & Dokumenterer systemets tekniske hovedstruktur & Figurerne \ref{fig:tm-system-context}--\ref{fig:tm-import-ai-edge-boundary} dækker systemkontekst, datamodel med forstørrede ER-udsnit, tracker/completion, RLS, watchOS, Live Activity og import/AI-grænser. \\
 Containerarkitektur & Samler arkitekturen i komponentlag & Tabel \ref{tab:tm-container-architecture} gør hovedlagene læsbare som tekstligt overblik. \\
 Trackerproces og autorisationsregler & Forklarer træningsflow og sikkerhedsmodel & Tabel \ref{tab:tm-tracker-flow-bpmn} og \ref{tab:tm-authorization-dcr} viser de centrale proces- og adgangsregler. \\
@@ -225,7 +225,7 @@ UC-10 Admin håndterer bruger eller aktivitet & Admin-center gennem Edge Functio
 UC-11 Importer program eller historik & Importjob, normalisering, preview og gem af program/historikkladder. & Viser AI/import som afgrænset server-side flow. \\
 \bottomrule
 \end{tabularx}
-\caption{Kondenseret use case-overblik for Træningsmester.}
+\caption{Kondenseret use case-overblik for TræningsMester.}
 \label{tab:tm-use-cases}
 \end{table}
 
@@ -272,7 +272,7 @@ Edge Functions & Admin, trainer-client, program/import/analyse og billing functi
 Apple services & StoreKit 2, WatchConnectivity, ActivityKit/WidgetKit og HealthKit. & Placering af platformservices og afgrænsning af integrationer. \\
 \bottomrule
 \end{tabularx}
-\caption{Komponentoverblik for Træningsmesters arkitektur.}
+\caption{Komponentoverblik for TræningsMesters arkitektur.}
 \label{tab:tm-container-architecture}
 \end{table}
 
@@ -293,7 +293,7 @@ Progression & Aktiv cyklus kalder progression RPC efter completion. & Kobler com
 Historik/Home & Historik og Home bruger completion- og trackerlogdata efter afslutning. & Viser feedback tilbage til brugerens næste app-state. \\
 \bottomrule
 \end{tabularx}
-\caption{Tracker- og completionproces for Træningsmester.}
+\caption{Tracker- og completionproces for TræningsMester.}
 \label{tab:tm-tracker-flow-bpmn}
 \end{table}
 
@@ -312,7 +312,7 @@ Tracker og Live Activity & WriteTrackerLog kræver session; Live Activity write 
 Afvisning og audit & Cross-user access afvises, og privilegerede mutationer bør persistere audit event. & Kobler sikkerhed, governance og sporbarhed. \\
 \bottomrule
 \end{tabularx}
-\caption{Autorisationsregler for Træningsmester.}
+\caption{Autorisationsregler for TræningsMester.}
 \label{tab:tm-authorization-dcr}
 \end{table}
 
@@ -337,7 +337,7 @@ Settings/admin & user settings, activity events, feedback, version history og er
 Cykler/import & training cycles, cycle runtime-tabeller og training import jobs & Makro/meso/deload, runtime progression og importjobs. \\
 \bottomrule
 \end{tabularx}
-\caption{Centrale SQL-domæner i Træningsmesters datamodel.}
+\caption{Centrale SQL-domæner i TræningsMesters datamodel.}
 \label{tab:tm-sql-domain-overblik}
 \end{table}
 
@@ -357,7 +357,7 @@ subscription tier & User settings & Binder StoreKit-køb til appens featureadgan
 is admin & User settings & Bruges sammen med servervalidering, ikke som eneste adminbevis. \\
 \bottomrule
 \end{tabularx}
-\caption{Særligt relevante SQL-felter i Træningsmesters datamodel.}
+\caption{Særligt relevante SQL-felter i TræningsMesters datamodel.}
 \label{tab:tm-sql-fields}
 \end{table}
 
@@ -381,7 +381,7 @@ Trainer/client & Edge Function og RLS & Trainer-client-service. & Related-user p
 AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function runtime styrer service-role/OpenAI. \\
 \bottomrule
 \end{tabularx}
-\caption{RLS- og sikkerhedsmatrix for Træningsmester.}
+\caption{RLS- og sikkerhedsmatrix for TræningsMester.}
 \label{tab:tm-rls-matrix}
 \end{table}
 
@@ -414,7 +414,7 @@ AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function run
 2026-04-25 21:01 UTC & 2.0 (12) & iOS + watchOS & Seneste observerede beta-build i den gennemgåede betaperiode. \\
 \bottomrule
 \end{tabularx}
-\caption{TestFlight-tidslinje for Træningsmester. Tabellen dokumenterer distribution og iteration, ikke sundhedseffekt.}
+\caption{TestFlight-tidslinje for TræningsMester. Tabellen dokumenterer distribution og iteration, ikke sundhedseffekt.}
 \label{tab:tm-testflight-timeline}
 \end{table}
 

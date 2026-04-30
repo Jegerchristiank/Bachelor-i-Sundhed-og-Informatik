@@ -17,4 +17,4 @@ Dato: 2026-04-28
 
 Anbefalet commitbesked:
 
-`Add curated Træningsmester bachelor material`
+`Add curated TræningsMester bachelor material`

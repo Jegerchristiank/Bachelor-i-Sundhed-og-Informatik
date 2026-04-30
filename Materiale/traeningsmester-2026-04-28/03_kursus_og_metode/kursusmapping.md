@@ -1,4 +1,4 @@
-# Dyb Absalon-kursusmapping til Træningsmester
+# Dyb Absalon-kursusmapping til TræningsMester
 
 Dato: 2026-04-28  
 Formål: rapportklar kobling mellem Absalon-kursernes forløb og bachelorprojektets afsnit, artefakter og refleksioner.  
@@ -8,7 +8,7 @@ Denne fil gengiver kun kursustitler, modul-/lektionsoverskrifter, artikeltitler 
 
 ## Projektets faglige kerne
 
-Træningsmester undersøger, hvordan en digital træningsapp kan understøtte programstruktur, progression og feedback uden at gøre realistiske afvigelser fra et træningsprogram demotiverende. Caseimplementeringen er en native SwiftUI-app med iOS-app, watchOS companion, Live Activity, Supabase backend, typed repositories, RLS, Edge Functions, betaafprøvning og rapportklare bilag.
+TræningsMester undersøger, hvordan en digital træningsapp kan understøtte programstruktur, progression og feedback uden at gøre realistiske afvigelser fra et træningsprogram demotiverende. Caseimplementeringen er en native SwiftUI-app med iOS-app, watchOS companion, Live Activity, Supabase backend, typed repositories, RLS, Edge Functions, betaafprøvning og rapportklare bilag.
 
 Den autoritative problemformulering er:
 
@@ -38,7 +38,7 @@ Kursusforløb: introduktion, procesmodeller, requirements engineering, use cases
 
 ### Konkrete koblinger
 
-| Absalon-modul eller materiale | Faglig brug i rapporten | Træningsmester-kobling | Evidens i bachelorpakken |
+| Absalon-modul eller materiale | Faglig brug i rapporten | TræningsMester-kobling | Evidens i bachelorpakken |
 | --- | --- | --- | --- |
 | Week 1 - Introduction, inkl. software engineering og UML-introduktion | Placere projektet som softwareudviklingscase, ikke kun appbeskrivelse | SwiftUI-migrationen behandles som systemudvikling med krav, arkitektur, test og datamodel | `05_arkitektur_data_sikkerhed/arkitektur/arkitekturfortaelling.md` |
 | Week 2 - Process Models | Forklare iterativ udvikling og parity-migration | Appen er udviklet i iterationer med buildlogs, TestFlight-builds, parity-afstemning og løbende redesign | `04_brugerindsigt_beta/testflight_tidslinje.md`, `Docs/ParityMatrix.md` |
@@ -57,7 +57,7 @@ Kursusforløb: introduktion, procesmodeller, requirements engineering, use cases
 
 ### Rapportklar pointe
 
-Dette kursus er det stærkeste fundament for rapportens tekniske kapitler. Træningsmester kan demonstrere hele kæden fra krav til model, arkitektur, database, SQL, test og systemintegration. For topkarakter bør rapporten ikke nøjes med at vise diagrammer; den bør forklare, hvordan diagrammerne har styret konkrete designbeslutninger, fx hvorfor `workout_completion_events` findes ved siden af `trackerlog`, og hvorfor Edge Functions bruges til privilegerede flows.
+Dette kursus er det stærkeste fundament for rapportens tekniske kapitler. TræningsMester kan demonstrere hele kæden fra krav til model, arkitektur, database, SQL, test og systemintegration. For topkarakter bør rapporten ikke nøjes med at vise diagrammer; den bør forklare, hvordan diagrammerne har styret konkrete designbeslutninger, fx hvorfor `workout_completion_events` findes ved siden af `trackerlog`, og hvorfor Edge Functions bruges til privilegerede flows.
 
 ## 77437 - IT-projektledelse
 
@@ -66,7 +66,7 @@ Kursusforløb: seminarer om offentlige IT-projekter, projektdefinition, benefits
 
 ### Konkrete koblinger
 
-| Absalon-modul eller materiale | Faglig brug i rapporten | Træningsmester-kobling | Evidens i bachelorpakken |
+| Absalon-modul eller materiale | Faglig brug i rapporten | TræningsMester-kobling | Evidens i bachelorpakken |
 | --- | --- | --- | --- |
 | Seminar 1 med materiale om problemer i offentlige IT-projekter, damage cases og styringsdiscipliner | Indledning til projektstyringsrisici | Projektet håndterer risiko for scope creep ved at skelne mellem bachelorens hovedproblem og teknisk caseafgrænsning | `01_rapportgrundlag/problemformulering/problemformulering_autoritativ.md` |
 | Skabelon for idéskitse | Tidlig projektdefinition | Problemfeltet afgrænses til digital træning, motivation, progression og afvigelser fra plan | `01_rapportgrundlag/problemformulering/problemformulering_resume.md` |
@@ -79,7 +79,7 @@ Kursusforløb: seminarer om offentlige IT-projekter, projektdefinition, benefits
 
 ### Rapportklar pointe
 
-Projektledelsessporet bør bruges kritisk. Træningsmester er ikke et offentligt megaprojekt, men kursets temaer er relevante, fordi bacheloren har mange integrationsflader og høj risiko for at forveksle "flere features" med "bedre projekt". Det stærke argument er, at rapporten dokumenterer afgrænsning, risici, release-gates og evidens. Hullet er, at projektledelsen primært er dokumenteret retrospektivt; rapporten bør derfor ærligt beskrive, hvor planlægningen blev rekonstrueret fra logs og artefakter.
+Projektledelsessporet bør bruges kritisk. TræningsMester er ikke et offentligt megaprojekt, men kursets temaer er relevante, fordi bacheloren har mange integrationsflader og høj risiko for at forveksle "flere features" med "bedre projekt". Det stærke argument er, at rapporten dokumenterer afgrænsning, risici, release-gates og evidens. Hullet er, at projektledelsen primært er dokumenteret retrospektivt; rapporten bør derfor ærligt beskrive, hvor planlægningen blev rekonstrueret fra logs og artefakter.
 
 ## 72545 - Interaktionsdesign
 
@@ -88,7 +88,7 @@ Kursusforløb: introduktion, mennesker og interaktion, brugerforståelse, design
 
 ### Konkrete koblinger
 
-| Absalon-modul eller materiale | Faglig brug i rapporten | Træningsmester-kobling | Evidens i bachelorpakken |
+| Absalon-modul eller materiale | Faglig brug i rapporten | TræningsMester-kobling | Evidens i bachelorpakken |
 | --- | --- | --- | --- |
 | Uge 6 - Introduktion til kurset | Grundlag for at beskrive UI som designbeslutning | Native SwiftUI vælges ikke kun af teknisk grund, men for at kunne skabe hurtigere, mere platformskonsistente træningsflows | `05_arkitektur_data_sikkerhed/arkitektur/designrationale.md` |
 | Uge 7 - Mennesker og interaktion | Brugerens kontekst under træning | Appen designes til situationer med sved, tidspres, lav opmærksomhed og behov for hurtig registrering | `04_brugerindsigt_beta/beta_tester_rapport.md` |
@@ -109,7 +109,7 @@ Kursusforløb: metoder og videnskabsteori, spørgeskema, deltagerobservation, et
 
 ### Konkrete koblinger
 
-| Absalon-modul eller materiale | Faglig brug i rapporten | Træningsmester-kobling | Evidens i bachelorpakken |
+| Absalon-modul eller materiale | Faglig brug i rapporten | TræningsMester-kobling | Evidens i bachelorpakken |
 | --- | --- | --- | --- |
 | Modul 1 - introduktion, metoder og videnskabsteori | Metodeposition | Rapporten bør tydeligt skelne mellem design case, software engineering-evidens og brugerindsigt | `01_rapportgrundlag/problemformulering/problemformulering_autoritativ.md` |
 | Modul 2 og 3 - spørgeskema | Kvantitativt perspektiv | Spørgerammen om brug, friktion, værdi og betalingsvillighed kan operationaliseres, men datagrundlaget er ikke stort nok til statistisk generalisering | `04_brugerindsigt_beta/beta_tester_rapport.md` |
@@ -132,7 +132,7 @@ Kursusforløb: "Om bachelor projekter", arbejdsbeskrivelse og FAQ.
 
 ### Konkrete koblinger
 
-| Absalon-modul eller materiale | Faglig brug i rapporten | Træningsmester-kobling | Evidens i bachelorpakken |
+| Absalon-modul eller materiale | Faglig brug i rapporten | TræningsMester-kobling | Evidens i bachelorpakken |
 | --- | --- | --- | --- |
 | Bachelorprojekt - arbejdsbeskrivelse | Rapportens formelle ramme | Problemformulering, metode, teknisk løsning, evaluering og kritisk refleksion skal fremstå som bachelorprojekt, ikke produktpitch | `01_rapportgrundlag/problemformulering/problemformulering_autoritativ.md` |
 | FAQ om bachelorprojektet | Afklaring af omfang og dokumentation | Appens mange features skal underordnes en tydelig problemformulering og vurderes efter fagligt udbytte | `01_rapportgrundlag/rapportstruktur/rapportklar_gap_lukning.md` |
@@ -149,7 +149,7 @@ Kursusforløb: procesdesignværktøjer, introduktion, process management, DCR vs
 
 ### Konkrete koblinger
 
-| Absalon-modul eller materiale | Faglig brug i rapporten | Træningsmester-kobling | Evidens i bachelorpakken |
+| Absalon-modul eller materiale | Faglig brug i rapporten | TræningsMester-kobling | Evidens i bachelorpakken |
 | --- | --- | --- | --- |
 | Uge 1 - adgang til procesdesignværktøjer og introduktion | Procesmodellering | Trackerflow, authorization og dataudveksling modelleres som BPMN/DCR-lignende artefakter | `05_arkitektur_data_sikkerhed/data_og_sikkerhed/interoperabilitet_dcr_bpmn_notat.md` |
 | Lektion om process management | Proces frem for enkeltstående skærme | Workout-start, tracker-on/off, completion og cycle progression beskrives som proces med alternative grene | `05_arkitektur_data_sikkerhed/arkitektur/arkitekturfortaelling.md` |
@@ -160,13 +160,13 @@ Kursusforløb: procesdesignværktøjer, introduktion, process management, DCR vs
 | Uge 4 - data quality og interoperability | Datakvalitet | Completion-events øger adfærdsdatakvalitet for "træning gennemført", mens manglende trackerlog reducerer detaljeringsgrad. Det er et bevidst tradeoff | `05_arkitektur_data_sikkerhed/data_og_sikkerhed/dataflow.md` |
 | Benson/Grieve-materiale om principper for interoperabilitet, SNOMED CT, HL7 og FHIR | Standardiseringsrefleksion | Projektet implementerer ikke FHIR/HL7, men kan reflektere over, hvad der skulle til for klinisk interoperabilitet | `05_arkitektur_data_sikkerhed/data_og_sikkerhed/interoperabilitet_dcr_bpmn_notat.md` |
 | Mohammed et al. 2025 om data quality assessment | Kritisk datakvalitetsvurdering | Logs, completion-events, bodyweight, HealthKit-import og brugerindtastede øvelsesdata skal vurderes efter fuldstændighed, korrekthed og formål | `05_arkitektur_data_sikkerhed/data_og_sikkerhed/sql_schema_overblik.md` |
-| Uge 5 - SP/FMK/SMR | National sundhedsdata-afgrænsning | Træningsmester bør ikke fremstilles som national sundhedsintegration; det er en app med afgrænset HealthKit-samtykke | `05_arkitektur_data_sikkerhed/data_og_sikkerhed/interoperabilitet_dcr_bpmn_notat.md` |
+| Uge 5 - SP/FMK/SMR | National sundhedsdata-afgrænsning | TræningsMester bør ikke fremstilles som national sundhedsintegration; det er en app med afgrænset HealthKit-samtykke | `05_arkitektur_data_sikkerhed/data_og_sikkerhed/interoperabilitet_dcr_bpmn_notat.md` |
 | Uge 6 - elektroniske patientjournaler, timed DCR og kodning af data | Afgrænsning og modellering | Systemet bruger tidslige events som logs og completion, men uden EHR-status eller kliniske beslutningsregler | `05_arkitektur_data_sikkerhed/data_og_sikkerhed/dataflow.md` |
 | Uge 7 - clinical decision support and AI | AI- og beslutningsstøtterefleksion | Program-review/import og AI-features ligger server-side via Edge Functions; appen bør ikke beskrives som klinisk beslutningsstøtte | `05_arkitektur_data_sikkerhed/data_og_sikkerhed/edge_functions_overblik.md` |
 
 ### Rapportklar pointe
 
-Dette kursus er vigtigt, fordi projektet ligger i gråzonen mellem fitnessapp, sundhedsdata og personlig adfærdsstøtte. Den stærke rapportvinkel er afgrænsning: Træningsmester demonstrerer praktisk interoperabilitet mellem iOS, watchOS, Live Activity, Supabase, Edge Functions og HealthKit, men ikke klinisk FHIR/HL7-integration. En topkarakterstekst bør netop være præcis om denne grænse.
+Dette kursus er vigtigt, fordi projektet ligger i gråzonen mellem fitnessapp, sundhedsdata og personlig adfærdsstøtte. Den stærke rapportvinkel er afgrænsning: TræningsMester demonstrerer praktisk interoperabilitet mellem iOS, watchOS, Live Activity, Supabase, Edge Functions og HealthKit, men ikke klinisk FHIR/HL7-integration. En topkarakterstekst bør netop være præcis om denne grænse.
 
 ## Tværgående mapping til bachelorens hovedafsnit
 
@@ -205,7 +205,7 @@ Databaseafsnittet bør koble 80540's database-/SQL-moduler til Supabase-implemen
 - Relationel modellering: `plan`, `workout`, `plan_workouts`, `workout_exercises`, `trackerlog`, `workout_completion_events`, `training_cycle_*`.
 - SQL: RLS policies, views, RPC'er og constraints.
 - Data quality: forskellen på fulde sætlogs og completion-events.
-- XML: ikke implementeret som primært format, men relevant som sammenligningspunkt for strukturerede sundhedsdataformater. Rapporten bør skrive, at Træningsmester primært bruger Swift Codable/JSON/PostgREST, mens XML/FHIR/HL7 hører til interoperabilitetsrefleksionen.
+- XML: ikke implementeret som primært format, men relevant som sammenligningspunkt for strukturerede sundhedsdataformater. Rapporten bør skrive, at TræningsMester primært bruger Swift Codable/JSON/PostgREST, mens XML/FHIR/HL7 hører til interoperabilitetsrefleksionen.
 
 ### Projektledelse
 
@@ -288,4 +288,4 @@ Sundhedsdataafsnittet bør koble 89332 til:
 4. Brug 89332 til at vise moden dataforståelse: DCR/BPMN, interoperabilitet, datakvalitet og klar afgrænsning fra kliniske standarder.
 5. Brug 88370 til at holde rapporten problemstyret og kritisk.
 
-Den samlede topkarakterstrategi er at fremstille Træningsmester som et veldokumenteret software- og designprojekt, hvor de tekniske valg er metodisk begrundede og kritisk afgrænsede. Det stærkeste argument er ikke, at appen har mange funktioner, men at de centrale funktioner realiserer en sammenhængende idé: fleksibel progression uden at straffe brugeren for realistiske afvigelser.
+Den samlede topkarakterstrategi er at fremstille TræningsMester som et veldokumenteret software- og designprojekt, hvor de tekniske valg er metodisk begrundede og kritisk afgrænsede. Det stærkeste argument er ikke, at appen har mange funktioner, men at de centrale funktioner realiserer en sammenhængende idé: fleksibel progression uden at straffe brugeren for realistiske afvigelser.

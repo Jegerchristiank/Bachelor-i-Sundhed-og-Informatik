@@ -1,10 +1,10 @@
 # Navigator
 
-Dette er navigationsfilen for den kuraterede Træningsmester-materialemappe. Brug den som første stop, når materialet skal indarbejdes i bacheloren eller vedligeholdes i Overleaf/GitHub-repoet.
+Dette er navigationsfilen for den kuraterede TræningsMester-materialemappe. Brug den som første stop, når materialet skal indarbejdes i bacheloren eller vedligeholdes i Overleaf/GitHub-repoet.
 
 ## Kort Formål
 
-Mappen indeholder rapportnært bachelormateriale for Træningsmester pr. 2026-04-28:
+Mappen indeholder rapportnært bachelormateriale for TræningsMester pr. 2026-04-28:
 
 - problemformulering og rapportstruktur,
 - aktuelle app-screenshots fra iOS 26.4,

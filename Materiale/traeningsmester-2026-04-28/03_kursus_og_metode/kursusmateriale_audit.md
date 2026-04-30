@@ -1,7 +1,7 @@
 # Kursusmateriale Fil-Audit Fra Absalon
 
 Dato: 2026-04-28  
-Formål: rapportklar audit af observerede Absalon-moduler, filer og lektionsoverskrifter for de seks kurser, der kan forankre bachelorpakken om Træningsmester.  
+Formål: rapportklar audit af observerede Absalon-moduler, filer og lektionsoverskrifter for de seks kurser, der kan forankre bachelorpakken om TræningsMester.
 Kildegrundlag: eksisterende mappingfiler i denne mappe samt private råudtræk under `BachelorPrivateRaw/traeningsmester-2026-04-28/absalon/deep/`.
 
 Denne audit gengiver kun korte titler, modulnavne og parafraser. Den kopierer ikke kursusmaterialets indhold, underviserkommentarer, opgavebesvarelser, forelæsningsoptagelser eller lukkede adgangslinks.
@@ -240,7 +240,7 @@ Observerede råfiler: `course-89332-outline-filter-2026-04-28.txt`, `course-8933
 | Uge 3 | Health informatics chapters, methods of knowing + healthcare data | Direkte relevant til sundhedsdata-afgrænsning og datakildekritik |
 | Uge 4 | Benson/Grieve om SNOMED CT/HL7/FHIR, data quality + interoperability, Mohammed et al. om data quality assessment | Meget direkte relevant til interoperabilitet, datakvalitet og standardafgrænsning |
 | Uge 5 | SP/FMK/SMR-slides, tredje afleveringsopgave | Støtte til national sundhedsdata-afgrænsning |
-| Uge 6 | Elektroniske patientjournaler, timed DCR, kodning af data | Direkte/støtte til at afgrænse Træningsmester fra EHR og kliniske beslutningsregler |
+| Uge 6 | Elektroniske patientjournaler, timed DCR, kodning af data | Direkte/støtte til at afgrænse TræningsMester fra EHR og kliniske beslutningsregler |
 | Uge 7 | Health informatics chapters, clinical decision support and AI | Direkte relevant til AI-afgrænsning og server-side programreview/import |
 | Uge 8 | Review | Støtte |
 | Faggrupper/Nylig feedback | Afleveringsgruppe og feedbackoverskrifter observeret | Ikke rapportrelevant uden manuel og privat håndtering |
@@ -257,7 +257,7 @@ Observerede råfiler: `course-89332-outline-filter-2026-04-28.txt`, `course-8933
 
 ### Støttemateriale
 
-- SP/FMK/SMR og elektroniske patientjournaler er stærke afgrænsningskilder, men de bør ikke fremstilles som noget Træningsmester implementerer.
+- SP/FMK/SMR og elektroniske patientjournaler er stærke afgrænsningskilder, men de bør ikke fremstilles som noget TræningsMester implementerer.
 - Assignments og feedback er ikke nødvendige for bachelorrapporten, medmindre de bruges som egen læringsproces og må omtales.
 - Review-modulet er støtte til eksamensforberedelse.
 
@@ -275,7 +275,7 @@ Observerede råfiler: `course-89332-outline-filter-2026-04-28.txt`, `course-8933
 | Filindhold er ikke fuldt åbnet | Outlines dokumenterer titler, men ikke definitioner, modeller eller citérbare pointer | Åbn kun de få filer, der skal bruges som egentlige kilder i rapporten |
 | Kursusmateriale må ikke overkopieres | Bachelorpakken skal være rapportklar uden lukket kursusindhold | Brug korte titler/parafraser og henvis til kursus/materialetype |
 | Metodeevidens kan blive for stærkt formuleret | Beta-feedback og digitale spor viser plausibilitet, ikke statistisk motivationseffekt | Skriv "designbaseret evaluering" og begræns kvantitative konklusioner |
-| Interoperabilitet kan blive overdrevet | Træningsmester er ikke klinisk EHR/FHIR-system | Brug 89332 til kritisk afgrænsning og datakvalitet, ikke til at påstå klinisk integration |
+| Interoperabilitet kan blive overdrevet | TræningsMester er ikke klinisk EHR/FHIR-system | Brug 89332 til kritisk afgrænsning og datakvalitet, ikke til at påstå klinisk integration |
 | Projektledelse er delvist retrospektiv | Rapporten kan ligne efterrationalisering | Adskil faktiske logs/artefakter fra efterfølgende refleksion |
 | Mange features kan sløre hovedproblemet | Appen kan fremstå som produktkatalog | Prioritér tracker-off, completion-events, cycle runtime, watch/Live Activity og sikker dataadgang |
 
@@ -308,4 +308,4 @@ Observerede råfiler: `course-89332-outline-filter-2026-04-28.txt`, `course-8933
 
 ### Anbefalet Topkarakterlinje
 
-Den stærkeste rapportvinkel er at præsentere Træningsmester som en problemstyret software- og designcase: en native mobil løsning, hvor krav, arkitektur, dataansvar, interaktionsdesign og evaluering alle peger mod samme kerneproblem, nemlig fleksibel progression uden at straffe brugeren for realistiske afvigelser. Topkarakteren kræver især præcis afgrænsning: stærke design- og arkitekturargumenter, men ærlig begrænsning af effektmåling, klinisk interoperabilitet og kvantitativ generalisering.
+Den stærkeste rapportvinkel er at præsentere TræningsMester som en problemstyret software- og designcase: en native mobil løsning, hvor krav, arkitektur, dataansvar, interaktionsdesign og evaluering alle peger mod samme kerneproblem, nemlig fleksibel progression uden at straffe brugeren for realistiske afvigelser. Topkarakteren kræver især præcis afgrænsning: stærke design- og arkitekturargumenter, men ærlig begrænsning af effektmåling, klinisk interoperabilitet og kvantitativ generalisering.

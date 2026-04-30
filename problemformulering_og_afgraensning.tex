@@ -8,7 +8,7 @@ Problemfeltet samler fysisk aktivitet, digital adfærdsstøtte, interaktionsdesi
 Hvordan kan en digital træningsapp designes og implementeres, så programstruktur, progression og feedback understøtter vedvarende motivation og fleksibel håndtering af afvigelser fra et planlagt træningsforløb uden at øge risikoen for demotivation og frafald?
 \end{quote}
 
-Spørgsmålet er design- og implementeringsorienteret. Det undersøger ikke, om Træningsmester statistisk forbedrer fysisk aktivitet, motivation eller adherence. Det undersøger, hvordan strukturen i den udviklede app kan gøres fagligt begrundet og teknisk sammenhængende.
+Spørgsmålet er design- og implementeringsorienteret. Det undersøger ikke, om TræningsMester statistisk forbedrer fysisk aktivitet, motivation eller adherence. Det undersøger, hvordan strukturen i den udviklede app kan gøres fagligt begrundet og teknisk sammenhængende.
 
 Afgrænsningen er nødvendig, fordi samme app kan vurderes på flere niveauer. Et effektstudie ville spørge, om brugere træner mere eller falder mindre fra. Et produktstudie ville spørge, om appen kan sælges, skaleres og supporteres. Her er fokus snævrere: om den udviklede iOS-app kan forbinde motivation, progression, friktion og sikker dataadgang i et sammenhængende design- og implementeringsarbejde.
 
@@ -29,7 +29,7 @@ Underspørgsmålene hænger sammen i en kæde. Først skal træningen kunne mode
 
 \subsection{Egenudviklet app og afgrænsning}
 
-Træningsmester er udviklet og undersøges som design- og implementeringscase, fordi appen samler planlagt programstruktur, tracker, completion, Home-flow, watchOS, Live Activity, datamodel og backendregler i ét system. Tabel~\ref{tab:tm-use-cases} og Tabel~\ref{tab:tm-krav-traceability} viser de centrale use cases og krav, mens Figur~\ref{fig:tm-tracker-completion-summary} viser koblingen mellem trackerstatus, completion og progression.
+TræningsMester er udviklet og undersøges som design- og implementeringscase, fordi appen samler planlagt programstruktur, tracker, completion, Home-flow, watchOS, Live Activity, datamodel og backendregler i ét system. Tabel~\ref{tab:tm-use-cases} og Tabel~\ref{tab:tm-krav-traceability} viser de centrale use cases og krav, mens Figur~\ref{fig:tm-tracker-completion-summary} viser koblingen mellem trackerstatus, completion og progression.
 
 Afgrænsningen betyder, at SwiftUI, Supabase, RLS, Edge Functions, watchOS og Live Activity ikke er selvstændige hovedproblemer. De er tekniske midler i den udviklede app til at undersøge, hvordan appen kan håndtere afvigelser uden at miste programstruktur, feedback eller sikker dataadgang.
 
@@ -39,4 +39,4 @@ Denne afgrænsning betyder ikke, at effekt, jura eller drift er uvæsentlige. De
 
 \subsection{Bidrag}
 
-Bidraget er en problemstyret analyse af, hvordan en digital træningsapp kan adskille planlagt træning, faktisk logging, completion og næste handling. Denne adskillelse gør det muligt at fastholde historik og progression, selv når brugeren ikke følger en perfekt lineær plan. Træningsmester kan dermed diskuteres som et egenudviklet design- og implementeringsbidrag, men ikke som dokumenteret sundhedseffekt.
+Bidraget er en problemstyret analyse af, hvordan en digital træningsapp kan adskille planlagt træning, faktisk logging, completion og næste handling. Denne adskillelse gør det muligt at fastholde historik og progression, selv når brugeren ikke følger en perfekt lineær plan. TræningsMester kan dermed diskuteres som et egenudviklet design- og implementeringsbidrag, men ikke som dokumenteret sundhedseffekt.

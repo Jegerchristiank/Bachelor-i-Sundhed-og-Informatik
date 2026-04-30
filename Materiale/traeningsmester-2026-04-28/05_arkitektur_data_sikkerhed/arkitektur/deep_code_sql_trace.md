@@ -2,7 +2,7 @@
 
 Dato: 2026-04-28  
 Formål: rapportklar dybdesporing fra problemformulering til Swift-kode, Supabase SQL/RLS, Edge Functions, diagrammer og eksisterende testartefakter.  
-Scope: centrale fleksibilitets-, integrations- og sikkerhedsflows i Træningsmester. Der er ikke kørt nye tests i denne audit.
+Scope: centrale fleksibilitets-, integrations- og sikkerhedsflows i TræningsMester. Der er ikke kørt nye tests i denne audit.
 
 ## Problemspor
 
@@ -301,4 +301,4 @@ Diagramkataloget er opdateret med disse forslag som "manglende/anbefalede diagra
 
 ## Rapportkonklusion
 
-Træningsmester realiserer problemformuleringens fleksibilitet gennem et tydeligt runtime- og datamodelskel: planlagt træning ligger i programtabellerne, faktisk træning i tracker/completion-tabellerne, og progression i AppState plus server-side runtime-RPC'er. Watch og Live Activity reducerer friktion i selve træningssituationen, mens RLS, typed repositories og Edge Functions holder adgangsgrænserne eksplicitte. De mest centrale claims har eksisterende testfiler, men denne audit har kun dokumenteret dækningen og ikke genkørt testene.
+TræningsMester realiserer problemformuleringens fleksibilitet gennem et tydeligt runtime- og datamodelskel: planlagt træning ligger i programtabellerne, faktisk træning i tracker/completion-tabellerne, og progression i AppState plus server-side runtime-RPC'er. Watch og Live Activity reducerer friktion i selve træningssituationen, mens RLS, typed repositories og Edge Functions holder adgangsgrænserne eksplicitte. De mest centrale claims har eksisterende testfiler, men denne audit har kun dokumenteret dækningen og ikke genkørt testene.

@@ -56,7 +56,7 @@ Downloadet materiale indeholder arbejdsbeskrivelse, FAQ og projektforslagsskabel
 
 ### Sundhedsdata Og Interoperabilitet
 
-Downloadet materiale dækker methods of knowing/healthcare data, process management, guidelines/protocols, DCR/BPMN, data quality, EHR, coding data, HL7/FHIR/SNOMED, clinical decision support og AI. Det bør kobles til Træningsmester sådan:
+Downloadet materiale dækker methods of knowing/healthcare data, process management, guidelines/protocols, DCR/BPMN, data quality, EHR, coding data, HL7/FHIR/SNOMED, clinical decision support og AI. Det bør kobles til TræningsMester sådan:
 
 - DCR/BPMN: modeller fleksibel træningsadherence, deload, afvigelser og completion-events,
 - data quality: forklar hvorfor trackerlog, completion-events, cycle runtime og importdata skal holdes adskilt,
@@ -85,7 +85,7 @@ Materialet er observeret som 44 module-items, herunder seminarer om offentlige I
 
 ## Konkrete Rapportafsnit Dette Understøtter
 
-| Rapportafsnit | Kursuskilder | Træningsmester-kobling |
+| Rapportafsnit | Kursuskilder | TræningsMester-kobling |
 | --- | --- | --- |
 | Problem og metode | 79772, 88370 | Problemformulering, kvalitativ brugerindsigt, etisk databehandling |
 | UX/design | 72545 | Tracker-off flow, lav friktion, watch, Live Activity, feedbacktemaer |
