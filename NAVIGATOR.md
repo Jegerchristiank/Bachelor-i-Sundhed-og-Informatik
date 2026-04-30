@@ -26,7 +26,7 @@ Start med disse filer i rækkefølge:
 ## Kritiske Pointers
 
 - Hovedrapport: `main.tex`
-- Kapitelinput: `problemformulering_og_afgraensning.tex` for afsnittet Problemformulering og afgrænsning, `teoretisk_og_faglig_ramme.tex` for afsnittet Teoretisk og faglig ramme, `krav_og_use_cases.tex` for afsnittet Krav og use cases, `systemarkitektur.tex` for afsnittet Systemarkitektur og `interaktionsdesign.tex` for afsnittet Interaktionsdesign
+- Kapitelinput: `problemformulering_og_afgraensning.tex` for afsnittet Problemformulering og afgrænsning, `teoretisk_og_faglig_ramme.tex` for afsnittet Teoretisk og faglig ramme, `krav_og_use_cases.tex` for afsnittet Krav og use cases, `systemarkitektur.tex` for afsnittet Systemarkitektur, `interaktionsdesign.tex` for afsnittet Interaktionsdesign og `data_sikkerhed_og_interoperabilitet.tex` for afsnittet Data, sikkerhed og interoperabilitet
 - KU-style og forsidemakroer: `KUstyle.sty` (overstyrer den oprindelige matematik-template med SUND-header og styrbar headerbaggrundsbredde)
 - KU-forsidebaggrund: `KU-logo.pdf` som original, `assets/ku-cover-background.png` som rød rasterbaggrund og `assets/ku-cover-background-blue.png` som blå SUND-valgt rasterbaggrund
 - Træningsmester-logo på forsiden: `assets/traeningsmester-logo-uden-baggrund.svg` og Overleaf-kompatibel `assets/traeningsmester-logo-uden-baggrund.pdf`
@@ -71,6 +71,7 @@ Start med disse filer i rækkefølge:
 | `krav_og_use_cases.tex` | Kapitelinput | Færdig rapporttekst for Krav og use cases, indlæst fra `main.tex` |
 | `systemarkitektur.tex` | Kapitelinput | Færdig rapporttekst for Systemarkitektur, indlæst fra `main.tex` |
 | `interaktionsdesign.tex` | Kapitelinput | Færdig rapporttekst for Interaktionsdesign, indlæst fra `main.tex` |
+| `data_sikkerhed_og_interoperabilitet.tex` | Kapitelinput | Færdig rapporttekst for Data, sikkerhed og interoperabilitet, indlæst fra `main.tex` |
 | `referencer.bib` | Referencebibliotek | BibTeX-nøgler til eksterne kilder og verificeret kursusmateriale |
 | `referencer.md` | Referencevejledning | Skal læses før nye skrive-/redigeringsiterationer; binder kildevalg, slide-/sidetal og PDF-status sammen |
 | `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af åbne kilder, navngivet efter BibTeX-stems; lukkede kursusfiler kopieres ikke hertil |
@@ -93,6 +94,7 @@ Start med disse filer i rækkefølge:
 - færdig tekst for Krav og use cases via `\input{krav_og_use_cases}`,
 - færdig tekst for Systemarkitektur via `\input{systemarkitektur}`,
 - færdig tekst for Interaktionsdesign via `\input{interaktionsdesign}`,
+- færdig tekst for Data, sikkerhed og interoperabilitet via `\input{data_sikkerhed_og_interoperabilitet}`,
 - en separat intern skrivematrix i `skrivematrix.md` for hele rapporten fra Indledning til Konklusion,
 - BibTeX-referenceafsnit baseret på `referencer.bib`,
 - bilag efter referenceafsnittet med kildesøgning via `\input{kildesoegning}`,
@@ -126,6 +128,7 @@ Start med disse filer i rækkefølge:
 ├── krav_og_use_cases.tex
 ├── systemarkitektur.tex
 ├── interaktionsdesign.tex
+├── data_sikkerhed_og_interoperabilitet.tex
 ├── skrivematrix.md
 ├── referencer.bib
 ├── referencer.md

@@ -1,0 +1,59 @@
+\section{Data, sikkerhed og interoperabilitet}
+
+Dette kapitel forklarer, hvordan Træningsmesters datamodel, adgangskontrol og platformspor understøtter appens centrale flows. Fokus er, hvorfor data skal adskille planlagt træning, faktisk logging, completion og progression for at kunne håndtere realistisk træningsadfærd.
+
+Kapitlet behandler samtidig sikkerhed og interoperabilitet som en del af den sundheds- og informatikfaglige afgrænsning. Træningsmester er ikke en klinisk journalintegration eller en bred sundhedsplatform. Appen håndterer brugerbundne fitnessdata, adgangskontrol og udvalgte platformintegrationer.
+
+\subsection{Datamodellen som afspejling af problemfeltet}
+
+Datamodellen afspejler rapportens centrale skelnen mellem plan og faktisk træning. En træningsplan beskriver intentionen: hvilke workouts, øvelser, sæt, gentagelser og progression der er planlagt. En trackerlog beskriver derimod, hvad brugeren faktisk registrerer under træning. Completion-events beskriver, at et pas er gennemført, også når den detaljerede trackerlog er ufuldstændig. Denne opdeling er nødvendig, fordi faktisk træningsadfærd ikke altid følger den lineære plan.
+
+Figur~\ref{fig:tm-data-model-er} viser den samlede datamodel, mens Figur~\ref{fig:tm-data-model-er-left}, Figur~\ref{fig:tm-data-model-er-middle} og Figur~\ref{fig:tm-data-model-er-right} viser udsnit for henholdsvis bruger/programmer, tracker/completion og træner-/cyklusdata. Datakvalitet handler i denne sammenhæng ikke kun om at have mange datapunkter, men om at data er egnede til det formål, de bruges til \cite{mohammed2025_five_facets_data_quality}. For Træningsmester betyder det, at historik og progression skal kunne fortolkes, selv når brugeren springer detaljeret logging over.
+
+Denne opdeling hænger også sammen med træningsfaglig progression. Styrketræning kan progredieres gennem belastning, volumen, øvelsesvalg og løbende tilpasning \cite{acsm2009_progression_models}. Derfor bør datamodellen ikke reducere progression til et simpelt kalenderindeks. Den skal kunne repræsentere både planlagt struktur, faktisk udførelse og næste relevante træningshandling.
+
+\subsection{Completion-events, trackerlog og datakvalitet}
+
+Completion-events er et centralt datadesign, fordi de gør gennemført træning synlig uden at kræve fuld sæt-for-sæt-logging. Figur~\ref{fig:tm-tracker-completion-summary} viser sammenhængen mellem tracker-on/off, completion-event og progression, og Tabel~\ref{tab:tm-tracker-flow-bpmn} beskriver trackerflowet som proces. Pointen er, at systemet kan anerkende gennemført træning, selv når data er mindre detaljerede.
+
+Dette er et bevidst tradeoff. En detaljeret trackerlog giver højere granularitet og bedre grundlag for præcis historik. Et completion-event giver lavere granularitet, men kan bevare kontinuitet og næste handling, når brugeren gennemfører et pas uden fuld logging. Tabel~\ref{tab:tm-sql-domain-overblik} og Tabel~\ref{tab:tm-sql-fields} viser, hvordan centrale datadomæner og felter understøtter denne skelnen.
+
+Datakvaliteten skal derfor vurderes efter formål. Hvis formålet er præcis analyse af hvert sæt, er trackerloggen stærkest. Hvis formålet er at fastholde programflow, historik og næste handling, kan completion-events være nødvendige. Denne differentiering gør datamodellen mere robust over for realistisk brug, men den kræver, at rapporten ikke oversælger detaljeringsgraden i data.
+
+\subsection{RLS som primær adgangskontrol}
+
+Row Level Security er den primære adgangskontrol i Træningsmesters backend. Klientens brugerflade kan skjule eller vise bestemte handlinger, men den må ikke være den eneste beskyttelse af brugerdata. Supabase-dokumentationen beskriver RLS og API-sikring som centrale mekanismer til at begrænse adgang efter bruger og rolle \cite{supabase_rls_docs,supabase_securing_api_docs}, og OWASP MASVS understreger tilsvarende behovet for at beskytte mobil dataadgang og backendkontrakter \cite{owasp2024_masvs}.
+
+Figur~\ref{fig:tm-security-boundary-summary} viser sikkerhedsgrænsen mellem mobil klient, RLS og Edge Functions. Tabel~\ref{tab:tm-authorization-dcr} viser autorisationsregler som proceslogik, mens Tabel~\ref{tab:tm-rls-matrix} viser, hvordan egne programmer, delte programmer, trackerlog, completion-events, active session, watch sync, Live Activity intents, admin, trainer/client og import kobles til forskellige sikkerhedsgrænser.
+
+Denne struktur betyder, at own-row-adgang, relationel adgang og privilegerede handlinger ikke bør blandes sammen. Brugerens egne træningsdata kan beskyttes gennem session og RLS, mens admin-, træner- og importflows kræver mere kontrollerede server-side grænser. Det dokumenterer ikke fuld sikkerhed i sig selv, men det viser en arkitektur, hvor klientguards ikke står alene.
+
+\subsection{Idempotency og robuste writes under træning}
+
+Træningsflows kan skabe datarisici, fordi flere flader kan skrive eller genforsøge handlinger. watchOS, Live Activity, tracker og completion kan alle indgå i samme træningsforløb. Hvis writes ikke er idempotente, kan retry, forsinkelse eller parallelle handlinger skabe dobbeltlogging eller inkonsistent status.
+
+Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser, hvordan Live Activity-sporet relaterer sig til idempotent trackerlog, og Figur~\ref{fig:tm-watch-sync-sequence} viser watchOS-sporets kobling til auth-sync og workoutdata. Tabel~\ref{tab:tm-sql-fields} viser felter som \texttt{client\_action\_id}, completion-events og aktive sessioner, der understøtter mere robuste writes.
+
+Idempotency er derfor ikke kun en teknisk detalje. Det er en forudsætning for, at lav-friktionsflader kan bruges uden at forringe datakvaliteten. Når brugeren træner, skal systemet kunne modtage handlinger fra flere steder og stadig bevare en entydig historik.
+
+\subsection{Edge Functions og privilegerede flows}
+
+Edge Functions bruges til flows, der ikke bør ligge direkte i klienten. Det gælder blandt andet admin, trainer-client, import, AI og billing. Disse flows kan kræve server-side vurdering, integrationer eller privilegerede nøgler, og de skal derfor adskilles fra almindelige brugerbundne læse- og skriveoperationer.
+
+Figur~\ref{fig:tm-import-ai-edge-boundary} viser import- og AI-grænsen mellem klient, Edge Functions, OpenAI og Supabase. Pointen er, at klienten ikke skal have direkte adgang til privilegerede integrationsnøgler eller brede databaseoperationer. Brugeren kan starte et flow, men backend skal håndtere den privilegerede del under kontrollerede adgangsbetingelser \cite{owasp2024_masvs,supabase_securing_api_docs}.
+
+Dette reducerer risiko, men fjerner den ikke. Edge Functions skal fortsat testes, reviews og driftes forsvarligt, og deres adgangslogik skal stemme med RLS og de øvrige sikkerhedsregler. Kapitlet kan derfor kun argumentere for en hensigtsmæssig sikkerhedsstruktur, ikke for endelig sikkerhedscertificering.
+
+\subsection{Interoperabilitet og HealthKit-afgrænsning}
+
+Interoperabilitet er relevant, fordi Træningsmester arbejder med sundheds- og træningsnære data, men appen skal afgrænses tydeligt. HealthKit kan forstås som en brugeraktiveret platformintegration for fitnessdata, ikke som klinisk journalintegration \cite{apple_healthkit_docs}. Det betyder, at rapporten ikke bør beskrive Træningsmester som et system, der udveksler kliniske patientdata på linje med hospitals- eller journalsystemer.
+
+Interoperabilitetslitteratur og kursusgrundlag kan bruges til at placere denne afgrænsning. Sundhedsinteroperabilitet handler blandt andet om semantik, datakvalitet, systemgrænser og standardiseret udveksling \cite{benson2016_principles_health_interoperability,zajac2026_data_quality_interoperability}. Procesmodeller som BPMN og deklarative modeller kan samtidig bruges til at forstå flow og regler uden at påstå, at appen implementerer kliniske standarder \cite{vanderalst2009_declarative_workflows,ku2026_dcr_bpmn_modeling}.
+
+FHIR og HL7 bør derfor kun nævnes som afgrænsende teori, ikke som implementeret funktionalitet. GDPR kan bruges som juridisk ramme for persondata og databeskyttelse \cite{europeanparliament2016_gdpr}, men rapporten kan ikke konkludere endelig compliance uden juridisk review.
+
+\subsection{Overgang til implementering}
+
+Kapitlet viser, at Træningsmesters data- og sikkerhedsmodel er tæt knyttet til problemformuleringen. Plan, trackerlog, completion-events, cycle runtime, RLS, idempotency, Edge Functions og HealthKit-afgrænsning er ikke uafhængige tekniske valg; de er forudsætninger for, at appen kan understøtte fleksibel progression og sikker brugerbundet datahåndtering.
+
+Det næste kapitel kan derfor gå tættere på implementeringen. Her skal de beskrevne data- og sikkerhedsprincipper kobles til de konkrete valg, der realiserer appens centrale flows.
