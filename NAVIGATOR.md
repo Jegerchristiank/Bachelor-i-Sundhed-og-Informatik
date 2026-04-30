@@ -26,7 +26,7 @@ Start med disse filer i rækkefølge:
 ## Kritiske Pointers
 
 - Hovedrapport: `main.tex`
-- Kapitelinput: `problemformulering_og_afgraensning.tex` for afsnittet Problemformulering og afgrænsning, `teoretisk_og_faglig_ramme.tex` for afsnittet Teoretisk og faglig ramme og `krav_og_use_cases.tex` for afsnittet Krav og use cases
+- Kapitelinput: `problemformulering_og_afgraensning.tex` for afsnittet Problemformulering og afgrænsning, `teoretisk_og_faglig_ramme.tex` for afsnittet Teoretisk og faglig ramme, `krav_og_use_cases.tex` for afsnittet Krav og use cases og `systemarkitektur.tex` for afsnittet Systemarkitektur
 - KU-style og forsidemakroer: `KUstyle.sty` (overstyrer den oprindelige matematik-template med SUND-header og styrbar headerbaggrundsbredde)
 - KU-forsidebaggrund: `KU-logo.pdf` som original, `assets/ku-cover-background.png` som rød rasterbaggrund og `assets/ku-cover-background-blue.png` som blå SUND-valgt rasterbaggrund
 - Træningsmester-logo på forsiden: `assets/traeningsmester-logo-uden-baggrund.svg` og Overleaf-kompatibel `assets/traeningsmester-logo-uden-baggrund.pdf`
@@ -69,6 +69,7 @@ Start med disse filer i rækkefølge:
 | `problemformulering_og_afgraensning.tex` | Kapitelinput | Færdig rapporttekst for Problemformulering og afgrænsning, indlæst fra `main.tex` |
 | `teoretisk_og_faglig_ramme.tex` | Kapitelinput | Færdig rapporttekst for Teoretisk og faglig ramme, indlæst fra `main.tex` |
 | `krav_og_use_cases.tex` | Kapitelinput | Færdig rapporttekst for Krav og use cases, indlæst fra `main.tex` |
+| `systemarkitektur.tex` | Kapitelinput | Færdig rapporttekst for Systemarkitektur, indlæst fra `main.tex` |
 | `referencer.bib` | Referencebibliotek | BibTeX-nøgler til eksterne kilder og verificeret kursusmateriale |
 | `referencer.md` | Referencevejledning | Skal læses før nye skrive-/redigeringsiterationer; binder kildevalg, slide-/sidetal og PDF-status sammen |
 | `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af åbne kilder, navngivet efter BibTeX-stems; lukkede kursusfiler kopieres ikke hertil |
@@ -89,6 +90,7 @@ Start med disse filer i rækkefølge:
 - færdig tekst for Problemformulering og afgrænsning via `\input{problemformulering_og_afgraensning}`,
 - færdig tekst for Teoretisk og faglig ramme via `\input{teoretisk_og_faglig_ramme}`,
 - færdig tekst for Krav og use cases via `\input{krav_og_use_cases}`,
+- færdig tekst for Systemarkitektur via `\input{systemarkitektur}`,
 - en separat intern skrivematrix i `skrivematrix.md` for hele rapporten fra Indledning til Konklusion,
 - BibTeX-referenceafsnit baseret på `referencer.bib`,
 - bilag efter referenceafsnittet med kildesøgning via `\input{kildesoegning}`,
@@ -120,6 +122,7 @@ Start med disse filer i rækkefølge:
 ├── problemformulering_og_afgraensning.tex
 ├── teoretisk_og_faglig_ramme.tex
 ├── krav_og_use_cases.tex
+├── systemarkitektur.tex
 ├── skrivematrix.md
 ├── referencer.bib
 ├── referencer.md
