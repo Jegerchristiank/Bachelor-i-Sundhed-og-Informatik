@@ -8,7 +8,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - Repoet er en Overleaf/LaTeX-mappe til bachelorrapporten om Træningsmester.
 - Hovedfilen er `main.tex`; layoutet styres af `KUstyle.sty`.
 - Dokumentet skal kompileres med XeLaTeX eller LuaLaTeX, fordi templaten bruger `fontspec`, og hovedrapporten er sat op til A4.
-- `main.tex` indlæser `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex` og `test_og_verifikation.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
+- `main.tex` indlæser `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `metode.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex` og `test_og_verifikation.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
 - `skrivematrix.md` er internt styringsdokument for hele rapportens kapitelstruktur og må ikke inputtes eller omtales synligt i rapporten.
 - Forsidens KU-header, fakultetstekst, headerfarve, headerbaggrundsbredde og coverbaggrund styres fra `main.tex` via KUstyle-makroer.
 - `Materiale/traeningsmester-2026-04-28/` er den kuraterede materialepakke til rapportarbejdet.
@@ -81,6 +81,7 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 - `skrivematrix.md`: intern skrivematrix for hele rapporten fra Indledning til Konklusion.
 - `problemformulering_og_afgraensning.tex`: kapitelinput med færdig rapporttekst for Problemformulering og afgrænsning.
 - `teoretisk_og_faglig_ramme.tex`: kapitelinput med færdig rapporttekst for Teoretisk og faglig ramme.
+- `metode.tex`: kapitelinput med færdig rapporttekst for Metode.
 - `krav_og_use_cases.tex`: kapitelinput med færdig rapporttekst for Krav og use cases.
 - `systemarkitektur.tex`: kapitelinput med færdig rapporttekst for Systemarkitektur.
 - `interaktionsdesign.tex`: kapitelinput med færdig rapporttekst for Interaktionsdesign.
