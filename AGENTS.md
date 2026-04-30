@@ -8,7 +8,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - Repoet er en Overleaf/LaTeX-mappe til bachelorrapporten om Træningsmester.
 - Hovedfilen er `main.tex`; layoutet styres af `KUstyle.sty`.
 - Dokumentet skal kompileres med XeLaTeX eller LuaLaTeX, fordi templaten bruger `fontspec`, og hovedrapporten er sat op til A4.
-- `main.tex` indlæser `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `metode.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex`, `test_og_verifikation.tex`, `evaluering_og_brugerindsigt.tex`, `diskussion.tex` og `konklusion.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
+- `main.tex` indlæser `indledning.tex`, `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `metode.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex`, `test_og_verifikation.tex`, `evaluering_og_brugerindsigt.tex`, `diskussion.tex` og `konklusion.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
 - `skrivematrix.md` er internt styringsdokument for hele rapportens kapitelstruktur og må ikke inputtes eller omtales synligt i rapporten.
 - Forsidens KU-header, fakultetstekst, headerfarve, headerbaggrundsbredde og coverbaggrund styres fra `main.tex` via KUstyle-makroer.
 - `Materiale/traeningsmester-2026-04-28/` er den kuraterede materialepakke til rapportarbejdet.
@@ -71,7 +71,7 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 
 ## Centrale Filer
 
-- `main.tex`: rapportens hovedfil og nuværende blanke canvas.
+- `main.tex`: rapportens hovedfil og samlende inputfil.
 - `KUstyle.sty`: KU-forside- og layoutmakroer.
 - `README.md`: kort template-vejledning.
 - `NAVIGATOR.md`: repoets strukturkort.
@@ -79,6 +79,7 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 - `referencer.md`: læsevejledning, kildeforklaring og link mellem BibTeX-nøgler, DOI/webkilder og lokale PDF'er.
 - `referencer/`: lokale åbne PDF-kopier navngivet efter BibTeX-kilderne.
 - `skrivematrix.md`: intern skrivematrix for hele rapporten fra Indledning til Konklusion.
+- `indledning.tex`: kapitelinput med færdig rapporttekst for Indledning.
 - `problemformulering_og_afgraensning.tex`: kapitelinput med færdig rapporttekst for Problemformulering og afgrænsning.
 - `teoretisk_og_faglig_ramme.tex`: kapitelinput med færdig rapporttekst for Teoretisk og faglig ramme.
 - `metode.tex`: kapitelinput med færdig rapporttekst for Metode.

@@ -7,7 +7,7 @@ Dette er navigationsfilen for Overleaf-mappen til bachelorrapporten om Trænings
 Repoet indeholder:
 
 - en KU LaTeX-template,
-- en ryddet `main.tex` som blankt rapport-canvas på A4-format,
+- en ryddet `main.tex` som samler rapportens kapitelinput på A4-format,
 - en kurateret materialepakke for Træningsmester pr. 2026-04-28,
 - agentinstruktioner for fremtidigt rapportarbejde.
 
@@ -26,7 +26,7 @@ Start med disse filer i rækkefølge:
 ## Kritiske Pointers
 
 - Hovedrapport: `main.tex`
-- Kapitelinput: `problemformulering_og_afgraensning.tex` for afsnittet Problemformulering og afgrænsning, `teoretisk_og_faglig_ramme.tex` for afsnittet Teoretisk og faglig ramme, `metode.tex` for afsnittet Metode, `krav_og_use_cases.tex` for afsnittet Krav og use cases, `systemarkitektur.tex` for afsnittet Systemarkitektur, `interaktionsdesign.tex` for afsnittet Interaktionsdesign, `data_sikkerhed_og_interoperabilitet.tex` for afsnittet Data, sikkerhed og interoperabilitet, `implementering.tex` for afsnittet Implementering, `test_og_verifikation.tex` for afsnittet Test og verifikation, `evaluering_og_brugerindsigt.tex` for afsnittet Evaluering og brugerindsigt, `diskussion.tex` for afsnittet Diskussion og `konklusion.tex` for afsnittet Konklusion
+- Kapitelinput: `indledning.tex` for afsnittet Indledning, `problemformulering_og_afgraensning.tex` for afsnittet Problemformulering og afgrænsning, `teoretisk_og_faglig_ramme.tex` for afsnittet Teoretisk og faglig ramme, `metode.tex` for afsnittet Metode, `krav_og_use_cases.tex` for afsnittet Krav og use cases, `systemarkitektur.tex` for afsnittet Systemarkitektur, `interaktionsdesign.tex` for afsnittet Interaktionsdesign, `data_sikkerhed_og_interoperabilitet.tex` for afsnittet Data, sikkerhed og interoperabilitet, `implementering.tex` for afsnittet Implementering, `test_og_verifikation.tex` for afsnittet Test og verifikation, `evaluering_og_brugerindsigt.tex` for afsnittet Evaluering og brugerindsigt, `diskussion.tex` for afsnittet Diskussion og `konklusion.tex` for afsnittet Konklusion
 - KU-style og forsidemakroer: `KUstyle.sty` (overstyrer den oprindelige matematik-template med SUND-header og styrbar headerbaggrundsbredde)
 - KU-forsidebaggrund: `KU-logo.pdf` som original, `assets/ku-cover-background.png` som rød rasterbaggrund og `assets/ku-cover-background-blue.png` som blå SUND-valgt rasterbaggrund
 - Træningsmester-logo på forsiden: `assets/traeningsmester-logo-uden-baggrund.svg` og Overleaf-kompatibel `assets/traeningsmester-logo-uden-baggrund.pdf`
@@ -66,6 +66,7 @@ Start med disse filer i rækkefølge:
 | `AGENTS.md` | Arbejdsregler for LLM-agenter | Skal læses ved opstart |
 | `NAVIGATOR.md` | Dette strukturkort | Skal opdateres ved strukturændringer |
 | `skrivematrix.md` | Intern skrivematrix | Låser rød tråd, kilder, kursusspor, bilag og faldgruber for hele rapporten fra Indledning til Konklusion |
+| `indledning.tex` | Kapitelinput | Færdig rapporttekst for Indledning, indlæst fra `main.tex` |
 | `problemformulering_og_afgraensning.tex` | Kapitelinput | Færdig rapporttekst for Problemformulering og afgrænsning, indlæst fra `main.tex` |
 | `teoretisk_og_faglig_ramme.tex` | Kapitelinput | Færdig rapporttekst for Teoretisk og faglig ramme, indlæst fra `main.tex` |
 | `metode.tex` | Kapitelinput | Færdig rapporttekst for Metode, indlæst fra `main.tex` |
@@ -87,14 +88,15 @@ Start med disse filer i rækkefølge:
 
 ## Rapportens Nuværende Canvas
 
-`main.tex` er ryddet for synlig skabelon- og fyldtekst. Det indeholder:
+`main.tex` er ryddet for synlig skabelon- og fyldtekst og samler rapportens kapitelinput. Det indeholder:
 
 - A4-opsætning med XeLaTeX/LuaLaTeX-kompatibel fontopsætning,
 - udfyldt forfatter, projekttype, arbejdstitel, arbejdssubtitle og vejleder,
 - `Afventer` for dato,
 - udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
-- kapiteloverskrifter baseret på rapportafsnit-mappingen,
+- kapitelinput baseret på rapportafsnit-mappingen,
+- færdig tekst for Indledning via `\input{indledning}`,
 - færdig tekst for Problemformulering og afgrænsning via `\input{problemformulering_og_afgraensning}`,
 - færdig tekst for Teoretisk og faglig ramme via `\input{teoretisk_og_faglig_ramme}`,
 - færdig tekst for Metode via `\input{metode}`,
@@ -110,8 +112,7 @@ Start med disse filer i rækkefølge:
 - en separat intern skrivematrix i `skrivematrix.md` for hele rapporten fra Indledning til Konklusion,
 - BibTeX-referenceafsnit baseret på `referencer.bib`,
 - bilag efter referenceafsnittet med kildesøgning via `\input{kildesoegning}`,
-- billed- og materialebilag efter referenceafsnittet med aktuelle Træningsmester-screenshots, arkitekturdiagrammer og supplerende tabeller via `\input{billedbilag}`,
-- skjulte TODO-kommentarer som skrivehjælp.
+- billed- og materialebilag efter referenceafsnittet med aktuelle Træningsmester-screenshots, arkitekturdiagrammer og supplerende tabeller via `\input{billedbilag}`.
 
 ## Vedligeholdelsesregler
 
@@ -135,6 +136,7 @@ Start med disse filer i rækkefølge:
 ├── README.md
 ├── billedbilag.tex
 ├── kildesoegning.tex
+├── indledning.tex
 ├── problemformulering_og_afgraensning.tex
 ├── teoretisk_og_faglig_ramme.tex
 ├── metode.tex
