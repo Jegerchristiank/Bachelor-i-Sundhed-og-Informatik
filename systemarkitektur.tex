@@ -1,53 +1,29 @@
 \section{Systemarkitektur}
 
-Træningsmesters systemarkitektur er det tekniske svar på kravene om programstruktur, faktisk træning, completion, progression og feedback. Arkitekturen skal forbinde disse dele uden at gøre brugerfladen til den endelige kilde til sandhed. Den skal samtidig understøtte lav friktion i træningssituationen og beskytte brugerbundne træningsdata gennem en tydelig backendgrænse.
+Systemarkitekturen skal forbinde brugerflade, state, datamodel og backend, så Træningsmester kan håndtere både planlagt og faktisk træning. Figur~\ref{fig:tm-system-context} viser systemet som en native iOS-app med watchOS, Live Activity, Supabase og udvalgte Apple-services. Arkitekturen vurderes på tre valg: lagdeling, backend som sikkerhedsgrænse og støtteflader under træning.
 
-Arkitekturen behandles derfor som en designmæssig og teknisk struktur, ikke som dokumentation for sundhedseffekt. Dens kvalitet vurderes ud fra, om den skaber sammenhæng mellem krav, dataflow, adgangskontrol og brugerens centrale træningshandlinger.
+Arkitekturen er derfor ikke kun en teknisk beskrivelse. Den afgør, om appen kan bevare samme træningsforløb på tværs af Home, tracker, database, Apple Watch og Live Activity. Hvis disse flader udvikler hver deres sandhed om session og completion, bliver fleksibel progression usikker.
 
-\subsection{Systemkontekst}
+\subsection{Lagdeling mellem brugerflade, state og data}
 
-Træningsmester består af en native iOS-app, en watchOS companion, Live Activity- og widgetspor, Supabase som backend samt udvalgte Apple-services. Figur~\ref{fig:tm-system-context} viser denne systemkontekst, mens Tabel~\ref{tab:tm-container-architecture} samler hovedkomponenterne i et tekstligt overblik. Pointen er, at appen ikke kun er en enkelt skærmflade, men et økosystem af klienter, platformservices og backendkomponenter.
+SwiftUI understøtter deklarative, state-drevne brugerflader \cite{apple_swiftui_docs}. I Træningsmester betyder det, at skærme viser aktuel session, aktivt program, træningsstatus og næste handling, men ikke selv er datamæssig autoritet. AppState, domænemodeller og repositories placerer logikken mellem brugerflade og backend.
 
-iOS-appen er den primære brugerflade for programopbygning, dagens træning, tracker, historik og indstillinger. watchOS-sporet fungerer som en træningsnær companion, hvor brugeren kan få adgang til relevante workoutdata uden nødvendigvis at bruge telefonen aktivt. Live Activity-sporet giver en statusflade under aktiv træning. Supabase håndterer autentifikation, database, Row Level Security, RPC og Storage, mens Edge Functions bruges til privilegerede eller integrationsnære handlinger.
+Lagdelingen er nødvendig, fordi træningsflowet ikke bør afhænge af, at én skærm husker al kontekst. Når workoutstatus, trackerlog, completion og progression ligger i fælles state- og datalag, kan iOS, watchOS og Live Activity arbejde med samme træningsforløb. Tabel~\ref{tab:tm-container-architecture} viser komponentlagene i kondenseret form.
 
-Denne systemkontekst følger kravanalysens skelnen mellem plan, faktisk udførelse og næste handling. Arkitekturen skal kunne håndtere, at brugeren følger planen, afviger fra den, afslutter en træning uden fuld trackerlog eller bruger flere flader under samme træningsforløb.
-
-\subsection{Lagdeling mellem brugerflade, state og dataadgang}
-
-Arkitekturen er lagdelt for at reducere kobling mellem brugerflade og backend. SwiftUI understøtter deklarative brugerflader og state-drevet rendering \cite{apple_swiftui_docs}, men i Træningsmester er brugerfladen ikke designet som sikkerhedsgrænse eller datamæssig autoritet. Den viser og indsamler handlinger, mens state, domænemodeller, repositories og backendregler afgør, hvad handlingerne betyder.
-
-På konceptuelt niveau kan arkitekturen læses som seks lag: presentation, AppState, domænemodeller, repository-lag, platformintegrationer og backend. Presentation-laget rummer skærme og flows. AppState koordinerer session, brugerprofil, aktiv plan, aktiv træning og centrale runtime-tilstande. Domænemodellerne beskriver de begreber, appen arbejder med, eksempelvis program, workout, øvelse, sæt, completion og træningscyklus. Repository-laget samler dataadgang og oversætter mellem appens domæne og backendens kontrakter.
-
-Denne opdeling er vigtig, fordi træningsflowet ikke bør afhænge af, at en enkelt skærm husker al kontekst. Når workoutstatus, completion og progression er placeret i delte state- og datalag, kan samme træningsforløb understøttes af iOS, watchOS og Live Activity uden at hver flade skal genopfinde logikken.
-
-\subsection{AppState og repository-lag}
-
-AppState fungerer som samlende applikationskontekst. Den holder styr på, om brugeren er autentificeret, hvilken profil og plan der er aktiv, hvilken træningssession der er i gang, og hvilke tilstande der skal være synlige for brugerfladen. Det er særligt vigtigt i Træningsmester, fordi brugerens næste relevante handling afhænger af både planlagte data og faktisk adfærd.
-
-Dataadgang samles i repositories og services. Skærme kalder ikke databasen direkte. Laget samler læsning, skrivning og fejlhåndtering, så completion, trackerlogs, delte programmer og cyklusdata får tydelige dataflows.
-
-Tabel~\ref{tab:tm-container-architecture} viser denne rollefordeling, og Tabel~\ref{tab:tm-sql-fields} viser centrale felter, der understøtter blandt andet idempotency, completion, aktive sessioner og cyklusprogression. Disse felter er arkitektonisk vigtige, fordi datakvalitet ikke kun handler om at have data, men om at data kan fortolkes konsistent på tværs af brugerhandlinger og systemflader \cite{mohammed2025_five_facets_data_quality}.
+Lagdelingen gør også test og ændring lettere. Domænelogik for cycle runtime og completion kan vurderes adskilt fra den konkrete SwiftUI-visning. Det er vigtigt, fordi problemformuleringen handler om systemadfærd, ikke kun om om en bestemt knap eller skærm findes.
 
 \subsection{Backend som sikkerhedsgrænse}
 
-Backendens rolle er at være den autoritative sikkerheds- og datagrænse. Klienten kan give brugeren en struktureret oplevelse, men den må ikke alene afgøre, hvilke data brugeren har adgang til, eller hvilke privilegerede handlinger der er tilladte. Dette følger både mobile sikkerhedsprincipper og Supabase-modellen, hvor RLS og API-beskyttelse skal begrænse adgang efter bruger, rolle og kontekst \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}.
+Backendens rolle er at være autoritativ data- og sikkerhedsgrænse. Klienten kan vise og starte handlinger, men den må ikke alene afgøre, hvilke data brugeren kan læse eller skrive. OWASP MASVS peger på samme princip for mobile apps, og Supabase RLS-dokumentationen beskriver, hvordan adgang kan begrænses efter bruger, rolle og kontekst \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}.
 
-Figur~\ref{fig:tm-security-boundary-summary} viser grænsen mellem mobil klient, RLS og Edge Functions. RLS beskytter brugerbundne læse- og skriveoperationer, mens Edge Functions afgrænser handlinger, der kræver server-side vurdering, integrationer eller privilegerede nøgler. Tabel~\ref{tab:tm-authorization-dcr} beskriver autorisationsreglerne som proceslogik, og Tabel~\ref{tab:tm-rls-matrix} viser, hvordan centrale datadomæner kobles til klientbeskyttelse og serverbeskyttelse.
+Figur~\ref{fig:tm-security-boundary-summary} viser grænsen mellem mobil klient, RLS og Edge Functions. RLS beskytter almindelige brugerbundne læse- og skriveoperationer. Edge Functions afgrænser privilegerede handlinger, integrationer og nøgler. Det reducerer risikoen for, at en brugerfladefejl bliver til bredere dataadgang, men det dokumenterer ikke fuld sikkerhed i sig selv.
 
-Denne arkitektur reducerer risikoen for, at en fejl i brugerfladen giver bredere adgang end tilsigtet. Den dokumenterer dog ikke fuld sikkerhed i sig selv. RLS, helper functions, RPC og Edge Functions skal fortsat vurderes gennem test, deployment-review og konkrete adgangsscenarier.
+Denne grænse er særlig relevant, fordi træningsdata både er personlige og operationelle. Brugeren skal kunne logge hurtigt, men hurtig logging må ikke betyde, at klienten kan skrive eller læse på tværs af brugergrænser. Arkitekturen placerer derfor hastighed i brugerfladen og autoritet i backendlaget.
 
-\subsection{watchOS og Live Activity som friktionsreducerende arkitektur}
+\subsection{Støtteflader under træning}
 
-watchOS og Live Activity er arkitektoniske greb til at reducere friktion under træning. De er ikke selvstændige hovedformål, men støtteflader, der skal gøre det lettere at følge, logge eller afslutte en træning, når brugeren er midt i et træningspas. Apple beskriver Live Activities som en måde at vise løbende, tidsfølsom status, mens Watch Connectivity kan bruges til at koordinere data mellem iPhone og Apple Watch \cite{apple_activitykit_live_data_docs,apple_hig_live_activities,apple_watchconnectivity_docs}.
+watchOS og Live Activity er arkitektoniske støtteflader. Apple beskriver Live Activities som løbende status for tidsfølsomme aktiviteter og Watch Connectivity som koordinering mellem iPhone og Apple Watch \cite{apple_activitykit_live_data_docs,apple_hig_live_activities,apple_watchconnectivity_docs}. I casen skal de reducere friktion under træning, ikke skabe parallelle datamodeller.
 
-Figur~\ref{fig:tm-watch-sync-sequence} viser, hvordan watchOS-sporet relaterer sig til auth-sync, token-cache og RLS-baserede workoutdata. Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser, hvordan Live Activity-sporet kobles til intent-write, App Group snapshot og idempotent trackerlog. Begge spor afhænger af, at appens state og backendkontrakter er fælles nok til, at flere flader kan arbejde med samme træningsforløb.
+Figur~\ref{fig:tm-watch-sync-sequence} og Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser, at støttefladerne afhænger af fælles session, auth-sync, snapshot og idempotente writes. Arkitekturens styrke er dermed ikke, at appen findes på flere flader, men at flere flader kan pege på samme træningsmodel.
 
-Det arkitektoniske tradeoff er, at flere flader giver bedre tilgængelighed, men også øger behovet for konsistent state, idempotente writes og tydelige sikkerhedsgrænser. Derfor er watchOS og Live Activity placeret som forlængelser af den samme træningsmodel, ikke som separate datamodeller.
-
-\subsection{Arkitekturens afgrænsning}
-
-Arkitekturen forklarer, hvordan Træningsmester kan forbinde klient, backend, platformservices og sikkerhedsregler. Den forklarer derimod ikke alene, om brugeroplevelsen føles motiverende, eller om feedbacken faktisk hjælper brugeren med at fastholde træning. Det kræver en analyse af de konkrete interaktionsflows, skærme og feedbackmekanismer.
-
-Figur~\ref{fig:tm-import-ai-edge-boundary} viser desuden, at import- og AI-sporet ligger bag backendgrænsen. Eksterne integrationer kan støtte programimport og automatisering, men de skal følge samme principper om adgangskontrol, datakvalitet og brugerbundet kontekst.
-
-Samlet er Træningsmesters arkitektur bygget til at holde plan, udførelse, completion, progression og sikker dataadgang sammen. Den tekniske struktur skal samtidig omsættes til konkrete brugerflader og handlinger, hvis den skal støtte brugeren i træningssituationen.
+Det giver også en klar begrænsning. Hvis watchOS eller Live Activity kun kan bygges, men ikke runtime-verificeres, er arkitekturargumentet stærkere end produktionsbeviset. Støttefladerne skal derfor forstås som en dokumenteret designretning med behov for yderligere test.

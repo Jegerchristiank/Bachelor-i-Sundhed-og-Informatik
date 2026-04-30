@@ -1,59 +1,29 @@
 \section{Evaluering og brugerindsigt}
 
-Anonymiseret beta-feedback og TestFlight-tidslinjen analyseres som kvalitativ design- og procesindsigt. Formålet er at vurdere, hvilke former for friktion, forståelsesproblemer og prioriteringsbehov der viste sig omkring Træningsmester, og hvordan disse indsigter kan bruges til at kvalificere designet.
+Evalueringen bygger på anonymiseret beta-feedback og TestFlight-tidslinjen. Materialet er kvalitativt, begrænset og iOS-biased, fordi deltagelse krævede Apples testmiljø. Det kan derfor pege på friktion og designprioriteringer, men ikke dokumentere effekt eller repræsentativ brugeraccept.
 
-Evalueringen er ikke et effektstudie. Den kan ikke vise, om Træningsmester forbedrer motivation, adherence eller fysisk aktivitet. Den kan derimod bidrage til at vurdere, om appens designvalg virker plausible, hvor brugeren møder friktion, og hvilke dele af løsningen der bør prioriteres i en videre iteration.
+Styrken ved materialet er nærhed til faktisk brug. Svagheden er fraværet af systematisk rekruttering, faste opgaver, målinger før og efter samt længere observation. Indsigterne bruges derfor tematisk: de viser, hvor appen bør forbedres, ikke hvor godt den virker i en population.
 
-\subsection{Evalueringens kvalitative og anonymiserede grundlag}
+\subsection{Feedbackgrundlag og iteration}
 
-Beta-feedbacken behandles som anonymiseret, kvalitativ brugerindsigt. Den bygger på et convenience sample og har en tydelig iOS-bias, fordi deltagelse krævede adgang til Apples testmiljø og en kompatibel platform. Det betyder, at materialet kan pege på relevante temaer, men ikke kan repræsentere alle potentielle brugere.
+Tabel~\ref{tab:tm-testflight-timeline} viser, at appen blev distribueret og itereret gennem flere beta-builds. Tidslinjen dokumenterer aktivitet og iteration, men ikke bedre træningsudbytte. Tabel~\ref{tab:tm-beta-feedback} samler anonymiserede observationer uden direkte private citater eller personhenførbare detaljer.
 
-Metodisk skelnes der mellem observation, fortolkning og designimplikation. Observationer er de anonymiserede forhold, der fremgår af Tabel~\ref{tab:tm-beta-feedback}. Fortolkningen handler om, hvad observationerne kan sige om friktion, datakvalitet og brugerbehov. Designimplikationerne handler om, hvilke ændringer eller prioriteringer observationerne gør relevante. Denne skelnen er nødvendig, fordi kvalitative data skal behandles kontekstuelt og etisk forsvarligt \cite{gjoedsboel_grundtvig2025_interview,grundtvig2025_digitale_metoder,grundtvig2025_analyse_data,clotworthy2025_etik_kvalitet_forskning,clotworthy2025_persondata_datasikkerhed}.
+Metodisk skelnes der mellem observation, fortolkning og designimplikation. Grundtvig, Gjødsbøl og Clotworthy understøtter denne forsigtige brug af kvalitative data, anonymisering og etik \cite{grundtvig2025_analyse_data,gjoedsboel_grundtvig2025_interview,clotworthy2025_etik_kvalitet_forskning}. Observationerne bruges som designinput, ikke som statistik.
 
-Direkte private citater og personhenførbare detaljer er derfor fravalgt. Analysen anvender kun de aggregerede og anonymiserede observationer, der fremgår af bilaget, og tolker dem som designinput frem for som statistisk dokumentation.
+Denne skelnen gør feedbacken brugbar uden at overdrive den. En observation om søgning kan pege på et katalogproblem. En observation om TestFlight kan pege på onboardingfriktion. Ingen af delene kan alene sige noget om motivationseffekt, men begge dele kan påvirke, om brugeren når frem til den træning, appen skal støtte.
 
-\subsection{TestFlight-tidslinjen som iterationsspor}
+\subsection{Friktion, katalog og støtteflader}
 
-Tabel~\ref{tab:tm-testflight-timeline} viser en række beta-builds fra slutningen af marts til slutningen af april 2026. Tidslinjen dokumenterer, at appen blev distribueret og itereret over flere versioner, herunder i perioder hvor feedback om søgning, katalog, opdatering og releaseforståelse var relevant.
+Feedbacken viser, at friktion både opstod i appen og omkring distributionen. Installation, TestFlight-link, review-status og manuelle opdateringer påvirkede adgangen til selve træningsoplevelsen. Eysenbachs frafaldsperspektiv og Yardley et al.s effective engagement gør det relevant at behandle denne adgangsfriktion som en del af brugeroplevelsen \cite{eysenbach2005_law_of_attrition,yardley2016_effective_engagement_dbci}.
 
-Tidslinjen skal dog læses snævert. Den viser udviklings- og distributionsaktivitet, men den viser ikke, at brugerne fik bedre træningsudbytte, højere motivation eller mere stabil brug. Hyppige builds kan være tegn på responsiv iteration, men de kan også afspejle ustabilitet, releasefriktion eller behov for rettelser.
+Flere observationer handler om øvelseskatalog, søgning, medier og enheder. Figur~\ref{fig:tm-ios-oevelser} og Figur~\ref{fig:tm-ios-match-card} viser de relevante flader. Her er problemet både interaktionsdesign og datakvalitet: øvelser skal kunne findes, forstås og registreres konsistent. Mohammed et al.s datakvalitetsbegreb gør dette til mere end et UI-problem \cite{mohammed2025_five_facets_data_quality}.
 
-Som procesdata er tidslinjen derfor nyttig, fordi den placerer feedbacken i et iterativt forløb. Den viser, at evalueringen ikke kun handler om en statisk appskærm, men om et digitalt produkt i bevægelse, hvor distribution, opdateringer og platformkrav også påvirker brugeroplevelsen.
+Watch og Live Activity fremstår som mulige lav-friktionsflader, men feedbacken dokumenterer ikke robust runtime på tværs af enheder. Tabel~\ref{tab:tm-test-traceability} fastholder samme begrænsning. Brickwood et al. og Laranjo et al. gør wearables og trackere relevante som bredt evidensspor, men ikke som direkte bevis for Træningsmester \cite{brickwood2019_wearable_trackers_meta,laranjo2021_apps_trackers_meta}.
 
-\subsection{Friktion i og omkring appen}
+Dermed bliver feedbacken et korrektiv til implementeringen. Den viser, at lav friktion ikke kun handler om færre tryk i trackerflowet, men også om distribution, søgning, katalogforståelse, enheder og støtteflader. Brugeren møder appen som en samlet oplevelse, ikke som separate tekniske moduler.
 
-Feedbacken peger på, at friktion ikke kun opstod inde i appens træningsflows. Tabel~\ref{tab:tm-beta-feedback} viser også friktion omkring installation, TestFlight-link, Apple review-status og manuelle opdateringer. Det er vigtigt, fordi digital adherence ikke kun påvirkes af appens kernefunktioner, men også af de trin brugeren skal igennem for overhovedet at komme i gang.
+\subsection{Designimplikationer}
 
-Dette stemmer med litteraturen om frafald og engagement i digitale interventioner. Eysenbach beskriver, hvordan brugere ofte falder fra digitale løsninger over tid, og Yardley et al. fremhæver, at engagement både handler om faktisk brug og meningsfuld brug \cite{eysenbach2005_law_of_attrition,yardley2016_effective_engagement_dbci}. For Træningsmester betyder det, at onboarding, opdateringer og tydelig versionstilstand bør behandles som en del af brugeroplevelsen, ikke som perifere tekniske detaljer.
+Brugerindsigten peger på fem prioriteringer: tydeligere beta-onboarding, bedre søgning og synonymer, stærkere katalogstyring, klarere enhedshåndtering og mere direkte runtime-test af watchOS/Live Activity. Prioriteringerne handler alle om samme problem: at reducere friktion uden at miste programstruktur, datakvalitet eller sikker dataadgang.
 
-Observationen giver en konkret designimplikation: beta-onboarding bør gøre det tydeligt, hvilken version brugeren har, hvordan opdatering foregår, og hvad brugeren skal gøre, hvis et testlink eller en opdatering ikke virker. Det er ikke et bevis for, at appen er svær at bruge for alle, men det er et signal om, at distributionsfriktion kan forstyrre vurderingen af selve træningsoplevelsen.
-
-\subsection{Søgning, katalogkvalitet, medier og enheder}
-
-Flere betaobservationer handler om øvelseskatalog, søgning, medier og enheder. Figur~\ref{fig:tm-ios-oevelser} viser øvelseskataloget med søgning og filtrering, mens Figur~\ref{fig:tm-ios-match-card} viser match-flowet som en mere explorativ måde at finde øvelser på. Disse brugerflader er centrale, fordi appens træningsværdi afhænger af, at brugeren kan finde den rigtige øvelse og stole på indholdets kvalitet.
-
-Når en tester ikke kan finde almindelige øvelser eller relevante varianter, er observationen ikke kun et UI-problem. Det er også et datakvalitetsproblem. Synonymer, øvelsesfamilier, dubletter, mediekvalitet og kg/lbs-understøttelse påvirker, om appen kan understøtte faktisk træning uden unødig friktion. Appkvalitet bør derfor vurderes på både funktionalitet, information, engagement og anvendelighed \cite{stoyanov2015_mobile_app_rating_scale}, mens datakvalitet handler om blandt andet fuldstændighed, konsistens og egnethed til brug \cite{mohammed2025_five_facets_data_quality}.
-
-Designimplikationen er, at øvelseskataloget bør behandles som et styret domæne, ikke som en tilfældig liste. Private øvelser, offentlige øvelser, review-flow, synonymer, enhedskonvertering og troværdige øvelsesmedier bør prioriteres, fordi de påvirker både brugerens tillid og muligheden for konsistent træningslogning.
-
-\subsection{Watch og Live Activity som brugerindsigt}
-
-Watch og Live Activity optræder i feedbacken som mulige lav-friktionsflader under træning. Tabel~\ref{tab:tm-beta-feedback} angiver, at lock screen/Live Activity blev bekræftet som fungerende i praktisk brug, og at Apple Watch blev forstået som en mulig telefonfri træningsflade. Figur~\ref{fig:tm-watch-sync-sequence} og Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser de tekniske sekvenser bag disse støtteflader.
-
-Fortolkningen skal være forsigtig. Feedbacken indikerer, at statusvisning, hurtig logging og telefonfri interaktion er relevante, men den dokumenterer ikke robust runtime på tværs af enheder. Tabel~\ref{tab:tm-test-traceability} viser tilsvarende, at watchOS og Live Activity kan bygges, men at runtime-forløb ikke er dokumenteret visuelt i bilaget.
-
-Wearables og aktivitetsmålere kan understøtte selvmonitorering og fysisk aktivitet, men evidensen skal læses som et bredt app- og trackerfelt, ikke som direkte bevis for Træningsmester \cite{brickwood2019_wearable_trackers_meta,laranjo2021_apps_trackers_meta}. Apples retningslinjer for Live Activities understreger samtidig, at løbende status skal være relevant, overskuelig og tidsfølsom \cite{apple_hig_live_activities}. Designimplikationen er derfor, at watchOS og Live Activity bør prioriteres som støttende lav-friktionsflader, men først efter mere målrettet runtime-test.
-
-\subsection{Designimplikationer og prioriteringer}
-
-Samlet peger brugerindsigten på seks prioriteringer. For det første bør beta-onboarding og opdateringsflow gøres tydeligere, så platformfriktion ikke forveksles med appfriktion. For det andet bør søgning udvides med synonymer, varianter og øvelsesfamilier. For det tredje bør øvelseskataloget styres med klar adskillelse mellem private og offentlige øvelser.
-
-For det fjerde bør medieindhold og øvelseskvalitet prioriteres, fordi generiske eller uklare medier kan svække tilliden til appen. For det femte bør enheder håndteres mere fleksibelt, så kg/lbs og maskinspecifikke forhold ikke tvinger brugeren ud i manuelle omveje. For det sjette bør noter og watch/session-sync behandles som træningskontekst, ikke som ekstra pynt.
-
-Disse prioriteringer understøtter hovedproblemet, fordi de handler om at reducere friktion uden at gøre appen mindre fagligt struktureret. De viser også, at fleksibel progression ikke kun er en algoritmisk eller datamodelmæssig udfordring. Den afhænger af, om brugeren kan finde øvelser, registrere træning, forstå feedback og fortsætte efter afvigelser.
-
-\subsection{Evalueringens samlede implikation}
-
-Evalueringen viser, at Træningsmester har flere plausible designspor for lavere friktion, selvmonitorering og fleksibel træningsregistrering. Den viser også tydelige begrænsninger: feedbacken er anonymiseret, kvalitativ, iOS-biased og ikke repræsentativ, og den kan ikke dokumentere effekt på motivation eller adherence.
-
-Når evalueringen læses sammen med test og verifikation, giver den et mere samlet grundlag for kritisk vurdering. Den tekniske verifikation viser, hvad der er implementeret og afgrænset, mens brugerindsigten viser, hvor løsningen møder praktisk friktion. Kombinationen gør det muligt at diskutere styrker, begrænsninger og videre arbejde uden at overdrive evidensniveauet.
+Prioriteringerne bør behandles før et eventuelt effektstudie. Hvis søgning, enheder, onboarding eller watch-flow skaber unødig friktion, vil en senere effektmåling blande interventionens potentiale sammen med umoden brugeroplevelse.

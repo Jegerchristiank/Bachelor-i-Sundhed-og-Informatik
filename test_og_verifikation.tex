@@ -1,59 +1,27 @@
 \section{Test og verifikation}
 
-Test og verifikation redegør for, hvordan Træningsmesters tekniske claims er verificeret, og hvilke begrænsninger der fortsat gælder. Formålet er at vurdere, om den beskrevne design- og implementeringscase har rimelig teknisk dokumentation for de centrale flows, ikke at dokumentere sundhedseffekt, brugeraccept eller fuld produktionsklarhed.
+Test og verifikation vurderer, om de centrale tekniske påstande om Træningsmester er dokumenteret. Formålet er teknisk plausibilitet, ikke sundhedseffekt, brugeraccept eller produktionsklarhed.
 
-Verifikationen skal derfor læses som et teknisk evidensspor. Den kan underbygge, at appens vigtigste targets kan bygges, at centrale domæne- og trackerlogikker er testet, og at den dokumenterede brugerflade og arkitektur faktisk findes i bilaget. Den kan ikke i sig selv vise, at appen øger motivation, fastholder brugere eller fungerer fejlfrit i alle roller og driftssituationer.
+Verifikationen læses derfor som et afgrænset teknisk evidensspor. Den kan vise, at centrale dele kan bygges, at udvalgt domænelogik er testet, og at brugerflader og arkitektur er dokumenteret. Den kan ikke vise, at brugerne bliver mere motiverede eller fastholdes bedre.
 
-\subsection{Verifikationens rolle og afgrænsning}
+\subsection{Build, unit tests og centrale flows}
 
-Verifikation skal gøre de tekniske påstande efterprøvelige. Tabel~\ref{tab:tm-test-traceability} samler de vigtigste claims og deres status. Den skelner mellem build, unit tests, backendscenarier, visuel dokumentation og kendte begrænsninger.
+Tabel~\ref{tab:tm-test-traceability} viser, at iOS-klient, watchOS-target og Live Activity-target kan bygges, og at central forretningslogik er unit-testet. Det understøtter, at casen ikke kun er en visuel prototype, men har implementeret domænelogik for tracker, completion, cycle runtime og Live Activity-projection.
 
-Denne afgrænsning er vigtig, fordi teknisk test ikke er det samme som evidens for effektivt engagement. Yardley et al. fremhæver, at digitale adfærdsinterventioner både skal vurderes på brug, engagement og ønsket virkning \cite{yardley2016_effective_engagement_dbci}. Test og build kan derfor støtte implementeringsclaims, men de kan ikke alene dokumentere, at Træningsmester forbedrer motivation eller træningsadfærd.
+Buildstatus er dog afgrænset. Den dokumenterer, at targets kan kompileres i den gennemgåede tilstand, men ikke en uafhængig CI-proces, komplet installationsflow eller stabil runtime på tværs af enheder. Unit tests dokumenterer afgrænsede logikker; de viser ikke, at brugeren forstår flowet, eller at alle backend- og platformscenarier fungerer.
 
-Metodisk følger verifikationen samme grundprincip som eksplicit rapportering af søge- og vurderingsprocesser: det skal være tydeligt, hvad der er undersøgt, og hvad der ikke er undersøgt \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. Det betyder, at gaps ikke skal skjules, men bruges som grundlag for kritisk vurdering.
+Unit tests passer især til de dele, hvor forventet adfærd kan beskrives præcist: payloads, trackerstatus, completion, cycle runtime og Live Activity-projection. De er svagere til spørgsmål om forståelighed, tempo og oplevet friktion, som kræver brugerafprøvning.
 
-\subsection{Buildstatus og target-dækning}
+\subsection{Integrationstest og sikkerhedsbegrænsninger}
 
-Buildstatus dokumenterer, at de centrale tekniske spor kan bygges i den gennemgåede tilstand. Tabel~\ref{tab:tm-test-traceability} angiver, at iOS-klienten, watchOS-targetet og Live Activity-targetet kan bygges. Det understøtter implementeringens påstand om, at Træningsmester ikke kun består af én mobilskærm, men af en app med companion- og statusflader.
+Integrationstests er mere begrænsede. Tabel~\ref{tab:tm-test-traceability} angiver, at Supabase anon read path kun er delvist bestået, fordi admin- og ikke-adminscenarier ikke er fuldt dækket. Derfor kan der ikke påstås fuld backend- eller rolleverifikation.
 
-Buildstatus er dog et afgrænset bevis. Den viser, at de beskrevne targets kan kompileres, men den dokumenterer ikke en uafhængig CI-build, komplet installationsflow eller stabil runtime-adfærd på tværs af enheder. Den skal derfor bruges som teknisk plausibilitet, ikke som endelig udgivelsesgodkendelse.
+Det er især vigtigt for sikkerhedsmodellen. Figur~\ref{fig:tm-security-boundary-summary} og Tabel~\ref{tab:tm-rls-matrix} viser en arkitektur, hvor klient, RLS og Edge Functions har forskellige roller. OWASP MASVS og Supabase-dokumentationen understøtter princippet, men en model er ikke et sikkerhedsbevis \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}. Admin-, træner-, tværbruger- og Edge Function-scenarier kræver mere målrettet test.
 
-Kravsporbarheden i Tabel~\ref{tab:tm-krav-traceability} gør buildstatus mere meningsfuld, fordi den viser, hvilke use cases og krav implementeringssporene relaterer sig til. Når buildstatus læses sammen med kravsporbarhed, kan de centrale tekniske dele af casen vurderes som tilstedeværende, samtidig med at modenhedsbegrænsningerne fastholdes.
+\subsection{Visuel dokumentation og gaps}
 
-\subsection{Unit tests og domænelogik}
+Screenshots og diagrammer dokumenterer, at centrale brugerflader og arkitekturspor findes. Figur~\ref{fig:tm-ios-home-ready} viser Home som næste-handling-flade, Figur~\ref{fig:tm-ios-tracker-active} viser aktiv tracker, og Figur~\ref{fig:tm-system-context} viser systemkonteksten. Det styrker forbindelsen mellem krav, implementering og synlige artefakter.
 
-Unit tests er den stærkeste dokumentation for afgrænsede domæneclaims. Tabel~\ref{tab:tm-test-traceability} angiver, at central forretningslogik er unit-testet. Det er særligt relevant for payloads, trackerlogik, progression, cycle runtime og Live Activity-projection, fordi disse dele kan testes uden at gennemløbe hele appens brugerflade.
+Rest-risici handler især om reproducerbarhed, backendintegration, rollebaseret adgang og runtime for watchOS og Live Activity. Gaps svækker ikke casen, hvis de behandles åbent. De afgrænser blot, hvad der er dokumenteret: teknisk plausibilitet for centrale flows, ikke fuld sikkerhedscertificering, penetrationstest eller driftssikker produktionsmodenhed.
 
-Denne type test passer godt til problemstillingen. Træningsmester skal skelne mellem planlagt træning, faktisk logging, completion og næste handling. Testet domænelogik styrker derfor påstanden om, at implementeringen ikke kun er en visuel prototype, men har en underliggende model for fleksibel progression.
-
-Unit tests har samtidig en klar begrænsning. De dokumenterer ikke, at brugeren forstår flowet, at alle backendscenarier er dækket, eller at appen fungerer fejlfrit i samspil mellem iPhone, Apple Watch, Live Activity og database. De skal derfor kobles til buildstatus, bilagsfigurer og de kendte integrationstestbegrænsninger.
-
-\subsection{Integrationstests og sikkerhedsbegrænsninger}
-
-Integrationstests er mere begrænsede end unit tests. Tabel~\ref{tab:tm-test-traceability} angiver, at Supabase anon read path kun er delvist bestået, fordi admin- og ikke-adminscenarier blev sprunget over. Der må derfor ikke påstås fuld backend- eller rolleverifikation.
-
-Det er især vigtigt for sikkerhedsmodellen. Figur~\ref{fig:tm-security-boundary-summary} viser sikkerhedsgrænsen mellem mobil klient, RLS og Edge Functions. Tabel~\ref{tab:tm-rls-matrix} beskriver adgangsgrænser for auth, egne data, delte programmer, trackerlog og completion. Den dækker også watch sync, Live Activity, admin, trainer/client og AI/import. Disse modeller er stærk dokumentation for designet, men de er ikke det samme som et fuldt sikkerhedsbevis.
-
-OWASP MASVS og Supabase-dokumentationen understøtter princippet om, at mobilklienten ikke bør være den eneste sikkerhedsgrænse, og at adgang skal håndhæves i backend og RLS \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}. Verifikationen skal derfor vurdere, om arkitekturen følger disse principper, men samtidig fastholde, at admin-, træner-, tværbruger- og Edge Function-scenarier kræver mere målrettet test.
-
-\subsection{Screenshots, diagrammer og dokumenteret UI}
-
-Screenshots og diagrammer fungerer som visuel dokumentation for den aktuelle app og arkitektur. Tabel~\ref{tab:tm-bilag-materialegennemgang} viser, hvordan billeder, diagrammer og tabeller er udvalgt. Figur~\ref{fig:tm-ios-home-ready} viser Home som næste-handling-flade, Figur~\ref{fig:tm-ios-tracker-active} viser aktiv tracker, og Figur~\ref{fig:tm-system-context} viser systemkonteksten.
-
-Denne dokumentation er vigtig, fordi den forbinder teksten med konkrete synlige artefakter. Den viser, at centrale brugerflader og arkitekturspor ikke kun beskrives abstrakt, men også er dokumenteret visuelt. Det styrker sammenhængen mellem problemformulering, krav, implementering og verifikation.
-
-Den visuelle dokumentation har dog også grænser. De aktuelle iOS-screenshots dokumenterer brugerfladen i hovedappen, men ikke watchOS- eller Live Activity-runtime. Diagrammerne dokumenterer struktur og dataflow, men beviser ikke i sig selv, at alle runtime-scenarier er testet.
-
-\subsection{Kendte gaps og rest-risici}
-
-De vigtigste rest-risici handler om reproducerbarhed, integrationstest og runtime. Tabel~\ref{tab:tm-test-traceability} angiver, at iOS-klienten kan bygges, men ikke som uafhængigt reproduceret build. Den angiver også, at watchOS og Live Activity kan bygges, men at runtime-forløb ikke vises i bilaget.
-
-Sikkerhedssiden har tilsvarende begrænsninger. Data- og sikkerhedsmodellen er stærkt dokumenteret, men fuld sikkerhed kræver flere integrationstests. Særligt admin, ikke-admin, træner/klient, tværbrugeradgang og Edge Function-flows bør betragtes som områder, hvor en hensigtsmæssig arkitektur kan beskrives, men hvor endelig sikkerhedscertificering ikke kan konkluderes.
-
-Disse gaps svækker ikke nødvendigvis casen, hvis de håndteres åbent. Tværtimod gør de det muligt at skelne mellem det, projektet faktisk dokumenterer, og det der bør undersøges i en senere modningsfase. Tekniske claims skal være præcise og afgrænsede.
-
-\subsection{Teknisk verifikation som afgrænset evidens}
-
-Test og verifikation viser, at Træningsmester har et dokumenteret teknisk grundlag for de centrale design- og implementeringsclaims. Testmaterialet kan dog ikke stå alene som vurdering af brugeroplevelse, motivation eller praktisk friktion.
-
-Den tekniske dokumentation skal derfor suppleres med anonymiseret beta-feedback og brugerobservationer som kvalitativ indsigt i friktion, forståelighed og prioriteringer, men fortsat uden at gøre materialet til statistisk effektbevis.
+Den vigtigste konklusion fra verifikationen er derfor dobbelt. Kerneflowet har et dokumenteret teknisk grundlag, men flere integrations- og sikkerhedsscenarier skal testes, før appen kan vurderes som moden til bred drift.

@@ -1,67 +1,37 @@
 \section{Diskussion}
 
-De teoretiske, metodiske, tekniske og brugerorienterede spor samles i en kritisk vurdering af, hvad Træningsmester som design- og implementeringscase kan vise om fleksibel progression, feedback og håndtering af afvigelser i en digital træningsapp.
+Træningsmester viser en plausibel design- og implementeringsmodel, hvor planlagt træning, faktisk logging, completion, feedback og næste handling adskilles. Det er relevant, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Casen dokumenterer dog ikke empirisk effekt på motivation, adherence eller sundhed.
 
-Hovedpointen er, at Træningsmester dokumenterer en plausibel løsning, hvor planlagt træning, faktisk udførelse, completion, feedback og næste handling adskilles. Det er en styrke, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Samtidig dokumenteres der ikke empirisk effekt på motivation, adherence eller sundhed. Casen skal derfor vurderes som et gennemarbejdet design- og implementeringsbidrag, ikke som et effektstudie.
+Diskussionen samler derfor fire spændinger: fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Det er i disse spændinger, casens faglige værdi ligger.
 
-\subsection{Samlet vurdering af casen}
+\subsection{Fleksibilitet og datakvalitet}
 
-Træningsmester er stærkest som case, hvor sundhedsadfærd, styrketræningslogik og softwarearkitektur kobles til en konkret app. Teorien peger på, at autonom motivation, oplevet kompetence og meningsfuldt engagement er centrale for vedvarende træningsadfærd \cite{teixeira2012_sdt_exercise,yardley2016_effective_engagement_dbci}. Casens bidrag er, at disse begreber omsættes til et system, hvor brugeren ikke kun møder en statisk plan, men også får mulighed for at registrere faktisk træning og komme videre efter afvigelser.
+Casens stærkeste bidrag er at behandle afvigelser som systemtilstande frem for fejl. Figur~\ref{fig:tm-tracker-completion-summary} viser, hvordan trackerlog og completion kan adskilles, så et træningspas kan registreres som gennemført, selv om alle detaljer ikke er logget. Greig et al.s arbejde om autoregulering understøtter, at faktisk træning kan afvige fagligt legitimt fra en fast plan \cite{greig2020_autoregulation_resistance_training}.
 
-Denne styrke skal dog afgrænses. Designet er fagligt begrundet og teknisk dokumenteret gennem krav, arkitektur, implementering, test og bilag. Det viser ikke, at brugere over tid bliver mere motiverede, træner mere eller fastholder bedre adherence. Det ville kræve et andet undersøgelsesdesign med systematisk brugerrekruttering, længere observation og før-/eftermålinger.
+Styrken har et tradeoff. Completion uden fuld trackerlog bevarer historik og næste handling, men datagranulariteten falder. Mohammed et al.s datakvalitetsramme gør dette til et formålsspørgsmål: data kan være gode til progression og kontinuitet, men utilstrækkelige til detaljeret analyse \cite{mohammed2025_five_facets_data_quality}. Træningsmester bør derfor normalisere afvigelser uden at gøre dem usynlige.
 
-Casen er derfor mest relevant som et svar på, hvordan en digital træningsapp kan struktureres, så realistiske afvigelser ikke automatisk bliver til datatab eller nederlag. Den viser en mulig teknisk og designmæssig vej, men ikke den endelige empiriske virkning af vejen.
+Dette tradeoff bør være synligt for både design og senere evaluering. Hvis completion bruges ofte, kan appen stadig støtte kontinuitet, men den får sværere ved at beregne belastningsudvikling og præcis træningsvolumen. Hvis detaljeret logging kræves for ofte, kan appen derimod miste brug i praksis.
 
-\subsection{Afvigelser som systemtilstande}
+\subsection{Lav friktion og app-evidens}
 
-Et centralt resultat er, at afvigelser behandles som systemtilstande frem for som fejl. Figur~\ref{fig:tm-tracker-completion-summary} viser, hvordan trackerlog og completion kan adskilles, så et gennemført træningspas kan registreres, selv om brugeren ikke har logget alle detaljer. Tabel~\ref{tab:tm-tracker-flow-bpmn} viser tilsvarende trackerprocessen som et flow med start, logging, completion og videre progression.
+Lav friktion er nødvendig, fordi brugeren logger under fysisk aktivitet. Stoyanovs MARS-ramme viser, at appkvalitet også handler om engagement, information og brugbarhed \cite{stoyanov2015_mobile_app_rating_scale}. Træningsmester må derfor balancere mellem at være let nok til faktisk brug og detaljeret nok til meningsfuld feedback.
 
-Dette er væsentligt i forhold til træningsprogression. Autoregulering i styrketræning handler om at justere træningen efter aktuel kapacitet, dagsform og faktisk performance frem for kun at følge en fast plan \cite{greig2020_autoregulation_resistance_training}. Træningsmester implementerer ikke en fuldautomatisk træningscoach, men appen understøtter et princip om, at planlagt og faktisk træning ikke behøver være identiske for at systemet kan bevare kontinuitet.
+App- og tracker-evidensen støtter relevansen, men ikke effekten. Laranjo et al., Romeo et al. og Brickwood et al. viser, at apps og trackere kan påvirke fysisk aktivitet, men deres resultater kan ikke overføres direkte til en ny styrketræningsapp med andet design og andet datagrundlag \cite{laranjo2021_apps_trackers_meta,romeo2019_smartphone_apps_pa_meta,brickwood2019_wearable_trackers_meta}. Casen kan derfor argumentere for plausibilitet, ikke dokumenteret virkning.
 
-Det kritiske punkt er, at fleksibel afvigelseshåndtering både kan støtte og svække træningsarbejdet. Det støtter brugeren, fordi appen ikke nødvendigvis straffer manglende detaljeret logging. Det kan samtidig svække analysegrundlaget, hvis for mange pas afsluttes uden tilstrækkelige data om sæt, reps, belastning og øvelsesvalg. Afvigelser bør derfor normaliseres, men ikke usynliggøres.
+Det er en vigtig kildekritisk grænse. Reviews og meta-analyser giver tyngde til problemfeltet, men de erstatter ikke evaluering af den konkrete app. Træningsmester skal derfor ses som et forarbejde til senere bruger- og effektstudier, ikke som et resultat af dem.
 
-\subsection{Lav friktion og datagranularitet}
+\subsection{Sikkerhed og verifikationsgrænser}
 
-Lav friktion er en nødvendig kvalitet i en træningsapp, fordi brugeren ofte logger under fysisk aktivitet, pauser og skift mellem øvelser. Hvis registreringen kræver for meget opmærksomhed, kan appen komme til at konkurrere med selve træningen. Derfor er det en styrke, at Træningsmester kan understøtte både detaljeret trackerlog og mindre detaljeret completion.
+Sikkerhedsmodellen er en styrke, fordi klienten ikke behandles som eneste sikkerhedsgrænse. Figur~\ref{fig:tm-security-boundary-summary} og Tabel~\ref{tab:tm-rls-matrix} viser en arkitektur, hvor RLS og Edge Functions bærer adgangskontrol. OWASP MASVS, GDPR og Supabase RLS understøtter denne retning \cite{owasp2024_masvs,europeanparliament2016_gdpr,supabase_rls_docs}.
 
-Tradeoffet er datagranularitet. Når brugeren kan afslutte uden fuld logging, bevares historik og næste handling, men datakvaliteten bliver mindre detaljeret. Datakvalitet handler ikke kun om at have data, men om dataenes fuldstændighed, konsistens og egnethed til formålet \cite{mohammed2025_five_facets_data_quality}. Hvis appen senere skal give præcis progressionsfeedback, kræver det bedre data end hvis målet kun er at fastholde overblik over gennemførte pas.
+Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser dokumenterede build- og testspor, men også gaps i rolle-, backend- og runtime-scenarier. Derfor kan casen ikke konkludere fuld sikkerhedscertificering, penetrationstest eller komplet produktionsmodenhed. Den kan kun konkludere, at sikkerhedsdesignet er fagligt plausibelt og delvist verificeret.
 
-Appkvalitet handler tilsvarende om mere end funktionalitet. Den omfatter blandt andet information, engagement, æstetik og brugervenlighed \cite{stoyanov2015_mobile_app_rating_scale}. Træningsmester må derfor balancere mellem at være let nok til at blive brugt og detaljeret nok til at give meningsfuld feedback. Denne balance bør være et eksplicit designprincip frem for en tilfældig konsekvens af implementeringen.
+Sikkerhedsargumentet er derfor stærkest på designniveau. Det viser, hvor adgang bør håndhæves, og hvorfor privilegeret logik ikke bør ligge i klienten. Det svageste punkt er dækningsgraden: alle rolle- og tværbrugerscenarier skal testes, før designet kan omsættes til et stærkere driftspåstand.
 
-\subsection{Evidensniveau for apps, trackers og Træningsmester}
+\subsection{Brugerindsigt og videre arbejde}
 
-Kildesøgningen viser, at der findes relevant evidens for digitale apps, trackere og mHealth-interventioner. Tabel~\ref{tab:kildesoegning-appspor} samler app- og trackerrelaterede søgespor, mens Tabel~\ref{tab:kildesoegning-progression-data-metode} viser søgespor for progression, datakvalitet og metode. Disse kilder støtter, at problemfeltet er relevant, og at selvmonitorering, feedback, appkvalitet og wearables kan være betydningsfulde elementer.
+Beta-feedbacken styrker vurderingen, fordi den viser praktisk friktion omkring installation, søgning, katalogkvalitet, enheder, medier og watch. Tabel~\ref{tab:tm-beta-feedback} og Tabel~\ref{tab:tm-testflight-timeline} dokumenterer disse temaer. Grundtvig og Clotworthy understøtter, at kvalitative data kan give kontekstuel indsigt, men kræver tydelig afgrænsning \cite{grundtvig2025_analyse_data,clotworthy2025_etik_kvalitet_forskning}.
 
-Samtidig er evidensen ikke et direkte bevis for Træningsmester. Meta-analyser og reviews viser brede tendenser for apps og trackere, men de overfører ikke automatisk effekt til en ny app med et andet design, en anden målgruppe og et andet datagrundlag \cite{laranjo2021_apps_trackers_meta,romeo2019_smartphone_apps_pa_meta,brickwood2019_wearable_trackers_meta,metzendorf2024_mhealth_obesity_cochrane}. Evidensen giver derfor grundlag for relevans og plausibilitet, men ikke for dokumenteret effekt.
+Videre arbejde bør følge tre trin. Først bør Home, tracker, completion og søgning usabilitytestes systematisk. Dernæst bør betaen udvides over længere tid og med bredere deltagelse. Til sidst bør rollebaserede RLS-scenarier, Edge Functions, datakvalitet, watchOS og Live Activity runtime testes mere målrettet. Et egentligt effektstudie giver først mening efter denne modning.
 
-Træningsmester bør derfor placeres i en trinvis evalueringskæde. Casen dokumenterer design, implementering og begrænset brugerindsigt. Næste evidensniveau ville være systematisk usabilitytest og længere brugstest. Først derefter ville et egentligt effektstudie være meningsfuldt.
-
-\subsection{Sikkerhed, data og verifikationsbegrænsninger}
-
-Sikkerheds- og datamodellen er en væsentlig styrke i casen. Figur~\ref{fig:tm-security-boundary-summary} viser en arkitektur, hvor mobil klient, RLS og server-side funktioner har forskellige roller. Tabel~\ref{tab:tm-rls-matrix} viser, hvordan adgangsgrænser er tænkt på tværs af brugerdata, trackerlog, completion, watch sync, Live Activity og rollebaserede flows.
-
-Denne model flugter med mobile sikkerhedsprincipper og databeskyttelseskrav: klienten bør ikke være eneste sikkerhedsgrænse, og persondata skal behandles efter klare adgangs- og formålsprincipper \cite{owasp2024_masvs,europeanparliament2016_gdpr,supabase_rls_docs}. Det styrker det tekniske argument, fordi sikkerhed ikke eftermonteres som et appendiks, men indgår i arkitekturen.
-
-Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser, at centrale tekniske claims er dokumenteret, men også at der findes gaps. Det gælder især rolle- og tværbrugerscenarier, backendintegration og runtime for støtteflader. Derfor kan der ikke konkluderes fuld sikkerhedscertificering, penetrationstest eller komplet produktionsmodenhed. Sikkerhedsdesignet kan kun vurderes som fagligt plausibelt og delvist verificeret.
-
-\subsection{Brugerindsigt og generaliserbarhed}
-
-Den anonymiserede beta-feedback styrker diskussionen, fordi den viser, at friktion ikke kun er teoretisk. Tabel~\ref{tab:tm-beta-feedback} peger på konkrete temaer som installation, søgning, katalogkvalitet, enheder, medier, noter og watch. Tabel~\ref{tab:tm-testflight-timeline} viser samtidig, at appen blev distribueret og itereret gennem flere beta-builds.
-
-Brugerindsigten har dog lav generaliserbarhed. Den bygger på et convenience sample med iOS-bias og uden statistisk sampling. Den er derfor bedst egnet til tematisk analyse og designprioritering, ikke til konklusioner om repræsentativ brugeraccept. Kvalitativ analyse kan give stærk kontekstuel forståelse, men kræver tydelig afgrænsning af datagrundlag og fortolkning \cite{grundtvig2025_analyse_data,clotworthy2025_etik_kvalitet_forskning}.
-
-Dette er ikke en svaghed, hvis det håndteres åbent. Beta-feedbacken gør vurderingen mere jordnær, fordi den peger på praktiske problemer, som en rent teknisk analyse kunne overse. Den skal blot ikke løftes til mere, end den kan bære. Den viser relevante designrisici og forbedringsmuligheder, ikke dokumenteret effekt eller repræsentativ tilfredshed.
-
-\subsection{Videre arbejde}
-
-Videre arbejde bør følge direkte af de dokumenterede gaps. Først bør der gennemføres mere systematiske usabilitytests, hvor brugere løser konkrete opgaver i Home, tracker, øvelsessøgning, completion og indstillinger. Det vil gøre det muligt at undersøge forståelighed, fejl, tidsforbrug og oplevet friktion mere præcist.
-
-Dernæst bør betaen udvides over længere tid og med bredere deltagelse. Det vil give bedre indblik i vedvarende brug, frafald, platformvariation og træningsadfærd over flere cyklusser. Watch og Live Activity bør samtidig runtime-dokumenteres mere direkte, fordi de er centrale lav-friktionsspor, men endnu ikke dokumenteret som stabile brugerflows.
-
-Teknisk bør rolle- og tværbrugertests, RLS-scenarier og datakvalitetsmålinger prioriteres. Det gælder især admin, træner/klient, delte programmer, completion, idempotent trackerlog og enhedskonvertering. På længere sigt kan et effektstudie først overvejes, når appens usability, datakvalitet og sikkerhedsmodel er mere modent dokumenteret.
-
-\subsection{Samlet svar på problemformuleringen}
-
-Træningsmester er et plausibelt svar på problemformuleringen, men kun inden for et afgrænset evidensniveau. Casen viser, hvordan fleksibel progression kan understøttes gennem adskillelse af plan, faktisk udførelse, completion, feedback og næste handling. Den viser også, at lav friktion, datakvalitet, sikkerhed og brugerindsigt skaber tradeoffs, som ikke kan løses alene ved at tilføje flere funktioner.
-
-Det samlede svar er derfor, at en digital træningsapp kan designes og implementeres på denne måde, men at casen dokumenterer design- og implementeringsplausibilitet frem for empirisk effekt.
+Samlet viser casen, at fleksibel progression er et tværgående designproblem. Den kan ikke løses alene af en algoritme, en pæn brugerflade eller en sikker database. Den kræver, at træningsfaglig progression, brugerens situation, datakvalitet og adgangskontrol tænkes sammen.

@@ -1,61 +1,31 @@
 \section{Metode}
 
-Træningsmester undersøges som en design- og implementeringscase med afsæt i den teoretiske og faglige ramme. Formålet er at analysere, hvordan en digital træningsapp kan designes og bygges, så programstruktur, progression og feedback understøtter fleksibel håndtering af realistiske afvigelser fra en træningsplan. Metoden er derfor egnet til at vurdere designvalg, implementeringskvalitet og sammenhæng mellem problemformulering, krav og teknisk løsning.
+Træningsmester undersøges som en design- og implementeringscase. Metoden kombinerer kildesøgning, kursus- og faggrundlag, artefaktanalyse, anonymiseret beta-feedback og teknisk verifikation. Den kan vurdere, om casen er fagligt begrundet og teknisk sammenhængende; den kan ikke måle statistisk effekt på motivation, adherence eller fysisk aktivitet.
 
-Projektet er ikke et klinisk effektstudie, et randomiseret studie eller et systematisk review. Det betyder, at der ikke kan konkluderes statistisk effekt på motivation, adherence eller fysisk aktivitet. I stedet kombineres kildesøgning, kursus- og faggrundlag, dokument- og artefaktanalyse, anonymiseret beta-feedback og teknisk verifikation som flere supplerende evidensspor.
+Metodevalget følger problemformuleringen. Spørgsmålet handler om, hvordan en app kan designes og implementeres, ikke om hvor stor en effekt appen har i en brugerpopulation. Derfor vægtes dokumenterede designvalg, implementeringsspor, krav, tests og kvalitativ feedback højere end kvantitative effektmål.
 
 \subsection{Design- og implementeringscase}
 
-Træningsmester behandles som en konkret case, hvor appens arkitektur, brugerflader, datamodel, feedbackflows og verifikationsspor bruges til at belyse problemformuleringen. Casen giver mulighed for at undersøge, hvordan teoretiske pointer om motivation, progression, friktion og sikker dataadgang kan omsættes til et faktisk digitalt system.
+Caseformen gør det muligt at undersøge, hvordan teori om motivation, progression, friktion og sikker dataadgang omsættes til et konkret digitalt system. Træningsmester vurderes derfor gennem appens synlige brugerflader, krav, arkitektur, datamodel og testspor. Tabel~\ref{tab:tm-bilag-materialegennemgang} samler det synlige materiale, mens Figur~\ref{fig:tm-system-context} viser systemkonteksten.
 
-Billed- og materialebilaget samler screenshots, diagrammer, tabeller og verifikationsspor, jf. Tabel~\ref{tab:tm-bilag-materialegennemgang}. Figur~\ref{fig:tm-system-context} viser systemkonteksten, mens Tabel~\ref{tab:tm-container-architecture} beskriver de centrale komponentlag. Disse artefakter bruges metodisk som dokumentation for, hvordan appens design- og implementeringsvalg hænger sammen med problemformuleringen.
+Begrænsningen er, at en case ikke kan dokumentere virkning for en bred brugergruppe. Den kan vise design- og implementeringsplausibilitet, men ikke empirisk effekt. Den sondring styrer hele evidensniveauet.
 
-Caseformen har samtidig en klar begrænsning. Den kan vise, at en bestemt løsning er plausibel og teknisk gennemarbejdet, men den kan ikke alene vise, at løsningen virker for en bred brugergruppe. Derfor skelnes der mellem dokumenteret design- og implementeringskvalitet og empirisk dokumenteret effekt.
+Casen analyseres derfor som en kæde af beslutninger. Først undersøges problemets teoretiske ramme. Derefter vurderes, om krav og use cases oversætter problemet til konkrete funktioner. Til sidst vurderes, om arkitektur, implementering, test og feedback giver tilstrækkelig dokumentation for den valgte løsning.
 
-\subsection{Kildesøgning}
+\subsection{Kildesøgning og faggrundlag}
 
-Kildesøgningen er gennemført som en problemstyret scoping-søgning. Den skulle ikke opfylde kravene til et fuldt systematisk review, men skulle give et transparent og bredt kildegrundlag for et tværfagligt problemfelt. PRISMA-S og PRESS bruges som metodiske pejlemærker for tydelig rapportering af søgeflader, søgestrenge, kildeudvælgelse og kontrol af elektroniske søgninger \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}.
+Kildesøgningen blev gennemført som en problemstyret scoping-søgning. Rethlefsen et al.s PRISMA-S og McGowan et al.s PRESS-guideline bruges som pejlemærker for transparent søgning, søgestrenge og kildekritik \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. Søgestrategien kombinerede KB.dk/Primo, PubMed/PMC, DOI/Crossref og udgiversider, fordi problemfeltet både er sundhedsfagligt, designfagligt og teknisk. Tabel~\ref{tab:kildesoegning-platforme} og Tabel~\ref{tab:kildesoegning-appspor} dokumenterer søgesporene i bilaget.
 
-Problemfeltet går på sundhed, adfærd, design og teknik. Derfor blev der søgt i flere søgeflader. KB.dk/Primo gav et bredt discovery-spor, PubMed/PMC gav et biomedicinsk spor, DOI/Crossref blev brugt til metadatakontrol, og udgiversider blev brugt som autoritative kildepunkter. Tabel~\ref{tab:kildesoegning-platforme} viser søgefladernes rolle og kildekritiske begrænsninger.
+Kursusmateriale bruges som metodisk og faglig støtte, ikke som effektbevis. Hornbæks materiale om brugerundersøgelser, prototyper og evaluering støtter interaktionsdesignet, mens Grundtvig, Gjødsbøl og Clotworthy støtter analyse, anonymisering og etik \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering,grundtvig2025_analyse_data,gjoedsboel_grundtvig2025_interview,clotworthy2025_etik_kvalitet_forskning}. Tabel~\ref{tab:kursusmateriale-gennemgang} viser de konkrete kursusspor.
 
-Kildesøgningen blev opdelt i spor, så app- og trackerforskning, motivation, styrketræningsprogression, datakvalitet og teknisk sikkerhed ikke blev blandet sammen. Tabel~\ref{tab:kildesoegning-appspor} viser søgespor for app-effekt, appkvalitet og digital engagement, mens Tabel~\ref{tab:kildesoegning-progression-data-metode} viser søgespor for progression, datakvalitet og søgemetode. Denne opdeling gør det muligt at bruge kilderne efter deres evidensniveau: appstudier som bred relevans, træningskilder som fagligt progressionsgrundlag og tekniske kilder som implementerings- og sikkerhedsgrundlag.
+Kilderne blev udvalgt efter funktion. Teixeira, Eysenbach og Yardley dækker motivation, frafald og engagement. ACSM, Currier, Greig og Larsen dækker progression og autoregulering. Laranjo, Romeo og Brickwood dækker apps og trackere. Stoyanov dækker appkvalitet, Mohammed et al. dækker datakvalitet, og OWASP, Supabase og GDPR dækker sikkerhed og persondata. Den opdeling reducerer risikoen for citationer, der kun pynter teksten.
 
-\subsection{Kursus- og faggrundlag}
+\subsection{Artefakter, beta-feedback og verifikation}
 
-Udvalgt kursus- og faggrundlag bruges som metodisk støtte til analysen. Det gælder især interaktionsdesign, brugerundersøgelser, prototyper, evaluering, videnskabsteori, analyse, persondata, datakvalitet og procesmodellering \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering,gjoedsboel2025_metoder_videnskabsteori,grundtvig2025_analyse_data,clotworthy2025_persondata_datasikkerhed,zajac2026_data_quality_interoperability,ku2026_dcr_bpmn_modeling}.
+Artefaktanalysen undersøger de synlige elementer, der dokumenterer appens design og implementering: screenshots, diagrammer, use cases, krav, datamodel, RLS-matrix og testspor. Figur~\ref{fig:tm-ios-home-ready} bruges som eksempel på Home som næste-handling-flade, mens Figur~\ref{fig:tm-tracker-completion-summary} viser adskillelsen mellem tracker, completion og progression.
 
-Tabel~\ref{tab:kursusmateriale-gennemgang} viser, hvilke kursusspor der er brugt som fagligt støttegrundlag. Materialet bruges til at kvalificere metodevalg, analysekategorier og begreber, men det bruges ikke som empirisk effektbevis for Træningsmester. Eksempelvis kan interaktionsdesigngrundlaget støtte analysen af brugerflader og evaluering, mens metodegrundlaget støtter anonymisering, fortolkning og afgrænsning.
+Beta-feedback behandles som anonymiseret, kvalitativ designindsigt. Den bruges til at identificere friktion, katalogproblemer, enheder, watch-behov og prioriteringer, men ikke til at generalisere til alle brugere. Tabel~\ref{tab:tm-beta-feedback} og Tabel~\ref{tab:tm-testflight-timeline} dokumenterer observationer og iteration.
 
-Denne brug af kursus- og faggrundlag er vigtig, fordi casen kombinerer sundhedsadfærd, softwareudvikling og design. Kursusmaterialet hjælper med at forbinde disse felter, men de faglige claims skal stadig understøttes af synlige bilag, faglitteratur og teknisk verifikation.
+Teknisk verifikation vurderer buildstatus, unit tests, begrænsede integrationstests og kendte gaps. Tabel~\ref{tab:tm-test-traceability} samler de tekniske påstande. Apple-, Supabase- og OWASP-kilder bruges til at vurdere platform- og sikkerhedsvalg \cite{apple_swiftui_docs,apple_activitykit_live_data_docs,apple_watchconnectivity_docs,owasp2024_masvs,supabase_rls_docs}. Verifikationen dokumenterer teknisk plausibilitet, ikke produktionsklarhed, sikkerhedscertificering eller klinisk validering.
 
-\subsection{Dokument- og artefaktanalyse}
-
-Dokument- og artefaktanalysen undersøger de synlige elementer, der dokumenterer Træningsmesters design og implementering. Det omfatter appskærme, arkitekturdiagrammer, use cases, krav, datamodel, RLS-matrix og testspor. Analysen bruges til at vise, hvordan problemformuleringen omsættes til konkrete systemfunktioner og tekniske valg.
-
-Figur~\ref{fig:tm-ios-home-ready} og Figur~\ref{fig:tm-ios-tracker-active} bruges til at analysere centrale brugerflader: Home som næste-handling-flade og tracker som aktiv registreringsflade under træning. Figur~\ref{fig:tm-data-model-er} og Figur~\ref{fig:tm-tracker-completion-summary} bruges til at analysere adskillelsen mellem planlagt træning, faktisk logging, completion og progression.
-
-Tabel~\ref{tab:tm-use-cases} og Tabel~\ref{tab:tm-krav-traceability} bruges til at koble brugerhandlinger til funktionelle og ikke-funktionelle krav. Tabel~\ref{tab:tm-rls-matrix} bruges til at analysere sikkerhedsgrænser og adgangsmodel. Samlet giver artefaktanalysen et grundlag for at vurdere, om design, data og implementering hænger sammen, men den dokumenterer ikke i sig selv brugeraccept eller effekt.
-
-\subsection{Anonymiseret beta-feedback og brugerindsigt}
-
-Beta-feedback behandles som kvalitativ, anonymiseret designindsigt. Den bruges til at identificere friktion, brugerbehov og designimplikationer, men ikke til at måle effekt eller generalisere til alle potentielle brugere. Denne afgrænsning følger metodegrundlaget for interview, digitale metoder, analyse og forskningsetik \cite{gjoedsboel_grundtvig2025_interview,grundtvig2025_digitale_metoder,grundtvig2025_analyse_data,clotworthy2025_etik_kvalitet_forskning}.
-
-Tabel~\ref{tab:tm-testflight-timeline} dokumenterer iteration og distribution i betaperioden. Den viser udviklingsaktivitet, men den viser ikke, at brugerne fik bedre træningsudbytte. Tabel~\ref{tab:tm-beta-feedback} samler udvalgte anonymiserede observationer om blandt andet friktion, øvelseskatalog, søgning, enheder, watch og noter.
-
-Beta-feedbacken bruges derfor som et designorienteret supplement til de tekniske og teoretiske analyser. Den kan pege på konkrete problemer og prioriteringer, men den er ikke repræsentativ, ikke statistisk og ikke et bevis for, at Træningsmester forbedrer motivation eller adherence.
-
-\subsection{Teknisk verifikation og begrænsninger}
-
-Teknisk verifikation bruges til at vurdere implementeringsstatus og kendte begrænsninger. Den omfatter buildstatus, unit tests, appskærme, arkitektur, sikkerhedsmodel og afgrænsede testresultater. Tabel~\ref{tab:tm-test-traceability} samler de tekniske claims, deres dokumenterede status og begrænsninger.
-
-Tekniske kilder bruges til at kvalificere platform- og sikkerhedsvalg. SwiftUI, ActivityKit, Watch Connectivity, Supabase RLS, API-sikring og OWASP MASVS giver relevante rammer for apparkitektur, platformflader og mobil sikkerhed \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs,apple_swiftui_docs,apple_activitykit_live_data_docs,apple_watchconnectivity_docs}. Figur~\ref{fig:tm-security-boundary-summary} viser sikkerhedsgrænsen mellem mobil klient, RLS og Edge Functions, mens Figur~\ref{fig:tm-watch-sync-sequence} og Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser platformspor for watchOS og Live Activity.
-
-Verifikationen skal dog læses med klare begrænsninger. Den dokumenterer status og centrale tekniske valg, men den dokumenterer ikke fuld produktionsklarhed, komplet sikkerhedsrevision, clean CI, alle rolle- og tværbrugerscenarier eller klinisk validering. Disse begrænsninger er vigtige for den senere diskussion.
-
-\subsection{Samlet metodisk grundlag}
-
-Metoden samler fem evidensspor: scoping-kildesøgning, kursus- og faggrundlag, artefaktanalyse, anonymiseret beta-feedback og teknisk verifikation. Tilsammen gør disse spor det muligt at vurdere, om Træningsmester er en fagligt begrundet og teknisk sammenhængende design- og implementeringscase.
-
-Metoden gør det derimod ikke muligt at konkludere statistisk effekt på motivation, adherence eller fysisk aktivitet. Konklusionerne skal derfor holdes inden for rammen af design, implementering, teknisk dokumentation og kvalitativ brugerindsigt.
-
-Det metodiske grundlag gør det muligt at omsætte motivation, progression, friktion og sikker dataadgang til konkrete funktionelle og ikke-funktionelle krav for Træningsmester.
+De tre materialetyper supplerer hinanden. Artefakterne viser, hvad der er designet og implementeret. Feedbacken viser, hvor brugen møder friktion. Verifikationen viser, hvilke tekniske påstande der er sandsynliggjort. Ingen af delene kan alene besvare problemformuleringen, men sammen giver de et grundlag for at diskutere styrker og begrænsninger uden at overdrive evidensniveauet.
