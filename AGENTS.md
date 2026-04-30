@@ -11,6 +11,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - `main.tex` indlæser `indledning.tex`, `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `metode.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex`, `test_og_verifikation.tex`, `evaluering_og_brugerindsigt.tex`, `diskussion.tex` og `konklusion.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
 - `skrivematrix.md` er internt styringsdokument for hele rapportens kapitelstruktur og må ikke inputtes eller omtales synligt i rapporten.
 - Rapporten har to forsider: først en rolig projektrapportforside via `\makeprojecttitle`, derefter den officielle KU-forside via `\makekutitle`.
+- Rapportstilen efter forsiderne er sort/hvid med 10pt serif-brødtekst, afsnitsluft uden indrykning, indholdsfortegnelse med dot leaders og linjebaserede kapitelåbninger med højrestillet titel.
 - Forsidernes metadata, KU-header, fakultetstekst, headerfarve, headerbaggrundsbredde og coverbaggrund styres fra `main.tex` via KUstyle-makroer.
 - `Materiale/traeningsmester-2026-04-28/` er den kuraterede materialepakke til rapportarbejdet.
 - `referencer.bib`, `referencer.md` og `referencer/` er referencebiblioteket med BibTeX-nøgler, kildebeskrivelser og lokale åbne PDF-kopier.

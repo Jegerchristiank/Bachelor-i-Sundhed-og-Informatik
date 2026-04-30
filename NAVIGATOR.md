@@ -90,7 +90,7 @@ Start med disse filer i rækkefølge:
 
 `main.tex` er ryddet for synlig skabelon- og fyldtekst og samler rapportens kapitelinput. Det indeholder:
 
-- A4-opsætning med XeLaTeX/LuaLaTeX-kompatibel fontopsætning, tosidet geometri, serif brødtekst, afsnitsluft uden indrykning og farvede sektionsoverskrifter,
+- A4-opsætning med XeLaTeX/LuaLaTeX-kompatibel fontopsætning, tosidet geometri, 10pt serif-brødtekst, afsnitsluft uden indrykning, indholdsfortegnelse med dot leaders og linjebaserede kapitelåbninger med højrestillet titel,
 - to forsider: en projektrapportforside inspireret af den eksterne rapportstil og derefter den officielle KU-forside,
 - romertal til metadata/indhold og arabisk sidenummerering fra hovedrapportens første afsnit,
 - udfyldt forfatter, projekttype, arbejdstitel, arbejdssubtitle og vejleder,

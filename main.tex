@@ -1,5 +1,5 @@
 % VIGTIGT! For at dokumentet kan kompilere, skal man benytte XeLaTeX eller LuaLaTeX som compiler. Dette kan gøres i Overleaf ved at gå til Menu -> Settings -> Compiler -> Vælg XeLaTeX/LuaLaTeX
-\documentclass[12pt,a4paper,twoside]{article}
+\documentclass[10pt,a4paper,twoside]{article}
 
 \usepackage[numbers]{natbib} % Referencehåndtering til referencer.bib
 \usepackage{KUstyle}
@@ -19,12 +19,14 @@
   {\setmainfont{Linux Libertine O}}
   {\IfFontExistsTF{Libertinus Serif}
     {\setmainfont{Libertinus Serif}}
-    {\IfFontExistsTF{Georgia}{\setmainfont{Georgia}}{\setmainfont{Times New Roman}}}}
+    {\IfFontExistsTF{Times New Roman}
+      {\setmainfont{Times New Roman}}
+      {\IfFontExistsTF{Georgia}{\setmainfont{Georgia}}{\setmainfont{Times}}}}}
 \setsansfont{Arial}
 \setlength{\emergencystretch}{3em}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{2}
 \tolerance=9999
 \hyphenpenalty=10000
@@ -47,24 +49,83 @@
 \advisor{Karsten Vrangbæk}
 \fpimage{assets/traeningsmester-logo-uden-baggrund.pdf} % Kilde-SVG ligger i assets/traeningsmester-logo-uden-baggrund.svg
 
-\renewcommand{\contentsname}{Indholdsfortegnelse}
+\renewcommand{\contentsname}{Indhold}
+\addto\captionsdanish{\renewcommand{\contentsname}{Indhold}}
 \renewcommand{\refname}{Referencer}
 \renewcommand{\figurename}{Figur}
 \renewcommand{\tablename}{Tabel}
 
 \makeatletter
-\renewcommand\section{\@startsection{section}{1}{\z@}%
-  {-3.2ex plus -1ex minus -.2ex}%
-  {1.5ex plus .2ex}%
-  {\normalfont\huge\bfseries\color{titleteal}\raggedright}}
+\newif\iftmappendix
+\tmappendixfalse
+\let\tmoldappendix\appendix
+\renewcommand{\appendix}{\tmoldappendix\tmappendixtrue}
+
+\newcommand{\tmheadinglabel}[1]{%
+  \iftmappendix
+    \MakeUppercase{Bilag}~#1%
+  \else
+    \MakeUppercase{Kapitel}~#1%
+  \fi
+}
+
+\newcommand{\tmchapterheading}[2]{%
+  \clearpage
+  \thispagestyle{plain}%
+  \begingroup
+  \setlength{\parskip}{0pt}%
+  \vspace*{0.8cm}%
+  \noindent\hfill{\normalfont\normalsize\tmheadinglabel{#1}}\par
+  \vspace{0.8ex}%
+  \noindent\rule{\textwidth}{0.4pt}\par
+  \vspace{0.45ex}%
+  \noindent\hfill{\normalfont\normalsize\bfseries #2}\par
+  \vspace{0.45ex}%
+  \noindent\rule{\textwidth}{0.4pt}\par
+  \endgroup
+  \vspace{0.85cm}%
+}
+
+\newcommand{\tmplainheading}[1]{%
+  \clearpage
+  \thispagestyle{plain}%
+  \begingroup
+  \setlength{\parskip}{0pt}%
+  \vspace*{1.4cm}%
+  \noindent\rule{\textwidth}{0.4pt}\par
+  \vspace{0.45ex}%
+  \noindent\hfill{\normalfont\normalsize\bfseries #1}\par
+  \vspace{0.45ex}%
+  \noindent\rule{\textwidth}{0.4pt}\par
+  \endgroup
+  \vspace{0.85cm}%
+}
+
+\renewcommand\section{%
+  \@ifstar{\tmsectionstar}{\tmsectionnumbered}%
+}
+\newcommand{\tmsectionnumbered}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \tmchapterheading{\thesection}{#1}%
+}
+\newcommand{\tmsectionstar}[1]{%
+  \tmplainheading{#1}%
+}
+
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
   {-2.2ex plus -1ex minus -.2ex}%
   {0.9ex plus .2ex}%
-  {\normalfont\Large\bfseries\raggedright}}
+  {\normalfont\normalsize\bfseries\raggedright}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
   {-1.8ex plus -0.8ex minus -.2ex}%
   {0.7ex plus .2ex}%
-  {\normalfont\large\bfseries\raggedright}}
+  {\normalfont\normalsize\bfseries\raggedright}}
+
+\renewcommand\tableofcontents{%
+  \tmplainheading{\contentsname}%
+  \@starttoc{toc}%
+}
 \makeatother
 
 \begin{document}
@@ -73,7 +134,7 @@
 \makeprojecttitle
 \makekutitle
 
-\setstretch{1.08}
+\setstretch{1}
 
 \pagenumbering{roman}
 \setcounter{page}{1}
@@ -93,6 +154,8 @@ Dato: & Afventer
 \end{table}
 \newpage
 
+\phantomsection
+\addcontentsline{toc}{section}{\contentsname}
 \tableofcontents
 \newpage
 

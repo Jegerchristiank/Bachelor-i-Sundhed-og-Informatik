@@ -2,7 +2,7 @@ En LaTeX-skabelon til specialer, ph.d.-afhandlinger og rapporter. Skabelonen bes
 
 VIGTIGT! For at dokumentet kan kompilere, skal man benytte XeLaTeX eller LuaLaTeX som compiler. Dette kan gøres i Overleaf ved at gå til Menu -> Settings -> Compiler -> Vælg XeLaTeX/LuaLaTeX.
 
-Rapporten bruger to forsider. `\makeprojecttitle` laver den enkle projektrapportforside, og `\makekutitle` laver den officielle KU-forside. For at ændre detaljerne på forsiderne skal man ændre værdien af følgende kommandoer inden document-miljøet:
+Rapporten bruger to forsider. `\makeprojecttitle` laver den enkle projektrapportforside, og `\makekutitle` laver den officielle KU-forside. Selve rapporten er sat i en sort/hvid rapportstil med 10pt serif-brødtekst, afsnitsluft uden indrykning, indholdsfortegnelse med dot leaders og kapitelåbninger med højrestillet titel mellem tynde linjer. For at ændre detaljerne på forsiderne skal man ændre værdien af følgende kommandoer inden document-miljøet:
 
 'title' angiver titlen på projektet.
 'subtitle' angiver undertitlen på projektet.
