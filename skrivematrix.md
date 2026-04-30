@@ -1,7 +1,7 @@
 # Skrivematrix for hele rapporten
 
 Dato: 2026-04-30
-Status: internt arbejdsdokument til skriveiterationer. Filen skal ikke inputtes i `main.tex` og må ikke omtales synligt i rapporten.
+Status: internt arbejdsdokument til skriveiterationer. Filen skal ikke indlæses i `main.tex` og må ikke omtales synligt i rapporten.
 
 ## Absolutte rammer
 
@@ -17,7 +17,7 @@ Træningsmester er en design- og implementeringscase. SwiftUI, Supabase, watchOS
 
 ### Skriveregel for rapporttekst
 
-Synlig rapporttekst må kun henvise til artikler, standarder, kursusmateriale registreret i referencebiblioteket, appen, synlige figurer/tabeller og anonymiserede undersøgelser, der faktisk er indsat i bilag. Interne arbejdsfiler, mapper, lokale PDF-statusser, Overleaf/BibTeX-arbejdsgange, approval-matricer og lokale stier må ikke omtales synligt.
+Synlig rapporttekst må kun henvise til artikler, standarder, kursusmateriale registreret i referencebiblioteket, appen, synlige figurer/tabeller og anonymiserede undersøgelser, der faktisk er indsat i bilag. Interne arbejdsfiler, mapper, lokale PDF-statusser, Overleaf/BibTeX-arbejdsgange, godkendelsesmatricer og lokale stier må ikke omtales synligt.
 
 ### Internt skrivegrundlag
 
@@ -49,7 +49,7 @@ Rapporten skal føre læseren fra et bredt problem til en præcis design- og imp
 
 1. **Indledning** etablerer problemet: digitale træningsapps kan understøtte fysisk aktivitet og træningsadfærd, men effekten afhænger af engagement, kvalitet, friktion og evnen til at håndtere realistiske afvigelser.
 2. **Problemformulering og afgrænsning** oversætter problemet til rapportens hovedspørgsmål og afgrænser Træningsmester som case frem for som produktpitch.
-3. **Teoretisk og faglig ramme** giver de begreber, rapporten senere bruger til at analysere motivation, behavior change, appkvalitet, progression, interaktionsdesign, datakvalitet og sikkerhed.
+3. **Teoretisk og faglig ramme** giver de begreber, rapporten senere bruger til at analysere motivation, adfærdsændring, appkvalitet, progression, interaktionsdesign, datakvalitet og sikkerhed.
 4. **Metode** forklarer, hvordan projektet undersøges: som design- og implementeringscase med kildesøgning, dokument-/artefaktanalyse, anonymiseret beta-feedback, bilagsmateriale og teknisk verifikation.
 5. **Krav og use cases** omsætter problemformuleringen til funktionelle og ikke-funktionelle krav, hvor fleksibel progression, lav friktion og sikker dataadgang kan spores til konkrete flows.
 6. **Systemarkitektur** viser, hvordan SwiftUI, AppState, repository-lag, Supabase, RLS, Edge Functions, watchOS og Live Activity tilsammen understøtter appens kerneproblem.
@@ -67,13 +67,13 @@ Den røde tråd skal være: **fra brugerens realistiske træningsadfærd til et 
 
 | Evidenstype | Brug i rapporten | Må ikke bruges til |
 | --- | --- | --- |
-| App-/trackerstudier | Samlet evidensspor om digitale interventioner, appkvalitet, self-monitoring, feedback og wearables. | Direkte bevis for, at Træningsmester forbedrer motivation, adherence eller sundhedseffekt. |
+| App-/trackerstudier | Samlet evidensspor om digitale interventioner, appkvalitet, selvmonitorering, feedback og wearables. | Direkte bevis for, at Træningsmester forbedrer motivation, adherence eller sundhedseffekt. |
 | Træningsfaglige kilder | Fagligt grundlag for programstruktur, progression, autoregulering, deload og fleksibel justering. | Dokumentation for appens effekt eller brugeraccept. |
-| Teori om motivation og behavior change | Begreber til at forklare autonom motivation, engagement, frafald, feedback og adfærdsdesign. | Påstande om at en bestemt UI-funktion alene skaber varig adfærdsændring. |
+| Teori om motivation og adfærdsændring | Begreber til at forklare autonom motivation, engagement, frafald, feedback og adfærdsdesign. | Påstande om at en bestemt UI-funktion alene skaber varig adfærdsændring. |
 | Kursusmateriale | Metodisk og faglig støtte til design, metode, databehandling, etik, evaluering, interoperabilitet og procesmodellering. | Empirisk effektbevis for Træningsmester. |
 | Tekniske primærkilder | Dokumentation for platformvalg, RLS, API-sikkerhed, Live Activity, Watch Connectivity, HealthKit og databeskyttelse. | Sundhedsfaglig effekt eller brugerudbytte. |
 | Beta-feedback | Anonymiseret design- og brugerindsigt om friktion, behov, forståelighed og iteration. | Statistisk generalisering, klinisk effekt eller dokumenteret langtidsadherence. |
-| Tests og bilag | Verifikation af implementering, build, udvalgte flows, datamodel, sikkerhedsdesign og UI-dokumentation. | Fuld produktionsmodenhed, komplet security proof eller uafhængig clean CI-verifikation. |
+| Tests og bilag | Verifikation af implementering, build, udvalgte flows, datamodel, sikkerhedsdesign og UI-dokumentation. | Fuld produktionsmodenhed, komplet sikkerhedsbevis eller uafhængig clean CI-verifikation. |
 
 ### Formuleringsstandard
 
@@ -100,7 +100,7 @@ Digitale træningsapps kan være relevante for fysisk aktivitet og træningsadf�
 2. **Digitale interventioner har potentiale, men engagement og frafald er centrale problemer.** Brug af apps og trackere kan understøtte aktivitet, men lav vedvarende brug, friktion og appkvalitet begrænser effekten.
    Primære kilder: cite:eysenbach2005_law_of_attrition, cite:laranjo2021_apps_trackers_meta, cite:romeo2019_smartphone_apps_pa_meta, cite:brickwood2019_wearable_trackers_meta.
 
-3. **Træningsapps skal vurderes kritisk som apps, ikke kun som sundhedsinterventioner.** Kvalitet, funktionalitet, engagement, self-monitoring, feedback og behavior change-komponenter har betydning for, om appen reelt understøtter brugerens adfærd.
+3. **Træningsapps skal vurderes kritisk som apps, ikke kun som sundhedsinterventioner.** Kvalitet, funktionalitet, engagement, selvmonitorering, feedback og adfærdsændringskomponenter har betydning for, om appen reelt understøtter brugerens adfærd.
    Primære kilder: cite:bondaronek2018_quality_pa_apps, cite:kebede2018_evidence_informed_pa_apps, cite:stoyanov2015_mobile_app_rating_scale, cite:middelweerd2014_apps_physical_activity.
 
 4. **Styrketræning kræver progression og justering.** Et træningsprogram er ikke kun en kalender; det rummer valg om volumen, intensitet, øvelser, progression, deload og regulering efter faktisk performance.
@@ -157,7 +157,7 @@ Kapitlet skal låse rapportens undersøgende ramme. Det skal præsentere hovedsp
 
 Rapportens problem er ikke at bygge flest mulige funktioner, men at undersøge hvordan digital programstruktur, progression og feedback kan designes, så brugeren kan håndtere realistiske afvigelser uden datatab, unødig friktion eller demotiverende feedback.
 
-### Anbefalet struktur
+### Delargumenter i anbefalet rækkefølge
 
 1. **Problemformulering.** Indsæt hovedspørgsmålet ordret og kort begrund, at det kombinerer sundhedsadfærd, interaktionsdesign og softwareimplementering.
 2. **Underspørgsmål.** Brug fire underspørgsmål:
@@ -180,7 +180,7 @@ Rapportens problem er ikke at bygge flest mulige funktioner, men at undersøge h
 
 - 88370 Bachelorprojekt: rapporten skal være problemstyret, dokumenteret og kritisk.
 - 80540 Software Development for Digital Health: krav, use cases, arkitektur, database, SQL og test som teknisk metode.
-- 77437 IT-projektledelse: scopekontrol, risiko, releaseparathed og undgåelse af scope creep.
+- 77437 IT-projektledelse: afgrænsningskontrol, risiko, udgivelsesparathed og undgåelse af ukontrolleret omfangsudvidelse.
 - 79772 Metode: skelnen mellem designcase, artefaktanalyse og brugerindsigt.
 
 ### Relevante bilag og synlige henvisninger
@@ -201,7 +201,7 @@ Rapportens problem er ikke at bygge flest mulige funktioner, men at undersøge h
 
 ### Overgang til næste kapitel
 
-Kapitlet skal afslutte med, at problemformuleringen kræver en tværfaglig ramme. Den næste del skal derfor etablere begreberne for motivation, digital behavior change, appkvalitet, træningsprogression, interaktionsdesign og datakvalitet.
+Kapitlet skal afslutte med, at problemformuleringen kræver en tværfaglig ramme. Den næste del skal derfor etablere begreberne for motivation, digital adfærdsændring, appkvalitet, træningsprogression, interaktionsdesign og datakvalitet.
 
 ### Acceptkriterier for første version
 
@@ -221,7 +221,7 @@ Kapitlet skal give rapporten et samlet begrebsapparat. Det skal ikke være en l�
 
 Træningsmester skal forstås i krydsfeltet mellem motivation, adfærdsdesign, appkvalitet, træningsprogression, interaktionsdesign og data-/sikkerhedsarkitektur. Et godt digitalt træningssystem skal både understøtte adfærd, træningsfaglig progression og teknisk pålidelighed.
 
-### Anbefalet struktur
+### Delargumenter i anbefalet rækkefølge
 
 #### 3.1 Motivation, adherence og effektivt engagement
 
@@ -231,9 +231,9 @@ Primære kilder: cite:teixeira2012_sdt_exercise, cite:eysenbach2005_law_of_attri
 
 Brug i senere kapitler: begrunder hvorfor feedback, completion og fleksibel afvigelseshåndtering skal vurderes som motivationsstøtte, ikke kun som datalogik.
 
-#### 3.2 Behavior change, feedback og persuasive systems
+#### 3.2 Adfærdsændring, feedback og persuasive systems
 
-Fokus: COM-B, Behaviour Change Wheel, BCT Taxonomy, self-monitoring, feedback, prompts, goals, action planning, tailoring og system credibility.
+Fokus: COM-B, Behaviour Change Wheel, BCT Taxonomy, selvmonitorering, feedback, påmindelser, mål, handleplanlægning, tilpasning og systemtroværdighed.
 
 Primære kilder: cite:michie2011_behaviour_change_wheel, cite:michie2013_bct_taxonomy_v1, cite:oinaskukkonen2009_persuasive_systems_design, cite:nahumshani2018_jitai_mobile_health.
 
@@ -265,19 +265,27 @@ Brug i senere kapitler: forklarer hvorfor Home, tracker, tracker-off, watchOS og
 
 #### 3.6 Datakvalitet, interoperabilitet og sikkerhed som designbetingelser
 
-Fokus: datakvalitet, kontekstuel databrug, relationel model, DCR/BPMN, interoperabilitetsniveauer, RLS, service-role boundary, GDPR og mobile security.
+Fokus: datakvalitet, kontekstuel databrug, relationel model, DCR/BPMN, interoperabilitetsniveauer, RLS, service-role-grænse, GDPR og mobilsikkerhed.
 
 Primære kilder: cite:mohammed2025_five_facets_data_quality, cite:vanderalst2009_declarative_workflows, cite:benson2016_principles_health_interoperability, cite:zajac2026_data_quality_interoperability, cite:ku2026_dcr_bpmn_modeling, cite:owasp2024_masvs, cite:europeanparliament2016_gdpr, cite:supabase_rls_docs.
 
 Brug i senere kapitler: gør det muligt at diskutere completion-events, trackerlog, RLS, HealthKit-afgrænsning og Edge Functions som faglige designvalg, ikke kun implementeringsdetaljer.
 
+### Primære citation keys
+
+- Motivation og engagement: cite:teixeira2012_sdt_exercise, cite:eysenbach2005_law_of_attrition, cite:yardley2016_effective_engagement_dbci.
+- Adfærdsændring og feedback: cite:michie2011_behaviour_change_wheel, cite:michie2013_bct_taxonomy_v1, cite:oinaskukkonen2009_persuasive_systems_design, cite:nahumshani2018_jitai_mobile_health.
+- Appkvalitet, apps og wearables: cite:laranjo2021_apps_trackers_meta, cite:romeo2019_smartphone_apps_pa_meta, cite:brickwood2019_wearable_trackers_meta, cite:bondaronek2018_quality_pa_apps, cite:kebede2018_evidence_informed_pa_apps, cite:stoyanov2015_mobile_app_rating_scale.
+- Træningsprogression og autoregulering: cite:acsm2009_progression_models, cite:currier2026_acsm_resistance_training, cite:greig2020_autoregulation_resistance_training, cite:larsen2021_autoregulation_systematic_review.
+- Interaktionsdesign, data og sikkerhed: cite:hornbaek2024_brugerundersoegelser, cite:hornbaek2024_prototyper, cite:hornbaek2024_evaluering, cite:mohammed2025_five_facets_data_quality, cite:benson2016_principles_health_interoperability, cite:owasp2024_masvs, cite:supabase_rls_docs.
+
 ### Relevante kursusspor
 
 - 72545 Interaktionsdesign: brugerforståelse, prototyper, evaluering og tænkehøjt.
 - 79772 Kvantitative og kvalitative undersøgelsesmetoder: metodeposition, interview/spørgeskema, digitale metoder, etik og analyse.
-- 89332 Sundhedsdata og interoperabilitet: data quality, DCR/BPMN, interoperabilitet, FHIR/HL7-afgrænsning.
+- 89332 Sundhedsdata og interoperabilitet: datakvalitet, DCR/BPMN, interoperabilitet, FHIR/HL7-afgrænsning.
 - 80540 Software Development for Digital Health: krav, use cases, systemarkitektur, database og test som softwarefaglig ramme. Må kun bruges direkte, hvis præcise citebare kursuskilder senere verificeres; ellers som intern strukturinspiration.
-- 77437 IT-projektledelse: scope, risici og modenhed. Må kun bruges direkte, hvis præcise citebare kursuskilder senere verificeres; ellers som intern strukturinspiration.
+- 77437 IT-projektledelse: afgrænsning, risici og modenhed. Må kun bruges direkte, hvis præcise citebare kursuskilder senere verificeres; ellers som intern strukturinspiration.
 
 ### Relevante bilag og synlige henvisninger
 
@@ -316,7 +324,7 @@ Metodekapitlet skal forklare, hvordan rapporten undersøger problemformuleringen
 
 Metoden er en problemstyret kombination af scoping-kildesøgning, design-/implementeringscase, dokument- og artefaktanalyse, anonymiseret beta-feedback og teknisk verifikation. Metoden er egnet til at vurdere designvalg og implementeringskvalitet, men ikke til at konkludere statistisk effekt på motivation eller adherence.
 
-### Anbefalet struktur
+### Delargumenter i anbefalet rækkefølge
 
 #### 4.1 Design- og implementeringscase
 
@@ -358,6 +366,13 @@ Beskriv test, build, screenshotdokumentation, sikkerhedsdesign og kendte gaps. F
 Primære tekniske kilder: cite:owasp2024_masvs, cite:supabase_rls_docs, cite:supabase_securing_api_docs, cite:apple_swiftui_docs, cite:apple_activitykit_live_data_docs, cite:apple_watchconnectivity_docs.
 Synlige bilag: label:tab:tm-test-traceability, label:fig:tm-security-boundary-summary, label:fig:tm-watch-sync-sequence, label:fig:tm-live-activity-idempotency-sequence.
 
+### Primære citation keys
+
+- Kildesøgningsmetode: cite:rethlefsen2021_prisma_s, cite:mcgowan2016_press_guideline_statement.
+- Kursus- og metodegrundlag: cite:hornbaek2024_brugerundersoegelser, cite:hornbaek2024_prototyper, cite:hornbaek2024_evaluering, cite:gjoedsboel2025_metoder_videnskabsteori, cite:gjoedsboel_grundtvig2025_interview, cite:grundtvig2025_analyse_data, cite:grundtvig2025_digitale_metoder, cite:clotworthy2025_persondata_datasikkerhed, cite:clotworthy2025_etik_kvalitet_forskning.
+- Datakvalitet og interoperabilitet: cite:zajac2026_data_quality_interoperability, cite:ku2026_dcr_bpmn_modeling.
+- Teknisk verifikation og sikkerhed: cite:owasp2024_masvs, cite:supabase_rls_docs, cite:supabase_securing_api_docs, cite:apple_swiftui_docs, cite:apple_activitykit_live_data_docs, cite:apple_watchconnectivity_docs.
+
 ### Relevante kursusspor
 
 - 79772 Metode: videnskabsteori, interview/spørgeskema, digitale metoder, etik, analyse og databehandling.
@@ -365,12 +380,20 @@ Synlige bilag: label:tab:tm-test-traceability, label:fig:tm-security-boundary-su
 - 89332 Sundhedsdata og interoperabilitet: datakvalitet, DCR/BPMN og interoperabilitetsafgrænsning.
 - 80540 Software Development for Digital Health: intern metodeinspiration for krav, use cases, database, SQL og test. Direkte citation kræver verificeret citation key; ellers bruges de synlige bilag og tekniske kilder.
 
+### Relevante bilag og synlige henvisninger
+
+- Kildesøgning: label:tab:kildesoegning-platforme, label:tab:kildesoegning-appspor, label:tab:kildesoegning-progression-data-metode.
+- Kursusmateriale: label:tab:kursusmateriale-gennemgang.
+- Materiale- og artefaktgrundlag: label:tab:tm-bilag-materialegennemgang, label:fig:tm-system-context, label:tab:tm-container-architecture.
+- App, data og sikkerhed: label:fig:tm-ios-home-ready, label:fig:tm-ios-tracker-active, label:fig:tm-data-model-er, label:fig:tm-tracker-completion-summary, label:tab:tm-use-cases, label:tab:tm-krav-traceability, label:tab:tm-rls-matrix.
+- Beta og verifikation: label:tab:tm-testflight-timeline, label:tab:tm-beta-feedback, label:tab:tm-test-traceability.
+
 ### Hvad kapitlet ikke må påstå
 
 - At projektet er et randomiseret studie eller et systematisk review.
 - At beta-feedback er repræsentativt eller statistisk generaliserbart.
 - At alle tests er kørt i clean CI.
-- At Supabase/admin/cross-user sikkerhed er fuldt integrationstestet.
+- At Supabase/admin/tværbruger-sikkerhed er fuldt integrationstestet.
 - At watchOS og Live Activity runtime er dokumenteret visuelt, hvis det kun er dokumenteret via build/test/arkitektur.
 - At lukkede kursusfiler eller private kommunikationsdata er en synlig del af rapportens evidens.
 
@@ -429,7 +452,7 @@ Træningsmesters centrale krav handler om at understøtte en realistisk træning
 
 - 80540 Software Development for Digital Health: krav, use cases, database og test som softwarefaglig struktur. Brug kun direkte citation, hvis citation key er verificeret; ellers bruges de synlige tabeller.
 - 72545 Interaktionsdesign: use cases og brugerrejser som oversættelse fra brugerbehov til design.
-- 77437 IT-projektledelse: scopekontrol og prioritering af krav.
+- 77437 IT-projektledelse: afgrænsningskontrol og prioritering af krav.
 - 89332 Sundhedsdata og interoperabilitet: krav til datakvalitet, adgang og afgrænsning af dataudveksling.
 
 ### Relevante bilag og synlige henvisninger
@@ -476,7 +499,7 @@ Arkitekturen adskiller brugerflade, applikationsstate, domænemodeller, dataadga
 2. **Lagdelingen reducerer kobling mellem UI og backend.** Beskriv presentation, AppState, domain models, repositories, integration/platform og database/RLS på konceptuelt niveau.
    Primære kilder: cite:apple_swiftui_docs, cite:supabase_rls_docs.
 
-3. **Repository-laget og AppState giver en samlet bruger- og sessionskontekst.** Forklar hvorfor auth, profile mode, aktiv plan, trackerstatus, subscription og runtime state skal koordineres.
+3. **Repository-laget og AppState giver en samlet bruger- og sessionskontekst.** Forklar hvorfor auth, profiltilstand, aktiv plan, trackerstatus, abonnementsstatus og runtime state skal koordineres.
    Synlige bilag: label:tab:tm-container-architecture, label:tab:tm-sql-fields.
 
 4. **Backend er sikkerhedsgrænse.** Forklar at RLS, helper functions, RPC og Edge Functions er autoritative, mens klienten er et typed og brugerrettet lag.
@@ -499,7 +522,7 @@ Arkitekturen adskiller brugerflade, applikationsstate, domænemodeller, dataadga
 
 - 80540 Software Development for Digital Health: lagdeling, use cases, databasedesign og test.
 - 89332 Sundhedsdata og interoperabilitet: datakvalitet, procesmodellering og systemafgrænsning.
-- 77437 IT-projektledelse: tradeoffs, scope, releaseparathed og teknisk risiko.
+- 77437 IT-projektledelse: afvejninger, afgrænsning, udgivelsesparathed og teknisk risiko.
 
 ### Relevante bilag og synlige henvisninger
 
@@ -606,7 +629,7 @@ Kapitlet skal forklare datamodellen, sikkerhedsmodellen og platformintegrationer
 
 ### Hovedpointe
 
-Træningsmesters dataarkitektur understøtter fleksibel progression ved at adskille planlagt træning, faktisk logging, completion og runtime-progression. Sikkerheden bygger på client-safe nøgler, bruger-session, RLS og server-side funktioner, mens HealthKit og øvrig interoperabilitet behandles som afgrænsede platformintegrationer.
+Træningsmesters dataarkitektur understøtter fleksibel progression ved at adskille planlagt træning, faktisk logging, completion og runtime-progression. Sikkerheden bygger på klientsikre nøgler, bruger-session, RLS og server-side funktioner, mens HealthKit og øvrig interoperabilitet behandles som afgrænsede platformintegrationer.
 
 ### Delargumenter i anbefalet rækkefølge
 
@@ -666,7 +689,7 @@ Data- og sikkerhedskapitlet skal afslutte med, at modellen nu kan kobles til de 
 ### Acceptkriterier for første version
 
 - Kapitlet forklarer datamodellen problemstyret og med ER-bilag.
-- RLS, Edge Functions og client-safe nøgler er tydeligt adskilt.
+- RLS, Edge Functions og klientsikre nøgler er tydeligt adskilt.
 - HealthKit og interoperabilitet er præcist afgrænset.
 - Rest-risici og begrænsninger omtales åbent.
 
@@ -709,7 +732,7 @@ Implementeringen realiserer rapportens kerne ved at samle programstruktur, track
 
 - Platform og backend: cite:apple_swiftui_docs, cite:apple_activitykit_live_data_docs, cite:apple_watchconnectivity_docs, cite:supabase_rls_docs, cite:supabase_securing_api_docs.
 - Træningslogik: cite:acsm2009_progression_models, cite:currier2026_acsm_resistance_training, cite:greig2020_autoregulation_resistance_training, cite:larsen2021_autoregulation_systematic_review.
-- Feedback og behavior change: cite:michie2013_bct_taxonomy_v1, cite:oinaskukkonen2009_persuasive_systems_design.
+- Feedback og adfærdsændring: cite:michie2013_bct_taxonomy_v1, cite:oinaskukkonen2009_persuasive_systems_design.
 
 ### Relevante kursusspor
 
@@ -750,7 +773,7 @@ Kapitlet skal dokumentere, hvad der er verificeret, hvordan resultaterne kan bru
 
 ### Hovedpointe
 
-Verifikationen giver rimelig dokumentation for, at den beskrevne design- og implementeringscase kan bygges og at centrale domæne-/payload-/tracker-/cycle-/Live Activity-logikker er testet. Den dokumenterer ikke fuld produktionsklarhed, clean CI, komplet security proof eller statistisk brugerudbytte.
+Verifikationen giver rimelig dokumentation for, at den beskrevne design- og implementeringscase kan bygges og at centrale domæne-/payload-/tracker-/cycle-/Live Activity-logikker er testet. Den dokumenterer ikke fuld produktionsklarhed, clean CI, komplet sikkerhedsbevis eller statistisk brugerudbytte.
 
 ### Delargumenter i anbefalet rækkefølge
 
@@ -762,7 +785,7 @@ Verifikationen giver rimelig dokumentation for, at den beskrevne design- og impl
 
 3. **Unit tests styrker domæne- og payloadclaims.** Fremhæv unit test-dækning som stærkere evidens for encoding, progress logic, tracker, cycle og Live Activity projection end for fulde brugerflows.
 
-4. **Integrationstests er begrænsede.** Integrationsteststatus skal bruges forsigtigt, fordi nogle admin/non-admin og cross-user scenarier kræver dedikerede credentials.
+4. **Integrationstests er begrænsede.** Integrationsteststatus skal bruges forsigtigt, fordi nogle admin/ikke-admin- og tværbruger-scenarier kræver dedikerede testlegitimationsoplysninger.
    Synlige bilag: label:tab:tm-test-traceability, label:tab:tm-rls-matrix.
 
 5. **Screenshots og diagrammer verificerer dokumenterede brugerflader og strukturer.** De 13 iOS-screenshots og diagrammer dokumenterer aktuel UI og arkitektur, men ikke watchOS/Live Activity runtime visuelt.
@@ -779,7 +802,7 @@ Verifikationen giver rimelig dokumentation for, at den beskrevne design- og impl
 
 - 80540 Software Development for Digital Health: test, build, database og traceability som teknisk dokumentation.
 - 79772 Metode: skelnen mellem dokumentation, observation og generaliserbar evidens.
-- 77437 IT-projektledelse: release readiness, rest-risici og scope.
+- 77437 IT-projektledelse: udgivelsesparathed, rest-risici og afgrænsning.
 
 ### Relevante bilag og synlige henvisninger
 
@@ -792,7 +815,7 @@ Verifikationen giver rimelig dokumentation for, at den beskrevne design- og impl
 ### Hvad kapitlet ikke må påstå
 
 - At appen er testet i clean CI, hvis dokumentationen er fra lokal freeze-state.
-- At integrationstestene dækker alle admin-, træner- og cross-user scenarier.
+- At integrationstestene dækker alle admin-, træner- og tværbruger-scenarier.
 - At watchOS og Live Activity er runtime-verificeret visuelt, hvis der ikke findes synlige runtime screenshots.
 - At unit tests dokumenterer brugeraccept eller sundhedseffekt.
 - At Edge Function helper tests er kørt, hvis de ikke er det.
@@ -849,7 +872,7 @@ Beta-feedbacken giver konkrete indikationer på friktion og brugerbehov, som er 
 
 - 79772 Metode: interview, digitale metoder, analyse af data, etik og persondata.
 - 72545 Interaktionsdesign: evaluering og prototyper.
-- 77437 IT-projektledelse: iteration, releasefriktion og prioritering.
+- 77437 IT-projektledelse: iteration, udgivelsesfriktion og prioritering.
 
 ### Relevante bilag og synlige henvisninger
 
@@ -862,7 +885,7 @@ Beta-feedbacken giver konkrete indikationer på friktion og brugerbehov, som er 
 
 - At beta-feedbacken er repræsentativ.
 - At brugernes motivation eller adherence er statistisk forbedret.
-- At direkte private citater må bruges uden samtykke.
+- At direkte private citater kan anvendes uden eksplicit samtykke.
 - At TestFlight-builds er det samme som systematisk evaluering.
 - At feedbacken alene beviser, at et designvalg er korrekt.
 
@@ -899,7 +922,7 @@ Træningsmester viser, at fleksibel progression kan understøttes gennem design-
 3. **App- og tracker-evidens støtter relevansen, men ikke den konkrete effekt.** Brug meta-analyser og appkvalitetsstudier som bredt evidensspor; undgå direkte overførsel til Træningsmester.
    Primære kilder: cite:laranjo2021_apps_trackers_meta, cite:romeo2019_smartphone_apps_pa_meta, cite:brickwood2019_wearable_trackers_meta, cite:metzendorf2024_mhealth_obesity_cochrane.
 
-4. **Sikkerhedsarkitekturen er stærk som design, men begrænset som verificeret bevis.** RLS, Edge Functions og client-safe nøgler er rigtige designgreb, men fuld cross-user/admin-verifikation og deployment-review mangler.
+4. **Sikkerhedsarkitekturen er stærk som design, men begrænset som verificeret bevis.** RLS, Edge Functions og klientsikre nøgler er rigtige designgreb, men fuld tværbruger-/admin-verifikation og deployment-gennemgang mangler.
    Primære kilder: cite:owasp2024_masvs, cite:europeanparliament2016_gdpr, cite:supabase_rls_docs.
    Synlige bilag: label:fig:tm-security-boundary-summary, label:tab:tm-rls-matrix, label:tab:tm-test-traceability.
 
@@ -907,7 +930,7 @@ Træningsmester viser, at fleksibel progression kan understøttes gennem design-
    Primære kilder: cite:grundtvig2025_analyse_data, cite:clotworthy2025_etik_kvalitet_forskning.
    Synlige bilag: label:tab:tm-beta-feedback, label:tab:tm-testflight-timeline.
 
-6. **Fremtidigt arbejde skal følge evidensniveauet.** Foreslå næste skridt: mere systematisk usabilitytest, længere beta, bedre watch/Live Activity runtime-dokumentation, cross-user security tests, datakvalitetsmålinger, og eventuelt senere effektstudie.
+6. **Fremtidigt arbejde skal følge evidensniveauet.** Foreslå næste skridt: mere systematisk usabilitytest, længere beta, bedre watch/Live Activity runtime-dokumentation, tværbruger-sikkerhedstest, datakvalitetsmålinger, og eventuelt senere effektstudie.
 
 ### Primære citation keys
 
@@ -922,7 +945,7 @@ Træningsmester viser, at fleksibel progression kan understøttes gennem design-
 - 88370 Bachelorprojekt: kritisk syntese og besvarelse af problemformulering.
 - 79772 Metode: metodekritik, generaliserbarhed, etik og datagrundlag.
 - 89332 Sundhedsdata og interoperabilitet: datakvalitet, sikkerhed og afgrænsning.
-- 77437 IT-projektledelse: rest-risici, release readiness og videre arbejde.
+- 77437 IT-projektledelse: rest-risici, udgivelsesparathed og videre arbejde.
 
 ### Relevante bilag og synlige henvisninger
 
@@ -1016,7 +1039,7 @@ Ingen egentlig overgang. Konklusionen skal afslutte rapporten og efterfølges ku
 | Autonom motivation og fysisk aktivitet | cite:teixeira2012_sdt_exercise |
 | Digital frafaldsproblematik | cite:eysenbach2005_law_of_attrition |
 | Effektivt engagement | cite:yardley2016_effective_engagement_dbci |
-| Behavior change framework | cite:michie2011_behaviour_change_wheel, cite:michie2013_bct_taxonomy_v1 |
+| Adfærdsændringsframework | cite:michie2011_behaviour_change_wheel, cite:michie2013_bct_taxonomy_v1 |
 | Persuasive/digital feedback | cite:oinaskukkonen2009_persuasive_systems_design, cite:nahumshani2018_jitai_mobile_health |
 | Apps og activity trackers | cite:laranjo2021_apps_trackers_meta, cite:romeo2019_smartphone_apps_pa_meta, cite:brickwood2019_wearable_trackers_meta |
 | Appkvalitet og BCT-indhold | cite:stoyanov2015_mobile_app_rating_scale, cite:bondaronek2018_quality_pa_apps, cite:kebede2018_evidence_informed_pa_apps, cite:middelweerd2014_apps_physical_activity |
