@@ -8,6 +8,9 @@
 
 \definecolor{KUrod}{RGB}{144,26,30}
 \definecolor{KUsundblue}{RGB}{0,61,115}
+\definecolor{headerblue}{RGB}{157,188,219}
+\definecolor{sideblue}{RGB}{210,222,238}
+\definecolor{titleteal}{RGB}{33,114,126}
 
 \hypersetup{
     colorlinks,
@@ -26,14 +29,72 @@
 \newcommand*{\kucoverbackground}[1]{\def\@kucoverbackground{#1}}
 \newcommand*{\kuheadercolor}[1]{\def\@kuheadercolor{#1}}
 \newcommand*{\kuheaderbackgroundwidth}[1]{\def\@kuheaderbackgroundwidth{#1}}
+\newcommand*{\kudegree}[1]{\def\@kudegree{#1}}
+\newcommand*{\kuunit}[1]{\def\@kuunit{#1}}
+\newcommand*{\kudepartment}[1]{\def\@kudepartment{#1}}
 
 \kuheaderone{KØBENHAVNS UNIVERSITET}
 \kuheadertwo{DET SUNDHEDSVIDENSKABELIGE FAKULTET}
 \kucoverbackground{assets/ku-cover-background.png}
 \kuheadercolor{black}
 \kuheaderbackgroundwidth{120mm}
+\kudegree{Bachelor i Sundhed og Informatik}
+\kuunit{Institut for Folkesundhedsvidenskab}
+\kudepartment{Afdeling for Sundhedstjenesteforskning}
 
-\def\maketitle{
+\def\makeprojecttitle{
+    \begingroup
+    \thispagestyle{empty}
+    \normalfont
+
+    \begin{flushright}
+    \@ptype\\
+    \@kuheaderone\\
+    \@kuheadertwo\\
+    \@date
+    \end{flushright}
+
+    \vspace*{\stretch{0.08}}
+
+    \ifdefined\@fpimage
+        \begin{center}
+        \includegraphics[width=.48\textwidth,height=72mm,keepaspectratio]{\@fpimage}
+        \end{center}
+    \fi
+
+    \vspace{0.8cm}
+
+    \begin{center}
+        {\huge\bfseries \@title\par}
+        \vspace{0.45cm}
+        {\Large \@subtitle\par}
+        \vspace{0.7cm}
+        {\large af\par}
+        \vspace{0.1cm}
+        {\large \@author\par}
+    \end{center}
+
+    \vspace*{\stretch{1.4}}
+
+    \noindent
+    \begin{minipage}[t]{0.56\textwidth}
+    \textbf{Vejleder}\\
+    \@advisor
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.40\textwidth}
+    \small
+    \raggedleft
+    \textbf{\@kudegree}\\
+    \@kuunit\\
+    \@kudepartment
+    \end{minipage}
+
+    \clearpage
+    \endgroup
+}
+
+\def\makekutitle{
 	    \thispagestyle{empty}
 	    \AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{\@kucoverbackground}}
 	    \ 
@@ -42,7 +103,7 @@
 	    \noindent{\color{white}\rule{\@kuheaderbackgroundwidth}{28mm}}
 	    \end{textblock*}
 	    \begin{textblock*}{170mm}(19mm,17mm)
-	    \noindent{\color{\@kuheadercolor}\fontsize{13}{13}\selectfont\addfontfeatures{LetterSpace=18}\@kuheaderone\\[5pt]
+	    \noindent{\sffamily\color{\@kuheadercolor}\fontsize{13}{13}\selectfont\addfontfeatures{LetterSpace=18}\@kuheaderone\\[5pt]
 	    \fontsize{9}{9}\selectfont\addfontfeatures{LetterSpace=14}\@kuheadertwo}
 	    \end{textblock*}
 	    
@@ -52,34 +113,36 @@
         \end{textblock}
     \fi
     
-    \begin{textblock}{10}(1.5,10.4) \noindent\fontsize{20}{20}\selectfont \textbf{\@ptype}
+    \begin{textblock}{10}(1.5,10.4) \noindent\sffamily\fontsize{20}{20}\selectfont \textbf{\@ptype}
     \end{textblock}
     
     \ifdefined\@subtitle
-        \begin{textblock}{10}(1.5,11.0) \noindent\fontsize{14}{14}\selectfont \@author
+        \begin{textblock}{10}(1.5,11.0) \noindent\sffamily\fontsize{14}{14}\selectfont \@author
         \end{textblock}
     \fi
 
     \ifdefined\@ptype
         \begin{textblock}{10}(1.5,11.9)
-        \noindent\fontsize{20}{20}\selectfont \textbf{\@title}
+        \noindent\sffamily\fontsize{20}{20}\selectfont \textbf{\@title}
         \end{textblock}
     \fi
     
     \begin{textblock}{10}(1.5,12.5)
-        \noindent\fontsize{14}{14}\selectfont \@subtitle
+        \noindent\raggedright\sffamily\fontsize{14}{14}\selectfont \@subtitle
     \end{textblock}
     
     \begin{textblock}{10}(1.5,13.7)
-    \noindent\fontsize{11}{11}\selectfont \@date 
+    \noindent\sffamily\fontsize{11}{11}\selectfont Dato: \@date
     \end{textblock}
     
     \ifdefined\@advisor
         \begin{textblock}{10}(1.5,14.2)
-        \noindent\fontsize{11}{11}\selectfont \@advisor 
+        \noindent\sffamily\fontsize{11}{11}\selectfont Vejleder: \@advisor
         \end{textblock}
     \fi
     
     \newpage
     \noindent
 }
+
+\renewcommand{\maketitle}{\makekutitle}

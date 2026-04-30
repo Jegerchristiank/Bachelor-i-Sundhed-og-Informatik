@@ -1,20 +1,34 @@
 % VIGTIGT! For at dokumentet kan kompilere, skal man benytte XeLaTeX eller LuaLaTeX som compiler. Dette kan gøres i Overleaf ved at gå til Menu -> Settings -> Compiler -> Vælg XeLaTeX/LuaLaTeX
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper,twoside]{article}
 
 \usepackage[numbers]{natbib} % Referencehåndtering til referencer.bib
 \usepackage{KUstyle}
-\usepackage[a4paper,margin=0.8in]{geometry} % Pakke til sidemargin
+\usepackage[a4paper,inner=2.8cm,outer=3.2cm,top=3.5cm,bottom=3cm]{geometry} % Pakke til sidemargin
 \usepackage{setspace} % Pakke til halvanden linjeafstand
 \usepackage{tabularx} % Pakke til tabel
 \usepackage{fontspec}
+\usepackage[danish]{babel}
+\usepackage{microtype}
 \usepackage{pdflscape}
 \usepackage{caption}
-\captionsetup{hypcap=false}
+\captionsetup{hypcap=false,font=small,labelfont=bf,justification=raggedright,singlelinecheck=false}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,shapes.geometric}
 
-\setmainfont{Arial}
+\IfFontExistsTF{Linux Libertine O}
+  {\setmainfont{Linux Libertine O}}
+  {\IfFontExistsTF{Libertinus Serif}
+    {\setmainfont{Libertinus Serif}}
+    {\IfFontExistsTF{Georgia}{\setmainfont{Georgia}}{\setmainfont{Times New Roman}}}}
+\setsansfont{Arial}
 \setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\tolerance=9999
+\hyphenpenalty=10000
+\exhyphenpenalty=100
 
 % Nedenstående ændrer indholdet på forsiden
 \kuheaderone{KØBENHAVNS UNIVERSITET}
@@ -22,12 +36,15 @@
 \kucoverbackground{assets/ku-cover-background-blue.png}
 \kuheadercolor{black}
 \kuheaderbackgroundwidth{120mm}
+\kudegree{Bachelor i Sundhed og Informatik}
+\kuunit{Institut for Folkesundhedsvidenskab}
+\kudepartment{Afdeling for Sundhedstjenesteforskning}
 \ptype{Bachelorprojekt}
 \author{Christian Kristensen, TDH522}
 \title{Træningsmester}
 \subtitle{Design og implementering af en digital træningsapp til fleksibel progression og motivation}
-\date{Dato: Afventer}
-\advisor{Vejleder: Karsten Vrangbæk}
+\date{Afventer}
+\advisor{Karsten Vrangbæk}
 \fpimage{assets/traeningsmester-logo-uden-baggrund.pdf} % Kilde-SVG ligger i assets/traeningsmester-logo-uden-baggrund.svg
 
 \renewcommand{\contentsname}{Indholdsfortegnelse}
@@ -35,12 +52,31 @@
 \renewcommand{\figurename}{Figur}
 \renewcommand{\tablename}{Tabel}
 
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-3.2ex plus -1ex minus -.2ex}%
+  {1.5ex plus .2ex}%
+  {\normalfont\huge\bfseries\color{titleteal}\raggedright}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-2.2ex plus -1ex minus -.2ex}%
+  {0.9ex plus .2ex}%
+  {\normalfont\Large\bfseries\raggedright}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {-1.8ex plus -0.8ex minus -.2ex}%
+  {0.7ex plus .2ex}%
+  {\normalfont\large\bfseries\raggedright}}
+\makeatother
+
 \begin{document}
 
-\maketitle
+\pagenumbering{gobble}
+\makeprojecttitle
+\makekutitle
 
-\onehalfspacing
+\setstretch{1.08}
 
+\pagenumbering{roman}
+\setcounter{page}{1}
 \begin{table}[h]
 \def\arraystretch{1.5}
 \begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X}
@@ -59,6 +95,9 @@ Dato: & Afventer
 
 \tableofcontents
 \newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 \input{indledning}
 

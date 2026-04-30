@@ -27,7 +27,7 @@ Start med disse filer i rækkefølge:
 
 - Hovedrapport: `main.tex`
 - Kapitelinput: `indledning.tex` for afsnittet Indledning, `problemformulering_og_afgraensning.tex` for afsnittet Problemformulering og afgrænsning, `teoretisk_og_faglig_ramme.tex` for afsnittet Teoretisk og faglig ramme, `metode.tex` for afsnittet Metode, `krav_og_use_cases.tex` for afsnittet Krav og use cases, `systemarkitektur.tex` for afsnittet Systemarkitektur, `interaktionsdesign.tex` for afsnittet Interaktionsdesign, `data_sikkerhed_og_interoperabilitet.tex` for afsnittet Data, sikkerhed og interoperabilitet, `implementering.tex` for afsnittet Implementering, `test_og_verifikation.tex` for afsnittet Test og verifikation, `evaluering_og_brugerindsigt.tex` for afsnittet Evaluering og brugerindsigt, `diskussion.tex` for afsnittet Diskussion og `konklusion.tex` for afsnittet Konklusion
-- KU-style og forsidemakroer: `KUstyle.sty` (overstyrer den oprindelige matematik-template med SUND-header og styrbar headerbaggrundsbredde)
+- KU-style, rapporttypografi og forsidemakroer: `KUstyle.sty` (styrer både projektrapportforsiden og den officielle KU-forside med SUND-header og styrbar headerbaggrundsbredde)
 - KU-forsidebaggrund: `KU-logo.pdf` som original, `assets/ku-cover-background.png` som rød rasterbaggrund og `assets/ku-cover-background-blue.png` som blå SUND-valgt rasterbaggrund
 - Træningsmester-logo på forsiden: `assets/traeningsmester-logo-uden-baggrund.svg` og Overleaf-kompatibel `assets/traeningsmester-logo-uden-baggrund.pdf`
 - Oprindelig template-grafik: `billede.png`
@@ -58,7 +58,7 @@ Start med disse filer i rækkefølge:
 | Mappe/fil | Ansvar | Primær brug |
 | --- | --- | --- |
 | `main.tex` | Bachelorrapportens LaTeX-hovedfil | Skrivning og struktur |
-| `KUstyle.sty` | KU-forside og layoutmakroer | Forsidebaggrund, headertekst, headerfarve og headerbaggrundsbredde styres fra `main.tex` |
+| `KUstyle.sty` | Rapporttypografi og forsidemakroer | Projektrapportforside, officiel KU-forside, forsidebaggrund, headertekst, headerfarve og headerbaggrundsbredde styres fra `main.tex` |
 | `.gitignore` | Git ignore-regler | Ignorerer lokale LaTeX build-artefakter |
 | `.gitattributes` | Git diff-/merge-attributter | Marker PDF-filer som binære |
 | `assets/` | Rapportens egne billedaktiver | Logoer, figurer og konverterede Overleaf-aktiver |
@@ -90,7 +90,9 @@ Start med disse filer i rækkefølge:
 
 `main.tex` er ryddet for synlig skabelon- og fyldtekst og samler rapportens kapitelinput. Det indeholder:
 
-- A4-opsætning med XeLaTeX/LuaLaTeX-kompatibel fontopsætning,
+- A4-opsætning med XeLaTeX/LuaLaTeX-kompatibel fontopsætning, tosidet geometri, serif brødtekst, afsnitsluft uden indrykning og farvede sektionsoverskrifter,
+- to forsider: en projektrapportforside inspireret af den eksterne rapportstil og derefter den officielle KU-forside,
+- romertal til metadata/indhold og arabisk sidenummerering fra hovedrapportens første afsnit,
 - udfyldt forfatter, projekttype, arbejdstitel, arbejdssubtitle og vejleder,
 - `Afventer` for dato,
 - udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,

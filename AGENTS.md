@@ -6,11 +6,12 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 ## Kort Status
 
 - Repoet er en Overleaf/LaTeX-mappe til bachelorrapporten om Træningsmester.
-- Hovedfilen er `main.tex`; layoutet styres af `KUstyle.sty`.
+- Hovedfilen er `main.tex`; rapporttypografi og forsider styres af `KUstyle.sty`.
 - Dokumentet skal kompileres med XeLaTeX eller LuaLaTeX, fordi templaten bruger `fontspec`, og hovedrapporten er sat op til A4.
 - `main.tex` indlæser `indledning.tex`, `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `metode.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex`, `test_og_verifikation.tex`, `evaluering_og_brugerindsigt.tex`, `diskussion.tex` og `konklusion.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
 - `skrivematrix.md` er internt styringsdokument for hele rapportens kapitelstruktur og må ikke inputtes eller omtales synligt i rapporten.
-- Forsidens KU-header, fakultetstekst, headerfarve, headerbaggrundsbredde og coverbaggrund styres fra `main.tex` via KUstyle-makroer.
+- Rapporten har to forsider: først en rolig projektrapportforside via `\makeprojecttitle`, derefter den officielle KU-forside via `\makekutitle`.
+- Forsidernes metadata, KU-header, fakultetstekst, headerfarve, headerbaggrundsbredde og coverbaggrund styres fra `main.tex` via KUstyle-makroer.
 - `Materiale/traeningsmester-2026-04-28/` er den kuraterede materialepakke til rapportarbejdet.
 - `referencer.bib`, `referencer.md` og `referencer/` er referencebiblioteket med BibTeX-nøgler, kildebeskrivelser og lokale åbne PDF-kopier.
 - Rå Messenger-, Facebook-, Gmail-, KU webmail-, Absalon- og Xcode-logdata er bevidst ikke inkluderet i den kuraterede mappe.
@@ -41,7 +42,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - Arbejdstitel i LaTeX: `Træningsmester`.
 - Arbejdssubtitle i LaTeX: `Design og implementering af en digital træningsapp til fleksibel progression og motivation`.
 - Afleveringsdato: afventer.
-- Forsidens KU-header skal pege på Det Sundhedsvidenskabelige Fakultet, ikke den oprindelige matematik-template.
+- Den officielle KU-forsides KU-header skal pege på Det Sundhedsvidenskabelige Fakultet, ikke den oprindelige matematik-template.
 
 ## Rapportens Autoritative Spor
 
@@ -72,7 +73,7 @@ Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supa
 ## Centrale Filer
 
 - `main.tex`: rapportens hovedfil og samlende inputfil.
-- `KUstyle.sty`: KU-forside- og layoutmakroer.
+- `KUstyle.sty`: rapporttypografi, projektrapportforside og officiel KU-forside.
 - `README.md`: kort template-vejledning.
 - `NAVIGATOR.md`: repoets strukturkort.
 - `referencer.bib`: BibTeX-bibliotek for eksterne artikler, standarder, tekniske docs og juridiske kilder.
