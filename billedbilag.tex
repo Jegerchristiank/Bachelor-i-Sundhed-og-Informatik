@@ -7,8 +7,6 @@ Dette bilag samler udvalgte billeder, figurer og tabeller om Træningsmester pr.
 
 Figurerne og tabellerne er udvalgt, så argumentationen kun henviser til materiale, der er indsat i bilaget. De supplerende tabeller er kondenserede og anonymiserede; private rådata, rå kommunikation og personhenførbare detaljer er ikke kopieret ind i bilaget.
 
-\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-
 \makeatletter
 \setlength{\@fptop}{0pt}
 \setlength{\@fpsep}{12pt plus 2pt minus 2pt}
@@ -185,9 +183,10 @@ Figurerne og tabellerne er udvalgt, så argumentationen kun henviser til materia
 \begin{table}[htbp]
 \small
 \renewcommand{\arraystretch}{1.18}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.23\textwidth} >{\raggedright\arraybackslash}p{0.28\textwidth} Y}
-\textbf{Bilagsspor} & \textbf{Faglig funktion} & \textbf{Begrundelse} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.23\textwidth} >{\RaggedRight\arraybackslash}p{0.28\textwidth} Y}
+\toprule
+\tmthead{Bilagsspor} & \tmthead{Faglig funktion} & \tmthead{Begrundelse} \\
+\midrule
 Aktuelle app-screenshots & Dokumenterer den aktuelle brugerflade & Figurerne \ref{fig:tm-ios-home-stale-session}--\ref{fig:tm-ios-home-current-qa} viser centrale flows i iOS 26.4-versionen af Træningsmester. \\
 Arkitektur- og dataflowdiagrammer & Dokumenterer systemets tekniske hovedstruktur & Figurerne \ref{fig:tm-system-context}--\ref{fig:tm-import-ai-edge-boundary} dækker systemkontekst, datamodel med forstørrede ER-udsnit, tracker/completion, RLS, watchOS, Live Activity og import/AI-grænser. \\
 Containerarkitektur & Samler arkitekturen i komponentlag & Tabel \ref{tab:tm-container-architecture} gør hovedlagene læsbare som tekstligt overblik. \\
@@ -196,6 +195,7 @@ Use cases og kravsporbarhed & Kobler funktionalitet til implementering og test &
 SQL, RLS og sikkerhed & Dokumenterer data- og adgangsmodellen & Tabel \ref{tab:tm-sql-domain-overblik}, \ref{tab:tm-sql-fields} og \ref{tab:tm-rls-matrix} beskriver datadomæner, idempotency-felter og sikkerhedsgrænser. \\
 Beta- og TestFlight-spor & Dokumenterer iteration og brugerindsigt & Tabel \ref{tab:tm-testflight-timeline} og \ref{tab:tm-beta-feedback} samler anonymiserede observationspunkter uden direkte citater eller persondata. \\
 Afgrænset råmateriale & Understøtter anonymisering og versionsklarhed & Private rådata, lukkede kommunikationsspor og ældre UI-optagelser er fravalgt af hensyn til samtykke, dataminimering og klarhed om den dokumenterede appversion. \\
+\bottomrule
 \end{tabularx}
 \caption{Gennemgang af bilagsmateriale og afgrænsning.}
 \label{tab:tm-bilag-materialegennemgang}
@@ -208,9 +208,10 @@ Afgrænset råmateriale & Understøtter anonymisering og versionsklarhed & Priva
 \begin{table}[htbp]
 \footnotesize
 \renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.17\textwidth} >{\raggedright\arraybackslash}p{0.30\textwidth} Y}
-\textbf{Use case} & \textbf{Kort formål} & \textbf{Faglig relevans} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.17\textwidth} >{\RaggedRight\arraybackslash}p{0.30\textwidth} Y}
+\toprule
+\tmthead{Use case} & \tmthead{Kort formål} & \tmthead{Faglig relevans} \\
+\midrule
 UC-01 Opret konto og log ind & Supabase Auth, session restore og app-shell efter autentifikation. & Viser auth som forudsætning for brugerbundne træningsdata og RLS. \\
 UC-02 Gennemfør onboarding & Valg af startvej, præferencer og eventuel programimport. & Understøtter analyse af første brugerrejse og friktion. \\
 UC-03 Opret/rediger program & Oprette, hente, opdatere, aktivere og dele træningsprogrammer. & Dokumenterer programstruktur som kernefunktion. \\
@@ -222,6 +223,7 @@ UC-08 Aktiv træningscyklus & Prioritere cyklus-runtime over lineær planindeksl
 UC-09 Træner administrerer klient & Træner ser klienter, aktivitet og programlinks via servervalideret relation. & Afgrænser trænerfunktioner som teknisk udvidelse, ikke hovedproblem. \\
 UC-10 Admin håndterer bruger eller aktivitet & Admin-center gennem Edge Function og server-side admin guard. & Underbygger governance, katalogkvalitet og sikkerhedsdesign. \\
 UC-11 Importer program eller historik & Importjob, normalisering, preview og gem af program/historikkladder. & Viser AI/import som afgrænset server-side flow. \\
+\bottomrule
 \end{tabularx}
 \caption{Kondenseret use case-overblik for Træningsmester.}
 \label{tab:tm-use-cases}
@@ -230,9 +232,10 @@ UC-11 Importer program eller historik & Importjob, normalisering, preview og gem
 \begin{table}[htbp]
 \footnotesize
 \renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.23\textwidth} >{\raggedright\arraybackslash}p{0.19\textwidth} Y}
-\textbf{Use case} & \textbf{Dækkede krav} & \textbf{Primære implementeringsspor} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.23\textwidth} >{\RaggedRight\arraybackslash}p{0.19\textwidth} Y}
+\toprule
+\tmthead{Use case} & \tmthead{Dækkede krav} & \tmthead{Primære implementeringsspor} \\
+\midrule
 UC-01 Opret konto og log ind & F-01, F-02, NF-01, NF-02 & Login, AppState, AppEnvironment, Supabase repositories. \\
 UC-02 Gennemfør onboarding & F-02, F-11, F-12 & Onboardingmodeller, onboarding-flow og ProgramReviewService. \\
 UC-03 Opret/rediger træningsprogram & F-03, F-04, NF-02, NF-03 & TrainingProgramView, AddProgramView og PlanRepository. \\
@@ -244,6 +247,7 @@ UC-08 Aktiv træningscyklus & F-13, F-08, F-14 & TrainingCycleViews, TrainingCyc
 UC-09 Træner administrerer klient & F-16, NF-02, NF-08 & ClientsView, TrainerClientService og trainer-client Edge Function. \\
 UC-10 Admin håndterer bruger & F-17, NF-01, NF-02 & SettingsView, admin-control-center og admin SQL functions. \\
 UC-11 Importer program/historik & F-12, NF-08 & PremiumView, ProgramReviewService og import Edge Functions. \\
+\bottomrule
 \end{tabularx}
 \caption{Sporbarhed mellem use cases, krav og implementeringsspor.}
 \label{tab:tm-krav-traceability}
@@ -256,15 +260,17 @@ UC-11 Importer program/historik & F-12, NF-08 & PremiumView, ProgramReviewServic
 \begin{table}[htbp]
 \small
 \renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}p{0.36\textwidth} Y}
-\textbf{Lag} & \textbf{Indhold} & \textbf{Faglig brug} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.22\textwidth} >{\RaggedRight\arraybackslash}p{0.36\textwidth} Y}
+\toprule
+\tmthead{Lag} & \tmthead{Indhold} & \tmthead{Faglig brug} \\
+\midrule
 iOS-app & SwiftUI-features, RootView, AppState, domain models, repository protocols, Supabase repositories, support services og designsystem. & Viser at UI, state og dataadgang er opdelt i lag frem for direkte databasekald fra views. \\
 watchOS-app & WatchRootView, WatchWorkoutStore og WatchAuthSyncBridge. & Dokumenterer watchOS som companion til dagens træning og hurtig logging. \\
 Extensions & Live Activity widget, Live Activity intents og watch widget/complication. & Underbygger lav-friktionsstatus under træning uden fuld appåbning. \\
 Supabase & Auth, Postgres med RLS/views/RPC og Storage. & Viser backendens rolle som auth-, data- og sikkerhedsgrænse. \\
 Edge Functions & Admin, trainer-client, program/import/analyse og billing functions. & Afgrænser privilegerede operationer til server-side runtime. \\
 Apple services & StoreKit 2, WatchConnectivity, ActivityKit/WidgetKit og HealthKit. & Placering af platformservices og afgrænsning af integrationer. \\
+\bottomrule
 \end{tabularx}
 \caption{Komponentoverblik for Træningsmesters arkitektur.}
 \label{tab:tm-container-architecture}
@@ -273,9 +279,10 @@ Apple services & StoreKit 2, WatchConnectivity, ActivityKit/WidgetKit og HealthK
 \begin{table}[htbp]
 \small
 \renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}p{0.34\textwidth} Y}
-\textbf{Procespunkt} & \textbf{Kondenseret procesindhold} & \textbf{Faglig brug} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.24\textwidth} >{\RaggedRight\arraybackslash}p{0.34\textwidth} Y}
+\toprule
+\tmthead{Procespunkt} & \tmthead{Kondenseret procesindhold} & \tmthead{Faglig brug} \\
+\midrule
 Start og session & Brugeren starter workout; AppState validerer auth og profile mode. & Viser at træningsflowet er brugerbundet og sessionafhængigt. \\
 Tracker-valg & Gateway afgør, om tracker er aktiveret. & Gør tracker-off completion til en legitim vej gennem flowet. \\
 Tracker-route & Appen åbner workoutTracker, henter øvelser og historik og synkroniserer Live Activity snapshot. & Dokumenterer sammenhæng mellem planlagt workout, faktisk logging og statusflade. \\
@@ -284,6 +291,7 @@ Log-sæt-loop & Brugeren indtaster reps, vægt eller varighed; repository skrive
 Completion & WorkoutCompletionService gemmer completion event. & Adskiller gennemført træning fra detaljeret trackerlog. \\
 Progression & Aktiv cyklus kalder progression RPC efter completion. & Kobler completion til næste træningshandling og cyklusprogression. \\
 Historik/Home & Historik og Home bruger completion- og trackerlogdata efter afslutning. & Viser feedback tilbage til brugerens næste app-state. \\
+\bottomrule
 \end{tabularx}
 \caption{Tracker- og completionproces for Træningsmester.}
 \label{tab:tm-tracker-flow-bpmn}
@@ -292,15 +300,17 @@ Historik/Home & Historik og Home bruger completion- og trackerlogdata efter afsl
 \begin{table}[htbp]
 \small
 \renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}p{0.40\textwidth} Y}
-\textbf{Autorisationsspor} & \textbf{Kondenseret regel} & \textbf{Faglig brug} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.22\textwidth} >{\RaggedRight\arraybackslash}p{0.40\textwidth} Y}
+\toprule
+\tmthead{Autorisationsspor} & \tmthead{Kondenseret regel} & \tmthead{Faglig brug} \\
+\midrule
 Miljø og klient & Appen loader miljø, afviser placeholder- eller service-role keys og opretter derefter anon Supabase client. & Underbygger beslutningen om, at service-role ikke må ligge i klienten. \\
 Session og brugerdata & AuthenticateUser og ResolveSession er forudsætning for ReadOwnData, WriteOwnData og delt planadgang. & Viser auth som betingelse for brugerbundne læse-/skrivehandlinger. \\
 Admin & CallAdminFunction kræver ResolveSession; derefter skal ValidateAdminServerSide ske, ellers afvises operationen. & Dokumenterer at admin-UI ikke er autoritativt i sig selv. \\
 Trainer/import & Service-role er kun legal inside Edge Function runtime for trainer-, admin- eller importfunktioner. & Afgrænser privilegeret adgang til backend. \\
 Tracker og Live Activity & WriteTrackerLog kræver session; Live Activity write kræver session og deduplicering via client action. & Understøtter idempotency og RLS i træningslogging. \\
 Afvisning og audit & Cross-user access afvises, og privilegerede mutationer bør persistere audit event. & Kobler sikkerhed, governance og sporbarhed. \\
+\bottomrule
 \end{tabularx}
 \caption{Autorisationsregler for Træningsmester.}
 \label{tab:tm-authorization-dcr}
@@ -313,9 +323,10 @@ Afvisning og audit & Cross-user access afvises, og privilegerede mutationer bør
 \begin{table}[htbp]
 \small
 \renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}p{0.36\textwidth} Y}
-\textbf{Domæne} & \textbf{Centrale tabeller} & \textbf{Formål} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.22\textwidth} >{\RaggedRight\arraybackslash}p{0.36\textwidth} Y}
+\toprule
+\tmthead{Domæne} & \tmthead{Centrale tabeller} & \tmthead{Formål} \\
+\midrule
 Øvelseskatalog & exercises, workout exercise user weights & Officielle/private øvelser, søgning, medier og brugerspecifik vægt. \\
 Programmer & plan, workout, plan workouts, workout exercises & Programstruktur, træningsdage og øvelsesrækker. \\
 Deling/social & plan share codes, shared users, invites, friend codes og friendships & Programdeling, invites og buddy-relationer. \\
@@ -324,6 +335,7 @@ Match & match og liked/parrede views & Like-/swipe-state for øvelser. \\
 Tracker/historik & trackerlog, workout completion events og active workout session state & Sætlogs, completion uden trackerlog og aktiv session. \\
 Settings/admin & user settings, activity events, feedback, version history og error reports & Profiltilstand, subscription, admin, feedback og diagnostics. \\
 Cykler/import & training cycles, cycle runtime-tabeller og training import jobs & Makro/meso/deload, runtime progression og importjobs. \\
+\bottomrule
 \end{tabularx}
 \caption{Centrale SQL-domæner i Træningsmesters datamodel.}
 \label{tab:tm-sql-domain-overblik}
@@ -332,9 +344,10 @@ Cykler/import & training cycles, cycle runtime-tabeller og training import jobs 
 \begin{table}[htbp]
 \small
 \renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}p{0.24\textwidth} Y}
-\textbf{Felt} & \textbf{Placering} & \textbf{Hvorfor feltet er relevant} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.24\textwidth} >{\RaggedRight\arraybackslash}p{0.24\textwidth} Y}
+\toprule
+\tmthead{Felt} & \tmthead{Placering} & \tmthead{Hvorfor feltet er relevant} \\
+\midrule
 profile mode & User settings, completion, session og cycle flows & Skelner personlig bruger fra træner-/klientkontekst. \\
 client action id & Trackerlog og workout completion events & Giver idempotency for Live Activity-, watch- og tracker-writes. \\
 reverted at & Workout completion events & Gør det muligt at fortryde completion uden at slette historik. \\
@@ -342,6 +355,7 @@ superset group og position & Workout exercises & Understøtter superset-struktur
 rest override & Workout exercises & Skelner standardpause fra bevidst pauseoverride. \\
 subscription tier & User settings & Binder StoreKit-køb til appens featureadgang. \\
 is admin & User settings & Bruges sammen med servervalidering, ikke som eneste adminbevis. \\
+\bottomrule
 \end{tabularx}
 \caption{Særligt relevante SQL-felter i Træningsmesters datamodel.}
 \label{tab:tm-sql-fields}
@@ -350,9 +364,10 @@ is admin & User settings & Bruges sammen med servervalidering, ikke som eneste a
 \begin{table}[htbp]
 \footnotesize
 \renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.19\textwidth} >{\raggedright\arraybackslash}p{0.25\textwidth} >{\raggedright\arraybackslash}p{0.25\textwidth} Y}
-\textbf{Område} & \textbf{Primær sikkerhedsgrænse} & \textbf{Klientbeskyttelse} & \textbf{Server/SQL-beskyttelse} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.19\textwidth} >{\RaggedRight\arraybackslash}p{0.25\textwidth} >{\RaggedRight\arraybackslash}p{0.25\textwidth} Y}
+\toprule
+\tmthead{Område} & \tmthead{Primær sikkerhedsgrænse} & \tmthead{Klientbeskyttelse} & \tmthead{Server/SQL-beskyttelse} \\
+\midrule
 Auth/session & Supabase Auth og anon key & AppEnvironment afviser placeholders/service-role. & Auth JWT og auth.uid(). \\
 Egne programmer & RLS på plan/workout-tabeller & Repositories kræver session og typed payloads. & Owner policies og helper functions. \\
 Delte programmer & RLS og share views & UI viser kun accessible resources. & Read/edit helpers for delt planadgang. \\
@@ -364,6 +379,7 @@ Live Activity intents & App Group snapshot og anon Supabase client & SharedStore
 Admin & Edge Function og SQL guard & UI viser kun adminflow efter server-backed state. & Admin guards og service-role kun i function runtime. \\
 Trainer/client & Edge Function og RLS & Trainer-client-service. & Related-user policies og trainer-client function. \\
 AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function runtime styrer service-role/OpenAI. \\
+\bottomrule
 \end{tabularx}
 \caption{RLS- og sikkerhedsmatrix for Træningsmester.}
 \label{tab:tm-rls-matrix}
@@ -376,9 +392,10 @@ AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function run
 \begin{table}[htbp]
 \footnotesize
 \renewcommand{\arraystretch}{1.08}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.16\textwidth} >{\raggedright\arraybackslash}p{0.18\textwidth} Y}
-\textbf{Dato} & \textbf{Version/build} & \textbf{Platform} & \textbf{Faglig brug} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.18\textwidth} >{\RaggedRight\arraybackslash}p{0.16\textwidth} >{\RaggedRight\arraybackslash}p{0.18\textwidth} Y}
+\toprule
+\tmthead{Dato} & \tmthead{Version/build} & \tmthead{Platform} & \tmthead{Faglig brug} \\
+\midrule
 2026-03-25 22:20 UTC & Invitation & iOS & Start på iOS-beta og formel rekruttering. \\
 2026-03-26 16:29 UTC & 1.0 (5) & iOS + watchOS & Første observerede build efter invitation. \\
 2026-03-27 13:02 UTC & 1.0 (6) & iOS + watchOS & Iteration samme uge som betaåbning. \\
@@ -395,6 +412,7 @@ AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function run
 2026-04-23 15:19 UTC & 2.0 (10) & iOS + watchOS & Sen beta med fortsat polish. \\
 2026-04-23 23:37 UTC & 2.0 (11) & iOS + watchOS & Samme døgn som build 10; kort releasecyklus. \\
 2026-04-25 21:01 UTC & 2.0 (12) & iOS + watchOS & Seneste observerede beta-build i den gennemgåede betaperiode. \\
+\bottomrule
 \end{tabularx}
 \caption{TestFlight-tidslinje for Træningsmester. Tabellen dokumenterer distribution og iteration, ikke sundhedseffekt.}
 \label{tab:tm-testflight-timeline}
@@ -403,9 +421,10 @@ AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function run
 \begin{table}[htbp]
 \footnotesize
 \renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.14\textwidth} >{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.32\textwidth} Y}
-\textbf{ID} & \textbf{Tema} & \textbf{Anonymiseret observation} & \textbf{Designimplikation} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.14\textwidth} >{\RaggedRight\arraybackslash}p{0.18\textwidth} >{\RaggedRight\arraybackslash}p{0.32\textwidth} Y}
+\toprule
+\tmthead{ID} & \tmthead{Tema} & \tmthead{Anonymiseret observation} & \tmthead{Designimplikation} \\
+\midrule
 B01 & Friktion & Lock screen/Live Activity blev bekræftet som fungerende i praktisk brug. & Prioriter hurtig status under træning uden fuld appåbning. \\
 B02 & Mediekvalitet & Dialogen pegede på ønske om rigtige øvelsesvideoer frem for generiske klip. & Øvelsesmedier skal være troværdige og kropsligt genkendelige. \\
 B05 & Betaproces & Build 4-12 blev distribueret mellem 2026-03-31 og 2026-04-25. & Dokumenterer iterationstempo, men ikke brugerudbytte alene. \\
@@ -416,6 +435,7 @@ B13 & Søgning & Tester kunne ikke finde almindelige øvelser eller varianter i 
 B15 & Enheder & Tester ønskede kg/lbs, fordi nogle maskiner bruger lbs. & Tilbyd global enhed, per-øvelse override og logkonvertering. \\
 B16 & Watch & Apple Watch blev positioneret som telefonfri træningsflade med stabilitetsforbehold. & Prioriter oversigt, hurtig logging og robust session-sync. \\
 B18 & Noter & Feedback pegede på behov for noter til teknik, udstyr eller sædeindstilling. & Øvelsesnoter bør behandles som træningskontekst, ikke kun fritekst. \\
+\bottomrule
 \end{tabularx}
 \caption{Udvalgte anonymiserede betaobservationer. Direkte citater og personhenførbare detaljer er fravalgt.}
 \label{tab:tm-beta-feedback}
@@ -424,9 +444,10 @@ B18 & Noter & Feedback pegede på behov for noter til teknik, udstyr eller sæde
 \begin{table}[htbp]
 \small
 \renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.26\textwidth} >{\raggedright\arraybackslash}p{0.25\textwidth} Y}
-\textbf{Teknisk påstand} & \textbf{Dokumenteret status} & \textbf{Begrænsning} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.26\textwidth} >{\RaggedRight\arraybackslash}p{0.25\textwidth} Y}
+\toprule
+\tmthead{Teknisk påstand} & \tmthead{Dokumenteret status} & \tmthead{Begrænsning} \\
+\midrule
 Appen kan bygges som iOS-klient & Bestået & Ikke dokumenteret som uafhængig reproducerbar build. \\
 Central forretningslogik er unit-testet & Bestået & Dækker unit-lag, ikke alle live backendscenarier. \\
 Supabase anon read path fungerer & Delvist bestået & Tests med admin- og ikke-admin-legitimationsoplysninger blev sprunget over. \\
@@ -434,6 +455,7 @@ watchOS targetet kan bygges & Bestået & Runtime-forløb er ikke dokumenteret vi
 Live Activity targetet kan bygges & Bestået & Dynamic Island-forløb er ikke dokumenteret visuelt i bilaget. \\
 Aktuel iOS UI er dokumenteret visuelt & Bestået & Bygger på de aktuelle screenshots, der er indsat i bilaget. \\
 Data-/sikkerhedsmodellen er dokumenteret & Stærk dokumentation & Fuld security proof kræver flere integrationstests. \\
+\bottomrule
 \end{tabularx}
 \caption{Verifikationsspor for tekniske claims.}
 \label{tab:tm-test-traceability}

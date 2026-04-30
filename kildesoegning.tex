@@ -11,13 +11,15 @@ Søgningen brugte flere søgeflader med forskellige roller. KB.dk/Primo blev bru
 
 \begin{center}
 \small
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.20\textwidth} >{\raggedright\arraybackslash}p{0.36\textwidth} >{\raggedright\arraybackslash}X}
-\textbf{Søgeflade} & \textbf{Brug i søgningen} & \textbf{Kildekritisk vurdering} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.20\textwidth} >{\RaggedRight\arraybackslash}p{0.36\textwidth} Y}
+\toprule
+\tmthead{Søgeflade} & \tmthead{Brug i søgningen} & \tmthead{Kildekritisk vurdering} \\
+\midrule
 KB.dk/Primo & Bred søgning på tværs af biblioteksindeks, tidsskrifter og fuldtekstposter. Søgningen \texttt{smartphone applications activity trackers physical activity adults systematic review} gav 5.189 resultater, hvor Laranjo et al. fremstod som et præcist første match. Søgningen \texttt{mHealth outdoor gym resistance training ecofit randomized controlled trial} gav 8 resultater, hvor Plotnikoff et al. var det centrale effektstudie \cite{laranjo2021_apps_trackers_meta,plotnikoff2023_ecofit_rct}. & Styrken er horisont og ikke-PubMed-dækning. Svagheden er støj, dubletter og brede resultater. KB.dk/Primo blev derfor brugt til at opdage og kontrollere kilder, ikke som endelig bibliografisk autoritet. \\
 PubMed/PMC & Præcis søgning efter peer-reviewede sundheds- og interventionsstudier med PMID/PMCID, systematiske reviews, meta-analyser og RCT'er. & Stærk til biomedicinske metadata og åbne PMC-artikler. Svagere til app-store-analyser, HCI, tekniske standarder og juridiske kilder. Den må derfor ikke stå alene. \\
 Crossref, DOI og udgiversider & Kontrol af titel, forfattere, tidsskrift, år, volumen, issue, sider/artikelnummer, DOI, ISSN og udgiver. Bruges især ved ScienceDirect, JMIR, BMJ/BJSM, Springer/BMC og PeerJ. & God til autoritative metadata og virksomme links, men ikke nok som selvstændig søgestrategi. DOI-sider kan pege på betalingsmure, selv når metadata er korrekte. \\
 Primærkilder for teknik og jura & Apple Developer, Apple HIG, Supabase Docs, OWASP MASVS og EUR-Lex blev brugt som primærkilder for platform, sikkerhed og databeskyttelse \cite{apple_swiftui_docs,apple_activitykit_live_data_docs,apple_hig_live_activities,apple_healthkit_docs,apple_watchconnectivity_docs,supabase_rls_docs,supabase_securing_api_docs,owasp2024_masvs,europeanparliament2016_gdpr}. & Autoritative for implementeringsvalg, men de dokumenterer ikke sundhedseffekt. De skal derfor ikke bruges som evidens for appens virkning. \\
+\bottomrule
 \end{tabularx}
 \captionof{table}{Søgeflader, deres funktion og deres kildekritiske begrænsninger.}
 \label{tab:kildesoegning-platforme}
@@ -29,12 +31,14 @@ Ud over databasesøgningen blev udvalgt kursusmateriale fra projektets relevante
 
 \begin{center}
 \footnotesize
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}p{0.34\textwidth} >{\raggedright\arraybackslash}X}
-\textbf{Kursusspor} & \textbf{Relevante nedslag} & \textbf{Kildekritisk brug} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.22\textwidth} >{\RaggedRight\arraybackslash}p{0.34\textwidth} Y}
+\toprule
+\tmthead{Kursusspor} & \tmthead{Relevante nedslag} & \tmthead{Kildekritisk brug} \\
+\midrule
 Interaktionsdesign & Hornbæks slides om brugerundersøgelser, prototyper, evaluering og tænkehøjt-test. Særligt relevante er brugerundersøgelser s. 3--8 og 13--15, prototyper s. 6--7, 12 og 20--21, evaluering s. 10--13 og tænkehøjt-test s. 2--8 \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering,hornbaek2024_taenkehoejt_eksperimenter}. & Bruges til at begrunde brugerundersøgelse, prototypearbejde, heuristisk/analytisk evaluering og tænkehøjt-test som design- og evalueringsgreb. Materialet er kursusfagligt og bør kobles med projektets egne figurer, bilag og eksterne HCI-/mHealth-kilder. \\
 Kvantitative og kvalitative undersøgelsesmetoder & Slides om videnskabsteori, spørgeskemakonstruktion, interview, persondata, etik, analyse og digitale metoder. Særligt relevante er metode/videnskabsteori slides 4--5, 14--16 og 19--25; spørgeskema slides 2--6, 24--32 og 55--60; interview slides 14--18, 21--27 og 31--37; persondata slides 10--18; etik/kvalitet slides 4--14 og 18--25; analyse slides 20--30 og 47--54; digitale metoder slides 10--24 og 76--79 \cite{gjoedsboel2025_metoder_videnskabsteori,groenvold2025_spoergeskemakonstruktion,gjoedsboel_grundtvig2025_interview,clotworthy2025_persondata_datasikkerhed,clotworthy2025_etik_kvalitet_forskning,grundtvig2025_analyse_data,grundtvig2025_digitale_metoder}. & Bruges til metodeafsnittets afgrænsning, anonymisering, etik, interview-/spørgeskemakritik, analyse og kildekritik. Det skal ikke erstatte artikler om app-effekt eller sundhedsadfærd. \\
 Sundhedsdata og interoperabilitet & Slides om datakvalitet og interoperabilitet, især s. 14--19 om datakvalitet og s. 63--72 om interoperabilitetsniveauer, FHIR og udfordringer. DCR/BPMN-notatet er relevant for deklarativ procesmodellering, compliance-regler og fleksible sundhedsprocesser \cite{zajac2026_data_quality_interoperability,ku2026_dcr_bpmn_modeling}. & Bruges som støtte til data-, sikkerheds- og interoperabilitetsafsnit. De kursusfaglige pointer suppleres med åbne eksterne kilder om datakvalitet, deklarative workflows og sundhedsinteroperabilitet \cite{mohammed2025_five_facets_data_quality,vanderalst2009_declarative_workflows,benson2016_principles_health_interoperability}. \\
+\bottomrule
 \end{tabularx}
 \captionof{table}{Kursusmateriale gennemgået som fagligt støttegrundlag med konkrete slide- og sidereferencer.}
 \label{tab:kursusmateriale-gennemgang}
@@ -48,13 +52,15 @@ Søgningen var problemstyret, fordi Træningsmester både kræver evidens om fys
 
 \begin{center}
 \scriptsize
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.33\textwidth} >{\raggedright\arraybackslash}X}
-\textbf{Spor} & \textbf{Eksempler på søgninger og resultater} & \textbf{Udvalgte kilder og begrundelse} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.18\textwidth} >{\RaggedRight\arraybackslash}p{0.33\textwidth} Y}
+\toprule
+\tmthead{Spor} & \tmthead{Eksempler på søgninger og resultater} & \tmthead{Udvalgte kilder og begrundelse} \\
+\midrule
 App- og tracker-effekt & KB.dk/Primo: \texttt{smartphone applications activity trackers physical activity adults systematic review} gav 5.189 resultater. PubMed: \texttt{smartphone applications activity trackers adults systematic review meta-analysis} gav 7 resultater. & Laranjo et al. blev valgt som mest centrale kilde, fordi den specifikt undersøger apps og activity trackers hos voksne. Romeo et al., Flores Mateo et al., Brickwood et al. og Chaudhry et al. supplerer med app-, wearable- og self-monitoring-evidens \cite{laranjo2021_apps_trackers_meta,romeo2019_smartphone_apps_pa_meta,floresmateo2015_mobile_apps_weight_pa_meta,brickwood2019_wearable_trackers_meta,chaudhry2020_step_count_meta}. \\
 Fitnessapps og mHealth-RCT'er & PubMed: \texttt{Apps for IMproving FITness AIMFIT randomized trial} gav 2 resultater. KB.dk/Primo: \texttt{mHealth outdoor gym resistance training ecofit randomized controlled trial} gav 8 resultater. & Direito et al. blev valgt som fitnessapp-RCT. Plotnikoff et al. blev valgt som mest træningsnære mHealth-kilde, fordi studiet undersøger outdoor gym resistance training. Protokol- og procesevalueringsartikler blev fravalgt, når hovedresultatet var tilgængeligt \cite{direito2015_aimfit_rct,plotnikoff2023_ecofit_rct}. \\
 Appkvalitet og BCT-indhold & PubMed/KB.dk/DOI-søgninger på \texttt{physical activity apps behavior change techniques content analysis}, \texttt{mobile app rating scale} og relevante citationer fra tidligere app-reviews. & Middelweerd, Lyons, Bondaronek, Kebede og Conroy blev valgt, fordi de undersøger BCT'er, evidensinformeret indhold og kvalitet i kommercielle eller offentligt tilgængelige apps. Stoyanov blev tilføjet, fordi MARS giver et konkret vurderingsværktøj for appkvalitet \cite{middelweerd2014_apps_physical_activity,lyons2014_bct_activity_monitors,bondaronek2018_quality_pa_apps,kebede2018_evidence_informed_pa_apps,conroy2014_bct_top_ranked_pa_apps,stoyanov2015_mobile_app_rating_scale}. \\
 Motivation og digital engagement & Målrettede DOI-, PubMed- og citationsopslag på self-determination theory, attrition, effective engagement og just-in-time adaptive interventions. & Teixeira et al., Eysenbach, Yardley et al. og Nahum-Shani et al. blev bevaret, fordi de forklarer motivation, frafald, meningsfuldt engagement og kontekstafhængig digital støtte \cite{teixeira2012_sdt_exercise,eysenbach2005_law_of_attrition,yardley2016_effective_engagement_dbci,nahumshani2018_jitai_mobile_health}. \\
+\bottomrule
 \end{tabularx}
 \captionof{table}{Søgespor om app-effekt, appkvalitet og digital engagement.}
 \label{tab:kildesoegning-appspor}
@@ -62,12 +68,14 @@ Motivation og digital engagement & Målrettede DOI-, PubMed- og citationsopslag 
 
 \begin{center}
 \scriptsize
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.33\textwidth} >{\raggedright\arraybackslash}X}
-\textbf{Spor} & \textbf{Eksempler på søgninger og resultater} & \textbf{Udvalgte kilder og begrundelse} \\
-\hline
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.18\textwidth} >{\RaggedRight\arraybackslash}p{0.33\textwidth} Y}
+\toprule
+\tmthead{Spor} & \tmthead{Eksempler på søgninger og resultater} & \tmthead{Udvalgte kilder og begrundelse} \\
+\midrule
 Progression og autoregulering & PubMed/PMC, PeerJ, Sports Medicine og ACSM/DOI-opslag på \texttt{progression models resistance training}, \texttt{autoregulation resistance training} og \texttt{resistance training prescription}. & ACSM 2009 og Currier et al. 2026 blev valgt som træningsfaglige referencepunkter. Greig et al. og Larsen et al. blev valgt, fordi de gør fleksibel justering og autoregulering relevant for styrketræning \cite{acsm2009_progression_models,currier2026_acsm_resistance_training,greig2020_autoregulation_resistance_training,larsen2021_autoregulation_systematic_review}. \\
 Datakvalitet og interoperabilitet & Kursusgennemgang kombineret med DOI-/udgiversøgninger på \texttt{data quality assessment facets}, \texttt{declarative workflows flexibility support} og \texttt{health interoperability HL7 FHIR}. & Mohammed et al. blev valgt som nyere datakvalitetskilde. van der Aalst et al. blev valgt som åben kilde om deklarative workflows og fleksibilitet. Benson og Grieve blev valgt som bogreference til sundhedsinteroperabilitet, HL7 og FHIR \cite{mohammed2025_five_facets_data_quality,vanderalst2009_declarative_workflows,benson2016_principles_health_interoperability}. \\
 Søgemetode og transparens & Crossref/udgiversøgning på PRISMA-S og PRESS-guideline for dokumentation og kvalitetssikring af søgestrategier. & Rethlefsen et al. og McGowan et al. blev tilføjet som metodiske kilder, så kildesøgningsafsnittet kan forklare transparens, søgestrenge og kontrol af elektroniske søgninger \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. \\
+\bottomrule
 \end{tabularx}
 \captionof{table}{Søgespor om træningsprogression, datakvalitet og søgemetode.}
 \label{tab:kildesoegning-progression-data-metode}

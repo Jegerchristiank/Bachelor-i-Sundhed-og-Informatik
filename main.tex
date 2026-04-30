@@ -1,17 +1,31 @@
 % VIGTIGT! For at dokumentet kan kompilere, skal man benytte XeLaTeX eller LuaLaTeX som compiler. Dette kan gøres i Overleaf ved at gå til Menu -> Settings -> Compiler -> Vælg XeLaTeX/LuaLaTeX
 \documentclass[10pt,a4paper,twoside]{article}
 
-\usepackage[numbers]{natbib} % Referencehåndtering til referencer.bib
+\usepackage[numbers,sort&compress]{natbib} % Referencehåndtering til referencer.bib
 \usepackage{KUstyle}
 \usepackage[a4paper,inner=2.8cm,outer=3.2cm,top=3.5cm,bottom=3cm]{geometry} % Pakke til sidemargin
 \usepackage{setspace} % Pakke til halvanden linjeafstand
+\usepackage{array}
 \usepackage{tabularx} % Pakke til tabel
+\usepackage{booktabs}
 \usepackage{fontspec}
 \usepackage[danish]{babel}
-\usepackage{microtype}
+\usepackage[autostyle=true]{csquotes}
+\usepackage[final]{microtype}
+\usepackage{ragged2e}
 \usepackage{pdflscape}
 \usepackage{caption}
-\captionsetup{hypcap=false,font=small,labelfont=bf,justification=raggedright,singlelinecheck=false}
+\captionsetup{
+  hypcap=false,
+  font={small,stretch=0.98},
+  labelfont=bf,
+  labelsep=period,
+  justification=RaggedRight,
+  singlelinecheck=false,
+  skip=6pt
+}
+\captionsetup[table]{position=bottom,skip=7pt}
+\captionsetup[figure]{skip=6pt}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,shapes.geometric}
 
@@ -23,14 +37,26 @@
       {\setmainfont{Times New Roman}}
       {\IfFontExistsTF{Georgia}{\setmainfont{Georgia}}{\setmainfont{Times}}}}}
 \setsansfont{Arial}
-\setlength{\emergencystretch}{3em}
+\microtypesetup{protrusion=true}
+\frenchspacing
+\setlength{\emergencystretch}{2em}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\setlength{\tabcolsep}{5.5pt}
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{2}
-\tolerance=9999
-\hyphenpenalty=10000
-\exhyphenpenalty=100
+\tolerance=2500
+\hyphenpenalty=2500
+\exhyphenpenalty=1000
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcommand{\tmthead}[1]{\textbf{#1}}
+\setlength{\leftmargini}{1.7em}
+\setlength{\leftmarginii}{1.45em}
 
 % Nedenstående ændrer indholdet på forsiden
 \kuheaderone{KØBENHAVNS UNIVERSITET}
@@ -54,8 +80,29 @@
 \renewcommand{\refname}{Referencer}
 \renewcommand{\figurename}{Figur}
 \renewcommand{\tablename}{Tabel}
+\setcitestyle{numbers,square,comma,sort&compress}
+\setlength{\bibsep}{0.45em plus 0.15em minus 0.05em}
+\renewcommand{\bibfont}{\small}
 
 \makeatletter
+\newenvironment{tmquote}{%
+  \par\addvspace{1.1em}%
+  \noindent\hspace*{0.45cm}%
+  \begin{minipage}{0.9\textwidth}%
+    \noindent{\color{black!35}\vrule width 0.8pt}%
+    \hspace{0.7cm}%
+    \begin{minipage}{0.82\textwidth}%
+      \small\itshape\color{black!90}%
+      \setlength{\parskip}{0.45ex}%
+      \setlength{\parindent}{0pt}%
+      \ignorespaces
+}{%
+    \end{minipage}%
+  \end{minipage}%
+  \par\addvspace{1.1em}%
+}
+\renewenvironment{quote}{\begin{tmquote}}{\end{tmquote}}
+
 \newif\iftmappendix
 \tmappendixfalse
 \let\tmoldappendix\appendix
@@ -139,17 +186,20 @@
 \pagenumbering{roman}
 \setcounter{page}{1}
 \begin{table}[h]
-\def\arraystretch{1.5}
-\begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X}
-Fakultet: & Det Sundhedsvidenskabelige Fakultet \\
-Institutnavn: & Institut for Folkesundhedsvidenskab \\
-Afdelingsnavn: & Afdeling for Sundhedstjenesteforskning \\
-Uddannelse: & Bachelor i Sundhed og Informatik \\
-Forfatter(e): & Christian Kristensen, TDH522 \\
-Titel og evt. undertitel: & Træningsmester: Design og implementering af en digital træningsapp til fleksibel progression og motivation \\
-Emnebeskrivelse: & Projektet undersøger, hvordan en digital træningsapp kan designes og implementeres, så programstruktur, progression og feedback understøtter vedvarende motivation og fleksibel håndtering af afvigelser fra et planlagt træningsforløb uden at øge risikoen for demotivation og frafald. \\
-Vejleder: & Karsten Vrangbæk \\
-Dato: & Afventer
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{0.27\textwidth} Y}
+\toprule
+Fakultet & Det Sundhedsvidenskabelige Fakultet \\
+Institutnavn & Institut for Folkesundhedsvidenskab \\
+Afdelingsnavn & Afdeling for Sundhedstjenesteforskning \\
+Uddannelse & Bachelor i Sundhed og Informatik \\
+Forfatter(e) & Christian Kristensen, TDH522 \\
+Titel og evt. undertitel & Træningsmester: Design og implementering af en digital træningsapp til fleksibel progression og motivation \\
+Emnebeskrivelse & Projektet undersøger, hvordan en digital træningsapp kan designes og implementeres, så programstruktur, progression og feedback understøtter vedvarende motivation og fleksibel håndtering af afvigelser fra et planlagt træningsforløb uden at øge risikoen for demotivation og frafald. \\
+Vejleder & Karsten Vrangbæk \\
+Dato & Afventer \\
+\bottomrule
 \end{tabularx}
 \end{table}
 \newpage
