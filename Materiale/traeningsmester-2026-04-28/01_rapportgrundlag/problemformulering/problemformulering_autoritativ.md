@@ -7,9 +7,9 @@ Formål: samle de to problemformuleringsspor i pakken, så rapporten ikke får k
 
 Hvordan kan en digital træningsapp designes og implementeres, så programstruktur, progression og feedback understøtter vedvarende motivation og fleksibel håndtering af afvigelser fra et planlagt træningsforløb uden at øge risikoen for demotivation og frafald?
 
-## Case: Træningsmester Som Native SwiftUI-App
+## Case: Træningsmester Som Egenudviklet Native SwiftUI-App
 
-Træningsmester bruges som design- og implementeringscase. SwiftUI-migrationen, Supabase-arkitekturen, watchOS companion appen, Live Activity og træner-/adminfunktioner er ikke et separat hovedproblem. De er tekniske og organisatoriske midler til at undersøge hovedspørgsmålet.
+Træningsmester er bachelorprojektets egenudviklede design- og implementeringscase. Case betyder her den app, der er designet, implementeret og undersøgt i projektet, ikke et eksternt eksempel. SwiftUI-migrationen, Supabase-arkitekturen, watchOS companion appen, Live Activity og træner-/adminfunktioner er ikke et separat hovedproblem. De er tekniske og organisatoriske midler i appen til at undersøge hovedspørgsmålet.
 
 Den brede formulering om native SwiftUI, parity, sikker arkitektur og træner-klient-samarbejde bør derfor placeres som caseafgrænsning eller underspørgsmål:
 
@@ -27,4 +27,3 @@ Hvordan kan Træningsmester som native SwiftUI-løsning realisere denne fleksibl
 - `problemformulering_resume.md` matcher hovedspørgsmålet og bør bruges som primær problemformulering.
 - `problemformuleringsresume.md` bør læses som case-/implementeringsafgrænsning, ikke som konkurrerende hovedproblem.
 - Den redigerede PDF i `problemformulering_ucph_math_redacted.pdf` er den oprindelige kilde og bør nævnes som problemformuleringsgrundlag.
-

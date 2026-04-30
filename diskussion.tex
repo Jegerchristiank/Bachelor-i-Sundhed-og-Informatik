@@ -1,12 +1,12 @@
 \section{Diskussion}
 
-Træningsmester viser en plausibel design- og implementeringsmodel, hvor planlagt træning, faktisk logging, completion, feedback og næste handling adskilles. Det er relevant, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Casen dokumenterer dog ikke empirisk effekt på motivation, adherence eller sundhed.
+Den udviklede Træningsmester-app viser en plausibel design- og implementeringsmodel, hvor planlagt træning, faktisk logging, completion, feedback og næste handling adskilles. Det er relevant, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Projektet dokumenterer dog ikke empirisk effekt på motivation, adherence eller sundhed.
 
-Diskussionen samler derfor fire spændinger: fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Det er i disse spændinger, casens faglige værdi ligger.
+Diskussionen samler derfor fire spændinger: fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Det er i disse spændinger, appens faglige værdi som design- og implementeringsarbejde ligger.
 
 \subsection{Fleksibilitet og datakvalitet}
 
-Casens stærkeste bidrag er at behandle afvigelser som systemtilstande frem for fejl. Figur~\ref{fig:tm-tracker-completion-summary} viser, hvordan trackerlog og completion kan adskilles, så et træningspas kan registreres som gennemført, selv om alle detaljer ikke er logget. Greig et al.s arbejde om autoregulering understøtter, at faktisk træning kan afvige fagligt legitimt fra en fast plan \cite{greig2020_autoregulation_resistance_training}.
+Appens stærkeste bidrag er at behandle afvigelser som systemtilstande frem for fejl. Figur~\ref{fig:tm-tracker-completion-summary} viser, hvordan trackerlog og completion kan adskilles, så et træningspas kan registreres som gennemført, selv om alle detaljer ikke er logget. Greig et al.s arbejde om autoregulering understøtter, at faktisk træning kan afvige fagligt legitimt fra en fast plan \cite{greig2020_autoregulation_resistance_training}.
 
 Styrken har et tradeoff. Completion uden fuld trackerlog bevarer historik og næste handling, men datagranulariteten falder. Mohammed et al.s datakvalitetsramme gør dette til et formålsspørgsmål: data kan være gode til progression og kontinuitet, men utilstrækkelige til detaljeret analyse \cite{mohammed2025_five_facets_data_quality}. Træningsmester bør derfor normalisere afvigelser uden at gøre dem usynlige.
 
@@ -16,7 +16,7 @@ Dette tradeoff bør være synligt for både design og senere evaluering. Hvis co
 
 Lav friktion er nødvendig, fordi brugeren logger under fysisk aktivitet. Stoyanovs MARS-ramme viser, at appkvalitet også handler om engagement, information og brugbarhed \cite{stoyanov2015_mobile_app_rating_scale}. Træningsmester må derfor balancere mellem at være let nok til faktisk brug og detaljeret nok til meningsfuld feedback.
 
-App- og tracker-evidensen støtter relevansen, men ikke effekten. Laranjo et al., Romeo et al. og Brickwood et al. viser, at apps og trackere kan påvirke fysisk aktivitet, men deres resultater kan ikke overføres direkte til en ny styrketræningsapp med andet design og andet datagrundlag \cite{laranjo2021_apps_trackers_meta,romeo2019_smartphone_apps_pa_meta,brickwood2019_wearable_trackers_meta}. Casen kan derfor argumentere for plausibilitet, ikke dokumenteret virkning.
+App- og tracker-evidensen støtter relevansen, men ikke effekten. Laranjo et al., Romeo et al. og Brickwood et al. viser, at apps og trackere kan påvirke fysisk aktivitet, men deres resultater kan ikke overføres direkte til en ny styrketræningsapp med andet design og andet datagrundlag \cite{laranjo2021_apps_trackers_meta,romeo2019_smartphone_apps_pa_meta,brickwood2019_wearable_trackers_meta}. Træningsmester kan derfor argumentere for plausibilitet, ikke dokumenteret virkning.
 
 Det er en vigtig kildekritisk grænse. Reviews og meta-analyser giver tyngde til problemfeltet, men de erstatter ikke evaluering af den konkrete app. Træningsmester skal derfor ses som et forarbejde til senere bruger- og effektstudier, ikke som et resultat af dem.
 
@@ -24,7 +24,7 @@ Det er en vigtig kildekritisk grænse. Reviews og meta-analyser giver tyngde til
 
 Sikkerhedsmodellen er en styrke, fordi klienten ikke behandles som eneste sikkerhedsgrænse. Figur~\ref{fig:tm-security-boundary-summary} og Tabel~\ref{tab:tm-rls-matrix} viser en arkitektur, hvor RLS og Edge Functions bærer adgangskontrol. OWASP MASVS, GDPR og Supabase RLS understøtter denne retning \cite{owasp2024_masvs,europeanparliament2016_gdpr,supabase_rls_docs}.
 
-Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser dokumenterede build- og testspor, men også gaps i rolle-, backend- og runtime-scenarier. Derfor kan casen ikke konkludere fuld sikkerhedscertificering, penetrationstest eller komplet produktionsmodenhed. Den kan kun konkludere, at sikkerhedsdesignet er fagligt plausibelt og delvist verificeret.
+Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser dokumenterede build- og testspor, men også gaps i rolle-, backend- og runtime-scenarier. Derfor kan projektet ikke konkludere fuld sikkerhedscertificering, penetrationstest eller komplet produktionsmodenhed. Det kan kun konkludere, at sikkerhedsdesignet er fagligt plausibelt og delvist verificeret.
 
 Sikkerhedsargumentet er derfor stærkest på designniveau. Det viser, hvor adgang bør håndhæves, og hvorfor privilegeret logik ikke bør ligge i klienten. Det svageste punkt er dækningsgraden: alle rolle- og tværbrugerscenarier skal testes, før designet kan omsættes til et stærkere driftspåstand.
 
@@ -34,4 +34,4 @@ Beta-feedbacken styrker vurderingen, fordi den viser praktisk friktion omkring i
 
 Videre arbejde bør følge tre trin. Først bør Home, tracker, completion og søgning usabilitytestes systematisk. Dernæst bør betaen udvides over længere tid og med bredere deltagelse. Til sidst bør rollebaserede RLS-scenarier, Edge Functions, datakvalitet, watchOS og Live Activity runtime testes mere målrettet. Et egentligt effektstudie giver først mening efter denne modning.
 
-Samlet viser casen, at fleksibel progression er et tværgående designproblem. Den kan ikke løses alene af en algoritme, en pæn brugerflade eller en sikker database. Den kræver, at træningsfaglig progression, brugerens situation, datakvalitet og adgangskontrol tænkes sammen.
+Samlet viser arbejdet med Træningsmester, at fleksibel progression er et tværgående designproblem. Den kan ikke løses alene af en algoritme, en pæn brugerflade eller en sikker database. Den kræver, at træningsfaglig progression, brugerens situation, datakvalitet og adgangskontrol tænkes sammen.

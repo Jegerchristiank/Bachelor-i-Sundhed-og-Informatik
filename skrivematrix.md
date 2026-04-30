@@ -13,7 +13,7 @@ Rapportens styrende spørgsmål er:
 
 ### Caseafgrænsning
 
-Træningsmester er en design- og implementeringscase. SwiftUI, Supabase, watchOS, Live Activity, trænerfunktioner, adminfunktioner og import/AI er tekniske og organisatoriske midler til at undersøge hovedspørgsmålet. De må ikke blive konkurrerende hovedproblemer.
+Træningsmester er bachelorprojektets egenudviklede design- og implementeringscase. Case betyder her projektets egen app som undersøgelsesartefakt, ikke et eksternt eksempel. SwiftUI, Supabase, watchOS, Live Activity, trænerfunktioner, adminfunktioner og import/AI er tekniske og organisatoriske midler i appen til at undersøge hovedspørgsmålet. De må ikke blive konkurrerende hovedproblemer.
 
 ### Skriveregel for rapporttekst
 
@@ -45,18 +45,18 @@ Når disse filer bruges, skal indholdet omsættes til rapporttekst som faglig an
 
 ## Rød tråd
 
-Rapporten skal føre læseren fra et bredt problem til en præcis design- og implementeringscase:
+Rapporten skal føre læseren fra et bredt problem til en præcis egenudviklet design- og implementeringscase:
 
 1. **Indledning** etablerer problemet: digitale træningsapps kan understøtte fysisk aktivitet og træningsadfærd, men effekten afhænger af engagement, kvalitet, friktion og evnen til at håndtere realistiske afvigelser.
-2. **Problemformulering og afgrænsning** oversætter problemet til rapportens hovedspørgsmål og afgrænser Træningsmester som case frem for som produktpitch.
+2. **Problemformulering og afgrænsning** oversætter problemet til rapportens hovedspørgsmål og placerer Træningsmester som egenudviklet artefakt frem for som produktpitch.
 3. **Teoretisk og faglig ramme** giver de begreber, rapporten senere bruger til at analysere motivation, adfærdsændring, appkvalitet, progression, interaktionsdesign, datakvalitet og sikkerhed.
-4. **Metode** forklarer, hvordan projektet undersøges: som design- og implementeringscase med kildesøgning, dokument-/artefaktanalyse, anonymiseret beta-feedback, bilagsmateriale og teknisk verifikation.
+4. **Metode** forklarer, hvordan projektet undersøges: som egenudviklet design- og implementeringscase med kildesøgning, dokument-/artefaktanalyse, anonymiseret beta-feedback, bilagsmateriale og teknisk verifikation.
 5. **Krav og use cases** omsætter problemformuleringen til funktionelle og ikke-funktionelle krav, hvor fleksibel progression, lav friktion og sikker dataadgang kan spores til konkrete flows.
 6. **Systemarkitektur** viser, hvordan SwiftUI, AppState, repository-lag, Supabase, RLS, Edge Functions, watchOS og Live Activity tilsammen understøtter appens kerneproblem.
 7. **Interaktionsdesign** analyserer de brugerflader og flows, der skal gøre plan, tracker, completion, feedback og næste handling forståelige i en faktisk træningssituation.
 8. **Data, sikkerhed og interoperabilitet** redegør for datamodellen, sikkerhedsgrænserne og afgrænsningen mellem fitnessdata, HealthKit og egentlig klinisk interoperabilitet.
 9. **Implementering** forklarer de vigtigste implementeringsvalg, der realiserer fleksibel progression og feedback uden at gøre kapitlet til en filgennemgang.
-10. **Test og verifikation** dokumenterer build, tests, screenshots, diagrammer og kendte begrænsninger som teknisk evidens for casen.
+10. **Test og verifikation** dokumenterer build, tests, screenshots, diagrammer og kendte begrænsninger som teknisk evidens for den udviklede app.
 11. **Evaluering og brugerindsigt** bruger anonymiseret beta-feedback til at vurdere friktion, forståelighed, behov og designimplikationer.
 12. **Diskussion** samler styrker, begrænsninger, evidensniveau, generaliserbarhed, sikkerhed og fremtidigt arbejde.
 13. **Konklusion** svarer direkte på problemformuleringen og afgrænser, hvad projektet har vist, og hvad det ikke har dokumenteret.
@@ -77,7 +77,7 @@ Den røde tråd skal være: **fra brugerens realistiske træningsadfærd til et 
 
 ### Formuleringsstandard
 
-- Skriv: "studier peger på", "kan understøtte", "giver et fagligt grundlag for", "i denne case undersøges".
+- Skriv: "studier peger på", "kan understøtte", "giver et fagligt grundlag for", "i den udviklede app undersøges".
 - Undgå: "Træningsmester beviser", "appen øger adherence", "brugerne bliver motiverede", "sikkerheden er fuldt dokumenteret".
 - Når en påstand handler om effekt, skal den knyttes til litteraturen generelt.
 - Når en påstand handler om Træningsmester, skal den knyttes til designrationale, implementering, bilag eller anonymiseret feedback.
@@ -86,7 +86,7 @@ Den røde tråd skal være: **fra brugerens realistiske træningsadfærd til et 
 
 ### Kapitelmål
 
-Indledningen skal gøre det klart, hvorfor problemet er relevant, og hvorfor en digital træningsapp er en rimelig, men ikke triviel, case. Den skal introducere spændingen mellem planlagt træning og faktisk træningsadfærd: brugere springer pas over, træner uden fuld logging, ændrer belastning, mister overblik eller oplever friktion i appen. Indledningen skal ende i et behov for et system, der understøtter progression og feedback uden at straffe afvigelser.
+Indledningen skal gøre det klart, hvorfor problemet er relevant, og hvorfor en digital træningsapp er et rimeligt, men ikke trivielt, udviklingsartefakt. Den skal introducere spændingen mellem planlagt træning og faktisk træningsadfærd: brugere springer pas over, træner uden fuld logging, ændrer belastning, mister overblik eller oplever friktion i appen. Indledningen skal ende i et behov for et system, der understøtter progression og feedback uden at straffe afvigelser.
 
 ### Hovedpointe
 
@@ -106,7 +106,7 @@ Digitale træningsapps kan være relevante for fysisk aktivitet og træningsadf�
 4. **Styrketræning kræver progression og justering.** Et træningsprogram er ikke kun en kalender; det rummer valg om volumen, intensitet, øvelser, progression, deload og regulering efter faktisk performance.
    Primære kilder: cite:acsm2009_progression_models, cite:currier2026_acsm_resistance_training, cite:greig2020_autoregulation_resistance_training, cite:larsen2021_autoregulation_systematic_review.
 
-5. **Rapportens case er relevant, fordi den samler disse problemer i ét systemdesign.** Træningsmester undersøges som en app, hvor plan, tracker, completion, feedback, watchOS/Live Activity og datamodel skal understøtte fleksibel progression frem for kun perfekt registrering.
+5. **Den udviklede app er relevant, fordi den samler disse problemer i ét systemdesign.** Træningsmester undersøges som projektets egen app, hvor plan, tracker, completion, feedback, watchOS/Live Activity og datamodel skal understøtte fleksibel progression frem for kun perfekt registrering.
    Synlige bilag: label:fig:tm-ios-home-ready, label:fig:tm-ios-tracker-active, label:fig:tm-ios-home-completion-delay, label:fig:tm-ios-home-next-training, label:fig:tm-tracker-completion-summary.
 
 ### Primære citation keys
@@ -137,13 +137,13 @@ Digitale træningsapps kan være relevante for fysisk aktivitet og træningsadf�
 
 ### Overgang til næste kapitel
 
-Indledningen skal afslutte med, at denne problematik kræver en præcis problemformulering og en klar caseafgrænsning. Overgangen bør pege på, at rapporten ikke undersøger "om appen virker" i klinisk eller statistisk forstand, men hvordan et konkret design- og implementeringsarbejde kan understøtte de relevante mekanismer.
+Indledningen skal afslutte med, at denne problematik kræver en præcis problemformulering og en klar afgrænsning af den udviklede app. Overgangen bør pege på, at rapporten ikke undersøger "om appen virker" i klinisk eller statistisk forstand, men hvordan et konkret design- og implementeringsarbejde kan understøtte de relevante mekanismer.
 
 ### Acceptkriterier for første version
 
 - Læseren forstår problemet uden at kende Træningsmester på forhånd.
 - Indledningen bruger mindst tre kildegrupper: motivation/engagement, app-/tracker-evidens og træningsprogression.
-- Træningsmester introduceres kort som case, ikke som produktpræsentation.
+- Træningsmester introduceres kort som egenudviklet artefakt, ikke som produktpræsentation.
 - Ingen interne arbejdsfiler, mapper eller lokale processer omtales.
 - Claims om effekt er forsigtige og koblet til litteratur, ikke til appens egen dokumentation.
 
@@ -151,7 +151,7 @@ Indledningen skal afslutte med, at denne problematik kræver en præcis problemf
 
 ### Kapitelmål
 
-Kapitlet skal låse rapportens undersøgende ramme. Det skal præsentere hovedspørgsmålet, forklare hvorfor det er afgrænset til design og implementering, og placere Træningsmester som case. Kapitlet skal også gøre det tydeligt, hvilke dele af appen der er centrale for problemformuleringen, og hvilke der kun er støttefunktioner.
+Kapitlet skal låse rapportens undersøgende ramme. Det skal præsentere hovedspørgsmålet, forklare hvorfor det er afgrænset til design og implementering, og placere Træningsmester som den app, der er udviklet i bachelorprojektet. Kapitlet skal også gøre det tydeligt, hvilke dele af appen der er centrale for problemformuleringen, og hvilke der kun er støttefunktioner.
 
 ### Hovedpointe
 
@@ -165,7 +165,7 @@ Rapportens problem er ikke at bygge flest mulige funktioner, men at undersøge h
    - Hvordan kan UI og interaktionsdesign reducere friktion under træning, herunder tracker-off flow, watchOS og Live Activity?
    - Hvordan kan Supabase, RLS, typed repositories og Edge Functions understøtte fleksible brugerflows uden at eksponere privilegerede credentials?
    - Hvordan kan beta-feedback, screenshots, buildlogs, tests og diagrammer bruges som evidens for designvalg og implementering?
-3. **Caseafgrænsning.** Forklar at Træningsmester er en native SwiftUI-case med Supabase-backend, watchOS, Live Activity og server-side funktioner, men at disse kun behandles i det omfang de belyser hovedspørgsmålet.
+3. **Afgrænsning af appen.** Forklar at Træningsmester er bachelorprojektets egen native SwiftUI-app med Supabase-backend, watchOS, Live Activity og server-side funktioner, men at disse kun behandles i det omfang de belyser hovedspørgsmålet.
 4. **Faglig afgrænsning.** Afgræns fra klinisk effektstudie, kommerciel produktlancering, fuld sikkerhedscertificering og national sundhedsdata-/FHIR-integration.
 5. **Bidrag.** Formuler bidraget som en dokumenteret design- og implementeringsmodel for fleksibel progression og feedback, understøttet af bilag, kilder og teknisk verifikation.
 
@@ -174,7 +174,7 @@ Rapportens problem er ikke at bygge flest mulige funktioner, men at undersøge h
 - Problemets adfærdsmæssige begrundelse: cite:teixeira2012_sdt_exercise, cite:eysenbach2005_law_of_attrition, cite:yardley2016_effective_engagement_dbci.
 - App- og trackerbaggrund: cite:laranjo2021_apps_trackers_meta, cite:romeo2019_smartphone_apps_pa_meta, cite:brickwood2019_wearable_trackers_meta.
 - Træningsfaglig afgrænsning: cite:acsm2009_progression_models, cite:currier2026_acsm_resistance_training, cite:greig2020_autoregulation_resistance_training.
-- Databeskyttelse og sikkerhed som caseafgrænsning: cite:europeanparliament2016_gdpr, cite:owasp2024_masvs, cite:supabase_rls_docs.
+- Databeskyttelse og sikkerhed som afgrænsning af den udviklede app: cite:europeanparliament2016_gdpr, cite:owasp2024_masvs, cite:supabase_rls_docs.
 
 ### Relevante kursusspor
 
@@ -206,7 +206,7 @@ Kapitlet skal afslutte med, at problemformuleringen kræver en tværfaglig ramme
 ### Acceptkriterier for første version
 
 - Hovedspørgsmålet står ordret og tydeligt.
-- Caseafgrænsningen gør Træningsmester til middel, ikke mål.
+- Afgrænsningen gør Træningsmester til undersøgelsesartefakt, ikke produktmål.
 - De fire underspørgsmål matcher senere kapitler og bilag.
 - Afgrænsningerne er eksplicitte nok til at forhindre overpåstande.
 - Kapitlet forbereder teorikapitlet uden at begynde at analysere alle tekniske detaljer.
@@ -318,17 +318,17 @@ Teorikapitlet skal afslutte med, at rammen viser, hvad der skal undersøges empi
 
 ### Kapitelmål
 
-Metodekapitlet skal forklare, hvordan rapporten undersøger problemformuleringen. Det skal gøre læseren tryg ved, at projektet ikke foregiver at være et klinisk effektstudie, men er en design- og implementeringscase med flere typer evidens: litteratur, kursusgrundlag, artefakter, bilag, anonymiseret feedback og teknisk verifikation.
+Metodekapitlet skal forklare, hvordan rapporten undersøger problemformuleringen. Det skal gøre læseren tryg ved, at projektet ikke foregiver at være et klinisk effektstudie, men er en egenudviklet design- og implementeringscase med flere typer evidens: litteratur, kursusgrundlag, artefakter, bilag, anonymiseret feedback og teknisk verifikation.
 
 ### Hovedpointe
 
-Metoden er en problemstyret kombination af scoping-kildesøgning, design-/implementeringscase, dokument- og artefaktanalyse, anonymiseret beta-feedback og teknisk verifikation. Metoden er egnet til at vurdere designvalg og implementeringskvalitet, men ikke til at konkludere statistisk effekt på motivation eller adherence.
+Metoden er en problemstyret kombination af scoping-kildesøgning, analyse af den egenudviklede design-/implementeringscase, dokument- og artefaktanalyse, anonymiseret beta-feedback og teknisk verifikation. Metoden er egnet til at vurdere designvalg og implementeringskvalitet, men ikke til at konkludere statistisk effekt på motivation eller adherence.
 
 ### Delargumenter i anbefalet rækkefølge
 
 #### 4.1 Design- og implementeringscase
 
-Forklar at Træningsmester undersøges som konkret case, hvor appens arkitektur, datamodel, UI, feedbackflows og verifikation bruges til at belyse problemformuleringen.
+Forklar at Træningsmester undersøges som projektets konkrete artefakt, hvor appens arkitektur, datamodel, UI, feedbackflows og verifikation bruges til at belyse problemformuleringen.
 
 Synlige bilag: label:tab:tm-bilag-materialegennemgang, label:fig:tm-system-context, label:tab:tm-container-architecture.
 
@@ -724,7 +724,7 @@ Implementeringen realiserer rapportens kerne ved at samle programstruktur, track
    Primære kilder: cite:apple_activitykit_live_data_docs, cite:apple_watchconnectivity_docs.
    Synlige bilag: label:fig:tm-watch-sync-sequence, label:fig:tm-live-activity-idempotency-sequence.
 
-6. **Edge Functions afgrænser privilegerede og eksterne flows.** Admin, træner, import, AI og billing skal kun behandles i det omfang de understøtter caseafgrænsning, sikkerhed og datakvalitet.
+6. **Edge Functions afgrænser privilegerede og eksterne flows.** Admin, træner, import, AI og billing skal kun behandles i det omfang de understøtter appafgrænsning, sikkerhed og datakvalitet.
    Primære kilder: cite:supabase_securing_api_docs, cite:owasp2024_masvs.
    Synlige bilag: label:fig:tm-import-ai-edge-boundary, label:tab:tm-authorization-dcr.
 
@@ -773,7 +773,7 @@ Kapitlet skal dokumentere, hvad der er verificeret, hvordan resultaterne kan bru
 
 ### Hovedpointe
 
-Verifikationen giver rimelig dokumentation for, at den beskrevne design- og implementeringscase kan bygges og at centrale domæne-/payload-/tracker-/cycle-/Live Activity-logikker er testet. Den dokumenterer ikke fuld produktionsklarhed, clean CI, komplet sikkerhedsbevis eller statistisk brugerudbytte.
+Verifikationen giver rimelig dokumentation for, at den beskrevne egenudviklede app kan bygges, og at centrale domæne-/payload-/tracker-/cycle-/Live Activity-logikker er testet. Den dokumenterer ikke fuld produktionsklarhed, clean CI, komplet sikkerhedsbevis eller statistisk brugerudbytte.
 
 ### Delargumenter i anbefalet rækkefølge
 
@@ -904,11 +904,11 @@ Kapitlet skal afslutte med, at brugerindsigt og teknisk verifikation samlet give
 
 ### Kapitelmål
 
-Diskussionen skal samle rapportens teori, metode, krav, arkitektur, implementering, verifikation og brugerindsigt i en kritisk vurdering. Den skal ikke genfortælle kapitlerne, men vurdere hvad casen viser om fleksibel progression, motivation, feedback og afvigelseshåndtering i en digital træningsapp.
+Diskussionen skal samle rapportens teori, metode, krav, arkitektur, implementering, verifikation og brugerindsigt i en kritisk vurdering. Den skal ikke genfortælle kapitlerne, men vurdere hvad arbejdet med den udviklede app viser om fleksibel progression, motivation, feedback og afvigelseshåndtering i en digital træningsapp.
 
 ### Hovedpointe
 
-Træningsmester viser, at fleksibel progression kan understøttes gennem design- og implementeringsvalg, hvor plan, faktisk udførelse, completion og næste handling adskilles. Casen dokumenterer en plausibel og teknisk gennemarbejdet løsning, men ikke en empirisk bevist effekt på motivation, adherence eller sundhed.
+Træningsmester viser, at fleksibel progression kan understøttes gennem design- og implementeringsvalg, hvor plan, faktisk udførelse, completion og næste handling adskilles. Den udviklede app dokumenterer en plausibel og teknisk gennemarbejdet løsning, men ikke en empirisk bevist effekt på motivation, adherence eller sundhed.
 
 ### Delargumenter i anbefalet rækkefølge
 
@@ -957,7 +957,7 @@ Træningsmester viser, at fleksibel progression kan understøttes gennem design-
 
 ### Hvad kapitlet ikke må påstå
 
-- At casen beviser effekt på motivation, adherence eller fysisk aktivitet.
+- At den udviklede app beviser effekt på motivation, adherence eller fysisk aktivitet.
 - At alle brugertyper er repræsenteret i beta-feedbacken.
 - At sikkerhedsmodellen er endeligt certificeret eller penetrationstestet.
 - At fleksibel completion altid er bedre end detaljeret logging.
@@ -982,11 +982,11 @@ Konklusionen skal svare kort og præcist på problemformuleringen. Den skal saml
 
 ### Hovedpointe
 
-En digital træningsapp kan designes og implementeres til at understøtte fleksibel progression og motivation ved at adskille plan, faktisk udførelse, completion og næste handling, reducere friktion i træningssituationen og placere sikker dataadgang i backend. Træningsmester dokumenterer dette som design- og implementeringscase, men ikke som klinisk eller statistisk effektstudie.
+En digital træningsapp kan designes og implementeres til at understøtte fleksibel progression og motivation ved at adskille plan, faktisk udførelse, completion og næste handling, reducere friktion i træningssituationen og placere sikker dataadgang i backend. Træningsmester dokumenterer dette som bachelorprojektets egenudviklede design- og implementeringscase, men ikke som klinisk eller statistisk effektstudie.
 
 ### Delargumenter i anbefalet rækkefølge
 
-1. **Svar direkte på hovedspørgsmålet.** Brug formuleringen "Projektet viser, at..." eller "Casen peger på, at..." frem for absolutte effektpåstande.
+1. **Svar direkte på hovedspørgsmålet.** Brug formuleringen "Projektet viser, at..." eller "Arbejdet med Træningsmester peger på, at..." frem for absolutte effektpåstande.
 2. **Fremhæv de centrale designgreb.** Programstruktur, tracker-on/off, completion-events, cycle runtime, Home/næste handling, watchOS/Live Activity og RLS/Edge Functions.
 3. **Fremhæv det tværfaglige bidrag.** Koblingen mellem træningsfaglig progression, motivation/adherence, interaktionsdesign, datakvalitet og softwarearkitektur.
 4. **Afgræns evidensen.** Ingen dokumenteret langtidsadherence, ingen klinisk effektmåling, begrænset beta, delvis teknisk verifikation.

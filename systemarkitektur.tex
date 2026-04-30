@@ -22,7 +22,7 @@ Denne grænse er særlig relevant, fordi træningsdata både er personlige og op
 
 \subsection{Støtteflader under træning}
 
-watchOS og Live Activity er arkitektoniske støtteflader. Apple beskriver Live Activities som løbende status for tidsfølsomme aktiviteter og Watch Connectivity som koordinering mellem iPhone og Apple Watch \cite{apple_activitykit_live_data_docs,apple_hig_live_activities,apple_watchconnectivity_docs}. I casen skal de reducere friktion under træning, ikke skabe parallelle datamodeller.
+watchOS og Live Activity er arkitektoniske støtteflader. Apple beskriver Live Activities som løbende status for tidsfølsomme aktiviteter og Watch Connectivity som koordinering mellem iPhone og Apple Watch \cite{apple_activitykit_live_data_docs,apple_hig_live_activities,apple_watchconnectivity_docs}. I den udviklede app skal de reducere friktion under træning, ikke skabe parallelle datamodeller.
 
 Figur~\ref{fig:tm-watch-sync-sequence} og Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser, at støttefladerne afhænger af fælles session, auth-sync, snapshot og idempotente writes. Arkitekturens styrke er dermed ikke, at appen findes på flere flader, men at flere flader kan pege på samme træningsmodel.
 

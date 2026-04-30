@@ -33,7 +33,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 ## Kendte Metadata
 
 - Forfatter: Christian Kristensen, TDH522.
-- Projekt/case: Træningsmester.
+- Projekt/egenudviklet app: Træningsmester.
 - Projekttype: Bachelorprojekt.
 - Uddannelse: Bachelor i Sundhed og Informatik.
 - Fakultet: Det Sundhedsvidenskabelige Fakultet.
@@ -49,7 +49,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 
 Bachelorens centrale spørgsmål er, hvordan en digital træningsapp kan designes og implementeres, så programstruktur, progression og feedback understøtter vedvarende motivation og fleksibel håndtering af afvigelser fra et planlagt træningsforløb uden at øge risikoen for demotivation og frafald.
 
-Træningsmester skal behandles som design- og implementeringscase. SwiftUI, Supabase, watchOS, Live Activity og træner-/adminfunktioner er tekniske midler til at undersøge problemformuleringen, ikke konkurrerende hovedproblemer.
+Træningsmester skal behandles som bachelorprojektets egenudviklede design- og implementeringscase. SwiftUI, Supabase, watchOS, Live Activity og træner-/adminfunktioner er tekniske midler i appen til at undersøge problemformuleringen, ikke konkurrerende hovedproblemer.
 
 ## Arbejdsregler
 

@@ -6,7 +6,7 @@ Verifikationen læses derfor som et afgrænset teknisk evidensspor. Den kan vise
 
 \subsection{Build, unit tests og centrale flows}
 
-Tabel~\ref{tab:tm-test-traceability} viser, at iOS-klient, watchOS-target og Live Activity-target kan bygges, og at central forretningslogik er unit-testet. Det understøtter, at casen ikke kun er en visuel prototype, men har implementeret domænelogik for tracker, completion, cycle runtime og Live Activity-projection.
+Tabel~\ref{tab:tm-test-traceability} viser, at iOS-klient, watchOS-target og Live Activity-target kan bygges, og at central forretningslogik er unit-testet. Det understøtter, at den udviklede app ikke kun er en visuel prototype, men har implementeret domænelogik for tracker, completion, cycle runtime og Live Activity-projection.
 
 Buildstatus er dog afgrænset. Den dokumenterer, at targets kan kompileres i den gennemgåede tilstand, men ikke en uafhængig CI-proces, komplet installationsflow eller stabil runtime på tværs af enheder. Unit tests dokumenterer afgrænsede logikker; de viser ikke, at brugeren forstår flowet, eller at alle backend- og platformscenarier fungerer.
 
@@ -22,6 +22,6 @@ Det er især vigtigt for sikkerhedsmodellen. Figur~\ref{fig:tm-security-boundary
 
 Screenshots og diagrammer dokumenterer, at centrale brugerflader og arkitekturspor findes. Figur~\ref{fig:tm-ios-home-ready} viser Home som næste-handling-flade, Figur~\ref{fig:tm-ios-tracker-active} viser aktiv tracker, og Figur~\ref{fig:tm-system-context} viser systemkonteksten. Det styrker forbindelsen mellem krav, implementering og synlige artefakter.
 
-Rest-risici handler især om reproducerbarhed, backendintegration, rollebaseret adgang og runtime for watchOS og Live Activity. Gaps svækker ikke casen, hvis de behandles åbent. De afgrænser blot, hvad der er dokumenteret: teknisk plausibilitet for centrale flows, ikke fuld sikkerhedscertificering, penetrationstest eller driftssikker produktionsmodenhed.
+Rest-risici handler især om reproducerbarhed, backendintegration, rollebaseret adgang og runtime for watchOS og Live Activity. Gaps svækker ikke arbejdet med Træningsmester, hvis de behandles åbent. De afgrænser blot, hvad der er dokumenteret: teknisk plausibilitet for centrale flows, ikke fuld sikkerhedscertificering, penetrationstest eller driftssikker produktionsmodenhed.
 
 Den vigtigste konklusion fra verifikationen er derfor dobbelt. Kerneflowet har et dokumenteret teknisk grundlag, men flere integrations- og sikkerhedsscenarier skal testes, før appen kan vurderes som moden til bred drift.
