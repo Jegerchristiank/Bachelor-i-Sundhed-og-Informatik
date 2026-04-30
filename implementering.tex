@@ -1,8 +1,8 @@
 \section{Implementering}
 
-Dette kapitel beskriver de centrale implementeringsvalg, der realiserer krav, arkitektur, interaktionsdesign og datamodel. Kapitlet er ikke en komplet gennemgang af al kildekode, men en problemstyret forklaring af de flows, der gør Træningsmester i stand til at forbinde planlagt træning, faktisk gennemførelse, feedback og næste handling.
+Centrale implementeringsvalg realiserer krav, arkitektur, interaktionsdesign og datamodel. Fokus er ikke en komplet gennemgang af al kildekode, men en problemstyret forklaring af de flows, der gør Træningsmester i stand til at forbinde planlagt træning, faktisk gennemførelse, feedback og næste handling.
 
-Implementeringen skal derfor vurderes ud fra, om den understøtter rapportens hovedproblem: fleksibel progression og motivation under realistiske afvigelser fra træningsplanen. De vigtigste spor er session, programstruktur, tracker, completion, cycle runtime, watchOS, Live Activity og server-side funktioner.
+Implementeringen skal derfor vurderes ud fra, om den understøtter hovedproblemet: fleksibel progression og motivation under realistiske afvigelser fra træningsplanen. De vigtigste spor er session, programstruktur, tracker, completion, cycle runtime, watchOS, Live Activity og server-side funktioner.
 
 \subsection{Bootstrap, session og repository-setup}
 
@@ -54,10 +54,10 @@ Edge Functions afgrænser flows, der ikke bør ligge direkte i klienten. Det gæ
 
 Implementeringsmæssigt betyder det, at klienten kan starte et flow, men server-side logik skal håndtere privilegerede nøgler, rollevalidering og bredere databaseoperationer. Dette følger mobile sikkerhedsprincipper, hvor følsomme operationer og backendkontrakter ikke bør bero på klientens brugerflade alene \cite{owasp2024_masvs,supabase_securing_api_docs}.
 
-Disse flows er støttende for casen, ikke hovedbeviset for sundhedsfaglig effekt. Admin, import, AI og billing kan understøtte drift, katalogkvalitet, programimport og adgangsstyring. Rapportens centrale implementeringsbidrag ligger i sammenhængen mellem plan, tracker, completion, cyklusprogression og lav-friktionsflader.
+Disse flows er støttende for casen, ikke hovedbeviset for sundhedsfaglig effekt. Admin, import, AI og billing kan understøtte drift, katalogkvalitet, programimport og adgangsstyring. Det centrale implementeringsbidrag ligger i sammenhængen mellem plan, tracker, completion, cyklusprogression og lav-friktionsflader.
 
-\subsection{Overgang til test og verifikation}
+\subsection{Implementering som teknisk grundlag for verifikation}
 
-Implementeringen samler rapportens tidligere kapitler i konkrete tekniske flows. Kravene bliver omsat til programstruktur, tracker, completion og sikker dataadgang. Arkitekturen bliver realiseret gennem state, repositories, Supabase, RLS, Edge Functions og platformservices. Interaktionsdesignet bliver understøttet af Home, tracker, watchOS og Live Activity som flader for næste handling og status.
+Implementeringen samler de faglige og tekniske spor i konkrete flows. Kravene bliver omsat til programstruktur, tracker, completion og sikker dataadgang. Arkitekturen bliver realiseret gennem state, repositories, Supabase, RLS, Edge Functions og platformservices. Interaktionsdesignet bliver understøttet af Home, tracker, watchOS og Live Activity som flader for næste handling og status.
 
-Kapitlet dokumenterer dog ikke, at alle flows er fuldt produktionsmodne eller testet i alle brugerroller. Det næste kapitel skal derfor vurdere implementeringen gennem test og verifikation, herunder hvilke tekniske claims der er dokumenteret, og hvilke begrænsninger der fortsat skal afgrænses.
+Implementeringsbeskrivelsen dokumenterer dog ikke, at alle flows er fuldt produktionsmodne eller testet i alle brugerroller. Det kræver test og verifikation af, hvilke tekniske claims der er dokumenteret, og hvilke begrænsninger der fortsat skal afgrænses.

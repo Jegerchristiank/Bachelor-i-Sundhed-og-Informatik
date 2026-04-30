@@ -1,6 +1,6 @@
 \section{Systemarkitektur}
 
-Dette kapitel beskriver Træningsmesters systemarkitektur som teknisk svar på kravene fra det foregående kapitel. Arkitekturen skal gøre det muligt at forbinde programstruktur, faktisk træning, completion, progression og feedback uden at gøre brugerfladen til den endelige kilde til sandhed. Den skal samtidig understøtte lav friktion i træningssituationen og beskytte brugerbundne træningsdata gennem en tydelig backendgrænse.
+Træningsmesters systemarkitektur er det tekniske svar på kravene om programstruktur, faktisk træning, completion, progression og feedback. Arkitekturen skal forbinde disse dele uden at gøre brugerfladen til den endelige kilde til sandhed. Den skal samtidig understøtte lav friktion i træningssituationen og beskytte brugerbundne træningsdata gennem en tydelig backendgrænse.
 
 Arkitekturen behandles derfor som en designmæssig og teknisk struktur, ikke som dokumentation for sundhedseffekt. Dens kvalitet vurderes ud fra, om den skaber sammenhæng mellem krav, dataflow, adgangskontrol og brugerens centrale træningshandlinger.
 
@@ -10,7 +10,7 @@ Træningsmester består af en native iOS-app, en watchOS companion, Live Activit
 
 iOS-appen er den primære brugerflade for programopbygning, dagens træning, tracker, historik og indstillinger. watchOS-sporet fungerer som en træningsnær companion, hvor brugeren kan få adgang til relevante workoutdata uden nødvendigvis at bruge telefonen aktivt. Live Activity-sporet giver en statusflade under aktiv træning. Supabase håndterer autentifikation, database, Row Level Security, RPC og Storage, mens Edge Functions bruges til privilegerede eller integrationsnære handlinger.
 
-Denne systemkontekst følger kravkapitlets skelnen mellem plan, faktisk udførelse og næste handling. Arkitekturen skal kunne håndtere, at brugeren følger planen, afviger fra den, afslutter en træning uden fuld trackerlog eller bruger flere flader under samme træningsforløb.
+Denne systemkontekst følger kravanalysens skelnen mellem plan, faktisk udførelse og næste handling. Arkitekturen skal kunne håndtere, at brugeren følger planen, afviger fra den, afslutter en træning uden fuld trackerlog eller bruger flere flader under samme træningsforløb.
 
 \subsection{Lagdeling mellem brugerflade, state og dataadgang}
 
@@ -44,10 +44,10 @@ Figur~\ref{fig:tm-watch-sync-sequence} viser, hvordan watchOS-sporet relaterer s
 
 Det arkitektoniske tradeoff er, at flere flader giver bedre tilgængelighed, men også øger behovet for konsistent state, idempotente writes og tydelige sikkerhedsgrænser. Derfor er watchOS og Live Activity placeret som forlængelser af den samme træningsmodel, ikke som separate datamodeller.
 
-\subsection{Arkitekturens afgrænsning og overgang til interaktionsdesign}
+\subsection{Arkitekturens afgrænsning}
 
 Arkitekturen forklarer, hvordan Træningsmester kan forbinde klient, backend, platformservices og sikkerhedsregler. Den forklarer derimod ikke alene, om brugeroplevelsen føles motiverende, eller om feedbacken faktisk hjælper brugeren med at fastholde træning. Det kræver en analyse af de konkrete interaktionsflows, skærme og feedbackmekanismer.
 
 Figur~\ref{fig:tm-import-ai-edge-boundary} viser desuden, at import- og AI-sporet ligger bag backendgrænsen. Eksterne integrationer kan støtte programimport og automatisering, men de skal følge samme principper om adgangskontrol, datakvalitet og brugerbundet kontekst.
 
-Samlet viser kapitlet, at Træningsmesters arkitektur er bygget til at holde plan, udførelse, completion, progression og sikker dataadgang sammen. Det næste spørgsmål er, hvordan denne tekniske struktur omsættes til konkrete brugerflader og handlinger. Det leder videre til interaktionsdesign.
+Samlet er Træningsmesters arkitektur bygget til at holde plan, udførelse, completion, progression og sikker dataadgang sammen. Den tekniske struktur skal samtidig omsættes til konkrete brugerflader og handlinger, hvis den skal støtte brugeren i træningssituationen.

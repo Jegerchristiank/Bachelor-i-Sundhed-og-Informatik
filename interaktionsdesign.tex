@@ -1,8 +1,8 @@
 \section{Interaktionsdesign}
 
-Dette kapitel analyserer Træningsmesters centrale brugerflader og flows som interaktionsdesign i en faktisk træningssituation. Hvor systemarkitekturen viste, hvordan appens tekniske lag hænger sammen, handler dette kapitel om, hvad brugeren møder: næste handling, aktiv tracker, completion, øvelsessøgning, historik, indstillinger, watchOS og Live Activity.
+Træningsmesters centrale brugerflader og flows analyseres som interaktionsdesign i en faktisk træningssituation. Fokus er, hvad brugeren møder: næste handling, aktiv tracker, completion, øvelsessøgning, historik, indstillinger, watchOS og Live Activity.
 
-Kapitlet vurderer ikke designet som dokumenteret effekt på motivation eller adherence. Designet analyseres som et sæt af valg, der kan reducere friktion, gøre feedback forståelig og behandle afvigelser fra planen som normale tilstande i stedet for fejl.
+Designet vurderes ikke som dokumenteret effekt på motivation eller adherence. Det analyseres som et sæt af valg, der kan reducere friktion, gøre feedback forståelig og behandle afvigelser fra planen som normale tilstande i stedet for fejl.
 
 \subsection{Træningssituationen som designkontekst}
 
@@ -40,7 +40,7 @@ Figur~\ref{fig:tm-ios-historik} viser tidligere træningslog og gennemførte pas
 
 watchOS og Live Activity skal forstås som lav-friktionsspor under træning. De er ikke hovedformålet i sig selv, men de kan reducere behovet for fuld appåbning, når brugeren kun har brug for status, hurtig logging eller adgang til den aktuelle træning. Apple beskriver Live Activities som status for tidsfølsomme aktiviteter, og Watch Connectivity som en mekanisme til koordinering mellem iPhone og Apple Watch \cite{apple_hig_live_activities,apple_activitykit_live_data_docs,apple_watchconnectivity_docs}.
 
-Figur~\ref{fig:tm-watch-sync-sequence} viser watchOS-sporets kobling til auth-sync og workoutdata, mens Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser Live Activity-sporets kobling til snapshot og idempotent trackerlog. I interaktionsdesignkapitlet er pointen ikke at dokumentere en fuld visuel ur- eller låseskærmsoplevelse. Pointen er, at ekstra flader kan være relevante, når de reducerer friktion uden at skabe nye datamæssige eller sikkerhedsmæssige sandheder.
+Figur~\ref{fig:tm-watch-sync-sequence} viser watchOS-sporets kobling til auth-sync og workoutdata, mens Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser Live Activity-sporets kobling til snapshot og idempotent trackerlog. Pointen er ikke at dokumentere en fuld visuel ur- eller låseskærmsoplevelse. Pointen er, at ekstra flader kan være relevante, når de reducerer friktion uden at skabe nye datamæssige eller sikkerhedsmæssige sandheder.
 
 Denne afgrænsning er vigtig. Flere platforme betyder ikke automatisk bedre engagement. De er kun relevante, hvis de gør den centrale træningshandling lettere og fastholder samme model for session, completion og progression som hovedappen.
 
@@ -52,8 +52,8 @@ Tabel~\ref{tab:tm-beta-feedback} viser feedbacktemaer om blandt andet søgning, 
 
 Tabel~\ref{tab:tm-testflight-timeline} viser samtidig et iterationsspor, hvor feedback og builds ligger tæt. Det understøtter en designproces, hvor brugerindsigt kan omsættes til prioriteringer, men det beviser ikke, at løsningerne virker for en bred brugergruppe. Beta-feedbackens styrke er, at den synliggør friktion og konkrete behov; dens begrænsning er, at den er smal, kontekstafhængig og ikke et effektstudie.
 
-\subsection{Overgang til data, sikkerhed og interoperabilitet}
+\subsection{Interaktionsflowets data- og sikkerhedskrav}
 
 Interaktionsdesignet viser, hvad brugeren møder: Home, tracker, completion, katalog, historik, settings, watchOS og Live Activity. Men disse flows kan kun fungere, hvis de bæres af en datamodel, der kan skelne mellem planlagt træning, faktisk træning, completion-events, sessioner og progression.
 
-Det leder videre til data, sikkerhed og interoperabilitet. Næste kapitel skal derfor vise, hvilke datafelter, adgangsregler og integrationsafgrænsninger der gør de beskrevne flows mulige uden at gøre brugerfladen til den endelige sikkerheds- eller datagrænse.
+De beskrevne brugerflows kræver derfor datafelter, adgangsregler og integrationsafgrænsninger, der gør fleksibel interaktion mulig uden at gøre brugerfladen til den endelige sikkerheds- eller datagrænse.

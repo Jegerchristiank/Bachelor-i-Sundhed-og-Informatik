@@ -3,9 +3,9 @@
 
 \sloppy
 
-Dette bilag samler rapportens udvalgte billeder, figurer og tabeller om Træningsmester pr. 28. april 2026. Bilaget omfatter 13 aktuelle iOS 26.4-screenshots, 7 arkitektur- og dataflowfigurer med supplerende ER-udsnit og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Ældre screenshots fra tidligere UI-versioner er ikke medtaget, fordi de ikke bør bruges som dokumentation for den aktuelle appversion.
+Dette bilag samler udvalgte billeder, figurer og tabeller om Træningsmester pr. 28. april 2026. Bilaget omfatter 13 aktuelle iOS 26.4-screenshots, 7 arkitektur- og dataflowfigurer med supplerende ER-udsnit og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Ældre screenshots fra tidligere UI-versioner er ikke medtaget, fordi de ikke bør bruges som dokumentation for den aktuelle appversion.
 
-Figurerne og tabellerne er udvalgt, så rapportens argumentation kun henviser til materiale, der er indsat i bilaget. De supplerende tabeller er kondenserede og anonymiserede; private rådata, rå kommunikation og personhenførbare detaljer er ikke kopieret ind i bilaget.
+Figurerne og tabellerne er udvalgt, så argumentationen kun henviser til materiale, der er indsat i bilaget. De supplerende tabeller er kondenserede og anonymiserede; private rådata, rå kommunikation og personhenførbare detaljer er ikke kopieret ind i bilaget.
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
@@ -197,7 +197,7 @@ SQL, RLS og sikkerhed & Dokumenterer data- og adgangsmodellen & Tabel \ref{tab:t
 Beta- og TestFlight-spor & Dokumenterer iteration og brugerindsigt & Tabel \ref{tab:tm-testflight-timeline} og \ref{tab:tm-beta-feedback} samler anonymiserede observationspunkter uden direkte citater eller persondata. \\
 Afgrænset råmateriale & Understøtter anonymisering og versionsklarhed & Private rådata, lukkede kommunikationsspor og ældre UI-optagelser er fravalgt af hensyn til samtykke, dataminimering og klarhed om den dokumenterede appversion. \\
 \end{tabularx}
-\caption{Gennemgang af rapportens bilagsmateriale og afgrænsning.}
+\caption{Gennemgang af bilagsmateriale og afgrænsning.}
 \label{tab:tm-bilag-materialegennemgang}
 \end{table}
 
@@ -209,10 +209,10 @@ Afgrænset råmateriale & Understøtter anonymisering og versionsklarhed & Priva
 \footnotesize
 \renewcommand{\arraystretch}{1.12}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.17\textwidth} >{\raggedright\arraybackslash}p{0.30\textwidth} Y}
-\textbf{Use case} & \textbf{Kort formål} & \textbf{Rapportrelevans} \\
+\textbf{Use case} & \textbf{Kort formål} & \textbf{Faglig relevans} \\
 \hline
 UC-01 Opret konto og log ind & Supabase Auth, session restore og app-shell efter autentifikation. & Viser auth som forudsætning for brugerbundne træningsdata og RLS. \\
-UC-02 Gennemfør onboarding & Valg af startvej, præferencer og eventuel programimport. & Understøtter afsnit om første brugerrejse og friktion. \\
+UC-02 Gennemfør onboarding & Valg af startvej, præferencer og eventuel programimport. & Understøtter analyse af første brugerrejse og friktion. \\
 UC-03 Opret/rediger program & Oprette, hente, opdatere, aktivere og dele træningsprogrammer. & Dokumenterer programstruktur som kernefunktion. \\
 UC-04 Tilføj træningsdag og øvelser & Knytte workouts og øvelser til programmet med sæt, reps, vægt og pause. & Knytter planlægning til den konkrete træningsfaglige struktur. \\
 UC-05 Find og like øvelse & Søge, swipe og gemme liked/parrede øvelser. & Kobler øvelseskatalog, søgning og match-flow til brugerfeedback. \\
@@ -257,7 +257,7 @@ UC-11 Importer program/historik & F-12, NF-08 & PremiumView, ProgramReviewServic
 \small
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}p{0.36\textwidth} Y}
-\textbf{Lag} & \textbf{Indhold} & \textbf{Rapportbrug} \\
+\textbf{Lag} & \textbf{Indhold} & \textbf{Faglig brug} \\
 \hline
 iOS-app & SwiftUI-features, RootView, AppState, domain models, repository protocols, Supabase repositories, support services og designsystem. & Viser at UI, state og dataadgang er opdelt i lag frem for direkte databasekald fra views. \\
 watchOS-app & WatchRootView, WatchWorkoutStore og WatchAuthSyncBridge. & Dokumenterer watchOS som companion til dagens træning og hurtig logging. \\
@@ -274,7 +274,7 @@ Apple services & StoreKit 2, WatchConnectivity, ActivityKit/WidgetKit og HealthK
 \small
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}p{0.34\textwidth} Y}
-\textbf{Procespunkt} & \textbf{Kondenseret procesindhold} & \textbf{Rapportbrug} \\
+\textbf{Procespunkt} & \textbf{Kondenseret procesindhold} & \textbf{Faglig brug} \\
 \hline
 Start og session & Brugeren starter workout; AppState validerer auth og profile mode. & Viser at træningsflowet er brugerbundet og sessionafhængigt. \\
 Tracker-valg & Gateway afgør, om tracker er aktiveret. & Gør tracker-off completion til en legitim vej gennem flowet. \\
@@ -293,7 +293,7 @@ Historik/Home & Historik og Home bruger completion- og trackerlogdata efter afsl
 \small
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}p{0.40\textwidth} Y}
-\textbf{Autorisationsspor} & \textbf{Kondenseret regel} & \textbf{Rapportbrug} \\
+\textbf{Autorisationsspor} & \textbf{Kondenseret regel} & \textbf{Faglig brug} \\
 \hline
 Miljø og klient & Appen loader miljø, afviser placeholder- eller service-role keys og opretter derefter anon Supabase client. & Underbygger beslutningen om, at service-role ikke må ligge i klienten. \\
 Session og brugerdata & AuthenticateUser og ResolveSession er forudsætning for ReadOwnData, WriteOwnData og delt planadgang. & Viser auth som betingelse for brugerbundne læse-/skrivehandlinger. \\
@@ -333,7 +333,7 @@ Cykler/import & training cycles, cycle runtime-tabeller og training import jobs 
 \small
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}p{0.24\textwidth} Y}
-\textbf{Felt} & \textbf{Placering} & \textbf{Hvorfor feltet er rapportrelevant} \\
+\textbf{Felt} & \textbf{Placering} & \textbf{Hvorfor feltet er relevant} \\
 \hline
 profile mode & User settings, completion, session og cycle flows & Skelner personlig bruger fra træner-/klientkontekst. \\
 client action id & Trackerlog og workout completion events & Giver idempotency for Live Activity-, watch- og tracker-writes. \\
@@ -343,7 +343,7 @@ rest override & Workout exercises & Skelner standardpause fra bevidst pauseoverr
 subscription tier & User settings & Binder StoreKit-køb til appens featureadgang. \\
 is admin & User settings & Bruges sammen med servervalidering, ikke som eneste adminbevis. \\
 \end{tabularx}
-\caption{Særligt rapportrelevante SQL-felter i Træningsmesters datamodel.}
+\caption{Særligt relevante SQL-felter i Træningsmesters datamodel.}
 \label{tab:tm-sql-fields}
 \end{table}
 
@@ -377,13 +377,13 @@ AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function run
 \footnotesize
 \renewcommand{\arraystretch}{1.08}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.16\textwidth} >{\raggedright\arraybackslash}p{0.18\textwidth} Y}
-\textbf{Dato} & \textbf{Version/build} & \textbf{Platform} & \textbf{Rapportbrug} \\
+\textbf{Dato} & \textbf{Version/build} & \textbf{Platform} & \textbf{Faglig brug} \\
 \hline
 2026-03-25 22:20 UTC & Invitation & iOS & Start på iOS-beta og formel rekruttering. \\
 2026-03-26 16:29 UTC & 1.0 (5) & iOS + watchOS & Første observerede build efter invitation. \\
 2026-03-27 13:02 UTC & 1.0 (6) & iOS + watchOS & Iteration samme uge som betaåbning. \\
 2026-03-27 13:17 UTC & 1.0 (8) & iOS + watchOS & Hurtig efterfølgende build. \\
-2026-03-29 23:29 UTC & 2.0 (1) & iOS + watchOS & Overgang til 2.0-sporet. \\
+2026-03-29 23:29 UTC & 2.0 (1) & iOS + watchOS & Skift til 2.0-sporet. \\
 2026-03-30 23:07 UTC & 2.0 (2) & iOS + watchOS & Build omkring link-/opdateringsfriktion. \\
 2026-03-31 00:09 UTC & 2.0 (3) & iOS + watchOS & Natlig iteration op til større releasebesked. \\
 2026-03-31 10:58 UTC & 2.0 (4) & iOS + watchOS & Samme dag som katalog-, søgnings- og releasefeedback. \\
@@ -425,7 +425,7 @@ B18 & Noter & Feedback pegede på behov for noter til teknik, udstyr eller sæde
 \small
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.26\textwidth} >{\raggedright\arraybackslash}p{0.25\textwidth} Y}
-\textbf{Påstand i rapporten} & \textbf{Dokumenteret status} & \textbf{Begrænsning} \\
+\textbf{Teknisk påstand} & \textbf{Dokumenteret status} & \textbf{Begrænsning} \\
 \hline
 Appen kan bygges som iOS-klient & Bestået & Ikke dokumenteret som uafhængig reproducerbar build. \\
 Central forretningslogik er unit-testet & Bestået & Dækker unit-lag, ikke alle live backendscenarier. \\
@@ -435,7 +435,7 @@ Live Activity targetet kan bygges & Bestået & Dynamic Island-forløb er ikke do
 Aktuel iOS UI er dokumenteret visuelt & Bestået & Bygger på de aktuelle screenshots, der er indsat i bilaget. \\
 Data-/sikkerhedsmodellen er dokumenteret & Stærk dokumentation & Fuld security proof kræver flere integrationstests. \\
 \end{tabularx}
-\caption{Verifikationsspor for rapportens tekniske claims.}
+\caption{Verifikationsspor for tekniske claims.}
 \label{tab:tm-test-traceability}
 \end{table}
 

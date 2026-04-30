@@ -1,12 +1,12 @@
 \section{Data, sikkerhed og interoperabilitet}
 
-Dette kapitel forklarer, hvordan Træningsmesters datamodel, adgangskontrol og platformspor understøtter appens centrale flows. Fokus er, hvorfor data skal adskille planlagt træning, faktisk logging, completion og progression for at kunne håndtere realistisk træningsadfærd.
+Træningsmesters datamodel, adgangskontrol og platformspor skal understøtte appens centrale flows. Det kræver, at data adskiller planlagt træning, faktisk logging, completion og progression, så realistisk træningsadfærd kan håndteres uden at miste sammenhæng.
 
-Kapitlet behandler samtidig sikkerhed og interoperabilitet som en del af den sundheds- og informatikfaglige afgrænsning. Træningsmester er ikke en klinisk journalintegration eller en bred sundhedsplatform. Appen håndterer brugerbundne fitnessdata, adgangskontrol og udvalgte platformintegrationer.
+Sikkerhed og interoperabilitet indgår samtidig som en del af den sundheds- og informatikfaglige afgrænsning. Træningsmester er ikke en klinisk journalintegration eller en bred sundhedsplatform. Appen håndterer brugerbundne fitnessdata, adgangskontrol og udvalgte platformintegrationer.
 
 \subsection{Datamodellen som afspejling af problemfeltet}
 
-Datamodellen afspejler rapportens centrale skelnen mellem plan og faktisk træning. En træningsplan beskriver intentionen: hvilke workouts, øvelser, sæt, gentagelser og progression der er planlagt. En trackerlog beskriver derimod, hvad brugeren faktisk registrerer under træning. Completion-events beskriver, at et pas er gennemført, også når den detaljerede trackerlog er ufuldstændig. Denne opdeling er nødvendig, fordi faktisk træningsadfærd ikke altid følger den lineære plan.
+Datamodellen afspejler den centrale skelnen mellem plan og faktisk træning. En træningsplan beskriver intentionen: hvilke workouts, øvelser, sæt, gentagelser og progression der er planlagt. En trackerlog beskriver derimod, hvad brugeren faktisk registrerer under træning. Completion-events beskriver, at et pas er gennemført, også når den detaljerede trackerlog er ufuldstændig. Denne opdeling er nødvendig, fordi faktisk træningsadfærd ikke altid følger den lineære plan.
 
 Figur~\ref{fig:tm-data-model-er} viser den samlede datamodel, mens Figur~\ref{fig:tm-data-model-er-left}, Figur~\ref{fig:tm-data-model-er-middle} og Figur~\ref{fig:tm-data-model-er-right} viser udsnit for henholdsvis bruger/programmer, tracker/completion og træner-/cyklusdata. Datakvalitet handler i denne sammenhæng ikke kun om at have mange datapunkter, men om at data er egnede til det formål, de bruges til \cite{mohammed2025_five_facets_data_quality}. For Træningsmester betyder det, at historik og progression skal kunne fortolkes, selv når brugeren springer detaljeret logging over.
 
@@ -18,7 +18,7 @@ Completion-events er et centralt datadesign, fordi de gør gennemført træning 
 
 Dette er et bevidst tradeoff. En detaljeret trackerlog giver højere granularitet og bedre grundlag for præcis historik. Et completion-event giver lavere granularitet, men kan bevare kontinuitet og næste handling, når brugeren gennemfører et pas uden fuld logging. Tabel~\ref{tab:tm-sql-domain-overblik} og Tabel~\ref{tab:tm-sql-fields} viser, hvordan centrale datadomæner og felter understøtter denne skelnen.
 
-Datakvaliteten skal derfor vurderes efter formål. Hvis formålet er præcis analyse af hvert sæt, er trackerloggen stærkest. Hvis formålet er at fastholde programflow, historik og næste handling, kan completion-events være nødvendige. Denne differentiering gør datamodellen mere robust over for realistisk brug, men den kræver, at rapporten ikke oversælger detaljeringsgraden i data.
+Datakvaliteten skal derfor vurderes efter formål. Hvis formålet er præcis analyse af hvert sæt, er trackerloggen stærkest. Hvis formålet er at fastholde programflow, historik og næste handling, kan completion-events være nødvendige. Denne differentiering gør datamodellen mere robust over for realistisk brug, men den kræver, at dataenes detaljeringsgrad ikke oversælges.
 
 \subsection{RLS som primær adgangskontrol}
 
@@ -42,18 +42,18 @@ Edge Functions bruges til flows, der ikke bør ligge direkte i klienten. Det gæ
 
 Figur~\ref{fig:tm-import-ai-edge-boundary} viser import- og AI-grænsen mellem klient, Edge Functions, OpenAI og Supabase. Pointen er, at klienten ikke skal have direkte adgang til privilegerede integrationsnøgler eller brede databaseoperationer. Brugeren kan starte et flow, men backend skal håndtere den privilegerede del under kontrollerede adgangsbetingelser \cite{owasp2024_masvs,supabase_securing_api_docs}.
 
-Dette reducerer risiko, men fjerner den ikke. Edge Functions skal fortsat testes, reviews og driftes forsvarligt, og deres adgangslogik skal stemme med RLS og de øvrige sikkerhedsregler. Kapitlet kan derfor kun argumentere for en hensigtsmæssig sikkerhedsstruktur, ikke for endelig sikkerhedscertificering.
+Dette reducerer risiko, men fjerner den ikke. Edge Functions skal fortsat testes, reviews og driftes forsvarligt, og deres adgangslogik skal stemme med RLS og de øvrige sikkerhedsregler. Materialet giver derfor grundlag for at argumentere for en hensigtsmæssig sikkerhedsstruktur, ikke for endelig sikkerhedscertificering.
 
 \subsection{Interoperabilitet og HealthKit-afgrænsning}
 
-Interoperabilitet er relevant, fordi Træningsmester arbejder med sundheds- og træningsnære data, men appen skal afgrænses tydeligt. HealthKit kan forstås som en brugeraktiveret platformintegration for fitnessdata, ikke som klinisk journalintegration \cite{apple_healthkit_docs}. Det betyder, at rapporten ikke bør beskrive Træningsmester som et system, der udveksler kliniske patientdata på linje med hospitals- eller journalsystemer.
+Interoperabilitet er relevant, fordi Træningsmester arbejder med sundheds- og træningsnære data, men appen skal afgrænses tydeligt. HealthKit kan forstås som en brugeraktiveret platformintegration for fitnessdata, ikke som klinisk journalintegration \cite{apple_healthkit_docs}. Træningsmester bør derfor ikke beskrives som et system, der udveksler kliniske patientdata på linje med hospitals- eller journalsystemer.
 
 Interoperabilitetslitteratur og kursusgrundlag kan bruges til at placere denne afgrænsning. Sundhedsinteroperabilitet handler blandt andet om semantik, datakvalitet, systemgrænser og standardiseret udveksling \cite{benson2016_principles_health_interoperability,zajac2026_data_quality_interoperability}. Procesmodeller som BPMN og deklarative modeller kan samtidig bruges til at forstå flow og regler uden at påstå, at appen implementerer kliniske standarder \cite{vanderalst2009_declarative_workflows,ku2026_dcr_bpmn_modeling}.
 
-FHIR og HL7 bør derfor kun nævnes som afgrænsende teori, ikke som implementeret funktionalitet. GDPR kan bruges som juridisk ramme for persondata og databeskyttelse \cite{europeanparliament2016_gdpr}, men rapporten kan ikke konkludere endelig compliance uden juridisk review.
+FHIR og HL7 bør derfor kun nævnes som afgrænsende teori, ikke som implementeret funktionalitet. GDPR kan bruges som juridisk ramme for persondata og databeskyttelse \cite{europeanparliament2016_gdpr}, men der kan ikke konkluderes endelig compliance uden juridisk review.
 
-\subsection{Overgang til implementering}
+\subsection{Data- og sikkerhedsprincipper i implementeringen}
 
-Kapitlet viser, at Træningsmesters data- og sikkerhedsmodel er tæt knyttet til problemformuleringen. Plan, trackerlog, completion-events, cycle runtime, RLS, idempotency, Edge Functions og HealthKit-afgrænsning er ikke uafhængige tekniske valg; de er forudsætninger for, at appen kan understøtte fleksibel progression og sikker brugerbundet datahåndtering.
+Træningsmesters data- og sikkerhedsmodel er tæt knyttet til problemformuleringen. Plan, trackerlog, completion-events og cycle runtime er centrale principper. RLS, idempotency, Edge Functions og HealthKit-grænsen tilføjer adgangs- og integrationsregler. Samlet er de forudsætninger for fleksibel progression og sikker brugerbundet datahåndtering.
 
-Det næste kapitel kan derfor gå tættere på implementeringen. Her skal de beskrevne data- og sikkerhedsprincipper kobles til de konkrete valg, der realiserer appens centrale flows.
+Disse data- og sikkerhedsprincipper skal kobles til konkrete implementeringsvalg, før appens centrale flows kan vurderes som en sammenhængende teknisk løsning.
