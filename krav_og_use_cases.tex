@@ -1,0 +1,53 @@
+\section{Krav og use cases}
+
+Dette kapitel viser, hvordan problemformuleringen omsættes til konkrete brugerhandlinger, funktionelle krav og ikke-funktionelle krav. Kravene behandles ikke som en neutral featureliste, men som en operationalisering af rapportens centrale problem: hvordan en digital træningsapp kan understøtte fleksibel progression, feedback, lav friktion, datakvalitet og sikker adgang, når faktisk træning afviger fra en planlagt struktur.
+
+Kapitlet bygger videre på den teoretiske ramme og metodeafgrænsningen. Kravene er derfor ikke dokumentation for effekt i sig selv. De fungerer som bindeled mellem teori, case, arkitektur og senere verifikation, så det bliver muligt at følge, hvordan motivation, progression og sikker dataadgang omsættes til konkrete systemvalg.
+
+\subsection{Krav som operationalisering af problemformuleringen}
+
+Problemformuleringen kræver, at appen både kan støtte adfærd og håndtere træningsfaglig struktur. COM-B og BCT-perspektivet giver et sprog for krav, der understøtter capability, opportunity, motivation, selvmonitorering og feedback \cite{michie2011_behaviour_change_wheel,michie2013_bct_taxonomy_v1}. Effektivt engagement betyder samtidig, at kravene skal vurderes efter, om de understøtter målrettet træningsadfærd, ikke blot om de øger mængden af appinteraktion \cite{yardley2016_effective_engagement_dbci}.
+
+Det træningsfaglige kravspor handler om, at programstruktur og progression skal kunne repræsentere mere end en fast kalender. Progression i styrketræning afhænger af blandt andet øvelsesvalg, sæt, gentagelser, belastning, volumen og løbende tilpasning \cite{acsm2009_progression_models}. Derfor må kravene skelne mellem planlagt træning, faktisk udførelse, completion og næste træningshandling. Hvis disse dele blandes sammen, bliver det vanskeligt at håndtere oversprungne pas, ændret belastning eller træning uden detaljeret logging.
+
+Kravene kan derfor grupperes i tre overordnede spor. Det første spor er brugerens træningsrejse fra program og træningsdag til udførelse og feedback. Det andet spor er datakvalitet og progression, hvor systemet skal bevare en meningsfuld historik uden at kræve perfekt registrering hver gang. Det tredje spor er sikkerhed og adgangskontrol, hvor brugerbundne træningsdata skal håndteres gennem en datamodel, der begrænser adgang og privilegerede handlinger.
+
+\subsection{Kerneuse cases: plan, udførelse og feedback}
+
+Tabel~\ref{tab:tm-use-cases} samler appens centrale use cases. I forhold til problemformuleringen er UC-03, UC-04, UC-06 og UC-08 særligt vigtige, fordi de tilsammen dækker plan, konkret træningsstruktur, udførelse og progression. UC-03 handler om at oprette og redigere træningsprogrammer, mens UC-04 knytter træningsdage og øvelser til den konkrete programstruktur. Disse use cases gør det muligt at repræsentere træning som mere end en liste af enkeltøvelser.
+
+UC-06 er central, fordi den handler om at starte en workout med tracker, logge sæt, styre pauser og gemme completion. Det er her, appen møder brugerens faktiske træningssituation. UC-08 udvider denne logik med aktiv træningscyklus, hvor runtime-progression kan prioriteres over en simpel lineær planindekslogik. Samlet viser de to use cases, at appen skal kunne håndtere både detaljeret registrering og mere fleksibel progression.
+
+Tabel~\ref{tab:tm-krav-traceability} viser, hvordan use cases kobles til krav og implementeringsspor. For rapportens problemformulering er F-08, F-09, F-13 og F-15 særligt centrale, fordi de knytter tracker, completion, cyklusprogression og Live Activity-spor til brugerens træningsflow. Kravene er dermed ikke alene tekniske beskrivelser, men konkrete udtryk for den faglige idé om, at plan, udførelse og næste handling skal holdes sammen uden at blive reduceret til en perfekt lineær plan.
+
+\subsection{Afvigelser fra planen som legitime brugerflows}
+
+Et centralt krav er, at afvigelser fra planen ikke skal behandles som rene fejltilstande. I praksis kan brugeren springe en træning over, gennemføre træning uden at logge alle sæt, ændre belastning eller vende tilbage til appen efter en forsinket session. Hvis systemet kun understøtter fuld og lineær logging, kan sådanne situationer skabe datatab, utydelig historik eller demotiverende feedback.
+
+Derfor skal gennemført træning uden aktiv tracker forstås som et legitimt flow. Figur~\ref{fig:tm-tracker-completion-summary} viser koblingen mellem trackerstatus, completion og progression. Pointen er, at brugeren kan markere træning som gennemført, selv når den detaljerede trackerlog ikke er fuldstændig. Det bevarer en meningsfuld historik og kan understøtte næste træningshandling, men det indebærer også et tradeoff: datadetaljen bliver lavere end ved fuld sæt-for-sæt-logging.
+
+Denne løsning hænger sammen med træningsfaglige principper om tilpasning og autoregulering. Nyere anbefalinger for styrketræning fremhæver fortsat progression og tilpasning som centrale, mens autoregulering peger på, at faktisk performance og situation kan begrunde justeringer i træningen \cite{currier2026_acsm_resistance_training,greig2020_autoregulation_resistance_training}. Tabel~\ref{tab:tm-tracker-flow-bpmn} viser procesperspektivet på trackerflowet og gør det muligt senere at diskutere, hvor appen balancerer fleksibilitet, datakvalitet og progression.
+
+\subsection{Lav friktion og platformstøtte}
+
+Lav friktion er et krav, fordi træning er en brugssituation, hvor brugeren har begrænset opmærksomhed til rådighed. Under en workout skal appen støtte handlingen uden at kræve unødige skift, lange indtastninger eller uklare statustilstande. Derfor bliver flere interaktionsflader relevante: iOS-appens tracker, watchOS companion og Live Activity.
+
+watchOS og Live Activity behandles dog som støttefunktioner, ikke som selvstændige hovedformål. Apple-dokumentationen for Live Activities og Watch Connectivity viser, at platformene kan bruges til løbende status, synkronisering og mere direkte adgang til aktivitetsspecifik information \cite{apple_activitykit_live_data_docs,apple_watchconnectivity_docs}. I rapportens case er deres relevans, at de kan reducere behovet for at åbne telefonen under træning og dermed understøtte lavere friktion.
+
+Figur~\ref{fig:tm-watch-sync-sequence} viser, hvordan watchOS-sporet er tænkt sammen med auth-sync og brugerbundne workoutdata. Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser, hvordan Live Activity-sporet relaterer sig til idempotente opdateringer. Kravene til disse platformspor skal derfor vurderes ud fra, om de understøtter tracker, completion og feedback i træningssituationen, ikke ud fra om de i sig selv gør appen mere omfattende.
+
+\subsection{Ikke-funktionelle krav: datakvalitet og sikker adgang}
+
+Ikke-funktionelle krav er centrale, fordi appens brugerflows behandler brugerbundne træningsdata. NF-01, NF-02 og NF-08 skal derfor forstås som krav til sikker adgang, adskillelse af privilegerede funktioner og robust databehandling. Sikkerhed er ikke en eftertanke til funktionaliteten; den er en forudsætning for, at funktionaliteten kan bruges forsvarligt.
+
+OWASP MASVS giver en mobil sikkerhedsramme for blandt andet datahåndtering, autentifikation og grænser mellem app og backend \cite{owasp2024_masvs}. Supabase-dokumentationen beskriver Row Level Security og API-sikring som centrale mekanismer til at begrænse adgang til data og undgå, at klienten får bredere rettigheder end nødvendigt \cite{supabase_rls_docs,supabase_securing_api_docs}. I Træningsmester betyder det, at brugerens session, RLS, typed repositories og Edge Functions skal ses som dele af samme adgangsmodel.
+
+Figur~\ref{fig:tm-security-boundary-summary} viser sikkerhedsgrænsen mellem mobil klient, RLS og Edge Functions. Tabel~\ref{tab:tm-authorization-dcr} beskriver autorisationslogikken som procesmodel, mens Tabel~\ref{tab:tm-rls-matrix} viser, hvordan centrale datadomæner kobles til adgangskontrol. Disse krav dokumenterer ikke fuld sikkerhedscertificering, men de gør det muligt at vurdere, om appens arkitektur tager højde for brugerbundet adgang og fravær af privilegerede nøgler i klienten.
+
+\subsection{Kravsporbarhed og overgang til arkitektur}
+
+Kravsporbarhed er nødvendig, fordi rapporten senere skal vise sammenhængen mellem problemformulering, use cases, arkitektur, implementering og test. Tabel~\ref{tab:tm-krav-traceability} fungerer derfor som et centralt bindeled: den viser, hvilke krav de enkelte use cases dækker, og hvilke implementeringsspor de knytter sig til. Tabel~\ref{tab:tm-test-traceability} viser tilsvarende, hvordan krav og implementering senere kan vurderes gennem teknisk verifikation.
+
+Sporbarheden betyder ikke, at alle krav er lige vigtige for problemformuleringen. I denne rapport vægtes de krav højest, der understøtter fleksibel progression, lav-friktionslogging, completion, næste træningshandling og sikker dataadgang. Andre krav, for eksempel import, admin og trænerfunktioner, kan være relevante som udvidelser eller governance-spor, men de er kun centrale i det omfang, de belyser hovedspørgsmålet.
+
+Kapitlet viser dermed, at Træningsmesters krav stiller krav til den underliggende arkitektur. Brugerflade, state, datamodel, backend, RLS, Edge Functions, watchOS og Live Activity skal fungere sammen, hvis appen skal understøtte plan, faktisk udførelse, completion og progression. Det leder videre til systemarkitekturen, hvor kravene omsættes til en samlet teknisk struktur.
