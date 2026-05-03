@@ -36,7 +36,7 @@ Start med disse filer i rækkefølge:
 - Lokal template-vejledning: `README.md`
 - Agentstyring: `AGENTS.md`
 - Skrivematrix for hele rapporten: `skrivematrix.md` (internt arbejdsdokument, ikke rapportinput)
-- Referencebibliotek: `referencer.bib`, `referencer.md` og lokale åbne PDF-kopier i `referencer/`; udvalgt kursusmateriale registreres med præcise slide-/sidetal uden at kopiere lukkede kursusfiler
+- Referencebibliotek: `referencer.bib`, `referencer.md`, lokal BibTeX-stil `abbrvnat-etal.bst` og åbne PDF-kopier i `referencer/`; udvalgt kursusmateriale registreres med præcise slide-/sidetal uden at kopiere lukkede kursusfiler
 - Kildesøgningsafsnit: `kildesoegning.tex`
 - Billed- og materialebilag: `billedbilag.tex` med labels til aktuelle TræningsMester-screenshots, arkitekturdiagrammer, supplerende ER-udsnit og tabeller fra materialepakken
 - Konverterede diagrammer til Overleaf: `assets/bilag/diagrammer/`
@@ -81,6 +81,7 @@ Start med disse filer i rækkefølge:
 | `konklusion.tex` | Kapitelinput | Færdig rapporttekst for Konklusion, indlæst fra `main.tex` |
 | `referencer.bib` | Referencebibliotek | BibTeX-nøgler til eksterne kilder og verificeret kursusmateriale |
 | `referencer.md` | Referencevejledning | Skal læses før nye skrive-/redigeringsiterationer; binder kildevalg, slide-/sidetal og PDF-status sammen |
+| `abbrvnat-etal.bst` | Lokal BibTeX-stil | `natbib`-kompatibel numerisk referencestil med initialer og `et al.` efter seks forfattere |
 | `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af åbne kilder, navngivet efter BibTeX-stems; lukkede kursusfiler kopieres ikke hertil |
 | `kildesoegning.tex` | Metodeafsnit om kildesøgning | Kan inputtes i rapportens metodekapitel |
 | `billedbilag.tex` | Billed- og materialebilag | Bilag med aktuelle, kuraterede TræningsMester-billeder, diagrammer, materialetabeller og labels |
@@ -154,6 +155,7 @@ Start med disse filer i rækkefølge:
 ├── skrivematrix.md
 ├── referencer.bib
 ├── referencer.md
+├── abbrvnat-etal.bst
 ├── referencer
 │   └── åbne PDF-kopier af kilder
 ├── assets
