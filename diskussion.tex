@@ -38,6 +38,14 @@ Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} vis
 
 Sikkerhedsargumentet er derfor stærkest på designniveau. Det viser, hvor adgang bør håndhæves, og hvorfor privilegeret logik ikke bør ligge i klienten. Det svageste punkt er dækningsgraden: alle rolle- og tværbrugerscenarier skal testes, før designet kan omsættes til et stærkere driftspåstand.
 
+\subsection{Perspektivering}
+
+Set bredere peger projektet på en udfordring i digitale sundhedsteknologier: systemer designes ofte omkring idealiserede brugerforløb, men værdien viser sig i afvigelserne. En app, der kun fungerer, når brugeren følger planen og logger alt korrekt, risikerer at blive mest skrøbelig der, hvor støttebehovet er størst.
+
+TræningsMester viser, at robust digital støtte kræver, at adfærdsdesign og softwarearkitektur tænkes sammen. Den brugerrettede fleksibilitet skal have en teknisk modpart i datamodel, idempotens og adgangskontrol. Ellers bliver fleksibilitet enten til uklare data eller for brede rettigheder. Den pointe rækker ud over styrketræning og er relevant for digitale sundhedsløsninger, hvor brugernes hverdag sjældent passer til et lineært procesdiagram.
+
+Perspektivet er dog begrænset af casens størrelse og evidensniveau. Før modellen kan generaliseres, skal den afprøves med flere brugere, længere forløb og stærkere teknisk reproducerbarhed.
+
 \subsection{Brugerindsigt og videre arbejde}
 
 Beta-feedbacken styrker vurderingen, fordi den viser praktisk friktion omkring installation, søgning, katalogkvalitet, enheder, medier og watch. Tabel~\ref{tab:tm-beta-feedback} og Tabel~\ref{tab:tm-testflight-timeline} dokumenterer disse temaer. Grundtvig og Clotworthy understøtter, at kvalitative data kan give kontekstuel indsigt, men kræver tydelig afgrænsning \cite{grundtvig2025_analyse_data,clotworthy2025_etik_kvalitet_forskning}.

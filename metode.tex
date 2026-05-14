@@ -12,6 +12,14 @@ Begrænsningen er, at en egenudviklet case ikke kan dokumentere virkning for en 
 
 Appen analyseres derfor som en kæde af beslutninger. Først undersøges problemets teoretiske ramme. Derefter vurderes, om krav og use cases oversætter problemet til konkrete funktioner. Til sidst vurderes, om arkitektur, implementering, test og feedback giver tilstrækkelig dokumentation for den valgte løsning.
 
+\subsection{Analysegenstand}
+
+Analysegenstanden er den udviklede apps håndtering af afvigelser i et træningsforløb. Det betyder, at appen ikke analyseres som et samlet produkt med alle kommercielle funktioner, men som en kæde af mekanismer: planlagt workout, aktiv tracker, completion-event, cycle runtime, næste handling, brugerfladefeedback og adgangskontrol.
+
+Genstanden undersøges på tre niveauer. Det første niveau er det træningsfaglige: om modellen kan bevare progression, når faktisk træning ikke følger planen. Det andet niveau er interaktionsniveauet: om Home, tracker, tracker-off, watchOS og Live Activity kan reducere friktion i selve træningssituationen. Det tredje niveau er det informatiske: om datamodel, RLS, repositories og Edge Functions gør fleksibiliteten sporbar og adgangsmæssigt afgrænset.
+
+Denne afgrænsning gør analysen snæver nok til at kunne vurderes. Rapporten behandler ikke alle appens features som lige vigtige. Den behandler de dele, der afgør, om problemformuleringens centrale spænding mellem struktur og afvigelse kan håndteres.
+
 \subsection{Analysestrategi}
 
 Analysen er organiseret efter underspørgsmålene, så hvert kapitel leverer belæg til den samlede konklusion. Tabel~\ref{tab:analysestrategi} viser, hvordan materialet bruges, og hvilke vurderingskriterier der lægges til grund.

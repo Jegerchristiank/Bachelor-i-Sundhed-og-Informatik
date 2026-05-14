@@ -115,8 +115,9 @@ Start med disse filer i rækkefølge:
 - færdig tekst for Konklusion via `\input{konklusion}`,
 - en separat intern skrivematrix i `skrivematrix.md` for hele rapporten fra Indledning til Konklusion,
 - BibTeX-referenceafsnit baseret på `referencer.bib`,
-- bilag efter referenceafsnittet med kildesøgning via `\input{kildesoegning}`,
-- billed- og materialebilag efter referenceafsnittet med aktuelle TræningsMester-screenshots, arkitekturdiagrammer og supplerende tabeller via `\input{billedbilag}`.
+- en kort AI-erklæring efter referenceafsnittet og før bilagene,
+- bilag efter AI-erklæringen med kildesøgning via `\input{kildesoegning}`,
+- billed- og materialebilag efter AI-erklæringen med aktuelle TræningsMester-screenshots, arkitekturdiagrammer og supplerende tabeller via `\input{billedbilag}`.
 
 ## Vedligeholdelsesregler
 
