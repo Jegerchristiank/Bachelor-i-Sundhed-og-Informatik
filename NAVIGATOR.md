@@ -98,6 +98,7 @@ Start med disse filer i rækkefølge:
 - `Afventer` for dato,
 - udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
+- et engelsk abstract/resumé før indholdsfortegnelsen, der opsummerer problemstilling, metode, hovedresultater, begrænsninger og næste skridt,
 - kapitelinput baseret på rapportafsnit-mappingen,
 - færdig tekst for Indledning via `\input{indledning}`,
 - færdig tekst for Problemformulering og afgrænsning via `\input{problemformulering_og_afgraensning}`,

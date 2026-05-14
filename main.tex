@@ -205,6 +205,20 @@ Dato & Afventer \\
 \newpage
 
 \phantomsection
+\addcontentsline{toc}{section}{Abstract}
+\section*{Abstract}
+
+This bachelor's thesis examines how a digital training app can be designed and implemented so that programme structure, progression and feedback support sustained motivation and flexible handling of deviations from a planned strength-training programme. The project is based on TræningsMester, a self-developed native iOS app with SwiftUI, watchOS support, Live Activity, Supabase backend services, Row Level Security and selected server-side Edge Functions.
+
+The method combines a problem-driven scoping search, course-based methodological support, analysis of the developed artefact, anonymised beta feedback and technical verification. This makes it possible to assess whether the app's design and implementation are academically grounded and technically coherent, but it does not provide evidence of clinical effect, improved adherence or health outcomes.
+
+The analysis shows that flexible progression depends on separating the planned workout, the user's actual logging, completion events, feedback and the next relevant training action. In TræningsMester, this is implemented through tracker-on and tracker-off flows, cycle runtime logic, a Home screen focused on the next action, and shared data structures that can be used across iOS, watchOS and Live Activity surfaces. The backend architecture places ordinary user access behind Supabase RLS and reserves privileged logic for Edge Functions, which strengthens the security design compared with a client-only model.
+
+The main contribution is a documented design and implementation model for handling realistic training deviations without treating them as errors. The main limitation is the evidence level: the beta feedback is qualitative and not representative, and the technical verification documents selected builds, tests and artefacts rather than full production readiness, security certification or long-term behavioural effect. Further work should therefore include systematic usability testing, a longer and broader beta period, stronger runtime documentation for watchOS and Live Activity, more role-based security testing and, only after that, a possible effect study.
+
+\newpage
+
+\phantomsection
 \addcontentsline{toc}{section}{\contentsname}
 \tableofcontents
 \newpage
