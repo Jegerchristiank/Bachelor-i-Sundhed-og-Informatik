@@ -12,6 +12,29 @@ Begrænsningen er, at en egenudviklet case ikke kan dokumentere virkning for en 
 
 Appen analyseres derfor som en kæde af beslutninger. Først undersøges problemets teoretiske ramme. Derefter vurderes, om krav og use cases oversætter problemet til konkrete funktioner. Til sidst vurderes, om arkitektur, implementering, test og feedback giver tilstrækkelig dokumentation for den valgte løsning.
 
+\subsection{Analysestrategi}
+
+Analysen er organiseret efter underspørgsmålene, så hvert kapitel leverer belæg til den samlede konklusion. Tabel~\ref{tab:analysestrategi} viser, hvordan materialet bruges, og hvilke vurderingskriterier der lægges til grund.
+
+\begin{table}[h]
+\small
+\renewcommand{\arraystretch}{1.14}
+\begin{tabularx}{\textwidth}{p{0.24\textwidth} Y Y}
+\toprule
+\tmthead{Underspørgsmål} & \tmthead{Materiale} & \tmthead{Vurderingskriterium} \\
+\midrule
+Plan, trackerlog, completion og cycle runtime & Use cases, kravsporbarhed, datamodel, trackerproces og implementeringsbeskrivelse & Om planlagt og faktisk træning kan adskilles uden datatab, og om næste handling kan forklares efter afvigelser. \\
+UI og lav friktion & Skærmbilleder, interaktionsdesign, beta-feedback og støtteflader for watchOS og Live Activity & Om brugeren får tydelig status, feedback og næste handling uden unødig registreringsfriktion. \\
+Sikker dataadgang & Sikkerhedsgrænse, RLS-matrix, Edge Function-spor og tekniske primærkilder & Om privilegeret logik holdes uden for klienten, og om påstande afgrænses til dokumenteret design og delvis test. \\
+Evidensgrundlag & Kildesøgning, anonymiseret feedback, build- og testspor, skærmbilleder og diagrammer & Om konklusionen følger af dokumenterede artefakter og tydeligt skelner mellem plausibilitet, brugerindsigt og effektbevis. \\
+\bottomrule
+\end{tabularx}
+\caption{Analysestrategi for koblingen mellem underspørgsmål, materiale og vurderingskriterier.}
+\label{tab:analysestrategi}
+\end{table}
+
+Strategien betyder, at kapitlerne ikke vurderes efter mængden af dokumentation alene. Et stærkt belæg kræver, at teori, krav, implementering og verifikation peger i samme retning. Et svagere belæg kan stadig være relevant, men skal markeres som plausibilitet, designindsigt eller videre arbejde frem for som dokumenteret effekt.
+
 \subsection{Kildesøgning og faggrundlag}
 
 Kildesøgningen blev gennemført som en problemstyret scoping-søgning. Rethlefsen et al.s PRISMA-S og McGowan et al.s PRESS-guideline bruges som pejlemærker for transparent søgning, søgestrenge og kildekritik \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. Søgestrategien kombinerede KB.dk/Primo, PubMed/PMC, DOI/Crossref og udgiversider, fordi problemfeltet både er sundhedsfagligt, designfagligt og teknisk. Tabel~\ref{tab:kildesoegning-platforme} og Tabel~\ref{tab:kildesoegning-appspor} dokumenterer søgesporene i bilaget.

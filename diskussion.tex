@@ -4,6 +4,16 @@ Den udviklede TræningsMester-app viser en plausibel design- og implementeringsm
 
 Diskussionen samler derfor fire spændinger: fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Det er i disse spændinger, appens faglige værdi som design- og implementeringsarbejde ligger.
 
+\subsection{Syntese på tværs af underspørgsmål}
+
+På tværs af kapitlerne kan de fire underspørgsmål besvares med forskellig styrke. Det stærkeste belæg ligger i datamodellen og implementeringen, hvor plan, trackerlog, completion og cycle runtime adskilles. Den adskillelse gør det muligt at bevare historik og progression, selv når brugeren afviger fra planen.
+
+Belægget for lav friktion er mere kvalitativt. Home-flow, tracker-off flow, watchOS og Live Activity viser et sammenhængende designprincip: brugeren skal have status, feedback og næste handling uden at skulle registrere alt perfekt i øjeblikket. Det understøttes af beta-feedback, men kræver stadig systematisk usabilitytest, før det kan vurderes som dokumenteret brugeroplevelsesforbedring.
+
+Sikkerhedsargumentet er stærkt som arkitekturargument og mere begrænset som verifikationsargument. RLS, repositories og Edge Functions placerer adgangskontrol uden for klienten, men rolle-, backend- og runtime-scenarier er ikke dækket fuldt. Evidensgrundlaget er derfor tilstrækkeligt til at diskutere en fagligt begrundet design- og implementeringscase, men ikke til at dokumentere effekt, fuld produktionsmodenhed eller komplet sikkerhed.
+
+Den samlede vurdering er derfor ikke, at TræningsMester har bevist en sundhedseffekt. Den er, at appen udgør en sammenhængende løsning på et afgrænset designproblem: hvordan fleksibel progression kan understøttes, når brugerens faktiske træning afviger fra planen, uden at historik, feedback og adgangskontrol bryder sammen.
+
 \subsection{Fleksibilitet og datakvalitet}
 
 Appens stærkeste bidrag er at behandle afvigelser som systemtilstande frem for fejl. Figur~\ref{fig:tm-tracker-completion-summary} viser, hvordan trackerlog og completion kan adskilles, så et træningspas kan registreres som gennemført, selv om alle detaljer ikke er logget. Greig et al.s arbejde om autoregulering understøtter, at faktisk træning kan afvige fagligt legitimt fra en fast plan \cite{greig2020_autoregulation_resistance_training}.
