@@ -18,15 +18,15 @@ Den samlede vurdering er derfor ikke, at TræningsMester har bevist en sundhedse
 
 Appens stærkeste bidrag er at behandle afvigelser som systemtilstande frem for fejl. Figur~\ref{fig:tm-tracker-completion-summary} viser, hvordan trackerlog og completion kan adskilles, så et træningspas kan registreres som gennemført, selv om alle detaljer ikke er logget. Greig et al.s arbejde om autoregulering understøtter, at faktisk træning kan afvige fagligt legitimt fra en fast plan \cite{greig2020_autoregulation_resistance_training}.
 
-Styrken har et tradeoff. Completion uden fuld trackerlog bevarer historik og næste handling, men datagranulariteten falder. Mohammed et al.s datakvalitetsramme gør dette til et formålsspørgsmål: data kan være gode til progression og kontinuitet, men utilstrækkelige til detaljeret analyse \cite{mohammed2025_five_facets_data_quality}. TræningsMester bør derfor normalisere afvigelser uden at gøre dem usynlige.
+Afvejningen er tydelig. Completion uden fuld trackerlog bevarer historik og næste handling, men datagranulariteten falder. Mohammed et al.s datakvalitetsramme gør dette til et formålsspørgsmål: data kan være gode til progression og kontinuitet, men utilstrækkelige til detaljeret analyse \cite{mohammed2025_five_facets_data_quality}. TræningsMester bør derfor normalisere afvigelser uden at gøre dem usynlige.
 
-Dette tradeoff bør være synligt for både design og senere evaluering. Hvis completion bruges ofte, kan appen stadig støtte kontinuitet, men den får sværere ved at beregne belastningsudvikling og præcis træningsvolumen. Hvis detaljeret logging kræves for ofte, kan appen derimod miste brug i praksis. Valget står derfor ikke mellem gode og dårlige data, men mellem forskellige datatyper med forskellige formål.
+Afvejningen bør være synlig for både design og senere evaluering. Hvis completion bruges ofte, kan appen stadig støtte kontinuitet, men den får sværere ved at beregne belastningsudvikling og præcis træningsvolumen. Hvis detaljeret logging kræves for ofte, kan appen derimod miste brug i praksis. Valget står derfor ikke mellem gode og dårlige data, men mellem forskellige datatyper med forskellige formål.
 
 \subsection{Lav friktion og app-evidens}
 
 Lav friktion er nødvendig, fordi brugeren logger under fysisk aktivitet. Stoyanovs MARS-ramme viser, at appkvalitet også handler om engagement, information og brugbarhed \cite{stoyanov2015_mobile_app_rating_scale}. TræningsMester må derfor balancere mellem at være let nok til faktisk brug og detaljeret nok til meningsfuld feedback.
 
-App- og tracker-evidensen støtter relevansen, men ikke effekten. Laranjo et al., Romeo et al. og Brickwood et al. viser, at apps og trackere kan påvirke fysisk aktivitet, men deres resultater kan ikke overføres direkte til en ny styrketræningsapp med andet design og andet datagrundlag \cite{laranjo2021_apps_trackers_meta,romeo2019_smartphone_apps_pa_meta,brickwood2019_wearable_trackers_meta}. TræningsMester kan derfor argumentere for plausibilitet, ikke dokumenteret virkning.
+App- og tracker-evidensen støtter relevansen, men ikke effekten. Laranjo et al., Romeo et al. og Brickwood et al. viser, at apps og trackere kan påvirke fysisk aktivitet, men deres resultater kan ikke overføres direkte til en ny styrketræningsapp med andet design og andet datagrundlag \cite{laranjo2021_apps_trackers_meta,romeo2019_smartphone_apps_pa_meta,brickwood2019_wearable_trackers_meta}. Belægget rækker derfor til plausibilitet, ikke dokumenteret virkning.
 
 Det er en vigtig kildekritisk grænse. Reviews og meta-analyser giver tyngde til problemfeltet, men de erstatter ikke evaluering af den konkrete app. TræningsMester er derfor et forarbejde til senere bruger- og effektstudier, ikke et resultat af dem.
 

@@ -22,7 +22,7 @@ Denne litteratur gør især to kriterier relevante. For det første skal appen h
 
 \subsection{Forskningsstatus og fagligt hul}
 
-Den eksisterende litteratur giver et solidt grundlag for at se apps, trackere, feedback og selvmonitorering som relevante for fysisk aktivitet. Den efterlader samtidig et fagligt hul for dette projekt. Meget app-evidens handler om generel fysisk aktivitet, skridt, vægt eller brede \emph{mHealth-interventioner}, mens styrketræning kræver en mere detaljeret model for øvelser, sæt, belastning, progression og afvigelser.
+Den eksisterende litteratur giver et solidt grundlag for at se apps, trackere, feedback og selvmonitorering som relevante for fysisk aktivitet. Den efterlader samtidig et fagligt hul for TræningsMester. Meget app-evidens handler om generel fysisk aktivitet, skridt, vægt eller brede \emph{mHealth-interventioner}, mens styrketræning kræver en mere detaljeret model for øvelser, sæt, belastning, progression og afvigelser.
 
 Hullet er derfor ikke, om digitale værktøjer i almindelighed kan understøtte fysisk aktivitet. Det er, hvordan en konkret styrketræningsapp kan forbinde adfærdsstøtte, programlogik, lav-friktionsinteraktion og sikker dataadgang i samme system. Hvis disse spor behandles hver for sig, bliver løsningen enten en generel motivationsapp, en teknisk logbog eller en database med brugerflade. TræningsMester samler sporene i ét design- og implementeringsbidrag, hvor afvigelser fra planen er den praktiske test: hænger motivation, progression, data og adgang stadig sammen, når brugeren ikke følger planen perfekt?
 
@@ -46,7 +46,7 @@ Mohammed et al. viser, at \emph{datakvalitet} må vurderes efter formål og kont
 
 Sikkerhed er en designbetingelse. \emph{OWASP MASVS} beskriver principper for mobil datahåndtering og backendgrænser, mens Supabase RLS-dokumentationen viser, hvordan adgang kan begrænses efter bruger og rolle \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}. \emph{GDPR} fungerer som juridisk ramme for persondata \cite{europeanparliament2016_gdpr}. Disse kilder bruges til at vurdere adgangsmodellen, ikke til at påstå fuld certificeret sikkerhed. Figur~\ref{fig:tm-security-boundary-summary} viser den centrale sikkerhedsgrænse i den udviklede app.
 
-Designbetingelserne peger dermed på et samlet krav: appen skal gøre den lette handling mulig uden at opgive den sikre og meningsfulde datamodel. Det er denne spænding mellem friktion, datakvalitet og adgangskontrol, der gør den udviklede TræningsMester-app til et informatikfagligt undersøgelsesartefakt og ikke kun en træningsfaglig appidé.
+Designbetingelserne peger dermed på et samlet krav: appen skal gøre den lette handling mulig uden at opgive den sikre og meningsfulde datamodel. Det er denne spænding mellem friktion, datakvalitet og adgangskontrol, der gør TræningsMester relevant for sundhedsinformatik og ikke kun som en træningsfaglig appidé.
 
 \subsection{Operationalisering af rammen}
 

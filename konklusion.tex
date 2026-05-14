@@ -2,7 +2,7 @@
 
 Svaret på problemformuleringen er, at \emph{fleksibel progression} kræver en tydelig adskillelse mellem planlagt træning, faktisk logging, completion, feedback og næste handling. En digital træningsapp bør ikke behandle afvigelser fra planen som en simpel fejltilstand. Den bør gøre dem håndterbare i datamodellen, i brugerfladen og i feedbacken, så brugeren kan fortsætte træningsforløbet uden at miste historik eller retning.
 
-De fire underspørgsmål peger samlet på samme svar. Datamodellen skal kunne adskille plan og faktisk udførelse; brugerfladen skal gøre næste handling tydelig uden at kræve perfekt logging; sikkerhedsarkitekturen skal placere privilegeret adgang uden for klienten; og evidensen skal læses som dokumentation for design- og implementeringsplausibilitet, ikke som dokumentation for effekt.
+På de fire underspørgsmål er svaret samlet: datamodellen skal adskille plan og faktisk udførelse; brugerfladen skal gøre næste handling tydelig uden at kræve perfekt logging; sikkerhedsarkitekturen skal placere privilegeret adgang uden for klienten; og evidensen skal forstås som dokumentation for design- og implementeringsplausibilitet, ikke som dokumentation for effekt.
 
 Den centrale styrke i den udviklede app er koblingen mellem træningsfaglig struktur og lav-friktionsflows. Tracker-on/off, completion-events og cycle runtime gør det muligt at fastholde progression, også når brugeren ikke logger alle detaljer. Home, watchOS og Live Activity fungerer som støtteflader for næste handling i selve træningssituationen, mens Supabase RLS og Edge Functions placerer adgangskontrol og privilegeret logik uden for den mobile klient.
 
