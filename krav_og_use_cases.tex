@@ -27,3 +27,9 @@ Lav friktion er et krav, fordi træning foregår mellem øvelser, pauser og fysi
 Samtidig må lav friktion ikke svække sikkerheden. OWASP MASVS og Supabase RLS-dokumentationen understøtter princippet om, at mobilklienten ikke må være eneste adgangsgrænse \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}. Figur~\ref{fig:tm-security-boundary-summary} viser derfor en model, hvor brugerfladen starter handlinger, mens RLS og Edge Functions håndhæver adgang. Import, admin, billing og trænerfunktioner er støttefunktioner og kun centrale, når de påvirker progression, datakvalitet eller sikker adgang.
 
 Kravene peger dermed frem mod arkitekturen. Hvis appen skal være fleksibel uden at miste kontrol over data, skal brugerfladen, state-laget, repositories og backendregler arbejde sammen. Kravene kan derfor ikke vurderes isoleret fra systemets tekniske grænser.
+
+\subsection{Samlet kravvurdering}
+
+Kravgrundlaget er stærkest, hvor det direkte forbinder problemformuleringen med kerneflows: plan, tracker, completion, cycle runtime og næste handling. Her er der en tydelig linje fra motivation og progression til konkrete use cases og krav. Det giver rapporten et egentligt analysegrundlag, fordi kravene ikke bare beskriver ønskede funktioner, men definerer hvad appen skal kunne for at håndtere afvigelser fagligt og teknisk.
+
+Kravgrundlaget er svagere for støttefunktioner som import, admin, betaling og trænerrelationer. De kan være nødvendige i en moden app, men de må ikke få samme vægt som kerneflowet i bachelorens argument. Derfor vurderes de kun som relevante, når de påvirker datakvalitet, sikker adgang eller brugerens mulighed for at fortsætte træningen.

@@ -27,3 +27,9 @@ watchOS og Live Activity er arkitektoniske støtteflader. Apple beskriver Live A
 Figur~\ref{fig:tm-watch-sync-sequence} og Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser, at støttefladerne afhænger af fælles session, auth-sync, snapshot og idempotente writes. Arkitekturens styrke er dermed ikke, at appen findes på flere flader, men at flere flader kan pege på samme træningsmodel.
 
 Det giver også en klar begrænsning. Hvis watchOS eller Live Activity kun kan bygges, men ikke runtime-verificeres, er arkitekturargumentet stærkere end produktionsbeviset. Støttefladerne skal derfor forstås som en dokumenteret designretning med behov for yderligere test.
+
+\subsection{Arkitekturvurdering}
+
+Arkitekturens vigtigste kvalitet er, at den placerer ansvar på de rigtige niveauer. Brugerfladen skal gøre handlinger forståelige, state- og repositorylaget skal samle træningsforløbets logik, og backendlaget skal være autoritativt for dataadgang. Det svarer til problemformuleringens behov for fleksibilitet uden datatab eller brede klientrettigheder.
+
+Den kritiske risiko er kompleksitet. Jo flere støtteflader appen får, desto vigtigere bliver fælles session, idempotency og testbare datakontrakter. Arkitekturen er derfor ikke stærk, fordi den indeholder mange komponenter, men fordi komponenterne har en begrundet arbejdsdeling. Det er også her den videre verifikation bør koncentreres.

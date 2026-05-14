@@ -34,7 +34,7 @@ Det er en vigtig kildekritisk grænse. Reviews og meta-analyser giver tyngde til
 
 Sikkerhedsmodellen er en styrke, fordi klienten ikke behandles som eneste sikkerhedsgrænse. Figur~\ref{fig:tm-security-boundary-summary} og Tabel~\ref{tab:tm-rls-matrix} viser en arkitektur, hvor RLS og Edge Functions bærer adgangskontrol. OWASP MASVS, GDPR og Supabase RLS understøtter denne retning \cite{owasp2024_masvs,europeanparliament2016_gdpr,supabase_rls_docs}.
 
-Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser dokumenterede build- og testspor, men også gaps i rolle-, backend- og runtime-scenarier. Derfor kan projektet ikke konkludere fuld sikkerhedscertificering, penetrationstest eller komplet produktionsmodenhed. Det kan kun konkludere, at sikkerhedsdesignet er fagligt plausibelt og delvist verificeret.
+Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser dokumenterede build- og testspor, men også åbne mangler i rolle-, backend- og runtime-scenarier. Derfor kan projektet ikke konkludere fuld sikkerhedscertificering, penetrationstest eller komplet produktionsmodenhed. Det kan kun konkludere, at sikkerhedsdesignet er fagligt plausibelt og delvist verificeret.
 
 Sikkerhedsargumentet er derfor stærkest på designniveau. Det viser, hvor adgang bør håndhæves, og hvorfor privilegeret logik ikke bør ligge i klienten. Det svageste punkt er dækningsgraden: alle rolle- og tværbrugerscenarier skal testes, før designet kan omsættes til et stærkere driftspåstand.
 

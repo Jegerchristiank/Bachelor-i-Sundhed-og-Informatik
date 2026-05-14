@@ -18,10 +18,16 @@ Integrationstests er mere begrænsede. Tabel~\ref{tab:tm-test-traceability} angi
 
 Det er især vigtigt for sikkerhedsmodellen. Figur~\ref{fig:tm-security-boundary-summary} og Tabel~\ref{tab:tm-rls-matrix} viser en arkitektur, hvor klient, RLS og Edge Functions har forskellige roller. OWASP MASVS og Supabase-dokumentationen understøtter princippet, men en model er ikke et sikkerhedsbevis \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}. Admin-, træner-, tværbruger- og Edge Function-scenarier kræver mere målrettet test.
 
-\subsection{Visuel dokumentation og gaps}
+\subsection{Visuel dokumentation og åbne mangler}
 
-Screenshots og diagrammer dokumenterer, at centrale brugerflader og arkitekturspor findes. Figur~\ref{fig:tm-ios-home-ready} viser Home som næste-handling-flade, Figur~\ref{fig:tm-ios-tracker-active} viser aktiv tracker, og Figur~\ref{fig:tm-system-context} viser systemkonteksten. Det styrker forbindelsen mellem krav, implementering og synlige artefakter.
+Skærmbilleder og diagrammer dokumenterer, at centrale brugerflader og arkitekturspor findes. Figur~\ref{fig:tm-ios-home-ready} viser Home som næste-handling-flade, Figur~\ref{fig:tm-ios-tracker-active} viser aktiv tracker, og Figur~\ref{fig:tm-system-context} viser systemkonteksten. Det styrker forbindelsen mellem krav, implementering og synlige artefakter.
 
-Rest-risici handler især om reproducerbarhed, backendintegration, rollebaseret adgang og runtime for watchOS og Live Activity. Gaps svækker ikke arbejdet med TræningsMester, hvis de behandles åbent. De afgrænser blot, hvad der er dokumenteret: teknisk plausibilitet for centrale flows, ikke fuld sikkerhedscertificering, penetrationstest eller driftssikker produktionsmodenhed.
+Rest-risici handler især om reproducerbarhed, backendintegration, rollebaseret adgang og runtime for watchOS og Live Activity. Åbne mangler svækker ikke arbejdet med TræningsMester, hvis de behandles åbent. De afgrænser blot, hvad der er dokumenteret: teknisk plausibilitet for centrale flows, ikke fuld sikkerhedscertificering, penetrationstest eller driftssikker produktionsmodenhed.
 
 Den vigtigste konklusion fra verifikationen er derfor dobbelt. Kerneflowet har et dokumenteret teknisk grundlag, men flere integrations- og sikkerhedsscenarier skal testes, før appen kan vurderes som moden til bred drift.
+
+\subsection{Verifikationsvurdering}
+
+Verifikationen styrker bachelorens argument, fordi den forbinder tekstens påstande med konkrete artefakter: build, unit tests, skærmbilleder, diagrammer og sporbarhedstabeller. Det gør rapporten mere end en idébeskrivelse. Den viser, at centrale dele af designet er omsat til en fungerende teknisk struktur.
+
+Samtidig er verifikationen ikke stærk nok til at bære de mest vidtgående påstande. De stærkeste konklusioner kan handle om implementeringsplausibilitet, arkitekturvalg og kendte begrænsninger. De svageste konklusioner ville være påstande om langtidseffekt, fuld sikkerhed eller stabil runtime på alle enheder. Derfor bruges verifikationen som et kontrolleret evidensspor og ikke som et kvalitetsstempel for færdig produktionsmodenhed.

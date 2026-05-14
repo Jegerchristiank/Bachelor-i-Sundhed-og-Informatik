@@ -35,6 +35,12 @@ Evidensgrundlag & Kildesøgning, anonymiseret feedback, build- og testspor, skæ
 
 Strategien betyder, at kapitlerne ikke vurderes efter mængden af dokumentation alene. Et stærkt belæg kræver, at teori, krav, implementering og verifikation peger i samme retning. Et svagere belæg kan stadig være relevant, men skal markeres som plausibilitet, designindsigt eller videre arbejde frem for som dokumenteret effekt.
 
+\subsection{Metodisk kvalitet}
+
+Metodens kvalitet vurderes efter gennemsigtighed, sammenhæng og kritisk afgrænsning. Gennemsigtighed betyder, at læseren kan se, hvilke materialetyper der bærer hvilke påstande. Sammenhæng betyder, at problemformulering, teori, krav, artefakter og verifikation peger mod samme undersøgelse. Kritisk afgrænsning betyder, at rapporten viser, hvor materialet ikke rækker: beta-feedback er ikke repræsentativ, skærmbilleder dokumenterer ikke effekt, og build/testspor dokumenterer ikke fuld driftssikkerhed.
+
+Det metodiske ideal er derfor ikke at fjerne alle usikkerheder, men at gøre dem synlige og bruge dem korrekt. Kvalitativ brugerindsigt kan styrke forståelsen af friktion, mens teknisk verifikation kan styrke vurderingen af implementeret adfærd. Ingen af delene kan alene afgøre, om appen virker som intervention. Clotworthy og Grundtvig bruges netop til denne skelnen mellem observation, fortolkning, validitet og generaliserbarhed \cite{clotworthy2025_etik_kvalitet_forskning,grundtvig2025_analyse_data}.
+
 \subsection{Kildesøgning og faggrundlag}
 
 Kildesøgningen blev gennemført som en problemstyret scoping-søgning. Rethlefsen et al.s PRISMA-S og McGowan et al.s PRESS-guideline bruges som pejlemærker for transparent søgning, søgestrenge og kildekritik \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. Søgestrategien kombinerede KB.dk/Primo, PubMed/PMC, DOI/Crossref og udgiversider, fordi problemfeltet både er sundhedsfagligt, designfagligt og teknisk. Tabel~\ref{tab:kildesoegning-platforme} og Tabel~\ref{tab:kildesoegning-appspor} dokumenterer søgesporene i bilaget.
@@ -45,10 +51,10 @@ Kilderne blev udvalgt efter funktion. Teixeira, Eysenbach og Yardley dækker mot
 
 \subsection{Artefakter, beta-feedback og verifikation}
 
-Artefaktanalysen undersøger de synlige elementer, der dokumenterer appens design og implementering: screenshots, diagrammer, use cases, krav, datamodel, RLS-matrix og testspor. Figur~\ref{fig:tm-ios-home-ready} bruges som eksempel på Home som næste-handling-flade, mens Figur~\ref{fig:tm-tracker-completion-summary} viser adskillelsen mellem tracker, completion og progression.
+Artefaktanalysen undersøger de synlige elementer, der dokumenterer appens design og implementering: skærmbilleder, diagrammer, use cases, krav, datamodel, RLS-matrix og testspor. Figur~\ref{fig:tm-ios-home-ready} bruges som eksempel på Home som næste-handling-flade, mens Figur~\ref{fig:tm-tracker-completion-summary} viser adskillelsen mellem tracker, completion og progression.
 
 Beta-feedback behandles som anonymiseret, kvalitativ designindsigt. Den bruges til at identificere friktion, katalogproblemer, enheder, watch-behov og prioriteringer, men ikke til at generalisere til alle brugere. Tabel~\ref{tab:tm-beta-feedback} og Tabel~\ref{tab:tm-testflight-timeline} dokumenterer observationer og iteration.
 
-Teknisk verifikation vurderer buildstatus, unit tests, begrænsede integrationstests og kendte gaps. Tabel~\ref{tab:tm-test-traceability} samler de tekniske påstande. Apple-, Supabase- og OWASP-kilder bruges til at vurdere platform- og sikkerhedsvalg \cite{apple_swiftui_docs,apple_activitykit_live_data_docs,apple_watchconnectivity_docs,owasp2024_masvs,supabase_rls_docs}. Verifikationen dokumenterer teknisk plausibilitet, ikke produktionsklarhed, sikkerhedscertificering eller klinisk validering.
+Teknisk verifikation vurderer buildstatus, unit tests, begrænsede integrationstests og kendte mangler. Tabel~\ref{tab:tm-test-traceability} samler de tekniske påstande. Apple-, Supabase- og OWASP-kilder bruges til at vurdere platform- og sikkerhedsvalg \cite{apple_swiftui_docs,apple_activitykit_live_data_docs,apple_watchconnectivity_docs,owasp2024_masvs,supabase_rls_docs}. Verifikationen dokumenterer teknisk plausibilitet, ikke produktionsklarhed, sikkerhedscertificering eller klinisk validering.
 
 De tre materialetyper supplerer hinanden. Artefakterne viser, hvad der er designet og implementeret. Feedbacken viser, hvor brugen møder friktion. Verifikationen viser, hvilke tekniske påstande der er sandsynliggjort. Ingen af delene kan alene besvare problemformuleringen, men sammen giver de et grundlag for at diskutere styrker og begrænsninger uden at overdrive evidensniveauet.
