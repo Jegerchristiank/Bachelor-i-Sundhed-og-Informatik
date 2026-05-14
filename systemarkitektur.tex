@@ -10,7 +10,7 @@ Arkitekturen er derfor ikke kun en teknisk beskrivelse. Den afgør, om appen kan
 
 Lagdelingen er nødvendig, fordi træningsflowet ikke bør afhænge af, at én skærm husker al kontekst. Når workoutstatus, trackerlog, completion og progression ligger i fælles state- og datalag, kan iOS, watchOS og Live Activity arbejde med samme træningsforløb. Tabel~\ref{tab:tm-container-architecture} viser komponentlagene i kondenseret form.
 
-Lagdelingen gør også test og ændring lettere. Domænelogik for cycle runtime og completion kan vurderes adskilt fra den konkrete SwiftUI-visning. Det er vigtigt, fordi problemformuleringen handler om systemadfærd, ikke kun om om en bestemt knap eller skærm findes.
+Lagdelingen gør også test og ændring lettere. Domænelogik for cycle runtime og completion kan vurderes adskilt fra den konkrete SwiftUI-visning. Det er vigtigt, fordi problemet handler om systemadfærd, ikke kun om en bestemt knap eller skærm findes.
 
 \subsection{Backend som sikkerhedsgrænse}
 
@@ -33,3 +33,5 @@ Det giver også en klar begrænsning. Hvis watchOS eller Live Activity kun kan b
 Arkitekturens vigtigste kvalitet er, at den placerer ansvar på de rigtige niveauer. Brugerfladen skal gøre handlinger forståelige, state- og repositorylaget skal samle træningsforløbets logik, og backendlaget skal være autoritativt for dataadgang. Det svarer til problemformuleringens behov for fleksibilitet uden datatab eller brede klientrettigheder.
 
 Den kritiske risiko er kompleksitet. Jo flere støtteflader appen får, desto vigtigere bliver fælles session, \emph{idempotens} og testbare datakontrakter. Arkitekturen er derfor ikke stærk, fordi den indeholder mange komponenter, men fordi komponenterne har en begrundet arbejdsdeling. Det er også her den videre verifikation bør koncentreres.
+
+\tmdelkonklusion{Arkitektonisk delkonklusion}{Arkitekturen løser ikke fleksibilitet ved at give klienten mere magt. Den løser den ved at dele ansvaret: brugerfladen gør handlingen let, state- og repositorylaget holder sammen på forløbet, og backendlaget håndhæver adgang.}

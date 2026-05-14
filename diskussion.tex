@@ -2,7 +2,7 @@
 
 Den udviklede TræningsMester-app viser en plausibel \emph{design- og implementeringsmodel}, hvor planlagt træning, faktisk logging, completion, feedback og næste handling adskilles. Det er relevant, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Projektet dokumenterer dog ikke empirisk effekt på motivation, adherence eller sundhed.
 
-Diskussionen samler derfor fire spændinger: fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Det er i disse spændinger, appens faglige værdi som design- og implementeringsarbejde ligger.
+Fire spændinger afgør, hvor stærkt arbejdet står: fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Appens faglige værdi ligger ikke i at fjerne spændingerne, men i at gøre dem håndterbare.
 
 \subsection{Syntese på tværs af underspørgsmål}
 
@@ -12,7 +12,7 @@ Belægget for lav friktion er mere kvalitativt. Home-flow, tracker-off flow, wat
 
 Sikkerhedsargumentet er stærkt som arkitekturargument og mere begrænset som verifikationsargument. RLS, repositories og Edge Functions placerer adgangskontrol uden for klienten, men rolle-, backend- og runtime-scenarier er ikke dækket fuldt. Evidensgrundlaget er derfor tilstrækkeligt til at diskutere en fagligt begrundet design- og implementeringscase, men ikke til at dokumentere effekt, fuld produktionsmodenhed eller komplet sikkerhed.
 
-Den samlede vurdering er derfor ikke, at TræningsMester har bevist en sundhedseffekt. Den er, at appen udgør en sammenhængende løsning på et afgrænset designproblem: hvordan fleksibel progression kan understøttes, når brugerens faktiske træning afviger fra planen, uden at historik, feedback og adgangskontrol bryder sammen.
+Den samlede vurdering er derfor ikke, at TræningsMester har bevist en sundhedseffekt. Vurderingen er mere præcis: appen giver en sammenhængende løsning på et afgrænset designproblem. Fleksibel progression kan understøttes, når brugerens faktiske træning afviger fra planen, uden at historik, feedback og adgangskontrol bryder sammen.
 
 \subsection{Fleksibilitet og datakvalitet}
 
@@ -20,7 +20,7 @@ Appens stærkeste bidrag er at behandle afvigelser som systemtilstande frem for 
 
 Styrken har et tradeoff. Completion uden fuld trackerlog bevarer historik og næste handling, men datagranulariteten falder. Mohammed et al.s datakvalitetsramme gør dette til et formålsspørgsmål: data kan være gode til progression og kontinuitet, men utilstrækkelige til detaljeret analyse \cite{mohammed2025_five_facets_data_quality}. TræningsMester bør derfor normalisere afvigelser uden at gøre dem usynlige.
 
-Dette tradeoff bør være synligt for både design og senere evaluering. Hvis completion bruges ofte, kan appen stadig støtte kontinuitet, men den får sværere ved at beregne belastningsudvikling og præcis træningsvolumen. Hvis detaljeret logging kræves for ofte, kan appen derimod miste brug i praksis.
+Dette tradeoff bør være synligt for både design og senere evaluering. Hvis completion bruges ofte, kan appen stadig støtte kontinuitet, men den får sværere ved at beregne belastningsudvikling og præcis træningsvolumen. Hvis detaljeret logging kræves for ofte, kan appen derimod miste brug i praksis. Valget står derfor ikke mellem gode og dårlige data, men mellem forskellige datatyper med forskellige formål.
 
 \subsection{Lav friktion og app-evidens}
 
@@ -28,7 +28,7 @@ Lav friktion er nødvendig, fordi brugeren logger under fysisk aktivitet. Stoyan
 
 App- og tracker-evidensen støtter relevansen, men ikke effekten. Laranjo et al., Romeo et al. og Brickwood et al. viser, at apps og trackere kan påvirke fysisk aktivitet, men deres resultater kan ikke overføres direkte til en ny styrketræningsapp med andet design og andet datagrundlag \cite{laranjo2021_apps_trackers_meta,romeo2019_smartphone_apps_pa_meta,brickwood2019_wearable_trackers_meta}. TræningsMester kan derfor argumentere for plausibilitet, ikke dokumenteret virkning.
 
-Det er en vigtig kildekritisk grænse. Reviews og meta-analyser giver tyngde til problemfeltet, men de erstatter ikke evaluering af den konkrete app. TræningsMester skal derfor ses som et forarbejde til senere bruger- og effektstudier, ikke som et resultat af dem.
+Det er en vigtig kildekritisk grænse. Reviews og meta-analyser giver tyngde til problemfeltet, men de erstatter ikke evaluering af den konkrete app. TræningsMester er derfor et forarbejde til senere bruger- og effektstudier, ikke et resultat af dem.
 
 \subsection{Sikkerhed og verifikationsgrænser}
 
@@ -52,4 +52,4 @@ Beta-feedbacken styrker vurderingen, fordi den viser praktisk friktion omkring i
 
 Videre arbejde bør følge tre trin. Først bør Home, tracker, completion og søgning usabilitytestes systematisk. Dernæst bør betaen udvides over længere tid og med bredere deltagelse. Til sidst bør rollebaserede RLS-scenarier, Edge Functions, datakvalitet, watchOS og Live Activity runtime testes mere målrettet. Et egentligt effektstudie giver først mening efter denne modning.
 
-Samlet viser arbejdet med TræningsMester, at fleksibel progression er et tværgående designproblem. Den kan ikke løses alene af en algoritme, en pæn brugerflade eller en sikker database. Den kræver, at træningsfaglig progression, brugerens situation, datakvalitet og adgangskontrol tænkes sammen.
+\tmdelkonklusion{Diskuterende delkonklusion}{Fleksibel progression er et tværgående designproblem. Den kan ikke løses alene af en algoritme, en pæn brugerflade eller en sikker database. Den kræver, at træningsfaglig progression, brugerens situation, datakvalitet og adgangskontrol tænkes sammen.}

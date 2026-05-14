@@ -103,6 +103,18 @@
 }
 \renewenvironment{quote}{\begin{tmquote}}{\end{tmquote}}
 
+\newcommand{\tmdelkonklusion}[2]{%
+  \par\addvspace{1.05em}%
+  \noindent\begin{minipage}{\textwidth}%
+    \hrule height 0.45pt%
+    \vspace{0.55em}%
+    \small\textbf{#1.}\quad #2%
+    \vspace{0.55em}%
+    \hrule height 0.45pt%
+  \end{minipage}%
+  \par\addvspace{1.05em}%
+}
+
 \newif\iftmappendix
 \tmappendixfalse
 \let\tmoldappendix\appendix
@@ -208,13 +220,13 @@ Dato & Afventer \\
 \addcontentsline{toc}{section}{Abstract}
 \section*{Abstract}
 
-This bachelor's thesis examines how a digital training app can be designed and implemented so that programme structure, progression and feedback support sustained motivation and flexible handling of deviations from a planned strength-training programme. The project is based on TræningsMester, a self-developed \emph{native iOS app} (an app built for Apple's iPhone platform) with \emph{SwiftUI} (Apple's declarative interface framework), \emph{watchOS} support (Apple Watch support), \emph{Live Activity} (time-sensitive status on Apple surfaces), \emph{Supabase} backend services, \emph{Row Level Security} (database-level access policies) and selected \emph{server-side Edge Functions} (server functions for privileged logic).
+TræningsMester is a self-developed \emph{native iOS app} (an app built for Apple's iPhone platform) that explores how programme structure, progression and feedback can support sustained motivation when strength training does not follow the plan exactly. The app is built with \emph{SwiftUI} (Apple's declarative interface framework), \emph{watchOS} support (Apple Watch support), \emph{Live Activity} (time-sensitive status on Apple surfaces), \emph{Supabase} backend services, \emph{Row Level Security} (database-level access policies) and selected \emph{server-side Edge Functions} (server functions for privileged logic).
 
-The method combines a problem-driven \emph{scoping search} (a broad mapping search), course-based methodological support, analysis of the developed \emph{artefact} (the app as the object of analysis), anonymised \emph{beta feedback} (early user feedback) and technical verification. This makes it possible to assess whether the app's design and implementation are academically grounded and technically coherent, but it does not provide evidence of clinical effect, improved \emph{adherence} (sustained continuation of training) or health outcomes.
+The method combines a problem-driven \emph{scoping search} (a broad mapping search), course-based methodological support, analysis of the developed \emph{artefact} (the app as the object of analysis), anonymised \emph{beta feedback} (early user feedback) and technical verification. These materials can show whether the design is academically grounded and technically coherent. They cannot show clinical effect, improved \emph{adherence} (sustained continuation of training) or health outcomes.
 
-The analysis shows that flexible progression depends on separating the planned \emph{workout} (training session), the user's actual \emph{logging} (recorded training data), \emph{completion events} (records of completed sessions), feedback and the next relevant training action. In TræningsMester, this is implemented through tracker-on and tracker-off flows, \emph{cycle runtime} logic (the active training-cycle state), a Home screen focused on the next action, and shared data structures that can be used across iOS, watchOS and Live Activity surfaces. The \emph{backend architecture} places ordinary user access behind Supabase \emph{RLS} and reserves privileged logic for Edge Functions, which strengthens the security design compared with a client-only model.
+Flexible progression depends on separating the planned \emph{workout} (training session), the user's actual \emph{logging} (recorded training data), \emph{completion events} (records of completed sessions), feedback and the next relevant training action. TræningsMester implements that separation through tracker-on and tracker-off flows, \emph{cycle runtime} logic (the active training-cycle state), a Home screen focused on the next action, and shared data structures across iOS, watchOS and Live Activity surfaces. The \emph{backend architecture} places ordinary user access behind Supabase \emph{RLS} and reserves privileged logic for Edge Functions, which is safer than a client-only model.
 
-The main contribution is a documented design and implementation model for handling realistic training deviations without treating them as errors. The main limitation is the evidence level: the beta feedback is qualitative and not representative, and the technical verification documents selected builds, tests and artefacts rather than full production readiness, security certification or long-term behavioural effect. Further work should therefore include systematic usability testing, a longer and broader beta period, stronger runtime documentation for watchOS and Live Activity, more role-based security testing and, only after that, a possible effect study.
+The contribution is a documented design and implementation model for handling realistic training deviations without treating them as errors. The limitation is the evidence level: beta feedback is qualitative and not representative, and the technical verification covers selected builds, tests and artefacts rather than full production readiness, security certification or long-term behavioural effect. Further work should start with systematic usability testing, a longer and broader beta period, stronger runtime documentation for watchOS and Live Activity, and more role-based security testing before an effect study would be meaningful.
 
 \newpage
 
@@ -266,7 +278,7 @@ The main contribution is a documented design and implementation model for handli
 \addcontentsline{toc}{section}{AI-erklæring}
 \section*{AI-erklæring}
 
-Generative AI-værktøjer er anvendt som støtte til litteraturorientering, strukturkritik, sproglig redigering og teknisk kvalitetssikring af rapporten. Værktøjerne er ikke anvendt som selvstændig kilde til faglige påstande. Faglige kilder, analysevalg, fortolkninger og endelig tekst er kontrolleret mod rapportens referencer, bilag og den udviklede app, og forfatteren er ansvarlig for indholdet.
+Generative AI-værktøjer er anvendt som støtte til litteraturorientering, strukturkritik, sproglig redigering og teknisk kvalitetssikring. Værktøjerne er ikke anvendt som selvstændig kilde til faglige påstande. Faglige kilder, analysevalg, fortolkninger og endelig tekst er kontrolleret mod referencer, bilag og den udviklede app, og forfatteren er ansvarlig for indholdet.
 
 \newpage
 \appendix
