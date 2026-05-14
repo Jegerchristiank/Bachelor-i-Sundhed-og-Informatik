@@ -4,6 +4,8 @@
 
 Arkitekturen er derfor ikke kun en teknisk beskrivelse. Den afgør, om appen kan bevare samme træningsforløb på tværs af Home, tracker, database, Apple Watch og Live Activity. Hvis disse flader udvikler hver deres sandhed om session og completion, bliver fleksibel progression usikker.
 
+Den centrale arbejdsdeling er enkel: klienten skal være hurtig og forståelig, men ikke autoritativ; backendlaget skal være autoritativt, men ikke gøre brugerens træningsflow tungt. Det er balancen mellem de to hensyn, der gør arkitekturen relevant for problemformuleringen.
+
 \subsection{Lagdeling mellem brugerflade, state og data}
 
 \emph{SwiftUI} understøtter deklarative, state-drevne brugerflader \cite{apple_swiftui_docs}. I TræningsMester betyder det, at skærme viser aktuel session, aktivt program, træningsstatus og næste handling, men ikke selv er datamæssig autoritet. AppState, domænemodeller og repositories placerer logikken mellem brugerflade og backend.
@@ -18,7 +20,7 @@ Lagdelingen gør også test og ændring lettere. Domænelogik for cycle runtime 
 
 Figur~\ref{fig:tm-security-boundary-summary} viser grænsen mellem mobil klient, RLS og Edge Functions. RLS beskytter almindelige brugerbundne læse- og skriveoperationer. Edge Functions afgrænser privilegerede handlinger, integrationer og nøgler. Det reducerer risikoen for, at en brugerfladefejl bliver til bredere dataadgang, men det dokumenterer ikke fuld sikkerhed i sig selv.
 
-Denne grænse er særlig relevant, fordi træningsdata både er personlige og operationelle. Brugeren skal kunne logge hurtigt, men hurtig logging må ikke betyde, at klienten kan skrive eller læse på tværs af brugergrænser. Arkitekturen placerer derfor hastighed i brugerfladen og autoritet i backendlaget.
+Denne grænse er særlig relevant, fordi træningsdata både er personlige og operationelle. Brugeren skal kunne logge hurtigt, men hurtig logging må ikke betyde, at klienten kan skrive eller læse på tværs af brugergrænser. Arkitekturen placerer derfor hastighed i brugerfladen og autoritet i backendlaget. Det er ikke en akademisk detalje; uden denne arbejdsdeling ville lav friktion kunne blive købt med for brede rettigheder.
 
 \subsection{Støtteflader under træning}
 
@@ -34,4 +36,4 @@ Arkitekturens vigtigste kvalitet er, at den placerer ansvar på de rigtige nivea
 
 Den kritiske risiko er kompleksitet. Jo flere støtteflader appen får, desto vigtigere bliver fælles session, \emph{idempotens} og testbare datakontrakter. Arkitekturen er derfor ikke stærk, fordi den indeholder mange komponenter, men fordi komponenterne har en begrundet arbejdsdeling. Det er også her den videre verifikation bør koncentreres.
 
-\tmdelkonklusion{Arkitektonisk delkonklusion}{Arkitekturen løser ikke fleksibilitet ved at give klienten mere magt. Den løser den ved at dele ansvaret: brugerfladen gør handlingen let, state- og repositorylaget holder sammen på forløbet, og backendlaget håndhæver adgang.}
+\tmdelkonklusion{Arkitekturens valg}{Arkitekturen løser ikke fleksibilitet ved at give klienten mere magt. Den løser den ved at dele ansvaret: brugerfladen gør handlingen let, state- og repositorylaget holder sammen på forløbet, og backendlaget håndhæver adgang.}

@@ -14,7 +14,7 @@ Afgrænsningen er nødvendig, fordi samme app kan vurderes på flere niveauer. E
 
 \subsection{Underspørgsmål}
 
-Hovedspørgsmålet konkretiseres i fire underspørgsmål:
+For at kunne svare præcist deles hovedspørgsmålet i fire underspørgsmål:
 
 \begin{enumerate}
     \item Hvordan kan plan, \emph{workout}, \emph{trackerlog}, \emph{completion-event} og \emph{cycle runtime} modelleres, så faktisk træning kan afvige fra planen uden datatab?
@@ -25,22 +25,20 @@ Hovedspørgsmålet konkretiseres i fire underspørgsmål:
 
 De første to spørgsmål handler om træningsflow og brugeroplevelse. Det tredje handler om sikker dataadgang. Det fjerde handler om belæg: hvad kan appens kilder, skærmbilleder, testspor og feedback faktisk bære?
 
-Underspørgsmålene hænger sammen i en kæde. Først skal træningen kunne modelleres, så plan og faktisk udførelse ikke forveksles. Dernæst skal modellen gøres brugbar i en travl træningssituation. Derefter skal dataadgangen sikres, så fleksibilitet ikke bygger på for brede klientrettigheder. Til sidst skal der være et dokumenteret grundlag for at vurdere, hvad den udviklede app faktisk dokumenterer.
-
-Dermed bliver underspørgsmålene en arbejdsdeling mellem problemets fire dele. De første tre undersøger, om løsningen hænger sammen på data-, interaktions- og sikkerhedsniveau. Det fjerde holder konklusionen fast på det dokumenterede: design og implementering kan vurderes, mens effekt og fuld driftssikkerhed kræver mere empiri.
+Spørgsmålene hænger sammen som en kæde. Først skal træningen modelleres, så plan og faktisk udførelse ikke blandes sammen. Dernæst skal modellen være brugbar i en travl træningssituation. Derefter skal dataadgangen sikres, så fleksibilitet ikke bygger på brede klientrettigheder. Til sidst skal belægget vurderes nøgternt: design og implementering kan underbygges, mens effekt og fuld driftssikkerhed kræver mere empiri.
 
 \subsection{Egenudviklet app og afgrænsning}
 
-TræningsMester er udviklet og undersøges som \emph{design- og implementeringscase}, fordi appen samler planlagt programstruktur, tracker, completion, Home-flow, watchOS, Live Activity, datamodel og backendregler i ét system. Tabel~\ref{tab:tm-use-cases} og Tabel~\ref{tab:tm-krav-traceability} viser de centrale use cases og krav, mens Figur~\ref{fig:tm-tracker-completion-summary} viser koblingen mellem trackerstatus, completion og progression.
+TræningsMester fungerer som \emph{design- og implementeringscase}, fordi appen samler planlagt programstruktur, tracker, completion, Home-flow, watchOS, Live Activity, datamodel og backendregler i ét system. Tabel~\ref{tab:tm-use-cases} og Tabel~\ref{tab:tm-krav-traceability} viser de centrale use cases og krav, mens Figur~\ref{fig:tm-tracker-completion-summary} viser koblingen mellem trackerstatus, completion og progression.
 
 Afgrænsningen betyder, at SwiftUI, Supabase, RLS, Edge Functions, watchOS og Live Activity ikke er selvstændige hovedproblemer. De er tekniske midler i den udviklede app til at undersøge, hvordan appen kan håndtere afvigelser uden at miste programstruktur, feedback eller sikker dataadgang.
 
-Projektet er afgrænset fra fire ting. For det første er det ikke et \emph{klinisk effektstudie}; appens effekt på motivation, adherence eller fysisk aktivitet måles ikke. For det andet er det ikke en produktlancering; abonnement, admin, import og trænerfunktioner inddrages kun, når de belyser progression, friktion, datakvalitet eller sikkerhed. For det tredje dokumenteres der ikke fuld sikkerhedscertificering, penetrationstest eller juridisk \emph{compliance}, selv om GDPR, OWASP MASVS og Supabase RLS bruges som rammer \cite{europeanparliament2016_gdpr,owasp2024_masvs,supabase_rls_docs}. For det fjerde behandles HealthKit og platformintegrationer som fitnessnære appintegrationer, ikke som klinisk journaludveksling.
+Fire grænser holder svaret skarpt. For det første måles appens effekt på motivation, adherence eller fysisk aktivitet ikke; det ville kræve et \emph{klinisk effektstudie}. For det andet vurderes TræningsMester ikke som produktlancering; abonnement, admin, import og trænerfunktioner inddrages kun, når de belyser progression, friktion, datakvalitet eller sikkerhed. For det tredje dokumenteres der ikke fuld sikkerhedscertificering, penetrationstest eller juridisk \emph{compliance}, selv om GDPR, OWASP MASVS og Supabase RLS bruges som rammer \cite{europeanparliament2016_gdpr,owasp2024_masvs,supabase_rls_docs}. For det fjerde behandles HealthKit og platformintegrationer som fitnessnære appintegrationer, ikke som klinisk journaludveksling.
 
 Denne afgrænsning gør ikke effekt, jura eller drift uvæsentlige. Den placerer dem bare rigtigt i rækkefølgen. Før appen kan evalueres som intervention, skal det være tydeligt, hvad den gør med træningsplaner, brugerhandlinger, feedback, data og adgangsregler.
 
 \subsection{Bidrag}
 
-Bidraget ligger i adskillelsen mellem planlagt træning, faktisk logging, completion og næste handling. Den adskillelse gør det muligt at bevare historik og progression, selv når brugeren ikke følger en perfekt lineær plan. TræningsMester viser dermed et konkret design- og implementeringsbud på fleksibel træningsstøtte, men ikke en dokumenteret sundhedseffekt.
+Det faglige bidrag ligger i adskillelsen mellem planlagt træning, faktisk logging, completion og næste handling. En almindelig logbog gemmer fortiden. TræningsMester forsøger også at gøre fortiden brugbar for næste træningsvalg. Den adskillelse kan bevare historik og progression, selv når brugeren ikke følger en perfekt lineær plan. Det er et konkret design- og implementeringsbud på fleksibel træningsstøtte, men ikke dokumenteret sundhedseffekt.
 
-\tmdelkonklusion{Afgrænsning}{Det vigtigste valg er at behandle TræningsMester som en undersøgt app, ikke som et færdigt sundhedsprodukt. Det giver plads til at vurdere designet ærligt: stærkt på sammenhængen mellem plan, handling og data, men endnu ikke stærkt nok til effektpåstande.}
+\tmdelkonklusion{Kernevalg}{Kernen i TræningsMester er spændingen mellem struktur og afvigelse. Appen står stærkest, når plan, handling og data hænger sammen, og svagest, hvis teksten eller evalueringen begynder at love effekt uden et egentligt effektstudie.}

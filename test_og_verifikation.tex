@@ -1,6 +1,6 @@
 \section{Test og verifikation}
 
-\emph{Test og verifikation} vurderer, om de centrale tekniske påstande om TræningsMester er dokumenteret. Formålet er teknisk plausibilitet, ikke sundhedseffekt, brugeraccept eller produktionsklarhed.
+\emph{Test og verifikation} vurderer, om de centrale tekniske påstande om TræningsMester er dokumenteret. Målet er teknisk plausibilitet, ikke sundhedseffekt, brugeraccept eller produktionsklarhed.
 
 Verifikationen læses derfor som et afgrænset teknisk evidensspor. Den kan vise, at centrale dele kan bygges, at udvalgt domænelogik er testet, og at brugerflader og arkitektur er dokumenteret. Den kan ikke vise, at brugerne bliver mere motiverede eller fastholdes bedre.
 
@@ -22,14 +22,14 @@ Det er især vigtigt for sikkerhedsmodellen. Figur~\ref{fig:tm-security-boundary
 
 Skærmbilleder og diagrammer dokumenterer, at centrale brugerflader og arkitekturspor findes. Figur~\ref{fig:tm-ios-home-ready} viser Home som næste-handling-flade, Figur~\ref{fig:tm-ios-tracker-active} viser aktiv tracker, og Figur~\ref{fig:tm-system-context} viser systemkonteksten. Det styrker forbindelsen mellem krav, implementering og synlige artefakter.
 
-Rest-risici handler især om reproducerbarhed, backendintegration, rollebaseret adgang og runtime for watchOS og Live Activity. Åbne mangler svækker ikke arbejdet med TræningsMester, hvis de behandles åbent. De afgrænser blot, hvad der er dokumenteret: teknisk plausibilitet for centrale flows, ikke fuld sikkerhedscertificering, penetrationstest eller driftssikker produktionsmodenhed.
+Rest-risici handler især om reproducerbarhed, backendintegration, rollebaseret adgang og runtime for watchOS og Live Activity. Åbne mangler er ikke i sig selv et problem, hvis de behandles åbent. De afgrænser blot, hvad der er dokumenteret: teknisk plausibilitet for centrale flows, ikke fuld sikkerhedscertificering, penetrationstest eller driftssikker produktionsmodenhed.
 
-Den vigtigste konklusion fra verifikationen er derfor dobbelt. Kerneflowet har et dokumenteret teknisk grundlag, men flere integrations- og sikkerhedsscenarier skal testes, før appen kan vurderes som moden til bred drift.
+Den vigtigste konklusion fra verifikationen er dobbelt. Kerneflowet har et dokumenteret teknisk grundlag, men flere integrations- og sikkerhedsscenarier skal testes, før appen kan vurderes som moden til bred drift.
 
 \subsection{Verifikationsvurdering}
 
-Verifikationen styrker arbejdet, fordi påstandene forbindes med konkrete artefakter: build, unit tests, skærmbilleder, diagrammer og sporbarhedstabeller. Dermed står TræningsMester ikke kun som en idé. Centrale dele af designet er omsat til en fungerende teknisk struktur.
+Belægget bliver stærkere, når påstandene forbindes med konkrete artefakter: build, unit tests, skærmbilleder, diagrammer og sporbarhedstabeller. Dermed står TræningsMester ikke kun som en idé. Centrale dele af designet er omsat til en fungerende teknisk struktur.
 
 Samtidig er verifikationen ikke stærk nok til at bære de mest vidtgående påstande. De stærkeste konklusioner kan handle om implementeringsplausibilitet, arkitekturvalg og kendte begrænsninger. De svageste konklusioner ville være påstande om langtidseffekt, fuld sikkerhed eller stabil runtime på alle enheder. Verifikationen er derfor et kontrolleret evidensspor, ikke et kvalitetsstempel for færdig produktionsmodenhed.
 
-\tmdelkonklusion{Verifikationsmæssig delkonklusion}{Testene gør det rimeligt at tale om en fungerende teknisk struktur. De gør det ikke rimeligt at tale om færdig drift, fuld sikkerhed eller dokumenteret brugeradfærd. Den skelnen er central for hele konklusionen.}
+\tmdelkonklusion{Verifikationens grænse}{Testene gør det rimeligt at tale om en fungerende teknisk struktur. De gør det ikke rimeligt at tale om færdig drift, fuld sikkerhed eller dokumenteret brugeradfærd. Den skelnen er central for hele konklusionen.}

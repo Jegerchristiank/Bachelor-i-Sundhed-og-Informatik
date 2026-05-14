@@ -2,7 +2,7 @@
 
 TræningsMesters \emph{datamodel} skal skelne mellem planlagt træning, faktisk logging, completion og progression. Uden denne skelnen bliver realistiske afvigelser enten datatab eller fejltilstande. Figur~\ref{fig:tm-data-model-er} viser den samlede datamodel, mens Figur~\ref{fig:tm-tracker-completion-summary} viser den del, hvor tracker og completion kobles til progression.
 
-Det afgørende er sammenhæng, ikke flest mulige felter. En app kan have mange tabeller uden at kunne forklare, hvad der sker, når en bruger træner anderledes end planlagt. Modellen skal bevare relationen mellem intention, handling, historik og næste skridt.
+Det afgørende er sammenhæng, ikke flest mulige felter. En app kan have mange tabeller uden at kunne forklare, hvad der sker, når en bruger træner anderledes end planlagt. Modellen skal bevare relationen mellem intention, handling, historik og næste skridt. Ellers bliver data fyldige på papiret og uklare i brug.
 
 \subsection{Datamodel og datakvalitet}
 
@@ -28,4 +28,4 @@ TræningsMester behandler fitnessnære brugerdata, ikke kliniske patientdata. \e
 
 Afgrænsningen er vigtig. Hvis appen senere skal integrere dybere med sundhedsdata, kræver det andre standarder, samtykkemodeller og valideringskrav. I den nuværende version af TræningsMester er interoperabilitet primært relevant som synkronisering mellem brugerens egne flader og som mulighed for fitnessnær dataudveksling.
 
-\tmdelkonklusion{Data- og sikkerhedsdelkonklusion}{Den bedste datamodel er ikke den mest detaljerede model, men den mest forklarlige. TræningsMester skal kunne skelne mellem plan, log og completion, samtidig med at adgang håndhæves i backend. Det giver fleksibilitet uden at gøre klienten til sikkerhedsautoritet.}
+\tmdelkonklusion{Dataens pris}{Den bedste datamodel er ikke den mest detaljerede model, men den mest forklarlige. TræningsMester skal kunne skelne mellem plan, log og completion, samtidig med at adgang håndhæves i backend. Det giver fleksibilitet uden at gøre klienten til sikkerhedsautoritet.}

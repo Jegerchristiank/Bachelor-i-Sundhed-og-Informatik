@@ -1,12 +1,12 @@
 \section{Diskussion}
 
-Den udviklede TræningsMester-app viser en plausibel \emph{design- og implementeringsmodel}, hvor planlagt træning, faktisk logging, completion, feedback og næste handling adskilles. Det er relevant, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Projektet dokumenterer dog ikke empirisk effekt på motivation, adherence eller sundhed.
+TræningsMester står stærkest som en plausibel \emph{design- og implementeringsmodel}, hvor planlagt træning, faktisk logging, completion, feedback og næste handling adskilles. Det er relevant, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Der ligger dog ikke en empirisk effektmåling bag, og appen dokumenterer derfor ikke effekt på motivation, adherence eller sundhed.
 
-Fire spændinger afgør, hvor stærkt arbejdet står: fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Appens faglige værdi ligger ikke i at fjerne spændingerne, men i at gøre dem håndterbare.
+Fire spændinger afgør, hvor stærkt argumentet står: fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Appens faglige værdi ligger ikke i at fjerne spændingerne, men i at gøre dem håndterbare.
 
 \subsection{Syntese på tværs af underspørgsmål}
 
-På tværs af kapitlerne kan de fire underspørgsmål besvares med forskellig styrke. Det stærkeste belæg ligger i datamodellen og implementeringen, hvor plan, trackerlog, completion og cycle runtime adskilles. Den adskillelse gør det muligt at bevare historik og progression, selv når brugeren afviger fra planen.
+De fire underspørgsmål kan besvares med forskellig styrke. Det stærkeste belæg ligger i datamodellen og implementeringen, hvor plan, trackerlog, completion og cycle runtime adskilles. Den adskillelse gør det muligt at bevare historik og progression, selv når brugeren afviger fra planen.
 
 Belægget for lav friktion er mere kvalitativt. Home-flow, tracker-off flow, watchOS og Live Activity viser et sammenhængende designprincip: brugeren skal have status, feedback og næste handling uden at skulle registrere alt perfekt i øjeblikket. Det understøttes af beta-feedback, men kræver stadig systematisk usabilitytest, før det kan vurderes som dokumenteret brugeroplevelsesforbedring.
 
@@ -34,13 +34,13 @@ Det er en vigtig kildekritisk grænse. Reviews og meta-analyser giver tyngde til
 
 \emph{Sikkerhedsmodellen} er en styrke, fordi klienten ikke behandles som eneste sikkerhedsgrænse. Figur~\ref{fig:tm-security-boundary-summary} og Tabel~\ref{tab:tm-rls-matrix} viser en arkitektur, hvor RLS og Edge Functions bærer adgangskontrol. OWASP MASVS, GDPR og Supabase RLS understøtter denne retning \cite{owasp2024_masvs,europeanparliament2016_gdpr,supabase_rls_docs}.
 
-Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser dokumenterede build- og testspor, men også åbne mangler i rolle-, backend- og runtime-scenarier. Derfor kan projektet ikke konkludere fuld sikkerhedscertificering, penetrationstest eller komplet produktionsmodenhed. Det kan kun konkludere, at sikkerhedsdesignet er fagligt plausibelt og delvist verificeret.
+Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser dokumenterede build- og testspor, men også åbne mangler i rolle-, backend- og runtime-scenarier. Derfor kan konklusionen ikke strækkes til fuld sikkerhedscertificering, penetrationstest eller komplet produktionsmodenhed. Den kan strækkes til, at sikkerhedsdesignet er fagligt plausibelt og delvist verificeret.
 
 Sikkerhedsargumentet er derfor stærkest på designniveau. Det viser, hvor adgang bør håndhæves, og hvorfor privilegeret logik ikke bør ligge i klienten. Det svageste punkt er dækningsgraden: alle rolle- og tværbrugerscenarier skal testes, før designet kan omsættes til et stærkere driftspåstand.
 
 \subsection{Perspektivering}
 
-Set bredere peger projektet på en udfordring i digitale sundhedsteknologier: systemer designes ofte omkring idealiserede brugerforløb, men værdien viser sig i afvigelserne. En app, der kun fungerer, når brugeren følger planen og logger alt korrekt, risikerer at blive mest skrøbelig der, hvor støttebehovet er størst.
+Set bredere peger casen på en udfordring i digitale sundhedsteknologier: systemer designes ofte omkring idealiserede brugerforløb, men værdien viser sig i afvigelserne. En app, der kun fungerer, når brugeren følger planen og logger alt korrekt, risikerer at blive mest skrøbelig der, hvor støttebehovet er størst.
 
 TræningsMester viser, at robust digital støtte kræver, at adfærdsdesign og softwarearkitektur tænkes sammen. Den brugerrettede fleksibilitet skal have en teknisk modpart i datamodel, idempotens og adgangskontrol. Ellers bliver fleksibilitet enten til uklare data eller for brede rettigheder. Den pointe rækker ud over styrketræning og er relevant for digitale sundhedsløsninger, hvor brugernes hverdag sjældent passer til et lineært procesdiagram.
 
@@ -52,4 +52,4 @@ Beta-feedbacken styrker vurderingen, fordi den viser praktisk friktion omkring i
 
 Videre arbejde bør følge tre trin. Først bør Home, tracker, completion og søgning usabilitytestes systematisk. Dernæst bør betaen udvides over længere tid og med bredere deltagelse. Til sidst bør rollebaserede RLS-scenarier, Edge Functions, datakvalitet, watchOS og Live Activity runtime testes mere målrettet. Et egentligt effektstudie giver først mening efter denne modning.
 
-\tmdelkonklusion{Diskuterende delkonklusion}{Fleksibel progression er et tværgående designproblem. Den kan ikke løses alene af en algoritme, en pæn brugerflade eller en sikker database. Den kræver, at træningsfaglig progression, brugerens situation, datakvalitet og adgangskontrol tænkes sammen.}
+\tmdelkonklusion{Samlet vurdering}{Fleksibel progression er et tværgående designproblem. Den kan ikke løses alene af en algoritme, en pæn brugerflade eller en sikker database. Den kræver, at træningsfaglig progression, brugerens situation, datakvalitet og adgangskontrol tænkes sammen.}

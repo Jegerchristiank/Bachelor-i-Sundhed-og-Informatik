@@ -10,7 +10,7 @@ Metodevalget følger problemformuleringen. Spørgsmålet handler om, hvordan en 
 
 Begrænsningen er, at en egenudviklet case ikke kan dokumentere virkning for en bred brugergruppe. Den kan vise design- og implementeringsplausibilitet, men ikke empirisk effekt. Den sondring styrer hele evidensniveauet.
 
-Appen analyseres derfor som en kæde af beslutninger. Først undersøges problemets teoretiske ramme. Derefter vurderes, om krav og use cases oversætter problemet til konkrete funktioner. Til sidst vurderes, om arkitektur, implementering, test og feedback giver tilstrækkelig dokumentation for den valgte løsning.
+Vurderingen følger en enkel kæde: først det faglige problem, derefter krav og use cases, og til sidst arkitektur, implementering, test og feedback. Kæden er vigtig, fordi en pæn brugerflade ikke er nok, hvis datamodellen ikke kan bære afvigelser, og en solid datamodel ikke er nok, hvis brugeren ikke kan komme igennem træningen uden unødig friktion.
 
 \subsection{Analysegenstand}
 
@@ -22,7 +22,7 @@ Denne afgrænsning gør analysen snæver nok til at kunne vurderes. Alle appens 
 
 \subsection{Analysestrategi}
 
-Analysen er organiseret efter underspørgsmålene, så hvert kapitel leverer belæg til den samlede konklusion. Tabel~\ref{tab:analysestrategi} viser, hvordan materialet bruges, og hvilke vurderingskriterier der lægges til grund.
+Analysestrategien følger underspørgsmålene. Tabel~\ref{tab:analysestrategi} viser, hvilket materiale der bærer hvilke vurderinger, og hvor grænsen går mellem plausibilitet, brugerindsigt og effektbevis.
 
 \begin{table}[h]
 \small
@@ -41,7 +41,7 @@ Evidensgrundlag & Kildesøgning, anonymiseret feedback, build- og testspor, skæ
 \label{tab:analysestrategi}
 \end{table}
 
-Strategien betyder, at kapitlerne ikke vurderes efter mængden af dokumentation alene. Et stærkt belæg kræver, at teori, krav, implementering og verifikation peger i samme retning. Et svagere belæg kan stadig være relevant, men skal markeres som plausibilitet, designindsigt eller videre arbejde frem for som dokumenteret effekt.
+Et stærkt belæg kræver mere end mange bilag. Teori, krav, implementering og verifikation skal pege i samme retning. Et svagere belæg kan stadig være relevant, men skal navngives ærligt som plausibilitet, designindsigt eller videre arbejde frem for dokumenteret effekt.
 
 \subsection{Metodisk kvalitet}
 
@@ -67,4 +67,4 @@ Teknisk verifikation vurderer \emph{buildstatus}, \emph{unit tests}, begrænsede
 
 De tre materialetyper supplerer hinanden. Artefakterne viser, hvad der er designet og implementeret. Feedbacken viser, hvor brugen møder friktion. Verifikationen viser, hvilke tekniske påstande der er sandsynliggjort. Ingen af delene kan alene besvare problemformuleringen, men sammen gør de det muligt at diskutere styrker og begrænsninger uden at overdrive evidensniveauet.
 
-\tmdelkonklusion{Metodisk delkonklusion}{Metoden er stærk til at undersøge sammenhæng mellem idé, design og implementering. Den er svag til at måle virkning hos brugere. Derfor skal de stærkeste konklusioner handle om plausibilitet og dokumenteret systemdesign, ikke om forbedret sundhed eller fastholdelse.}
+\tmdelkonklusion{Metodisk grænse}{Metoden er stærk til at undersøge sammenhæng mellem idé, design og implementering. Den er svag til at måle virkning hos brugere. Derfor skal de stærkeste konklusioner handle om plausibilitet og dokumenteret systemdesign, ikke om forbedret sundhed eller fastholdelse.}

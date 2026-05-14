@@ -2,7 +2,7 @@
 
 \emph{Implementeringen} realiserer den centrale model i TræningsMester: planlagt træning, faktisk logging, completion, progression og sikker dataadgang skal hænge sammen. Fokus ligger på de flows, der bærer problemformuleringen, ikke på al kildekode eller alle funktioner.
 
-Den praktiske test for implementeringen er, om brugerens træningsforløb kan overleve afvigelser. En app kan have mange skærme og stadig fejle, hvis en afbrudt session, en ændret øvelse eller en manglende detaljelog gør progressionen uklar.
+Den praktiske test for implementeringen er, om brugerens træningsforløb kan overleve afvigelser. En app kan have mange skærme og stadig fejle, hvis en afbrudt session, en ændret øvelse eller en manglende detaljelog gør progressionen uklar. Derfor er det ikke antallet af features, men sammenhængen mellem events, state og backendregler, der betyder mest.
 
 \subsection{Session, repositories og programstruktur}
 
@@ -20,7 +20,7 @@ Programstrukturen giver den planlagte ramme: programmer, workouts og øvelser be
 
 \emph{Cycle runtime} forbinder completion med næste workout. I stedet for kun at gå videre i en fast planrækkefølge kan appen bruge runtime-status til at afgøre, hvad der er relevant nu. Greig et al. og Larsen et al. gør denne fleksibilitet fagligt meningsfuld gennem autoregulering \cite{greig2020_autoregulation_resistance_training,larsen2021_autoregulation_systematic_review}. TræningsMester implementerer ikke en fuldautomatisk træningscoach, men appen kan strukturere næste handling ud fra faktisk gennemførelse.
 
-Det er her implementeringen adskiller sig fra en simpel checklistelogik. Completion er ikke bare et flueben; det er et event, der kan påvirke cyklus, historik og Home-visning. Trackerlog er ikke bare detaljer; den kan give bedre datagrundlag for feedback. Begge dele skal kunne eksistere uden at modsige hinanden.
+Det er her implementeringen adskiller sig fra en simpel checklistelogik. Completion er ikke bare et flueben; det er et event, der kan påvirke cyklus, historik og Home-visning. Trackerlog er ikke bare detaljer; den kan give bedre datagrundlag for feedback. Begge dele skal kunne eksistere uden at modsige hinanden. Det er også her appen bliver mere end en liste over øvelser: den skal kunne reagere på brugerens faktiske forløb.
 
 \subsection{Støtteflader og privilegerede flows}
 
@@ -30,4 +30,4 @@ Edge Functions afgrænser flows, der ikke bør ligge direkte i klienten. Det gæ
 
 Implementeringen viser dermed en prioritering: kerneflowet skal være robust, før støttefunktioner bliver afgørende. Admin, import og betaling kan udvides senere, men de må ikke forstyrre den basale model for brugerens træning. Derfor er test og verifikation især rettet mod build, domænelogik, sikkerhedsgrænser og kendte gaps.
 
-\tmdelkonklusion{Implementeringsmæssig delkonklusion}{Kerneideen er implementeret som events og fælles state, ikke som en løs samling skærme. Det betyder, at en completion kan få betydning for historik, cyklus og Home, mens en trackerlog kan give mere detaljeret feedback uden at være eneste vej gennem systemet.}
+\tmdelkonklusion{Implementeringens pointe}{Kerneideen er implementeret som events og fælles state, ikke som en løs samling skærme. Det betyder, at en completion kan få betydning for historik, cyklus og Home, mens en trackerlog kan give mere detaljeret feedback uden at være eneste vej gennem systemet.}

@@ -2,7 +2,7 @@
 
 Kravene omsætter problemformuleringen til systemvalg. De skal ikke vise flest mulige funktioner, men definere hvad appen skal kunne for at håndtere planlagt træning, faktisk udførelse, completion, progression, lav friktion og sikker dataadgang. \emph{COM-B} og \emph{BCT Taxonomy} gør selvmonitorering, feedback og handlingsstøtte relevante kravspor \cite{michie2011_behaviour_change_wheel,michie2013_bct_taxonomy_v1}, mens Yardley et al. gør \emph{effektivt engagement} til mere end hyppig appbrug \cite{yardley2016_effective_engagement_dbci}.
 
-Kravarbejdet fungerer som filter. Funktioner, der ikke påvirker progression, friktion, datakvalitet eller sikkerhed, er sekundære i analysen. Det gælder også funktioner, der kan være nyttige i et produkt, men som ikke er nødvendige for at besvare hovedspørgsmålet.
+Kravarbejdet fungerer som filter. Funktioner, der ikke påvirker progression, friktion, datakvalitet eller sikkerhed, er sekundære. Det gælder også funktioner, der kan være nyttige i et produkt, men som ikke er nødvendige for at besvare hovedspørgsmålet.
 
 \subsection{Kernekrav}
 
@@ -18,7 +18,7 @@ Et nøglekrav er, at afvigelser fra planen ikke behandles som fejl. Figur~\ref{f
 
 ACSM og Currier et al. gør progression til et træningsfagligt krav, mens Greig et al. gør autoregulering relevant, fordi faktisk træning kan afvige fra planen \cite{acsm2009_progression_models,currier2026_acsm_resistance_training,greig2020_autoregulation_resistance_training}. Kravene skal derfor kunne rumme både struktur og variation. Tabel~\ref{tab:tm-tracker-flow-bpmn} viser trackerflowet som proces.
 
-Denne kravlogik ændrer også fejlforståelsen. En afbrudt tracker, en manglende detaljelog eller en ændret øvelse bør ikke automatisk nulstille progressionen. Systemet skal kunne bevare nok information til at give næste handling, samtidig med at det er tydeligt, hvornår datagrundlaget er mindre detaljeret.
+Denne kravlogik ændrer også fejlforståelsen. En afbrudt tracker, en manglende detaljelog eller en ændret øvelse bør ikke automatisk nulstille progressionen. Systemet skal bevare nok information til at give næste handling, samtidig med at det er tydeligt, hvornår datagrundlaget er mindre detaljeret. Det er her forskellen på en logbog og en træningsstøtte opstår: logbogen spørger, hvad der blev registreret; træningsstøtten spørger også, hvad brugeren bør gøre nu.
 
 \subsection{Lav friktion og sikker adgang}
 
@@ -34,4 +34,4 @@ Kravgrundlaget er stærkest, hvor det direkte forbinder problemformuleringen med
 
 Kravgrundlaget er svagere for støttefunktioner som import, admin, betaling og trænerrelationer. De kan være nødvendige i en moden app, men de må ikke veje det samme som kerneflowet. Derfor er de kun centrale, når de påvirker datakvalitet, sikker adgang eller brugerens mulighed for at fortsætte træningen.
 
-\tmdelkonklusion{Kravmæssig delkonklusion}{Kernekravene viser forskellen på en almindelig træningslog og en fleksibel træningsapp. En logbog gemmer det, der skete. TræningsMester skal også kunne bruge det, der skete, til at foreslå næste meningsfulde handling.}
+\tmdelkonklusion{Kravets konsekvens}{Kernekravene viser forskellen på en almindelig træningslog og en fleksibel træningsapp. En logbog gemmer det, der skete. TræningsMester skal også kunne bruge det, der skete, til at foreslå næste meningsfulde handling.}

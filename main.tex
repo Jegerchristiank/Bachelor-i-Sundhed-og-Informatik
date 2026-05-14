@@ -104,15 +104,18 @@
 \renewenvironment{quote}{\begin{tmquote}}{\end{tmquote}}
 
 \newcommand{\tmdelkonklusion}[2]{%
-  \par\addvspace{1.05em}%
-  \noindent\begin{minipage}{\textwidth}%
-    \hrule height 0.45pt%
-    \vspace{0.55em}%
-    \small\textbf{#1.}\quad #2%
-    \vspace{0.55em}%
-    \hrule height 0.45pt%
-  \end{minipage}%
-  \par\addvspace{1.05em}%
+  \par\addvspace{1.1em}%
+  \begingroup
+  \setlength{\fboxsep}{0.75em}%
+  \noindent\fcolorbox{black!22}{black!3}{%
+    \begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}%
+      \small\textbf{#1.}\par
+      \vspace{0.25em}%
+      \small #2%
+    \end{minipage}%
+  }%
+  \endgroup
+  \par\addvspace{1.1em}%
 }
 
 \newif\iftmappendix

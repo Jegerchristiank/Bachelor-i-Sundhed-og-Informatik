@@ -4,6 +4,8 @@
 
 Designet skal derfor reducere beslutningsarbejde. Brugeren bør ikke skulle regne ud, om en session er aktiv, om næste workout er klar, eller om en afbrudt tracker kan fortsættes. De vigtigste skærme skal svare på få spørgsmål: Hvad skal jeg gøre nu? Hvad er allerede registreret? Hvad sker der, hvis jeg ikke logger alt?
 
+Det gør tonen i brugerfladen vigtig. Feedbacken skal hverken skælde ud over manglende logging eller lade som om alle data er lige præcise. Den skal hjælpe brugeren videre og samtidig vise, når et valg giver mindre detaljeret historik.
+
 \subsection{Home og næste handling}
 
 \emph{Home-skærmen} er appens primære næste-handling-flade. Figur~\ref{fig:tm-ios-home-ready} viser en tilstand, hvor brugeren kan se aktuel træningshandling uden først at rekonstruere hele programmet. Figur~\ref{fig:tm-ios-home-stale-session} viser en afbrudt session, hvor brugeren kan fortsætte eller rydde flowet. Det gør afvigelser synlige som valg frem for skjulte fejl.
@@ -16,7 +18,7 @@ Det er også her motivationsteorien bliver konkret. Hvis feedbacken kun belønne
 
 \emph{Trackerflowet} er den mest krævende interaktion. Figur~\ref{fig:tm-ios-tracker-active} viser aktiv logging af planlagte sæt, mens Figur~\ref{fig:tm-tracker-completion-summary} viser, at completion også kan registreres uden fuld trackerlog. Stoyanovs MARS-ramme gør funktionalitet, engagement og informationskvalitet relevante for vurderingen af dette flow \cite{stoyanov2015_mobile_app_rating_scale}.
 
-\emph{Designbalancen} er klar: detaljeret logging giver bedre data, men kan skabe friktion; completion giver lavere datagranularitet, men bevarer historik og næste handling. Et godt flow skal derfor gøre tracker-on og tracker-off forståelige uden at synliggøre unødig systemkompleksitet.
+\emph{Designbalancen} er klar: detaljeret logging giver bedre data, men kan skabe friktion; completion giver lavere datagranularitet, men bevarer historik og næste handling. Et godt flow skal derfor gøre tracker-on og tracker-off forståelige uden at synliggøre unødig systemkompleksitet. Brugeren skal mærke forskellen som et valg, ikke som en teknisk undskyldning.
 
 Trackerdesignet skal desuden undgå, at appen bliver et regneark under træningen. Sæt, reps og belastning skal kunne ændres hurtigt, men ændringerne skal stadig give mening i historikken. Den praktiske kvalitet ligger i at gøre den rigtige handling let, ikke i at vise alle mulige datatilstande.
 
@@ -34,4 +36,4 @@ Designets styrke er, at de centrale flader forsøger at svare på brugerens næs
 
 Designets svaghed er, at vurderingen stadig primært bygger på artefakter og begrænset feedback. Skærmbilleder kan vise, at flowet er tænkt og implementeret, men de kan ikke alene dokumentere, at brugeren forstår det i praksis. Derfor bør designet ses som et velbegrundet forslag, der kræver systematisk usabilitytest, især for tracker-off, katalogsøgning, watchOS og Live Activity.
 
-\tmdelkonklusion{Designmæssig delkonklusion}{Det stærke designvalg er at give brugeren en næste handling i stedet for en forklaring på hele systemet. Det svage punkt er stadig forståeligheden i praksis: tracker-off og støtteflader skal testes med rigtige opgaver, før brugeroplevelsen kan vurderes sikkert.}
+\tmdelkonklusion{Designets valg}{Det stærke designvalg er at give brugeren en næste handling i stedet for en forklaring på hele systemet. Det svage punkt er stadig forståeligheden i praksis: tracker-off og støtteflader skal testes med rigtige opgaver, før brugeroplevelsen kan vurderes sikkert.}
