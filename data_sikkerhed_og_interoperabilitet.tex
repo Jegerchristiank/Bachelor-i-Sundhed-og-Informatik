@@ -1,6 +1,6 @@
 \section{Data, sikkerhed og interoperabilitet}
 
-TræningsMesters datamodel skal skelne mellem planlagt træning, faktisk logging, completion og progression. Uden denne skelnen bliver realistiske afvigelser enten datatab eller fejltilstande. Figur~\ref{fig:tm-data-model-er} viser den samlede datamodel, mens Figur~\ref{fig:tm-tracker-completion-summary} viser den del, hvor tracker og completion kobles til progression.
+TræningsMesters \emph{datamodel} skal skelne mellem planlagt træning, faktisk logging, completion og progression. Uden denne skelnen bliver realistiske afvigelser enten datatab eller fejltilstande. Figur~\ref{fig:tm-data-model-er} viser den samlede datamodel, mens Figur~\ref{fig:tm-tracker-completion-summary} viser den del, hvor tracker og completion kobles til progression.
 
 Dataafsnittet handler derfor om sammenhæng, ikke om flest mulige felter. En app kan have mange tabeller uden at kunne forklare, hvad der sker, når en bruger træner anderledes end planlagt. Det afgørende er, om modellen kan bevare relationen mellem intention, handling, historik og næste skridt.
 
@@ -12,18 +12,18 @@ ACSM's progression model gør samme skelnen relevant træningsfagligt: progressi
 
 Denne datalogik skaber et kompromis. Hvis appen kræver fuld trackerlog for at give progression, bliver datakvaliteten højere, men risikoen for friktion og manglende registrering stiger. Hvis appen accepterer completion uden detaljer, bevares kontinuitet, men senere analyse bliver svagere. Begge datatyper skal derfor navngives og bruges efter deres formål.
 
-\subsection{RLS, Edge Functions og idempotency}
+\subsection{RLS, Edge Functions og idempotens}
 
-Row Level Security er den primære adgangskontrol. Supabase beskriver, hvordan RLS og API-regler kan begrænse adgang efter bruger og rolle, mens OWASP MASVS understøtter princippet om, at klienten ikke bør være eneste sikkerhedsgrænse \cite{supabase_rls_docs,supabase_securing_api_docs,owasp2024_masvs}. Figur~\ref{fig:tm-security-boundary-summary} viser opdelingen mellem mobil klient, RLS og Edge Functions.
+\emph{Row Level Security} (RLS) er den primære adgangskontrol. Supabase beskriver, hvordan RLS og \emph{API-regler} kan begrænse adgang efter bruger og rolle, mens OWASP MASVS understøtter princippet om, at klienten ikke bør være eneste sikkerhedsgrænse \cite{supabase_rls_docs,supabase_securing_api_docs,owasp2024_masvs}. Figur~\ref{fig:tm-security-boundary-summary} viser opdelingen mellem mobil klient, RLS og Edge Functions.
 
-Edge Functions bruges til flows, der kræver server-side vurdering eller privilegerede nøgler, eksempelvis admin, træner-/klientrelationer, import, AI og billing. Figur~\ref{fig:tm-import-ai-edge-boundary} viser denne grænse. Pointen er ikke, at alle disse flows er centrale for problemformuleringen, men at privilegeret logik ikke skal ligge i klienten.
+\emph{Edge Functions} bruges til flows, der kræver \emph{server-side} vurdering eller privilegerede nøgler, eksempelvis admin, træner-/klientrelationer, import, AI og billing. Figur~\ref{fig:tm-import-ai-edge-boundary} viser denne grænse. Pointen er ikke, at alle disse flows er centrale for problemformuleringen, men at privilegeret logik ikke skal ligge i klienten.
 
-Idempotency er nødvendig, fordi tracker, watchOS og Live Activity kan skrive til samme træningsforløb. Hvis retries eller parallelle handlinger kan skabe dobbeltlogging, svækkes datakvaliteten. Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser Live Activity-sporet, mens Tabel~\ref{tab:tm-sql-fields} viser relevante felter.
+\emph{Idempotens} er nødvendig, fordi tracker, watchOS og Live Activity kan skrive til samme træningsforløb. Hvis retries eller parallelle handlinger kan skabe dobbeltlogging, svækkes datakvaliteten. Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser Live Activity-sporet, mens Tabel~\ref{tab:tm-sql-fields} viser relevante felter.
 
 GDPR gør formål og adgang til en del af datamodellen \cite{europeanparliament2016_gdpr}. Træningsdata skal ikke blot gemmes, fordi de er teknisk mulige at gemme. De skal have et formål i feedback, progression, historik eller sikker drift. Det understøtter en smallere og mere forklarlig model.
 
 \subsection{Interoperabilitetsafgrænsning}
 
-TræningsMester behandler fitnessnære brugerdata, ikke kliniske patientdata. HealthKit kan forstås som brugeraktiveret appintegration, ikke som journalintegration \cite{apple_healthkit_docs}. FHIR og HL7 bruges derfor kun som afgrænsende begreber fra sundhedsinteroperabilitet, ikke som implementeret funktionalitet \cite{benson2016_principles_health_interoperability,zajac2026_data_quality_interoperability}. GDPR bruges som ramme for persondata, men endelig compliance kræver juridisk review \cite{europeanparliament2016_gdpr}.
+TræningsMester behandler fitnessnære brugerdata, ikke kliniske patientdata. \emph{HealthKit} kan forstås som brugeraktiveret appintegration, ikke som journalintegration \cite{apple_healthkit_docs}. \emph{FHIR} og \emph{HL7} bruges derfor kun som afgrænsende begreber fra \emph{sundhedsinteroperabilitet}, ikke som implementeret funktionalitet \cite{benson2016_principles_health_interoperability,zajac2026_data_quality_interoperability}. GDPR bruges som ramme for persondata, men endelig compliance kræver juridisk review \cite{europeanparliament2016_gdpr}.
 
 Afgrænsningen er vigtig. Hvis appen senere skal integrere dybere med sundhedsdata, kræver det andre standarder, samtykkemodeller og valideringskrav. I den nuværende version af TræningsMester er interoperabilitet primært relevant som synkronisering mellem brugerens egne flader og som mulighed for fitnessnær dataudveksling.

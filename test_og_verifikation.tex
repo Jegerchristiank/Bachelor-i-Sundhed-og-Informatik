@@ -1,20 +1,20 @@
 \section{Test og verifikation}
 
-Test og verifikation vurderer, om de centrale tekniske påstande om TræningsMester er dokumenteret. Formålet er teknisk plausibilitet, ikke sundhedseffekt, brugeraccept eller produktionsklarhed.
+\emph{Test og verifikation} vurderer, om de centrale tekniske påstande om TræningsMester er dokumenteret. Formålet er teknisk plausibilitet, ikke sundhedseffekt, brugeraccept eller produktionsklarhed.
 
 Verifikationen læses derfor som et afgrænset teknisk evidensspor. Den kan vise, at centrale dele kan bygges, at udvalgt domænelogik er testet, og at brugerflader og arkitektur er dokumenteret. Den kan ikke vise, at brugerne bliver mere motiverede eller fastholdes bedre.
 
 \subsection{Build, unit tests og centrale flows}
 
-Tabel~\ref{tab:tm-test-traceability} viser, at iOS-klient, watchOS-target og Live Activity-target kan bygges, og at central forretningslogik er unit-testet. Det understøtter, at den udviklede app ikke kun er en visuel prototype, men har implementeret domænelogik for tracker, completion, cycle runtime og Live Activity-projection.
+Tabel~\ref{tab:tm-test-traceability} viser, at iOS-klient, watchOS-target og Live Activity-target kan bygges, og at central forretningslogik er \emph{unit-testet}. Det understøtter, at den udviklede app ikke kun er en visuel prototype, men har implementeret domænelogik for tracker, completion, cycle runtime og Live Activity-projection.
 
-Buildstatus er dog afgrænset. Den dokumenterer, at targets kan kompileres i den gennemgåede tilstand, men ikke en uafhængig CI-proces, komplet installationsflow eller stabil runtime på tværs af enheder. Unit tests dokumenterer afgrænsede logikker; de viser ikke, at brugeren forstår flowet, eller at alle backend- og platformscenarier fungerer.
+\emph{Buildstatus} er dog afgrænset. Den dokumenterer, at targets kan kompileres i den gennemgåede tilstand, men ikke en uafhængig \emph{CI-proces}, komplet installationsflow eller stabil runtime på tværs af enheder. Unit tests dokumenterer afgrænsede logikker; de viser ikke, at brugeren forstår flowet, eller at alle backend- og platformscenarier fungerer.
 
 Unit tests passer især til de dele, hvor forventet adfærd kan beskrives præcist: payloads, trackerstatus, completion, cycle runtime og Live Activity-projection. De er svagere til spørgsmål om forståelighed, tempo og oplevet friktion, som kræver brugerafprøvning.
 
 \subsection{Integrationstest og sikkerhedsbegrænsninger}
 
-Integrationstests er mere begrænsede. Tabel~\ref{tab:tm-test-traceability} angiver, at Supabase anon read path kun er delvist bestået, fordi admin- og ikke-adminscenarier ikke er fuldt dækket. Derfor kan der ikke påstås fuld backend- eller rolleverifikation.
+\emph{Integrationstests} er mere begrænsede. Tabel~\ref{tab:tm-test-traceability} angiver, at Supabase anon read path kun er delvist bestået, fordi admin- og ikke-adminscenarier ikke er fuldt dækket. Derfor kan der ikke påstås fuld backend- eller rolleverifikation.
 
 Det er især vigtigt for sikkerhedsmodellen. Figur~\ref{fig:tm-security-boundary-summary} og Tabel~\ref{tab:tm-rls-matrix} viser en arkitektur, hvor klient, RLS og Edge Functions har forskellige roller. OWASP MASVS og Supabase-dokumentationen understøtter princippet, men en model er ikke et sikkerhedsbevis \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}. Admin-, træner-, tværbruger- og Edge Function-scenarier kræver mere målrettet test.
 

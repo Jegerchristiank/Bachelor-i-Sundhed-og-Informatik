@@ -26,6 +26,7 @@ Start med disse filer i rækkefølge:
 ## Kritiske Pointers
 
 - Hovedrapport: `main.tex`
+- Begrebs- og forkortelsesoversigt: `begreber_og_forkortelser.tex`, indlæst efter indholdsfortegnelsen
 - Kapitelinput: `indledning.tex` for afsnittet Indledning, `problemformulering_og_afgraensning.tex` for afsnittet Problemformulering og afgrænsning, `teoretisk_og_faglig_ramme.tex` for afsnittet Teoretisk og faglig ramme, `metode.tex` for afsnittet Metode, `krav_og_use_cases.tex` for afsnittet Krav og use cases, `systemarkitektur.tex` for afsnittet Systemarkitektur, `interaktionsdesign.tex` for afsnittet Interaktionsdesign, `data_sikkerhed_og_interoperabilitet.tex` for afsnittet Data, sikkerhed og interoperabilitet, `implementering.tex` for afsnittet Implementering, `test_og_verifikation.tex` for afsnittet Test og verifikation, `evaluering_og_brugerindsigt.tex` for afsnittet Evaluering og brugerindsigt, `diskussion.tex` for afsnittet Diskussion og `konklusion.tex` for afsnittet Konklusion
 - KU-style, rapporttypografi og forsidemakroer: `KUstyle.sty` (styrer både projektrapportforsiden og den officielle KU-forside med SUND-header og styrbar headerbaggrundsbredde)
 - KU-forsidebaggrund: `KU-logo.pdf` som original, `assets/ku-cover-background.png` som rød rasterbaggrund og `assets/ku-cover-background-blue.png` som blå SUND-valgt rasterbaggrund
@@ -66,6 +67,7 @@ Start med disse filer i rækkefølge:
 | `AGENTS.md` | Arbejdsregler for LLM-agenter | Skal læses ved opstart |
 | `NAVIGATOR.md` | Dette strukturkort | Skal opdateres ved strukturændringer |
 | `skrivematrix.md` | Intern skrivematrix | Låser rød tråd, kilder, kursusspor, bilag og faldgruber for hele rapporten fra Indledning til Konklusion |
+| `begreber_og_forkortelser.tex` | Begrebs- og forkortelsesoversigt | Forklarer centrale fagtermer og forkortelser efter indholdsfortegnelsen |
 | `indledning.tex` | Kapitelinput | Færdig rapporttekst for Indledning, indlæst fra `main.tex` |
 | `problemformulering_og_afgraensning.tex` | Kapitelinput | Færdig rapporttekst for Problemformulering og afgrænsning, indlæst fra `main.tex` |
 | `teoretisk_og_faglig_ramme.tex` | Kapitelinput | Færdig rapporttekst for Teoretisk og faglig ramme, indlæst fra `main.tex` |
@@ -99,6 +101,7 @@ Start med disse filer i rækkefølge:
 - udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
 - et engelsk abstract/resumé før indholdsfortegnelsen, der opsummerer problemstilling, metode, hovedresultater, begrænsninger og næste skridt,
+- en begrebs- og forkortelsesoversigt efter indholdsfortegnelsen,
 - kapitelinput baseret på rapportafsnit-mappingen,
 - færdig tekst for Indledning via `\input{indledning}`,
 - færdig tekst for Problemformulering og afgrænsning via `\input{problemformulering_og_afgraensning}`,
@@ -113,6 +116,7 @@ Start med disse filer i rækkefølge:
 - færdig tekst for Evaluering og brugerindsigt via `\input{evaluering_og_brugerindsigt}`,
 - færdig tekst for Diskussion via `\input{diskussion}`,
 - færdig tekst for Konklusion via `\input{konklusion}`,
+- begrebs- og forkortelsesoversigt via `\input{begreber_og_forkortelser}`,
 - en separat intern skrivematrix i `skrivematrix.md` for hele rapporten fra Indledning til Konklusion,
 - BibTeX-referenceafsnit baseret på `referencer.bib`,
 - en kort AI-erklæring efter referenceafsnittet og før bilagene,
@@ -140,6 +144,7 @@ Start med disse filer i rækkefølge:
 ├── NAVIGATOR.md
 ├── README.md
 ├── billedbilag.tex
+├── begreber_og_forkortelser.tex
 ├── kildesoegning.tex
 ├── indledning.tex
 ├── problemformulering_og_afgraensning.tex

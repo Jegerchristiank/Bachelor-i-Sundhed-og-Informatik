@@ -1,12 +1,12 @@
 \section{Krav og use cases}
 
-Kravene omsætter problemformuleringen til systemvalg. De skal ikke vise flest mulige funktioner, men definere hvad appen skal kunne for at håndtere planlagt træning, faktisk udførelse, completion, progression, lav friktion og sikker dataadgang. COM-B og BCT Taxonomy gør selvmonitorering, feedback og handlingsstøtte relevante kravspor \cite{michie2011_behaviour_change_wheel,michie2013_bct_taxonomy_v1}, mens Yardley et al. gør effektivt engagement til mere end hyppig appbrug \cite{yardley2016_effective_engagement_dbci}.
+Kravene omsætter problemformuleringen til systemvalg. De skal ikke vise flest mulige funktioner, men definere hvad appen skal kunne for at håndtere planlagt træning, faktisk udførelse, completion, progression, lav friktion og sikker dataadgang. \emph{COM-B} og \emph{BCT Taxonomy} gør selvmonitorering, feedback og handlingsstøtte relevante kravspor \cite{michie2011_behaviour_change_wheel,michie2013_bct_taxonomy_v1}, mens Yardley et al. gør \emph{effektivt engagement} til mere end hyppig appbrug \cite{yardley2016_effective_engagement_dbci}.
 
 Kravarbejdet fungerer som filter. Funktioner, der ikke påvirker progression, friktion, datakvalitet eller sikkerhed, er sekundære i analysen. Det gælder også funktioner, der kan være nyttige i et produkt, men som ikke er nødvendige for at besvare hovedspørgsmålet.
 
 \subsection{Kernekrav}
 
-Tabel~\ref{tab:tm-use-cases} viser use cases, men fire spor er mest afgørende for problemformuleringen. For det første skal appen kunne oprette og strukturere programmer, workouts og øvelser. For det andet skal brugeren kunne starte en workout, logge sæt og gemme completion. For det tredje skal cycle runtime kunne forbinde gennemført træning med næste relevante handling. For det fjerde skal watchOS og Live Activity fungere som støtteflader, ikke som separate sandheder om træningen.
+Tabel~\ref{tab:tm-use-cases} viser \emph{use cases}, men fire spor er mest afgørende for problemformuleringen. For det første skal appen kunne oprette og strukturere programmer, workouts og øvelser. For det andet skal brugeren kunne starte en workout, logge sæt og gemme completion. For det tredje skal cycle runtime kunne forbinde gennemført træning med næste relevante handling. For det fjerde skal watchOS og Live Activity fungere som støtteflader, ikke som separate sandheder om træningen.
 
 Tabel~\ref{tab:tm-krav-traceability} kobler disse spor til krav og implementering. F-08 og F-09 dækker tracker og completion. F-13 dækker cyklusprogression. F-15 dækker Live Activity-sporet. De krav er centrale, fordi de gør afvigelser håndterbare: brugeren kan træne med fuld trackerlog, afslutte uden fuld logging eller fortsætte efter en afbrudt session uden at miste hele programflowet.
 
@@ -22,7 +22,7 @@ Denne kravlogik ændrer også fejlforståelsen. En afbrudt tracker, en manglende
 
 \subsection{Lav friktion og sikker adgang}
 
-Lav friktion er et krav, fordi træning foregår mellem øvelser, pauser og fysisk belastning. Apple-dokumentationen for Live Activities og Watch Connectivity understøtter brugen af status- og companionflader til tidsfølsom aktivitet \cite{apple_activitykit_live_data_docs,apple_watchconnectivity_docs}. I TræningsMester er pointen ikke flere platforme i sig selv, men færre nødvendige afbrydelser under træning.
+Lav friktion er et krav, fordi træning foregår mellem øvelser, pauser og fysisk belastning. Apple-dokumentationen for \emph{Live Activities} og \emph{Watch Connectivity} understøtter brugen af status- og companionflader til tidsfølsom aktivitet \cite{apple_activitykit_live_data_docs,apple_watchconnectivity_docs}. I TræningsMester er pointen ikke flere platforme i sig selv, men færre nødvendige afbrydelser under træning.
 
 Samtidig må lav friktion ikke svække sikkerheden. OWASP MASVS og Supabase RLS-dokumentationen understøtter princippet om, at mobilklienten ikke må være eneste adgangsgrænse \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}. Figur~\ref{fig:tm-security-boundary-summary} viser derfor en model, hvor brugerfladen starter handlinger, mens RLS og Edge Functions håndhæver adgang. Import, admin, billing og trænerfunktioner er støttefunktioner og kun centrale, når de påvirker progression, datakvalitet eller sikker adgang.
 

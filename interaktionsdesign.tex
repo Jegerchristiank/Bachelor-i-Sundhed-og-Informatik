@@ -1,12 +1,12 @@
 \section{Interaktionsdesign}
 
-Interaktionsdesignet vurderes ud fra brugerens træningssituation. Brugeren skifter øvelser, holder pauser, justerer belastning og har begrænset opmærksomhed til appen. Hornbæks kursusmateriale om brugerundersøgelser, prototyper og evaluering understøtter derfor, at designvalg skal vurderes i brugskonteksten, ikke kun som skærmlayout \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering}.
+\emph{Interaktionsdesignet} vurderes ud fra brugerens træningssituation. Brugeren skifter øvelser, holder pauser, justerer belastning og har begrænset opmærksomhed til appen. Hornbæks kursusmateriale om brugerundersøgelser, prototyper og evaluering understøtter derfor, at designvalg skal vurderes i brugskonteksten, ikke kun som skærmlayout \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering}.
 
 Designet skal derfor reducere beslutningsarbejde. Brugeren bør ikke skulle regne ud, om en session er aktiv, om næste workout er klar, eller om en afbrudt tracker kan fortsættes. De vigtigste skærme skal svare på få spørgsmål: Hvad skal jeg gøre nu? Hvad er allerede registreret? Hvad sker der, hvis jeg ikke logger alt?
 
 \subsection{Home og næste handling}
 
-Home-skærmen er appens primære næste-handling-flade. Figur~\ref{fig:tm-ios-home-ready} viser en tilstand, hvor brugeren kan se aktuel træningshandling uden først at rekonstruere hele programmet. Figur~\ref{fig:tm-ios-home-stale-session} viser en afbrudt session, hvor brugeren kan fortsætte eller rydde flowet. Det gør afvigelser synlige som valg frem for skjulte fejl.
+\emph{Home-skærmen} er appens primære næste-handling-flade. Figur~\ref{fig:tm-ios-home-ready} viser en tilstand, hvor brugeren kan se aktuel træningshandling uden først at rekonstruere hele programmet. Figur~\ref{fig:tm-ios-home-stale-session} viser en afbrudt session, hvor brugeren kan fortsætte eller rydde flowet. Det gør afvigelser synlige som valg frem for skjulte fejl.
 
 Completion-flowet er samme princip. Efter et gennemført pas skal brugeren kunne se feedback og næste handling uden at appen kræver fuld sæt-for-sæt-registrering. Home bliver dermed et bindeled mellem plan, faktisk træning og fortsættelse.
 
@@ -14,9 +14,9 @@ Det er også her motivationsteorien bliver konkret. Hvis feedbacken kun belønne
 
 \subsection{Tracker, completion og feedback}
 
-Trackerflowet er den mest krævende interaktion. Figur~\ref{fig:tm-ios-tracker-active} viser aktiv logging af planlagte sæt, mens Figur~\ref{fig:tm-tracker-completion-summary} viser, at completion også kan registreres uden fuld trackerlog. Stoyanovs MARS-ramme gør funktionalitet, engagement og informationskvalitet relevante for vurderingen af dette flow \cite{stoyanov2015_mobile_app_rating_scale}.
+\emph{Trackerflowet} er den mest krævende interaktion. Figur~\ref{fig:tm-ios-tracker-active} viser aktiv logging af planlagte sæt, mens Figur~\ref{fig:tm-tracker-completion-summary} viser, at completion også kan registreres uden fuld trackerlog. Stoyanovs MARS-ramme gør funktionalitet, engagement og informationskvalitet relevante for vurderingen af dette flow \cite{stoyanov2015_mobile_app_rating_scale}.
 
-Designbalancen er klar: detaljeret logging giver bedre data, men kan skabe friktion; completion giver lavere datagranularitet, men bevarer historik og næste handling. Et godt flow skal derfor gøre tracker-on og tracker-off forståelige uden at synliggøre unødig systemkompleksitet.
+\emph{Designbalancen} er klar: detaljeret logging giver bedre data, men kan skabe friktion; completion giver lavere datagranularitet, men bevarer historik og næste handling. Et godt flow skal derfor gøre tracker-on og tracker-off forståelige uden at synliggøre unødig systemkompleksitet.
 
 Trackerdesignet skal desuden undgå, at appen bliver et regneark under træningen. Sæt, reps og belastning skal kunne ændres hurtigt, men ændringerne skal stadig give mening i historikken. Den praktiske kvalitet ligger i at gøre den rigtige handling let, ikke i at vise alle mulige datatilstande.
 

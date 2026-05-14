@@ -1,6 +1,6 @@
 \section{Diskussion}
 
-Den udviklede TræningsMester-app viser en plausibel design- og implementeringsmodel, hvor planlagt træning, faktisk logging, completion, feedback og næste handling adskilles. Det er relevant, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Projektet dokumenterer dog ikke empirisk effekt på motivation, adherence eller sundhed.
+Den udviklede TræningsMester-app viser en plausibel \emph{design- og implementeringsmodel}, hvor planlagt træning, faktisk logging, completion, feedback og næste handling adskilles. Det er relevant, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Projektet dokumenterer dog ikke empirisk effekt på motivation, adherence eller sundhed.
 
 Diskussionen samler derfor fire spændinger: fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Det er i disse spændinger, appens faglige værdi som design- og implementeringsarbejde ligger.
 
@@ -32,7 +32,7 @@ Det er en vigtig kildekritisk grænse. Reviews og meta-analyser giver tyngde til
 
 \subsection{Sikkerhed og verifikationsgrænser}
 
-Sikkerhedsmodellen er en styrke, fordi klienten ikke behandles som eneste sikkerhedsgrænse. Figur~\ref{fig:tm-security-boundary-summary} og Tabel~\ref{tab:tm-rls-matrix} viser en arkitektur, hvor RLS og Edge Functions bærer adgangskontrol. OWASP MASVS, GDPR og Supabase RLS understøtter denne retning \cite{owasp2024_masvs,europeanparliament2016_gdpr,supabase_rls_docs}.
+\emph{Sikkerhedsmodellen} er en styrke, fordi klienten ikke behandles som eneste sikkerhedsgrænse. Figur~\ref{fig:tm-security-boundary-summary} og Tabel~\ref{tab:tm-rls-matrix} viser en arkitektur, hvor RLS og Edge Functions bærer adgangskontrol. OWASP MASVS, GDPR og Supabase RLS understøtter denne retning \cite{owasp2024_masvs,europeanparliament2016_gdpr,supabase_rls_docs}.
 
 Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser dokumenterede build- og testspor, men også åbne mangler i rolle-, backend- og runtime-scenarier. Derfor kan projektet ikke konkludere fuld sikkerhedscertificering, penetrationstest eller komplet produktionsmodenhed. Det kan kun konkludere, at sikkerhedsdesignet er fagligt plausibelt og delvist verificeret.
 

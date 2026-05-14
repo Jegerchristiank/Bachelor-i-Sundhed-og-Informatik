@@ -8,10 +8,11 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - Repoet er en Overleaf/LaTeX-mappe til bachelorrapporten om TræningsMester.
 - Hovedfilen er `main.tex`; rapporttypografi og forsider styres af `KUstyle.sty`.
 - Dokumentet skal kompileres med XeLaTeX eller LuaLaTeX, fordi templaten bruger `fontspec`, og hovedrapporten er sat op til A4.
-- `main.tex` indlæser `indledning.tex`, `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `metode.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex`, `test_og_verifikation.tex`, `evaluering_og_brugerindsigt.tex`, `diskussion.tex` og `konklusion.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
+- `main.tex` indlæser `begreber_og_forkortelser.tex` efter indholdsfortegnelsen, `indledning.tex`, `problemformulering_og_afgraensning.tex`, `teoretisk_og_faglig_ramme.tex`, `metode.tex`, `krav_og_use_cases.tex`, `systemarkitektur.tex`, `interaktionsdesign.tex`, `data_sikkerhed_og_interoperabilitet.tex`, `implementering.tex`, `test_og_verifikation.tex`, `evaluering_og_brugerindsigt.tex`, `diskussion.tex` og `konklusion.tex` som kapitelinput, `kildesoegning.tex` og `billedbilag.tex` som bilag og bruger `referencer.bib` til referenceafsnittet.
 - `skrivematrix.md` er internt styringsdokument for hele rapportens kapitelstruktur og må ikke inputtes eller omtales synligt i rapporten.
 - Rapporten har to forsider: først en rolig projektrapportforside via `\makeprojecttitle`, derefter den officielle KU-forside via `\makekutitle`.
 - Efter forsider og metadatatabel ligger et engelsk abstract/resumé før indholdsfortegnelsen.
+- Efter indholdsfortegnelsen ligger en begrebs- og forkortelsesoversigt.
 - Efter referenceafsnittet ligger en kort AI-erklæring før bilagene.
 - Rapportstilen efter forsiderne er sort/hvid med 10pt serif-brødtekst, afsnitsluft uden indrykning, indholdsfortegnelse med dot leaders og linjebaserede kapitelåbninger med højrestillet titel.
 - Forsidernes metadata, KU-header, fakultetstekst, headerfarve, headerbaggrundsbredde og coverbaggrund styres fra `main.tex` via KUstyle-makroer.
@@ -84,6 +85,7 @@ TræningsMester skal behandles som bachelorprojektets egenudviklede design- og i
 - `abbrvnat-etal.bst`: lokal `natbib`-kompatibel BibTeX-stil, der bruger initialer og forkorter lange forfatterlister med `et al.` efter seks forfattere.
 - `referencer/`: lokale åbne PDF-kopier navngivet efter BibTeX-kilderne.
 - `skrivematrix.md`: intern skrivematrix for hele rapporten fra Indledning til Konklusion.
+- `begreber_og_forkortelser.tex`: begrebs- og forkortelsesoversigt efter indholdsfortegnelsen.
 - `indledning.tex`: kapitelinput med færdig rapporttekst for Indledning.
 - `problemformulering_og_afgraensning.tex`: kapitelinput med færdig rapporttekst for Problemformulering og afgrænsning.
 - `teoretisk_og_faglig_ramme.tex`: kapitelinput med færdig rapporttekst for Teoretisk og faglig ramme.

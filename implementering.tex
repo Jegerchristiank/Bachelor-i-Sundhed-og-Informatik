@@ -1,30 +1,30 @@
 \section{Implementering}
 
-Implementeringen realiserer den centrale model i den udviklede TræningsMester-app: planlagt træning, faktisk logging, completion, progression og sikker dataadgang skal hænge sammen. Beskrivelsen fokuserer derfor på de flows, der bærer problemformuleringen, ikke på al kildekode eller alle funktioner.
+\emph{Implementeringen} realiserer den centrale model i den udviklede TræningsMester-app: planlagt træning, faktisk logging, completion, progression og sikker dataadgang skal hænge sammen. Beskrivelsen fokuserer derfor på de flows, der bærer problemformuleringen, ikke på al kildekode eller alle funktioner.
 
 Den praktiske test for implementeringen er, om brugerens træningsforløb kan overleve afvigelser. En app kan have mange skærme og stadig fejle, hvis en afbrudt session, en ændret øvelse eller en manglende detaljelog gør progressionen uklar.
 
 \subsection{Session, repositories og programstruktur}
 
-Appen etablerer session, profil og dataadgang, før brugerbundne træningsdata vises. SwiftUI gør brugerfladen state-drevet, men adgang og datakontrakter ligger i AppState, repositories og backendregler \cite{apple_swiftui_docs}. Supabase RLS og API-sikring betyder, at klienten ikke alene afgør, hvad brugeren kan læse og skrive \cite{supabase_rls_docs,supabase_securing_api_docs}.
+Appen etablerer session, profil og dataadgang, før brugerbundne træningsdata vises. SwiftUI gør brugerfladen state-drevet, men adgang og datakontrakter ligger i AppState, repositories og backendregler \cite{apple_swiftui_docs}. Supabase RLS og \emph{API-sikring} betyder, at klienten ikke alene afgør, hvad brugeren kan læse og skrive \cite{supabase_rls_docs,supabase_securing_api_docs}.
 
 Programstrukturen giver den planlagte ramme: programmer, workouts og øvelser beskriver, hvad brugeren forventes at gennemføre. Figur~\ref{fig:tm-data-model-er-left} viser denne del af datamodellen. Den planlagte struktur er nødvendig, men ikke tilstrækkelig, fordi faktisk træning kan afvige fra planen.
 
-Repositories gør datatilgangen mere kontrolleret. I stedet for at hver visning skriver direkte mod backend, samles læsning, skrivning og mapping i et lag, der kan testes og ændres. Det passer til sikkerhedsargumentet, fordi klienten stadig er en klient, mens adgangsregler og privilegerede handlinger ligger uden for visningslaget.
+\emph{Repositories} gør datatilgangen mere kontrolleret. I stedet for at hver visning skriver direkte mod backend, samles læsning, skrivning og mapping i et lag, der kan testes og ændres. Det passer til sikkerhedsargumentet, fordi klienten stadig er en klient, mens adgangsregler og privilegerede handlinger ligger uden for visningslaget.
 
 \subsection{Tracker, completion og cycle runtime}
 
-Tracker- og completion-flowet er implementeringens svar på afvigelsesproblemet. Figur~\ref{fig:tm-ios-tracker-active} viser aktiv tracker med planlagte sæt, mens Figur~\ref{fig:tm-tracker-completion-summary} viser, at completion kan registrere gennemført træning uden fuld trackerlog. Det bevarer historik og næste handling, selv om datadetaljen er lavere.
+\emph{Tracker- og completion-flowet} er implementeringens svar på afvigelsesproblemet. Figur~\ref{fig:tm-ios-tracker-active} viser aktiv tracker med planlagte sæt, mens Figur~\ref{fig:tm-tracker-completion-summary} viser, at completion kan registrere gennemført træning uden fuld trackerlog. Det bevarer historik og næste handling, selv om datadetaljen er lavere.
 
-Selvmonitorering og feedback er centrale adfærdsændringsteknikker \cite{michie2013_bct_taxonomy_v1}, men feedback må ikke kræve så meget dataregistrering, at appen bliver en barriere. Completion er derfor ikke en fejltilstand, men et bevidst lav-friktionsflow.
+\emph{Selvmonitorering} og feedback er centrale adfærdsændringsteknikker \cite{michie2013_bct_taxonomy_v1}, men feedback må ikke kræve så meget dataregistrering, at appen bliver en barriere. Completion er derfor ikke en fejltilstand, men et bevidst lav-friktionsflow.
 
-Cycle runtime forbinder completion med næste workout. I stedet for kun at gå videre i en fast planrækkefølge kan appen bruge runtime-status til at afgøre, hvad der er relevant nu. Greig et al. og Larsen et al. gør denne fleksibilitet fagligt meningsfuld gennem autoregulering \cite{greig2020_autoregulation_resistance_training,larsen2021_autoregulation_systematic_review}. TræningsMester implementerer ikke en fuldautomatisk træningscoach, men appen kan strukturere næste handling ud fra faktisk gennemførelse.
+\emph{Cycle runtime} forbinder completion med næste workout. I stedet for kun at gå videre i en fast planrækkefølge kan appen bruge runtime-status til at afgøre, hvad der er relevant nu. Greig et al. og Larsen et al. gør denne fleksibilitet fagligt meningsfuld gennem autoregulering \cite{greig2020_autoregulation_resistance_training,larsen2021_autoregulation_systematic_review}. TræningsMester implementerer ikke en fuldautomatisk træningscoach, men appen kan strukturere næste handling ud fra faktisk gennemførelse.
 
 Det er her implementeringen adskiller sig fra en simpel checklistelogik. Completion er ikke bare et flueben; det er et event, der kan påvirke cyklus, historik og Home-visning. Trackerlog er ikke bare detaljer; den kan give bedre datagrundlag for feedback. Begge dele skal kunne eksistere uden at modsige hinanden.
 
 \subsection{Støtteflader og privilegerede flows}
 
-watchOS og Live Activity implementeres som støtteflader til samme træningsmodel. De kan give hurtig status og adgang under træning, men må ikke skabe en separat sandhed om session eller completion. Apple beskriver Live Activities som tidsfølsom status og Watch Connectivity som koordinering mellem iPhone og Apple Watch \cite{apple_activitykit_live_data_docs,apple_watchconnectivity_docs}. Derfor skal støttefladerne genbruge samme sessions- og datakontrakt som hovedappen.
+\emph{watchOS} og \emph{Live Activity} implementeres som støtteflader til samme træningsmodel. De kan give hurtig status og adgang under træning, men må ikke skabe en separat sandhed om session eller completion. Apple beskriver Live Activities som tidsfølsom status og Watch Connectivity som koordinering mellem iPhone og Apple Watch \cite{apple_activitykit_live_data_docs,apple_watchconnectivity_docs}. Derfor skal støttefladerne genbruge samme sessions- og datakontrakt som hovedappen.
 
 Edge Functions afgrænser flows, der ikke bør ligge direkte i klienten. Det gælder blandt andet admin, import, AI, billing og træner-/klientrelationer. OWASP MASVS og Supabase API-sikring understøtter, at privilegerede nøgler og bredere databaseoperationer holdes server-side \cite{owasp2024_masvs,supabase_securing_api_docs}. Det centrale implementeringsbidrag er dog stadig sammenhængen mellem plan, tracker, completion, cyklusprogression og lav-friktionsflader.
 

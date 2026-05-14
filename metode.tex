@@ -1,12 +1,12 @@
 \section{Metode}
 
-I dette bachelorprojekt undersøges TræningsMester som den udviklede design- og implementeringscase. Metoden kombinerer kildesøgning, kursus- og faggrundlag, artefaktanalyse, anonymiseret beta-feedback og teknisk verifikation. Den kan vurdere, om appens design og implementering er fagligt begrundet og teknisk sammenhængende; den kan ikke måle statistisk effekt på motivation, adherence eller fysisk aktivitet.
+I dette bachelorprojekt undersøges TræningsMester som den udviklede \emph{design- og implementeringscase}. Metoden kombinerer kildesøgning, kursus- og faggrundlag, \emph{artefaktanalyse}, anonymiseret beta-feedback og teknisk verifikation. Den kan vurdere, om appens design og implementering er fagligt begrundet og teknisk sammenhængende; den kan ikke måle statistisk effekt på motivation, adherence eller fysisk aktivitet.
 
 Metodevalget følger problemformuleringen. Spørgsmålet handler om, hvordan en app kan designes og implementeres, ikke om hvor stor en effekt appen har i en brugerpopulation. Derfor vægtes dokumenterede designvalg, implementeringsspor, krav, tests og kvalitativ feedback højere end kvantitative effektmål.
 
 \subsection{Design- og implementeringscase}
 
-Caseformen bruges her om projektets egen appudvikling: den gør det muligt at undersøge, hvordan teori om motivation, progression, friktion og sikker dataadgang omsættes til et konkret digitalt system. TræningsMester vurderes derfor gennem appens synlige brugerflader, krav, arkitektur, datamodel og testspor. Tabel~\ref{tab:tm-bilag-materialegennemgang} samler det synlige materiale, mens Figur~\ref{fig:tm-system-context} viser systemkonteksten.
+\emph{Caseformen} bruges her om projektets egen appudvikling: den gør det muligt at undersøge, hvordan teori om motivation, progression, friktion og sikker dataadgang omsættes til et konkret digitalt system. TræningsMester vurderes derfor gennem appens synlige brugerflader, krav, arkitektur, datamodel og testspor. Tabel~\ref{tab:tm-bilag-materialegennemgang} samler det synlige materiale, mens Figur~\ref{fig:tm-system-context} viser systemkonteksten.
 
 Begrænsningen er, at en egenudviklet case ikke kan dokumentere virkning for en bred brugergruppe. Den kan vise design- og implementeringsplausibilitet, men ikke empirisk effekt. Den sondring styrer hele evidensniveauet.
 
@@ -14,7 +14,7 @@ Appen analyseres derfor som en kæde af beslutninger. Først undersøges problem
 
 \subsection{Analysegenstand}
 
-Analysegenstanden er den udviklede apps håndtering af afvigelser i et træningsforløb. Det betyder, at appen ikke analyseres som et samlet produkt med alle kommercielle funktioner, men som en kæde af mekanismer: planlagt workout, aktiv tracker, completion-event, cycle runtime, næste handling, brugerfladefeedback og adgangskontrol.
+\emph{Analysegenstanden} er den udviklede apps håndtering af afvigelser i et træningsforløb. Det betyder, at appen ikke analyseres som et samlet produkt med alle kommercielle funktioner, men som en kæde af mekanismer: planlagt workout, aktiv tracker, completion-event, cycle runtime, næste handling, brugerfladefeedback og adgangskontrol.
 
 Genstanden undersøges på tre niveauer. Det første niveau er det træningsfaglige: om modellen kan bevare progression, når faktisk træning ikke følger planen. Det andet niveau er interaktionsniveauet: om Home, tracker, tracker-off, watchOS og Live Activity kan reducere friktion i selve træningssituationen. Det tredje niveau er det informatiske: om datamodel, RLS, repositories og Edge Functions gør fleksibiliteten sporbar og adgangsmæssigt afgrænset.
 
@@ -32,7 +32,7 @@ Analysen er organiseret efter underspørgsmålene, så hvert kapitel leverer bel
 \tmthead{Underspørgsmål} & \tmthead{Materiale} & \tmthead{Vurderingskriterium} \\
 \midrule
 Plan, trackerlog, completion og cycle runtime & Use cases, kravsporbarhed, datamodel, trackerproces og implementeringsbeskrivelse & Om planlagt og faktisk træning kan adskilles uden datatab, og om næste handling kan forklares efter afvigelser. \\
-UI og lav friktion & Skærmbilleder, interaktionsdesign, beta-feedback og støtteflader for watchOS og Live Activity & Om brugeren får tydelig status, feedback og næste handling uden unødig registreringsfriktion. \\
+\emph{UI} og lav friktion & Skærmbilleder, interaktionsdesign, beta-feedback og støtteflader for watchOS og Live Activity & Om brugeren får tydelig status, feedback og næste handling uden unødig registreringsfriktion. \\
 Sikker dataadgang & Sikkerhedsgrænse, RLS-matrix, Edge Function-spor og tekniske primærkilder & Om privilegeret logik holdes uden for klienten, og om påstande afgrænses til dokumenteret design og delvis test. \\
 Evidensgrundlag & Kildesøgning, anonymiseret feedback, build- og testspor, skærmbilleder og diagrammer & Om konklusionen følger af dokumenterede artefakter og tydeligt skelner mellem plausibilitet, brugerindsigt og effektbevis. \\
 \bottomrule
@@ -51,7 +51,7 @@ Det metodiske ideal er derfor ikke at fjerne alle usikkerheder, men at gøre dem
 
 \subsection{Kildesøgning og faggrundlag}
 
-Kildesøgningen blev gennemført som en problemstyret scoping-søgning. Rethlefsen et al.s PRISMA-S og McGowan et al.s PRESS-guideline bruges som pejlemærker for transparent søgning, søgestrenge og kildekritik \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. Søgestrategien kombinerede KB.dk/Primo, PubMed/PMC, DOI/Crossref og udgiversider, fordi problemfeltet både er sundhedsfagligt, designfagligt og teknisk. Tabel~\ref{tab:kildesoegning-platforme} og Tabel~\ref{tab:kildesoegning-appspor} dokumenterer søgesporene i bilaget.
+Kildesøgningen blev gennemført som en problemstyret \emph{scoping-søgning}. Rethlefsen et al.s \emph{PRISMA-S} og McGowan et al.s \emph{PRESS}-guideline bruges som pejlemærker for transparent søgning, søgestrenge og kildekritik \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. Søgestrategien kombinerede KB.dk/Primo, PubMed/PMC, DOI/Crossref og udgiversider, fordi problemfeltet både er sundhedsfagligt, designfagligt og teknisk. Tabel~\ref{tab:kildesoegning-platforme} og Tabel~\ref{tab:kildesoegning-appspor} dokumenterer søgesporene i bilaget.
 
 Kursusmateriale bruges som metodisk og faglig støtte, ikke som effektbevis. Hornbæks materiale om brugerundersøgelser, prototyper og evaluering støtter interaktionsdesignet, mens Grundtvig, Gjødsbøl og Clotworthy støtter analyse, anonymisering og etik \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering,grundtvig2025_analyse_data,gjoedsboel_grundtvig2025_interview,clotworthy2025_etik_kvalitet_forskning}. Tabel~\ref{tab:kursusmateriale-gennemgang} viser de konkrete kursusspor.
 
@@ -63,6 +63,6 @@ Artefaktanalysen undersøger de synlige elementer, der dokumenterer appens desig
 
 Beta-feedback behandles som anonymiseret, kvalitativ designindsigt. Den bruges til at identificere friktion, katalogproblemer, enheder, watch-behov og prioriteringer, men ikke til at generalisere til alle brugere. Tabel~\ref{tab:tm-beta-feedback} og Tabel~\ref{tab:tm-testflight-timeline} dokumenterer observationer og iteration.
 
-Teknisk verifikation vurderer buildstatus, unit tests, begrænsede integrationstests og kendte mangler. Tabel~\ref{tab:tm-test-traceability} samler de tekniske påstande. Apple-, Supabase- og OWASP-kilder bruges til at vurdere platform- og sikkerhedsvalg \cite{apple_swiftui_docs,apple_activitykit_live_data_docs,apple_watchconnectivity_docs,owasp2024_masvs,supabase_rls_docs}. Verifikationen dokumenterer teknisk plausibilitet, ikke produktionsklarhed, sikkerhedscertificering eller klinisk validering.
+Teknisk verifikation vurderer \emph{buildstatus}, \emph{unit tests}, begrænsede integrationstests og kendte mangler. Tabel~\ref{tab:tm-test-traceability} samler de tekniske påstande. Apple-, Supabase- og OWASP-kilder bruges til at vurdere platform- og sikkerhedsvalg \cite{apple_swiftui_docs,apple_activitykit_live_data_docs,apple_watchconnectivity_docs,owasp2024_masvs,supabase_rls_docs}. Verifikationen dokumenterer teknisk plausibilitet, ikke produktionsklarhed, sikkerhedscertificering eller klinisk validering.
 
 De tre materialetyper supplerer hinanden. Artefakterne viser, hvad der er designet og implementeret. Feedbacken viser, hvor brugen møder friktion. Verifikationen viser, hvilke tekniske påstande der er sandsynliggjort. Ingen af delene kan alene besvare problemformuleringen, men sammen giver de et grundlag for at diskutere styrker og begrænsninger uden at overdrive evidensniveauet.
