@@ -8,9 +8,9 @@ Metodevalget følger problemformuleringen. Spørgsmålet handler om, hvordan en 
 
 \emph{Caseformen} bruges om den egenudviklede app. Den gør det muligt at undersøge, hvordan teori om motivation, progression, friktion og sikker dataadgang omsættes til et konkret digitalt system. TræningsMester vurderes gennem synlige brugerflader, krav, arkitektur, datamodel og testspor. Bilagets materialegennemgang samler de synlige artefakter, og systemkontekstdiagrammet viser de centrale platforme og services, jf. Tabel~\ref{tab:tm-bilag-materialegennemgang} og Figur~\ref{fig:tm-system-context}.
 
-Evidensniveauet er design- og implementeringsplausibilitet. Det betyder, at rapporten kan vurdere sammenhængen mellem problem, løsning og dokumentation, mens bred brugeraccept og sundhedseffekt kræver senere undersøgelser.
+Evidensniveauet er design- og implementeringsplausibilitet. Det betyder, at analysen kan vurdere sammenhængen mellem problem, løsning og dokumentation, mens bred brugeraccept og sundhedseffekt kræver senere undersøgelser.
 
-Vurderingen følger en enkel kæde. Først fastlægges det faglige problem. Derefter omsættes problemet til krav og use cases. Til sidst vurderes arkitektur, implementering, test og feedback. Kæden er vigtig, fordi en pæn brugerflade ikke bærer argumentet alene, og en solid datamodel først får værdi, når brugeren kan komme gennem træningen med lavt betjeningsbesvær.
+Vurderingen følger en enkel kæde. Først fastlægges det faglige problem. Derefter omsættes problemet til krav og use cases. Til sidst vurderes arkitektur, implementering, test og feedback. Kæden er vigtig, fordi en pæn brugerflade ikke er nok alene, og en solid datamodel først får værdi, når brugeren kan komme gennem træningen med lavt betjeningsbesvær.
 
 \subsection{Analysegenstand}
 
@@ -22,7 +22,7 @@ Denne afgrænsning gør analysen vurderbar. De centrale dele er dem, der afgør,
 
 \subsection{Analysestrategi}
 
-Analysestrategien følger underspørgsmålene. Tabel~\ref{tab:analysestrategi} viser, hvilket materiale der bærer hvilke vurderinger, og hvor grænsen går mellem plausibilitet, brugerindsigt og effektbevis.
+Analysestrategien følger underspørgsmålene. Tabel~\ref{tab:analysestrategi} kobler materialetyper med vurderingskriterier og markerer grænsen mellem plausibilitet, brugerindsigt og effektbevis.
 
 \begin{table}[h]
 \small
@@ -34,7 +34,7 @@ Analysestrategien følger underspørgsmålene. Tabel~\ref{tab:analysestrategi} v
 Plan, trackerlog, completion og cycle runtime & Use cases, kravsporbarhed, datamodel, trackerproces og implementeringsbeskrivelse & Om planlagt og faktisk træning kan adskilles uden datatab, og om næste handling kan forklares efter ændringer i forløbet. \\
 \emph{UI} og lav friktion & Skærmbilleder, interaktionsdesign, beta-feedback og støtteflader for watchOS og Live Activity & Om brugeren får tydelig status, feedback og næste handling uden unødigt registreringsarbejde. \\
 Sikker dataadgang & Sikkerhedsgrænse, RLS-matrix, Edge Function-spor og tekniske primærkilder & Om privilegeret logik holdes uden for klienten, og om påstande afgrænses til dokumenteret design og delvis test. \\
-Evidensgrundlag & Kildesøgning, anonymiseret feedback, build- og testspor, skærmbilleder og diagrammer & Om konklusionen følger af dokumenterede artefakter og tydeligt skelner mellem plausibilitet, brugerindsigt og effektbevis. \\
+Evidensgrundlag & Kildesøgning, anonymiseret feedback, build- og testspor, skærmbilleder og diagrammer & Om dokumenterede artefakter tydeligt skelner mellem plausibilitet, brugerindsigt og effektbevis. \\
 \bottomrule
 \end{tabularx}
 \caption{Analysestrategi for koblingen mellem underspørgsmål, materiale og vurderingskriterier.}
@@ -51,7 +51,7 @@ Det metodiske ideal er at gøre usikkerheder synlige og bruge dem korrekt. Kvali
 
 \subsection{Kildesøgning og faggrundlag}
 
-Kildesøgningen blev gennemført som en problemstyret \emph{scoping-søgning}. PRISMA-S og PRESS-guideline bruges som pejlemærker for transparent søgning, søgestrenge og kildekritik \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. Søgestrategien kombinerede KB.dk/Primo, PubMed/PMC, DOI/Crossref og udgiversider, fordi problemfeltet både er sundhedsfagligt, designfagligt og teknisk. Bilagets kildesøgning dokumenterer søgeflader, søgespor og kursusmateriale, jf. Tabel~\ref{tab:kildesoegning-platforme}, Tabel~\ref{tab:kildesoegning-appspor} og Tabel~\ref{tab:kursusmateriale-gennemgang}.
+Kildesøgningen blev gennemført som en problemstyret \emph{scoping-søgning}. PRISMA-S og PRESS-guideline bruges som pejlemærker for transparent søgning, søgestrenge og kildekritik \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. Søgestrategien kombinerede KB.dk/Primo, PubMed/PMC, DOI/Crossref og udgiversider, fordi problemfeltet både er sundhedsfagligt, designfagligt og teknisk. Søgeflader, søgespor og kursusmateriale er samlet i Tabel~\ref{tab:kildesoegning-platforme}, Tabel~\ref{tab:kildesoegning-appspor} og Tabel~\ref{tab:kursusmateriale-gennemgang}.
 
 Kursusmateriale bruges som metodisk og faglig støtte. Hornbæks materiale om brugerundersøgelser, prototyper og evaluering støtter interaktionsdesignet, mens Grundtvig, Gjødsbøl og Clotworthy støtter analyse, anonymisering og etik \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering,grundtvig2025_analyse_data,gjoedsboel_grundtvig2025_interview,clotworthy2025_etik_kvalitet_forskning}.
 

@@ -2,8 +2,6 @@
 \addcontentsline{toc}{section}{Begrebs- og forkortelsesoversigt}
 \section*{Begrebs- og forkortelsesoversigt}
 
-Oversigten samler de fagtermer og forkortelser, der er lettest at miste overblikket over undervejs. Forklaringerne er korte, så de kan bruges som opslag, mens hovedkapitlerne viser, hvordan begreberne bliver brugt i analysen. Centrale eksterne begreber har kildehenvisninger direkte i oversigten.
-
 \begingroup
 \small
 \newcommand{\tmglossaryentry}[2]{%
@@ -36,7 +34,7 @@ Oversigten samler de fagtermer og forkortelser, der er lettest at miste overblik
 \tmglossaryentry{\emph{Build}}{En kompileret version af appen eller en teknisk kontrol af, at kildekoden kan bygges til en kørende app.}
 \tmglossaryentry{\emph{Buildstatus}}{Resultatet af en buildkontrol: om appens targets kan kompileres i den gennemgåede tilstand.}
 \tmglossaryentry{\emph{Caseform}}{En undersøgelsesform hvor en konkret case bruges til at analysere et problem. Her er casen den udviklede app.}
-\tmglossaryentry{\emph{CI}}{Continuous Integration; en automatisk proces, der bygger og tester kode efter ændringer. Rapporten afgrænser sig fra at dokumentere fuld uafhængig CI.}
+\tmglossaryentry{\emph{CI}}{Continuous Integration; en automatisk proces, der bygger og tester kode efter ændringer. Fuld uafhængig CI indgår ikke i dokumentationen af TræningsMester.}
 \tmglossaryentry{\emph{Compliance}}{Efterlevelse af regler eller standarder. Her dækker begrebet juridiske og sikkerhedsmæssige krav, ikke dokumenteret certificering.}
 \tmglossaryentry{\emph{COM-B}}{En model hvor adfærd forstås som resultat af capability, opportunity og motivation. Den bruges til at forstå, hvorfor støtte, friktion og feedback betyder noget \cite{michie2011_behaviour_change_wheel}.}
 \tmglossaryentry{\emph{Completion-event}}{En registrering af, at et træningspas er gennemført. Det kan bevare historik og næste handling, selv når brugeren ikke logger alle sæt detaljeret.}
@@ -47,13 +45,13 @@ Oversigten samler de fagtermer og forkortelser, der er lettest at miste overblik
 \tmglossaryentry{\emph{DCR}}{Dynamic Condition Response, en deklarativ procesmodel, hvor regler beskriver, hvad der skal, må eller kan ske i et forløb \cite{vanderalst2009_declarative_workflows,ku2026_dcr_bpmn_modeling}.}
 \tmglossaryentry{\emph{Edge Function}}{En server-side funktion i Supabase, der kan udføre privilegeret logik uden at lægge hemmelige nøgler i mobilklienten \cite{supabase_securing_api_docs}.}
 \tmglossaryentry{\emph{Effektivt engagement}}{Digital brug der faktisk støtter den ønskede adfærd. Det adskiller sig fra blot mange klik eller lang skærmtid \cite{yardley2016_effective_engagement_dbci}.}
-\tmglossaryentry{\emph{Effektstudie}}{En undersøgelse, der måler om en intervention ændrer et bestemt outcome, for eksempel fysisk aktivitet eller frafald. Denne bachelor måler ikke effekt på den måde.}
+\tmglossaryentry{\emph{Effektstudie}}{En undersøgelse, der måler om en intervention ændrer et bestemt outcome, for eksempel fysisk aktivitet eller frafald. TræningsMester måler ikke effekt på den måde.}
 \tmglossaryentry{\emph{eHealth}}{Digitale sundhedsløsninger bredt forstået, for eksempel apps, webinterventioner og digitale støtteværktøjer.}
 \tmglossaryentry{\emph{Feedback}}{Tilbagemelding til brugeren eller systemet. Her bruges feedback især om status, næste handling og information efter træning.}
 \tmglossaryentry{\emph{FHIR}}{Fast Healthcare Interoperability Resources, en standard til udveksling af sundhedsdata. FHIR bruges her til at afgrænse klinisk interoperabilitet fra appens fitnessnære integrationer \cite{benson2016_principles_health_interoperability,zajac2026_data_quality_interoperability}.}
 \tmglossaryentry{\emph{Fleksibel progression}}{Progression der kan fortsætte, selv når brugeren ændrer, afbryder eller gennemfører træning uden fuld detaljelog.}
 \tmglossaryentry{\emph{Flow}}{Et sammenhængende bruger- eller systemforløb, for eksempel fra start af workout til completion og næste handling.}
-\tmglossaryentry{\emph{Friktion}}{Besvær, ventetid eller ekstra beslutninger, der gør det sværere for brugeren at gennemføre en handling. I rapporten bruges lav friktion om lavt betjeningsbesvær i træningssituationen \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_evaluering}.}
+\tmglossaryentry{\emph{Friktion}}{Besvær, ventetid eller ekstra beslutninger, der gør det sværere for brugeren at gennemføre en handling. Lav friktion betegner lavt betjeningsbesvær i træningssituationen \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_evaluering}.}
 \tmglossaryentry{\emph{GDPR}}{EU's databeskyttelsesforordning. Den bruges som juridisk ramme for persondata, adgang og formål med databehandling \cite{europeanparliament2016_gdpr}.}
 \tmglossaryentry{\emph{HealthKit}}{Apples platform til brugerautoriseret sundheds- og fitnessdata på iOS. Her adskilles det fra klinisk journalintegration \cite{apple_healthkit_docs}.}
 \tmglossaryentry{\emph{HL7}}{Health Level Seven, en familie af standarder for sundhedsdataudveksling. Bruges her som afgrænsende interoperabilitetsbegreb \cite{benson2016_principles_health_interoperability}.}
@@ -72,7 +70,7 @@ Oversigten samler de fagtermer og forkortelser, der er lettest at miste overblik
 \tmglossaryentry{\emph{Meta-analyse}}{En statistisk sammenfatning af resultater fra flere studier. Begrebet beskriver kildetyper og bruges til at vurdere app- og tracker-evidens \cite{laranjo2021_apps_trackers_meta,romeo2019_smartphone_apps_pa_meta}.}
 \tmglossaryentry{\emph{mHealth}}{Mobile health, sundhedsrelaterede indsatser via mobiltelefoner, apps eller wearables \cite{nahumshani2018_jitai_mobile_health,brickwood2019_wearable_trackers_meta}.}
 \tmglossaryentry{\emph{OWASP MASVS}}{Mobile Application Security Verification Standard fra OWASP. Den bruges som sikkerhedsfaglig ramme for mobilappens grænser \cite{owasp2024_masvs}.}
-\tmglossaryentry{\emph{PRISMA-S}}{En rapporteringsstandard for søgestrategier i systematiske litteratursøgninger. Bruges som pejlemærke for gennemsigtig kildesøgning \cite{rethlefsen2021_prisma_s}.}
+\tmglossaryentry{\emph{PRISMA-S}}{En standard for dokumentation af søgestrategier i systematiske litteratursøgninger. Bruges som pejlemærke for gennemsigtig kildesøgning \cite{rethlefsen2021_prisma_s}.}
 \tmglossaryentry{\emph{PRESS}}{Peer Review of Electronic Search Strategies, en guideline til kvalitetssikring af elektroniske søgestrategier \cite{mcgowan2016_press_guideline_statement}.}
 \tmglossaryentry{\emph{Progression}}{Udvikling i træningen over tid, for eksempel gennem belastning, volumen, øvelsesvalg, frekvens eller næste planlagte handling \cite{acsm2009_progression_models,currier2026_acsm_resistance_training}.}
 \tmglossaryentry{\emph{Repository}}{Et kode- eller arkitekturlag, der samler læsning og skrivning af data, så brugerfladen ikke taler direkte med databasen.}
@@ -96,7 +94,7 @@ Oversigten samler de fagtermer og forkortelser, der er lettest at miste overblik
 \tmglossaryentry{\emph{UI}}{User Interface; brugerfladen, altså det brugeren ser og interagerer med.}
 \tmglossaryentry{\emph{Unit test}}{En afgrænset teknisk test af en lille del af systemets logik, for eksempel en funktion eller et domæneobjekt.}
 \tmglossaryentry{\emph{Use case}}{En beskrivelse af et bruger- eller systemforløb, som appen skal understøtte.}
-\tmglossaryentry{\emph{Usabilitytest}}{En systematisk test af om brugere kan forstå og udføre centrale opgaver i et system.}
+\tmglossaryentry{\emph{Usabilitytest}}{En systematisk test af om brugere kan forstå og udføre centrale handlinger i et system.}
 \tmglossaryentry{\emph{Watch Connectivity}}{Apples framework til dataudveksling mellem iPhone og Apple Watch \cite{apple_watchconnectivity_docs}.}
 \tmglossaryentry{\emph{watchOS}}{Apples styresystem til Apple Watch. Her fungerer watchOS som støtteflade til træning, ikke som separat hovedsystem.}
 \tmglossaryentry{\emph{Wearable}}{En bærbar digital enhed, for eksempel et smartwatch eller en aktivitetsmåler.}

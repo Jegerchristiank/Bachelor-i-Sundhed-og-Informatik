@@ -58,7 +58,7 @@
 \setlength{\leftmargini}{1.7em}
 \setlength{\leftmarginii}{1.45em}
 
-% Nedenstående ændrer indholdet på forsiden
+% Forsidemetadata
 \kuheaderone{KØBENHAVNS UNIVERSITET}
 \kuheadertwo{DET SUNDHEDSVIDENSKABELIGE FAKULTET}
 \kucoverbackground{assets/ku-cover-background-blue.png}
@@ -229,7 +229,7 @@ The method combines a problem-driven \emph{scoping search} (a broad mapping sear
 
 Flexible progression depends on separating the planned \emph{workout} (training session), the user's actual \emph{logging} (recorded training data), \emph{completion events} (records of completed sessions), feedback and the next relevant training action. TræningsMester implements that separation through tracker-on and tracker-off flows, \emph{cycle runtime} logic (the active training-cycle state), a Home screen focused on the next action, and shared data structures across iOS, watchOS and Live Activity surfaces. The \emph{backend architecture} places ordinary user access behind Supabase \emph{RLS} and reserves privileged logic for Edge Functions, which is safer than a client-only model.
 
-The contribution is a documented design and implementation model for handling realistic training deviations without treating them as errors. The limitation is the evidence level: beta feedback is qualitative and not representative, and the technical verification covers selected builds, tests and artefacts rather than full production readiness, security certification or long-term behavioural effect. Further work should start with systematic usability testing, a longer and broader beta period, stronger runtime documentation for watchOS and Live Activity, and more role-based security testing before an effect study would be meaningful.
+The developed model handles realistic training deviations without treating them as errors. The evidence level remains limited: beta feedback is qualitative and not representative, and the technical verification covers selected builds, tests and artefacts rather than full production readiness, security certification or long-term behavioural effect. Further work should start with systematic usability testing, a longer and broader beta period, stronger runtime documentation for watchOS and Live Activity, and more role-based security testing before an effect study would be meaningful.
 
 \newpage
 

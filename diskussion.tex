@@ -1,8 +1,8 @@
 \section{Diskussion}
 
-TræningsMester står stærkest som en plausibel \emph{design- og implementeringsmodel}, hvor planlagt træning, faktisk logging, completion, feedback og næste handling adskilles. Det er relevant, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Diskussionen vurderer derfor, hvad designet og implementeringen kan bære som fagligt belæg, og hvor næste undersøgelsestrin ligger.
+TræningsMester står stærkest som en plausibel \emph{design- og implementeringsmodel}, hvor planlagt træning, faktisk logging, completion, feedback og næste handling adskilles. Det er relevant, fordi realistisk træningsadfærd sjældent følger en perfekt lineær plan. Designet og implementeringen giver fagligt belæg for fleksibel progression, mens effekt, drift og sikkerhed kræver senere undersøgelsestrin.
 
-Fire spændinger afgør, hvor stærkt argumentet står. Fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Appens faglige værdi ligger i at gøre spændingerne håndterbare.
+Fire spændinger afgør evidensens styrke: fleksibilitet mod datakvalitet, lav friktion mod detaljeret logging, app-evidens mod manglende effektstudie og sikker arkitektur mod ufuldstændig verifikation. Appens faglige værdi ligger i at gøre spændingerne håndterbare.
 
 \subsection{Syntese på tværs af underspørgsmål}
 
@@ -10,7 +10,7 @@ De fire underspørgsmål kan besvares med forskellig styrke. Det stærkeste bel�
 
 Belægget for lav friktion er mere kvalitativt. Home-flow, tracker-off flow, watchOS og Live Activity viser et sammenhængende designprincip, hvor brugeren skal have status, feedback og næste handling uden at skulle registrere alt perfekt i øjeblikket. Beta-feedbacken understøtter relevansen, og systematisk usabilitytest er næste skridt for at vurdere brugeroplevelsen mere sikkert.
 
-Sikkerhedsargumentet er stærkt som arkitekturargument og mere begrænset som verifikationsargument. RLS, repositories og Edge Functions placerer adgangskontrol uden for klienten, mens rolle-, backend- og runtime-scenarier kræver mere test. Evidensgrundlaget er derfor tilstrækkeligt til at diskutere en fagligt begrundet design- og implementeringscase. Effekt, fuld produktionsmodenhed og komplet sikkerhed hører til senere dokumentation.
+Sikkerhedsmodellen er stærkest som arkitektur og mere begrænset som verifikation. RLS, repositories og Edge Functions placerer adgangskontrol uden for klienten, mens rolle-, backend- og runtime-scenarier kræver mere test. Evidensgrundlaget er derfor tilstrækkeligt til en fagligt begrundet design- og implementeringscase. Effekt, fuld produktionsmodenhed og komplet sikkerhed hører til senere dokumentation.
 
 Den samlede vurdering er, at appen giver en sammenhængende løsning på et afgrænset designproblem. Fleksibel progression kan understøttes, når brugerens faktiske træning afviger fra planen, uden at historik, feedback og adgangskontrol bryder sammen.
 
@@ -34,21 +34,21 @@ Det er en vigtig kildekritisk grænse. Reviews og meta-analyser giver tyngde til
 
 \emph{Sikkerhedsmodellen} er en styrke, fordi adgangskontrol placeres i RLS og Edge Functions frem for alene i klienten. Figur~\ref{fig:tm-security-boundary-summary} og Tabel~\ref{tab:tm-rls-matrix} viser denne arkitektur. OWASP MASVS, GDPR og Supabase RLS understøtter retningen \cite{owasp2024_masvs,europeanparliament2016_gdpr,supabase_rls_docs}.
 
-Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser dokumenterede build- og testspor samt åbne mangler i rolle-, backend- og runtime-scenarier. Konklusionen kan derfor strækkes til et fagligt plausibelt og delvist verificeret sikkerhedsdesign. Sikkerhedscertificering, penetrationstest og komplet produktionsmodenhed kræver yderligere arbejde.
+Begrænsningen ligger i verifikationen. Tabel~\ref{tab:tm-test-traceability} viser dokumenterede build- og testspor samt åbne mangler i rolle-, backend- og runtime-scenarier. Belægget rækker derfor til et fagligt plausibelt og delvist verificeret sikkerhedsdesign. Sikkerhedscertificering, penetrationstest og komplet produktionsmodenhed kræver yderligere arbejde.
 
-Sikkerhedsargumentet er derfor stærkest på designniveau. Det viser, hvor adgang bør håndhæves, og hvorfor privilegeret logik bør placeres server-side. Dækningsgraden er næste opgave. Rolle- og tværbrugerscenarier skal testes, før designet kan omsættes til en stærkere driftspåstand.
+Sikkerhedsmodellen er derfor stærkest på designniveau. Den placerer adgangshåndhævelse og privilegeret logik server-side. Dækningsgraden er næste testtrin. Rolle- og tværbrugerscenarier skal testes, før designet kan omsættes til en stærkere driftspåstand.
 
 \subsection{Perspektivering}
 
 Set bredere peger casen på en udfordring i digitale sundhedsteknologier. Systemer designes ofte omkring idealiserede brugerforløb, men værdien viser sig i ændringerne. En app, der kun fungerer, når brugeren følger planen og logger alt korrekt, risikerer at blive mest skrøbelig der, hvor støttebehovet er størst.
 
-TræningsMester viser, at robust digital støtte kræver, at adfærdsdesign og softwarearkitektur tænkes sammen. Den brugerrettede fleksibilitet skal have en teknisk modpart i datamodel, idempotens og adgangskontrol. Ellers bliver fleksibilitet enten til uklare data eller for brede rettigheder. Den pointe rækker ud over styrketræning og er relevant for digitale sundhedsløsninger, hvor brugernes hverdag sjældent passer til et lineært procesdiagram.
+TræningsMester gør robust digital støtte afhængig af samspillet mellem adfærdsdesign og softwarearkitektur. Den brugerrettede fleksibilitet skal have en teknisk modpart i datamodel, idempotens og adgangskontrol. Ellers bliver fleksibilitet enten til uklare data eller for brede rettigheder. Den pointe rækker ud over styrketræning og er relevant for digitale sundhedsløsninger, hvor brugernes hverdag sjældent passer til et lineært procesdiagram.
 
 Perspektivet er dog begrænset af casens størrelse og evidensniveau. Før modellen kan generaliseres, skal den afprøves med flere brugere, længere forløb og stærkere teknisk reproducerbarhed.
 
 \subsection{Brugerindsigt og videre arbejde}
 
-Beta-feedbacken styrker vurderingen, fordi den viser praktisk friktion omkring installation, søgning, katalogkvalitet, enheder, medier og watch. Tabel~\ref{tab:tm-beta-feedback} og Tabel~\ref{tab:tm-testflight-timeline} dokumenterer disse temaer. Grundtvig og Clotworthy understøtter, at kvalitative data kan give kontekstuel indsigt, men kræver tydelig afgrænsning \cite{grundtvig2025_analyse_data,clotworthy2025_etik_kvalitet_forskning}.
+Beta-feedbacken styrker vurderingen ved at dokumentere praktisk friktion omkring installation, søgning, katalogkvalitet, enheder, medier og watch. Tabel~\ref{tab:tm-beta-feedback} og Tabel~\ref{tab:tm-testflight-timeline} samler disse temaer. Grundtvig og Clotworthy understøtter, at kvalitative data kan give kontekstuel indsigt, men kræver tydelig afgrænsning \cite{grundtvig2025_analyse_data,clotworthy2025_etik_kvalitet_forskning}.
 
 Videre arbejde bør følge tre trin. Først bør Home, tracker, completion og søgning usabilitytestes systematisk. Dernæst bør betaen udvides over længere tid og med bredere deltagelse. Til sidst bør rollebaserede RLS-scenarier, Edge Functions, datakvalitet, watchOS og Live Activity runtime testes mere målrettet. Et egentligt effektstudie giver først mening efter denne modning.
 

@@ -10,7 +10,7 @@ Appen etablerer session, profil og dataadgang, før brugerbundne træningsdata v
 
 Programstrukturen giver den planlagte ramme. Programmer, workouts og øvelser beskriver, hvad brugeren forventes at gennemføre. Figur~\ref{fig:tm-data-model-er-left} viser denne del af datamodellen. Den planlagte struktur skal suppleres af en model for faktisk træning, fordi brugeren kan ændre øvelser, belastning eller logging undervejs.
 
-\emph{Repositories} gør datatilgangen mere kontrolleret. I stedet for at hver visning skriver direkte mod backend, samles læsning, skrivning og mapping i et lag, der kan testes og ændres. Det passer til sikkerhedsargumentet, fordi klienten stadig er en klient, mens adgangsregler og privilegerede handlinger ligger uden for visningslaget.
+\emph{Repositories} gør datatilgangen mere kontrolleret. I stedet for at hver visning skriver direkte mod backend, samles læsning, skrivning og mapping i et lag, der kan testes og ændres. Det passer til sikkerhedsmodellen, fordi klienten stadig er en klient, mens adgangsregler og privilegerede handlinger ligger uden for visningslaget.
 
 \subsection{Tracker, completion og cycle runtime}
 
@@ -28,6 +28,6 @@ Det er her implementeringen adskiller sig fra en simpel checklistelogik. Complet
 
 Edge Functions afgrænser flows, der kræver server-side logik. Det gælder blandt andet admin, import, AI, billing og træner-/klientrelationer. OWASP MASVS og Supabase API-sikring understøtter, at privilegerede nøgler og bredere databaseoperationer holdes server-side \cite{owasp2024_masvs,supabase_securing_api_docs}. Det centrale implementeringsbidrag er stadig sammenhængen mellem plan, tracker, completion, cyklusprogression og lav-friktionsflader.
 
-Implementeringen viser dermed en prioritering. Kerneflowet skal være robust, før støttefunktioner bliver afgørende. Admin, import og betaling kan udvides senere, når de understøtter den basale model for brugerens træning. Derfor er test og verifikation især rettet mod build, domænelogik, sikkerhedsgrænser og kendte gaps.
+Implementeringen prioriterer kerneflowet før støttefunktionerne. Admin, import og betaling kan udvides senere, når de understøtter den basale model for brugerens træning. Test og verifikation retter sig derfor især mod build, domænelogik, sikkerhedsgrænser og kendte gaps.
 
 \tmdelkonklusion{Implementeringens pointe}{Kerneideen er implementeret som events og fælles state. En completion kan få betydning for historik, cyklus og Home, mens en trackerlog kan give mere detaljeret feedback uden at være eneste vej gennem systemet.}

@@ -10,7 +10,7 @@ Bilagets use case-overblik viser de bruger- og systemforløb, som kravene bygger
 
 Kravsporbarheden kobler disse spor til implementeringen, jf. Tabel~\ref{tab:tm-krav-traceability}. F-08 og F-09 dækker tracker og completion. F-13 dækker cyklusprogression. F-15 dækker Live Activity-sporet. Kravene gør ændringer i træningen håndterbare, fordi brugeren kan træne med fuld trackerlog, afslutte uden fuld logging eller fortsætte efter en afbrudt session uden at miste hele programflowet.
 
-Kravene skelner mellem primære og støttende flows. Primære flows er dem, hvor brugeren planlægger, starter, logger, afslutter og fortsætter træning. Støttende flows er for eksempel import, admin, betaling og trænerfunktioner. De støttende flows kan være vigtige for en færdig app, men kerneflowet bærer argumentet om fleksibel progression.
+Kravene skelner mellem primære og støttende flows. Primære flows er dem, hvor brugeren planlægger, starter, logger, afslutter og fortsætter træning. Støttende flows er for eksempel import, admin, betaling og trænerfunktioner. De støttende flows kan være vigtige for en færdig app, men kerneflowet er afgørende for fleksibel progression.
 
 \subsection{Afvigelser som legitime flows}
 
@@ -26,7 +26,7 @@ Lav friktion betyder lavt betjeningsbesvær i selve træningssituationen. Bruger
 
 Den lette handling skal samtidig have en sikker dataadgang bag sig. OWASP MASVS og Supabase RLS-dokumentationen understøtter princippet om, at mobilklienten ikke bør være eneste adgangsgrænse \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}. Sikkerhedsdiagrammet viser derfor en model, hvor brugerfladen starter handlinger, mens RLS og Edge Functions håndhæver adgang, jf. Figur~\ref{fig:tm-security-boundary-summary}.
 
-Kravene peger dermed frem mod arkitekturen. Hvis appen skal være fleksibel uden at miste kontrol over data, skal brugerfladen, state-laget, repositories og backendregler arbejde sammen.
+Fleksibilitet uden tab af datakontrol kræver samspil mellem brugerflade, state-lag, repositories og backendregler.
 
 \subsection{Samlet kravvurdering}
 

@@ -3,9 +3,9 @@
 
 \sloppy
 
-Dette bilag samler udvalgte billeder, figurer og tabeller om TræningsMester pr. 28. april 2026. Bilaget omfatter 13 aktuelle iOS 26.4-screenshots, 7 arkitektur- og dataflowfigurer med supplerende ER-udsnit og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Ældre screenshots fra tidligere UI-versioner er ikke medtaget, fordi de ikke bør bruges som dokumentation for den aktuelle appversion.
+TræningsMester-materialet pr. 28. april 2026 består af 13 aktuelle iOS 26.4-screenshots, 7 arkitektur- og dataflowfigurer med supplerende ER-udsnit og et kondenseret udvalg af use cases, krav, SQL-/RLS-overblik, procesmodeller og anonymiseret beta-evidens. Ældre screenshots fra tidligere UI-versioner er ikke medtaget, fordi de ikke bør bruges som dokumentation for den aktuelle appversion.
 
-Figurerne og tabellerne er udvalgt, så argumentationen kun henviser til materiale, der er indsat i bilaget. De supplerende tabeller er kondenserede og anonymiserede; private rådata, rå kommunikation og personhenførbare detaljer er ikke kopieret ind i bilaget.
+Figurerne og tabellerne dokumenterer kun materiale, der er indsat i bilaget. De supplerende tabeller er kondenserede og anonymiserede; private rådata, rå kommunikation og personhenførbare detaljer er ikke kopieret ind i bilaget.
 
 \makeatletter
 \setlength{\@fptop}{0pt}
@@ -189,7 +189,7 @@ Figurerne og tabellerne er udvalgt, så argumentationen kun henviser til materia
 \midrule
 Aktuelle app-screenshots & Dokumenterer den aktuelle brugerflade & Figurerne \ref{fig:tm-ios-home-stale-session}--\ref{fig:tm-ios-home-current-qa} viser centrale flows i iOS 26.4-versionen af TræningsMester. \\
 Arkitektur- og dataflowdiagrammer & Dokumenterer systemets tekniske hovedstruktur & Figurerne \ref{fig:tm-system-context}--\ref{fig:tm-import-ai-edge-boundary} dækker systemkontekst, datamodel med forstørrede ER-udsnit, tracker/completion, RLS, watchOS, Live Activity og import/AI-grænser. \\
-Containerarkitektur & Samler arkitekturen i komponentlag & Tabel \ref{tab:tm-container-architecture} gør hovedlagene læsbare som tekstligt overblik. \\
+Containerarkitektur & Samler arkitekturen i komponentlag & Tabel \ref{tab:tm-container-architecture} samler hovedlagene som tekstligt overblik. \\
 Trackerproces og autorisationsregler & Forklarer træningsflow og sikkerhedsmodel & Tabel \ref{tab:tm-tracker-flow-bpmn} og \ref{tab:tm-authorization-dcr} viser de centrale proces- og adgangsregler. \\
 Use cases og kravsporbarhed & Kobler funktionalitet til implementering og test & Tabel \ref{tab:tm-use-cases} og \ref{tab:tm-krav-traceability} viser sammenhængen mellem brugerhandlinger, krav og implementeringsspor. \\
 SQL, RLS og sikkerhed & Dokumenterer data- og adgangsmodellen & Tabel \ref{tab:tm-sql-domain-overblik}, \ref{tab:tm-sql-fields} og \ref{tab:tm-rls-matrix} beskriver datadomæner, idempotency-felter og sikkerhedsgrænser. \\
@@ -426,7 +426,7 @@ AI/import & Edge Functions & Klienten kalder ikke OpenAI direkte. & Function run
 \tmthead{ID} & \tmthead{Tema} & \tmthead{Anonymiseret observation} & \tmthead{Designimplikation} \\
 \midrule
 B01 & Friktion & Lock screen/Live Activity blev bekræftet som fungerende i praktisk brug. & Prioriter hurtig status under træning uden fuld appåbning. \\
-B02 & Mediekvalitet & Dialogen pegede på ønske om rigtige øvelsesvideoer frem for generiske klip. & Øvelsesmedier skal være troværdige og kropsligt genkendelige. \\
+B02 & Mediekvalitet & Dialogen pegede på ønske om rigtige øvelsesvideoer frem for generiske klip. & Øvelsesmedier skal være realistiske og kropsligt genkendelige. \\
 B05 & Betaproces & Build 4-12 blev distribueret mellem 2026-03-31 og 2026-04-25. & Dokumenterer iterationstempo, men ikke brugerudbytte alene. \\
 B10 & Rekruttering & iOS-kravet udelukkede mindst én interesseret deltager. & Betaen bør beskrives som en bekvemmelighedsprøve med iOS-skævhed. \\
 B11 & Installationsfriktion & TestFlight-link, Apple review-status og manuel opdatering skabte forvirring. & Beta-onboarding skal vise build/version og fallback-instruktion tydeligt. \\
