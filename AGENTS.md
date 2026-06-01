@@ -46,6 +46,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - Arbejdstitel i LaTeX: `TræningsMester`.
 - Arbejdssubtitle i LaTeX: `Design og implementering af en digital træningsapp til fleksibel progression og motivation`.
 - Afleveringsdato: 4. juni 2026.
+- Omfang: ca. 24,74 normalsider.
 - Den officielle KU-forsides KU-header skal pege på Det Sundhedsvidenskabelige Fakultet, ikke den oprindelige matematik-template.
 
 ## Rapportens Autoritative Spor

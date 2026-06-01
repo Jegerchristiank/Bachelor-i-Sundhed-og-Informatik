@@ -98,6 +98,7 @@ Start med disse filer i rækkefølge:
 - romertal til metadata/indhold og arabisk sidenummerering fra hovedrapportens første afsnit,
 - udfyldt forfatter, projekttype, arbejdstitel, arbejdssubtitle og vejleder,
 - udfyldt dato: 4. juni 2026,
+- udfyldt omfang: ca. 24,74 normalsider,
 - udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
 - et engelsk abstract/resumé før indholdsfortegnelsen, der opsummerer problemstilling, metode, hovedresultater, begrænsninger og næste skridt,
