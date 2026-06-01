@@ -1,15 +1,15 @@
 \section{Konklusion}
 
-Svaret på problemformuleringen er, at \emph{fleksibel progression} kræver en tydelig adskillelse mellem planlagt træning, faktisk logging, completion, feedback og næste handling. En digital træningsapp bør ikke behandle afvigelser fra planen som en simpel fejltilstand. Den bør gøre dem håndterbare i datamodellen, i brugerfladen og i feedbacken, så brugeren kan fortsætte træningsforløbet uden at miste historik eller retning.
+Svaret på problemformuleringen er, at \emph{fleksibel progression} kræver en tydelig adskillelse mellem planlagt træning, faktisk logging, completion, feedback og næste handling. En digital træningsapp bør gøre afvigelser fra planen håndterbare i datamodellen, i brugerfladen og i feedbacken, så brugeren kan fortsætte træningsforløbet uden at miste historik eller retning.
 
-På de fire underspørgsmål er svaret samlet: datamodellen skal adskille plan og faktisk udførelse; brugerfladen skal gøre næste handling tydelig uden at kræve perfekt logging; sikkerhedsarkitekturen skal placere privilegeret adgang uden for klienten; og evidensen skal forstås som dokumentation for design- og implementeringsplausibilitet, ikke som dokumentation for effekt.
+På de fire underspørgsmål er svaret samlet. Datamodellen skal adskille plan og faktisk udførelse. Brugerfladen skal gøre næste handling tydelig uden at kræve perfekt logging. Sikkerhedsarkitekturen skal placere privilegeret adgang uden for klienten. Evidensen skal forstås som dokumentation for design- og implementeringsplausibilitet, mens effekt kræver et senere studie.
 
 Den centrale styrke i den udviklede app er koblingen mellem træningsfaglig struktur og lav-friktionsflows. Tracker-on/off, completion-events og cycle runtime gør det muligt at fastholde progression, også når brugeren ikke logger alle detaljer. Home, watchOS og Live Activity fungerer som støtteflader for næste handling i selve træningssituationen, mens Supabase RLS og Edge Functions placerer adgangskontrol og privilegeret logik uden for den mobile klient.
 
-Den faglige værdi er dermed en dokumenteret design- og implementeringsmodel for fleksibel digital træningsstøtte. Modellen samler motivation, progression, interaktionsdesign, datakvalitet og sikker dataadgang i én egenudviklet case. Den viser især, at fleksibel progression ikke kan løses af en enkelt algoritme eller skærm, men kræver sammenhæng mellem programstruktur, brugerhandlinger, feedback, data og adgangsregler.
+Den faglige værdi er dermed en dokumenteret design- og implementeringsmodel for fleksibel digital træningsstøtte. Modellen samler motivation, progression, interaktionsdesign, datakvalitet og sikker dataadgang i én egenudviklet case. Fleksibel progression kræver sammenhæng mellem programstruktur, brugerhandlinger, feedback, data og adgangsregler.
 
-Evidensen er samtidig afgrænset. Der er ikke dokumenteret forbedret motivation, adherence, fysisk aktivitet eller sundhedseffekt. Beta-feedbacken er kvalitativ og ikke repræsentativ, og den tekniske verifikation viser udvalgte builds, tests og artefakter, ikke certificering eller fuld produktionsmodenhed. Konklusionen rækker derfor til design- og implementeringsplausibilitet, men ikke længere.
+Evidensen er samtidig afgrænset til design og implementering. Beta-feedbacken er kvalitativ og ikke repræsentativ, og den tekniske verifikation viser udvalgte builds, tests og artefakter. Forbedret motivation, adherence, fysisk aktivitet, certificering og fuld produktionsmodenhed kræver næste undersøgelsestrin.
 
-Den vigtigste lære er enkel: fleksibilitet skal bygges ind i både træningslogikken og dataansvaret. Ellers bliver appen enten let at bruge, men uklar, eller præcis, men for tung i praksis.
+Den vigtigste lære er enkel. Fleksibilitet skal bygges ind i både træningslogikken og dataansvaret. Ellers bliver appen enten let at bruge, men uklar, eller præcis, men for tung i praksis.
 
 Næste skridt er systematisk usabilitytest, en længere og bredere beta, bedre runtime-dokumentation for watchOS og Live Activity samt flere sikkerheds- og datakvalitetstests. Først når disse trin er gennemført, giver et egentligt effektstudie mening.

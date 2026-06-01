@@ -2,7 +2,7 @@
 \addcontentsline{toc}{section}{Begrebs- og forkortelsesoversigt}
 \section*{Begrebs- og forkortelsesoversigt}
 
-Oversigten samler de fagtermer og forkortelser, der er lettest at miste overblikket over undervejs. Forklaringerne er korte, så de kan bruges som opslag, mens hovedkapitlerne viser, hvordan begreberne bliver brugt i analysen.
+Oversigten samler de fagtermer og forkortelser, der er lettest at miste overblikket over undervejs. Forklaringerne er korte, så de kan bruges som opslag, mens hovedkapitlerne viser, hvordan begreberne bliver brugt i analysen. Centrale eksterne begreber har kildehenvisninger direkte i oversigten.
 
 \begingroup
 \small
@@ -17,11 +17,12 @@ Oversigten samler de fagtermer og forkortelser, der er lettest at miste overblik
 \tmthead{Begreb eller forkortelse} & \tmthead{Forklaring} \\
 \midrule
 \end{tabularx}\par\addvspace{0.45em}
-\tmglossaryentry{\emph{Adherence}}{Vedvarende efterlevelse af et træningsforløb. Her handler det om, hvorvidt brugeren fortsætter træning og appbrug over tid, ikke om dokumenteret sundhedseffekt.}
-\tmglossaryentry{\emph{Adfærdsdesign}}{Designvalg, der skal gøre en bestemt handling lettere eller mere sandsynlig, for eksempel selvmonitorering, feedback og en tydelig næste handling.}
-\tmglossaryentry{\emph{Adgangskontrol}}{Regler for hvem der må læse, ændre eller oprette data. I TræningsMester skal adgang håndhæves i backend og ikke kun i brugerfladen.}
+\tmglossaryentry{\emph{Adherence}}{Vedvarende efterlevelse af et træningsforløb. Her handler det om, hvorvidt brugeren fortsætter træning og appbrug over tid, mens effekt på fysisk aktivitet kræver særskilt undersøgelse \cite{teixeira2012_sdt_exercise,eysenbach2005_law_of_attrition,yardley2016_effective_engagement_dbci}.}
+\tmglossaryentry{\emph{Adfærdsdesign}}{Designvalg, der skal gøre en bestemt handling lettere eller mere sandsynlig, for eksempel selvmonitorering, feedback og en tydelig næste handling \cite{michie2011_behaviour_change_wheel,michie2013_bct_taxonomy_v1,oinaskukkonen2009_persuasive_systems_design}.}
+\tmglossaryentry{\emph{Adgangskontrol}}{Regler for hvem der må læse, ændre eller oprette data. I TræningsMester skal adgang håndhæves i backend og brugerflade i fællesskab \cite{supabase_rls_docs,supabase_securing_api_docs,owasp2024_masvs}.}
 \tmglossaryentry{\emph{AI}}{Kunstig intelligens. I TræningsMester er AI kun relevant som server-side støtte til import eller analyse og ikke som klinisk beslutningsstøtte.}
-\tmglossaryentry{\emph{Apple HIG}}{Apple Human Interface Guidelines; Apples designvejledning for platforme og komponenter, blandt andet Live Activities.}
+\tmglossaryentry{\emph{ACSM}}{American College of Sports Medicine. ACSM bruges som træningsfaglig reference for styrketræningsprogression og anbefalinger om resistance training \cite{acsm2009_progression_models,currier2026_acsm_resistance_training}.}
+\tmglossaryentry{\emph{Apple HIG}}{Apple Human Interface Guidelines, Apples designvejledning for platforme og komponenter, blandt andet Live Activities \cite{apple_hig_live_activities}.}
 \tmglossaryentry{\emph{AppState}}{Appens fælles tilstandslag, som samler session, profil og træningsstatus, så skærme ikke hver især bliver datamæssig autoritet.}
 \tmglossaryentry{\emph{API}}{Application Programming Interface; en teknisk grænseflade, hvor et system kan hente eller sende data til et andet system.}
 \tmglossaryentry{\emph{API-sikring}}{De regler og kontroller, der begrænser hvordan en app må bruge en API, for eksempel gennem sessioner, rettigheder og server-side validering.}
@@ -30,63 +31,63 @@ Oversigten samler de fagtermer og forkortelser, der er lettest at miste overblik
 \tmglossaryentry{\emph{Autonom motivation}}{Motivation hvor brugeren oplever mening, ejerskab og frivillighed i handlingen frem for kun ydre pres eller tvang.}
 \tmglossaryentry{\emph{Backend}}{Den server- og databaseside af systemet, der håndterer data, adgangsregler og serverlogik.}
 \tmglossaryentry{\emph{Beta-feedback}}{Tidlige, anonymiserede tilbagemeldinger fra testbrugere. Feedbacken bruges som kvalitativ designindsigt, ikke som statistisk effektmåling.}
-\tmglossaryentry{\emph{BCT}}{Behaviour Change Technique; en navngivet adfærdsændringsteknik som eksempelvis selvmonitorering, feedback eller mål.}
-\tmglossaryentry{\emph{BPMN}}{Business Process Model and Notation; en grafisk måde at beskrive procesforløb på. Begrebet bruges som procesfaglig baggrund.}
+\tmglossaryentry{\emph{BCT}}{Behaviour Change Technique, en navngivet adfærdsændringsteknik som eksempelvis selvmonitorering, feedback eller mål \cite{michie2013_bct_taxonomy_v1}.}
+\tmglossaryentry{\emph{BPMN}}{Business Process Model and Notation, en grafisk måde at beskrive procesforløb på. Begrebet bruges som procesfaglig baggrund \cite{ku2026_dcr_bpmn_modeling}.}
 \tmglossaryentry{\emph{Build}}{En kompileret version af appen eller en teknisk kontrol af, at kildekoden kan bygges til en kørende app.}
 \tmglossaryentry{\emph{Buildstatus}}{Resultatet af en buildkontrol: om appens targets kan kompileres i den gennemgåede tilstand.}
 \tmglossaryentry{\emph{Caseform}}{En undersøgelsesform hvor en konkret case bruges til at analysere et problem. Her er casen den udviklede app.}
 \tmglossaryentry{\emph{CI}}{Continuous Integration; en automatisk proces, der bygger og tester kode efter ændringer. Rapporten afgrænser sig fra at dokumentere fuld uafhængig CI.}
 \tmglossaryentry{\emph{Compliance}}{Efterlevelse af regler eller standarder. Her dækker begrebet juridiske og sikkerhedsmæssige krav, ikke dokumenteret certificering.}
-\tmglossaryentry{\emph{COM-B}}{En model hvor adfærd forstås som resultat af capability, opportunity og motivation. Den bruges til at forstå, hvorfor støtte, friktion og feedback betyder noget.}
+\tmglossaryentry{\emph{COM-B}}{En model hvor adfærd forstås som resultat af capability, opportunity og motivation. Den bruges til at forstå, hvorfor støtte, friktion og feedback betyder noget \cite{michie2011_behaviour_change_wheel}.}
 \tmglossaryentry{\emph{Completion-event}}{En registrering af, at et træningspas er gennemført. Det kan bevare historik og næste handling, selv når brugeren ikke logger alle sæt detaljeret.}
 \tmglossaryentry{\emph{Cycle runtime}}{Den kørende tilstand i en træningscyklus, som afgør næste relevante workout efter faktisk gennemførelse.}
 \tmglossaryentry{\emph{Datagranularitet}}{Hvor detaljerede data er. En sætlog har højere datagranularitet end en completion-registrering.}
-\tmglossaryentry{\emph{Datakvalitet}}{Om data er gode nok til deres formål. Præcis analyse kræver detaljer, mens kontinuitet i træningen nogle gange kræver lettere registrering.}
+\tmglossaryentry{\emph{Datakvalitet}}{Om data er gode nok til deres formål. Præcis analyse kræver detaljer, mens kontinuitet i træningen nogle gange kræver lettere registrering \cite{mohammed2025_five_facets_data_quality}.}
 \tmglossaryentry{\emph{Datamodel}}{Den struktur, der bestemmer hvordan plan, workout, trackerlog, completion og brugeradgang hænger sammen i databasen.}
-\tmglossaryentry{\emph{DCR}}{Dynamic Condition Response; en deklarativ procesmodel, hvor regler beskriver, hvad der skal, må eller kan ske i et forløb.}
-\tmglossaryentry{\emph{Edge Function}}{En server-side funktion i Supabase, der kan udføre privilegeret logik uden at lægge hemmelige nøgler i mobilklienten.}
-\tmglossaryentry{\emph{Effektivt engagement}}{Digital brug der faktisk støtter den ønskede adfærd. Det adskiller sig fra blot mange klik eller lang skærmtid.}
+\tmglossaryentry{\emph{DCR}}{Dynamic Condition Response, en deklarativ procesmodel, hvor regler beskriver, hvad der skal, må eller kan ske i et forløb \cite{vanderalst2009_declarative_workflows,ku2026_dcr_bpmn_modeling}.}
+\tmglossaryentry{\emph{Edge Function}}{En server-side funktion i Supabase, der kan udføre privilegeret logik uden at lægge hemmelige nøgler i mobilklienten \cite{supabase_securing_api_docs}.}
+\tmglossaryentry{\emph{Effektivt engagement}}{Digital brug der faktisk støtter den ønskede adfærd. Det adskiller sig fra blot mange klik eller lang skærmtid \cite{yardley2016_effective_engagement_dbci}.}
 \tmglossaryentry{\emph{Effektstudie}}{En undersøgelse, der måler om en intervention ændrer et bestemt outcome, for eksempel fysisk aktivitet eller frafald. Denne bachelor måler ikke effekt på den måde.}
 \tmglossaryentry{\emph{eHealth}}{Digitale sundhedsløsninger bredt forstået, for eksempel apps, webinterventioner og digitale støtteværktøjer.}
 \tmglossaryentry{\emph{Feedback}}{Tilbagemelding til brugeren eller systemet. Her bruges feedback især om status, næste handling og information efter træning.}
-\tmglossaryentry{\emph{FHIR}}{Fast Healthcare Interoperability Resources; en standard til udveksling af sundhedsdata. FHIR er en afgrænsning her, ikke implementeret funktionalitet.}
+\tmglossaryentry{\emph{FHIR}}{Fast Healthcare Interoperability Resources, en standard til udveksling af sundhedsdata. FHIR bruges her til at afgrænse klinisk interoperabilitet fra appens fitnessnære integrationer \cite{benson2016_principles_health_interoperability,zajac2026_data_quality_interoperability}.}
 \tmglossaryentry{\emph{Fleksibel progression}}{Progression der kan fortsætte, selv når brugeren ændrer, afbryder eller gennemfører træning uden fuld detaljelog.}
 \tmglossaryentry{\emph{Flow}}{Et sammenhængende bruger- eller systemforløb, for eksempel fra start af workout til completion og næste handling.}
-\tmglossaryentry{\emph{Friktion}}{Besvær, ventetid eller ekstra beslutninger, der gør det sværere for brugeren at gennemføre en handling.}
-\tmglossaryentry{\emph{GDPR}}{EU's databeskyttelsesforordning. Den bruges som juridisk ramme for persondata, adgang og formål med databehandling.}
-\tmglossaryentry{\emph{HealthKit}}{Apples platform til brugerautoriseret sundheds- og fitnessdata på iOS. Her adskilles det fra klinisk journalintegration.}
-\tmglossaryentry{\emph{HL7}}{Health Level Seven; en familie af standarder for sundhedsdataudveksling. Bruges her som afgrænsende interoperabilitetsbegreb.}
+\tmglossaryentry{\emph{Friktion}}{Besvær, ventetid eller ekstra beslutninger, der gør det sværere for brugeren at gennemføre en handling. I rapporten bruges lav friktion om lavt betjeningsbesvær i træningssituationen \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_evaluering}.}
+\tmglossaryentry{\emph{GDPR}}{EU's databeskyttelsesforordning. Den bruges som juridisk ramme for persondata, adgang og formål med databehandling \cite{europeanparliament2016_gdpr}.}
+\tmglossaryentry{\emph{HealthKit}}{Apples platform til brugerautoriseret sundheds- og fitnessdata på iOS. Her adskilles det fra klinisk journalintegration \cite{apple_healthkit_docs}.}
+\tmglossaryentry{\emph{HL7}}{Health Level Seven, en familie af standarder for sundhedsdataudveksling. Bruges her som afgrænsende interoperabilitetsbegreb \cite{benson2016_principles_health_interoperability}.}
 \tmglossaryentry{\emph{Home-skærm}}{Appens startflade, hvor brugeren skal kunne se status og næste relevante træningshandling uden at rekonstruere hele programmet.}
 \tmglossaryentry{\emph{Idempotens}}{En egenskab hvor samme handling kan gentages uden at skabe dobbelte eller inkonsistente data, for eksempel ved gentagne tracker-writes.}
-\tmglossaryentry{\emph{Interaktionsdesign}}{Design af brugerens konkrete møde med systemet: skærme, flows, feedback og beslutningsarbejde.}
-\tmglossaryentry{\emph{Interoperabilitet}}{Systemers evne til at udveksle og forstå data. Her afgrænses det primært til fitnessnær synkronisering og ikke klinisk dataudveksling.}
+\tmglossaryentry{\emph{Interaktionsdesign}}{Design af brugerens konkrete møde med systemet, herunder skærme, flows, feedback og beslutningsarbejde \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering}.}
+\tmglossaryentry{\emph{Interoperabilitet}}{Systemers evne til at udveksle og forstå data. Her afgrænses det primært til fitnessnær synkronisering og ikke klinisk dataudveksling \cite{benson2016_principles_health_interoperability,zajac2026_data_quality_interoperability}.}
 \tmglossaryentry{\emph{Integrationstest}}{En test af om flere dele af systemet virker sammen, for eksempel app, backend, roller og adgangsregler.}
 \tmglossaryentry{\emph{iOS}}{Apples styresystem til iPhone. TræningsMester analyseres som en native iOS-app.}
 \tmglossaryentry{\emph{iOS-skævhed}}{En skævhed hvor materialet primært dækker iOS-brugere, fordi testen krævede Apples testmiljø.}
-\tmglossaryentry{\emph{JITAI}}{Just-in-Time Adaptive Intervention; støtte der tilpasses brugerens situation og timing. Begrebet bruges som baggrund for kontekstfølsom feedback.}
+\tmglossaryentry{\emph{JITAI}}{Just-in-Time Adaptive Intervention, støtte der tilpasses brugerens situation og timing. Begrebet bruges som baggrund for kontekstfølsom feedback \cite{nahumshani2018_jitai_mobile_health}.}
 \tmglossaryentry{\emph{Klient}}{Den del af systemet, som kører hos brugeren, for eksempel iPhone-appen. Klienten må ikke være eneste sikkerhedsgrænse.}
 \tmglossaryentry{\emph{Law of attrition}}{Eysenbachs begreb for frafald i digitale sundhedsinterventioner, hvor mange brugere stopper før interventionen kan få virkning.}
-\tmglossaryentry{\emph{Live Activity}}{En Apple-funktion, der viser tidsfølsom status på låseskærm eller Dynamic Island. I appen bruges den som støtteflade under træning.}
-\tmglossaryentry{\emph{MARS}}{Mobile App Rating Scale; et vurderingsværktøj for appkvalitet, herunder funktionalitet, engagement, æstetik og information.}
-\tmglossaryentry{\emph{Meta-analyse}}{En statistisk sammenfatning af resultater fra flere studier. Begrebet beskriver kildetyper, ikke et effektbevis for TræningsMester.}
-\tmglossaryentry{\emph{mHealth}}{Mobile health; sundhedsrelaterede indsatser via mobiltelefoner, apps eller wearables.}
-\tmglossaryentry{\emph{OWASP MASVS}}{Mobile Application Security Verification Standard fra OWASP. Den bruges som sikkerhedsfaglig ramme for mobilappens grænser.}
-\tmglossaryentry{\emph{PRISMA-S}}{En rapporteringsstandard for søgestrategier i systematiske litteratursøgninger. Bruges som pejlemærke for gennemsigtig kildesøgning.}
-\tmglossaryentry{\emph{PRESS}}{Peer Review of Electronic Search Strategies; en guideline til kvalitetssikring af elektroniske søgestrategier.}
-\tmglossaryentry{\emph{Progression}}{Udvikling i træningen over tid, for eksempel gennem belastning, volumen, øvelsesvalg, frekvens eller næste planlagte handling.}
+\tmglossaryentry{\emph{Live Activity}}{En Apple-funktion, der viser tidsfølsom status på låseskærm eller Dynamic Island. I appen bruges den som støtteflade under træning \cite{apple_activitykit_live_data_docs,apple_hig_live_activities}.}
+\tmglossaryentry{\emph{MARS}}{Mobile App Rating Scale, et vurderingsværktøj for appkvalitet, herunder funktionalitet, engagement, æstetik og information \cite{stoyanov2015_mobile_app_rating_scale}.}
+\tmglossaryentry{\emph{Meta-analyse}}{En statistisk sammenfatning af resultater fra flere studier. Begrebet beskriver kildetyper og bruges til at vurdere app- og tracker-evidens \cite{laranjo2021_apps_trackers_meta,romeo2019_smartphone_apps_pa_meta}.}
+\tmglossaryentry{\emph{mHealth}}{Mobile health, sundhedsrelaterede indsatser via mobiltelefoner, apps eller wearables \cite{nahumshani2018_jitai_mobile_health,brickwood2019_wearable_trackers_meta}.}
+\tmglossaryentry{\emph{OWASP MASVS}}{Mobile Application Security Verification Standard fra OWASP. Den bruges som sikkerhedsfaglig ramme for mobilappens grænser \cite{owasp2024_masvs}.}
+\tmglossaryentry{\emph{PRISMA-S}}{En rapporteringsstandard for søgestrategier i systematiske litteratursøgninger. Bruges som pejlemærke for gennemsigtig kildesøgning \cite{rethlefsen2021_prisma_s}.}
+\tmglossaryentry{\emph{PRESS}}{Peer Review of Electronic Search Strategies, en guideline til kvalitetssikring af elektroniske søgestrategier \cite{mcgowan2016_press_guideline_statement}.}
+\tmglossaryentry{\emph{Progression}}{Udvikling i træningen over tid, for eksempel gennem belastning, volumen, øvelsesvalg, frekvens eller næste planlagte handling \cite{acsm2009_progression_models,currier2026_acsm_resistance_training}.}
 \tmglossaryentry{\emph{Repository}}{Et kode- eller arkitekturlag, der samler læsning og skrivning af data, så brugerfladen ikke taler direkte med databasen.}
 \tmglossaryentry{\emph{Reps}}{Gentagelser i et sæt. Begrebet bruges sammen med vægt og sæt til at beskrive faktisk registreret styrketræning.}
 \tmglossaryentry{\emph{Resistance training}}{Styrketræning med modstand, for eksempel vægte, maskiner eller kropsvægt. Begrebet bruges i kildernes engelske træningsfaglige terminologi.}
-\tmglossaryentry{\emph{RLS}}{Row Level Security; databasepolitikker, der begrænser, hvilke rækker en bruger må læse eller skrive.}
-\tmglossaryentry{\emph{RPC}}{Remote Procedure Call; et kald til en database- eller serverfunktion, der udfører logik og returnerer et resultat.}
+\tmglossaryentry{\emph{RLS}}{Row Level Security, databasepolitikker, der begrænser, hvilke rækker en bruger må læse eller skrive \cite{supabase_rls_docs}.}
+\tmglossaryentry{\emph{RPC}}{Remote Procedure Call, et kald til en database- eller serverfunktion, der udfører logik og returnerer et resultat.}
 \tmglossaryentry{\emph{Runtime}}{Den faktiske kørselstilstand, når appen er i brug, modsat kun at kunne bygges eller kompileres.}
 \tmglossaryentry{\emph{Scoping-søgning}}{En bred, problemstyret litteratursøgning, der kortlægger relevante kildespor uden at være en fuld systematisk reviewproces.}
-\tmglossaryentry{\emph{Self-Determination Theory}}{Motivationsteori, der blandt andet forklarer betydningen af autonomi, kompetence og støtte for vedvarende adfærd.}
+\tmglossaryentry{\emph{Self-Determination Theory}}{Motivationsteori, der blandt andet forklarer betydningen af autonomi, kompetence og støtte for vedvarende adfærd \cite{teixeira2012_sdt_exercise}.}
 \tmglossaryentry{\emph{Server-side}}{Logik der kører på serveren frem for i mobilappen. Det bruges til privilegerede handlinger og hemmelige nøgler.}
 \tmglossaryentry{\emph{SQL}}{Structured Query Language; sprog til at definere, hente og ændre data i relationelle databaser.}
 \tmglossaryentry{\emph{State}}{Systemets aktuelle tilstand, for eksempel aktiv session, valgt profil, trackerstatus eller næste workout.}
-\tmglossaryentry{\emph{Supabase}}{Backendplatform med Postgres-database, autentifikation, storage, RLS og Edge Functions.}
-\tmglossaryentry{\emph{SwiftUI}}{Apples deklarative brugerfladeframework til blandt andet iOS og watchOS.}
+\tmglossaryentry{\emph{Supabase}}{Backendplatform med Postgres-database, autentifikation, storage, RLS og Edge Functions \cite{supabase_rls_docs,supabase_securing_api_docs}.}
+\tmglossaryentry{\emph{SwiftUI}}{Apples deklarative brugerfladeframework til blandt andet iOS og watchOS \cite{apple_swiftui_docs}.}
 \tmglossaryentry{\emph{Systemarkitektur}}{Systemets overordnede opbygning og arbejdsdeling mellem brugerflade, datalag, backend og eksterne services.}
 \tmglossaryentry{\emph{TestFlight}}{Apples platform til betadistribution af apps. Den viser her betaens distribution og iterationer.}
 \tmglossaryentry{\emph{Tracker}}{Appens flow til at registrere sæt, gentagelser, vægt og træningsstatus under en workout.}
@@ -96,7 +97,7 @@ Oversigten samler de fagtermer og forkortelser, der er lettest at miste overblik
 \tmglossaryentry{\emph{Unit test}}{En afgrænset teknisk test af en lille del af systemets logik, for eksempel en funktion eller et domæneobjekt.}
 \tmglossaryentry{\emph{Use case}}{En beskrivelse af et bruger- eller systemforløb, som appen skal understøtte.}
 \tmglossaryentry{\emph{Usabilitytest}}{En systematisk test af om brugere kan forstå og udføre centrale opgaver i et system.}
-\tmglossaryentry{\emph{Watch Connectivity}}{Apples framework til dataudveksling mellem iPhone og Apple Watch.}
+\tmglossaryentry{\emph{Watch Connectivity}}{Apples framework til dataudveksling mellem iPhone og Apple Watch \cite{apple_watchconnectivity_docs}.}
 \tmglossaryentry{\emph{watchOS}}{Apples styresystem til Apple Watch. Her fungerer watchOS som støtteflade til træning, ikke som separat hovedsystem.}
 \tmglossaryentry{\emph{Wearable}}{En bærbar digital enhed, for eksempel et smartwatch eller en aktivitetsmåler.}
 \tmglossaryentry{\emph{Workout}}{Et planlagt eller udført træningspas med øvelser, sæt og eventuel logging.}

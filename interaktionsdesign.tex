@@ -1,14 +1,14 @@
 \section{Interaktionsdesign}
 
-\emph{Interaktionsdesignet} vurderes ud fra brugerens træningssituation. Brugeren skifter øvelser, holder pauser, justerer belastning og har begrænset opmærksomhed til appen. Hornbæks kursusmateriale om brugerundersøgelser, prototyper og evaluering understøtter derfor, at designvalg skal vurderes i brugskonteksten, ikke kun som skærmlayout \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering}.
+\emph{Interaktionsdesignet} vurderes ud fra brugerens træningssituation. Brugeren skifter øvelser, holder pauser, justerer belastning og har begrænset opmærksomhed til appen. Hornbæks kursusmateriale om brugerundersøgelser, prototyper og evaluering understøtter derfor, at designvalg skal vurderes i brugskonteksten frem for kun som skærmlayout \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering}.
 
-Designet skal derfor reducere beslutningsarbejde. Brugeren bør ikke skulle regne ud, om en session er aktiv, om næste workout er klar, eller om en afbrudt tracker kan fortsættes. De vigtigste skærme skal svare på få spørgsmål: Hvad skal jeg gøre nu? Hvad er allerede registreret? Hvad sker der, hvis jeg ikke logger alt?
+Designet skal derfor reducere beslutningsarbejde. Brugeren bør ikke skulle regne ud, om en session er aktiv, om næste workout er klar, eller om en afbrudt tracker kan fortsættes. De vigtigste skærme skal vise, hvad brugeren skal gøre nu, hvad der allerede er registreret, og hvad der sker, hvis alt ikke logges.
 
 Det gør tonen i brugerfladen vigtig. Feedbacken skal hverken skælde ud over manglende logging eller lade som om alle data er lige præcise. Den skal hjælpe brugeren videre og samtidig vise, når et valg giver mindre detaljeret historik.
 
 \subsection{Home og næste handling}
 
-\emph{Home-skærmen} er appens primære næste-handling-flade. Figur~\ref{fig:tm-ios-home-ready} viser en tilstand, hvor brugeren kan se aktuel træningshandling uden først at rekonstruere hele programmet. Figur~\ref{fig:tm-ios-home-stale-session} viser en afbrudt session, hvor brugeren kan fortsætte eller rydde flowet. Det gør afvigelser synlige som valg frem for skjulte fejl.
+\emph{Home-skærmen} er appens primære næste-handling-flade. Figur~\ref{fig:tm-ios-home-ready} viser en tilstand, hvor brugeren kan se aktuel træningshandling uden først at rekonstruere hele programmet. Figur~\ref{fig:tm-ios-home-stale-session} viser en afbrudt session, hvor brugeren kan fortsætte eller rydde flowet. Det gør ændringer i forløbet synlige som valg frem for skjulte fejl.
 
 Completion-flowet er samme princip. Efter et gennemført pas skal brugeren kunne se feedback og næste handling uden at appen kræver fuld sæt-for-sæt-registrering. Home bliver dermed et bindeled mellem plan, faktisk træning og fortsættelse.
 
@@ -16,24 +16,24 @@ Det er også her motivationsteorien bliver konkret. Hvis feedbacken kun belønne
 
 \subsection{Tracker, completion og feedback}
 
-\emph{Trackerflowet} er den mest krævende interaktion. Figur~\ref{fig:tm-ios-tracker-active} viser aktiv logging af planlagte sæt, mens Figur~\ref{fig:tm-tracker-completion-summary} viser, at completion også kan registreres uden fuld trackerlog. Stoyanovs MARS-ramme gør funktionalitet, engagement og informationskvalitet relevante for vurderingen af dette flow \cite{stoyanov2015_mobile_app_rating_scale}.
+\emph{Trackerflowet} er den mest krævende interaktion. Figur~\ref{fig:tm-ios-tracker-active} viser aktiv logging af planlagte sæt, mens Figur~\ref{fig:tm-tracker-completion-summary} viser, at completion også kan registreres uden fuld trackerlog. MARS-rammen gør funktionalitet, engagement og informationskvalitet relevante for vurderingen af dette flow \cite{stoyanov2015_mobile_app_rating_scale}.
 
-\emph{Designbalancen} er klar: detaljeret logging giver bedre data, men kan skabe friktion; completion giver lavere datagranularitet, men bevarer historik og næste handling. Et godt flow skal derfor gøre tracker-on og tracker-off forståelige uden at synliggøre unødig systemkompleksitet. Brugeren skal mærke forskellen som et valg, ikke som en teknisk undskyldning.
+\emph{Designbalancen} er klar. Detaljeret logging giver bedre data, men kan skabe friktion. Completion giver lavere datagranularitet, men bevarer historik og næste handling. Et godt flow skal derfor gøre tracker-on og tracker-off forståelige uden at synliggøre unødig systemkompleksitet. Brugeren skal mærke forskellen som et valg.
 
-Trackerdesignet skal desuden undgå, at appen bliver et regneark under træningen. Sæt, reps og belastning skal kunne ændres hurtigt, men ændringerne skal stadig give mening i historikken. Den praktiske kvalitet ligger i at gøre den rigtige handling let, ikke i at vise alle mulige datatilstande.
+Trackerdesignet skal desuden undgå, at appen bliver et regneark under træningen. Sæt, reps og belastning skal kunne ændres hurtigt, men ændringerne skal stadig give mening i historikken. Den praktiske kvalitet ligger i at gøre den rigtige handling let frem for at vise alle mulige datatilstande.
 
 \subsection{Katalog, støtteflader og brugerindsigt}
 
 Øvelseskatalog, match-flow og historik er støtteflader for forståelse og feedback. Figur~\ref{fig:tm-ios-oevelser} og Figur~\ref{fig:tm-ios-match-card} viser, hvordan søgning og valg af øvelser påvirker brugerens mulighed for at fortsætte træning. Hvis øvelser ikke kan findes, eller enheder virker uklare, bliver kataloget en friktionskilde.
 
-watchOS og Live Activity kan reducere behovet for at åbne telefonen under træning, men de skal fastholde samme session, completion og progression som hovedappen. Apple HIG understreger, at Live Activities skal vise relevant, tidsfølsom status \cite{apple_hig_live_activities}. Beta-feedbacken bruges senere til at vurdere, om disse flader faktisk adresserer praktisk friktion.
+watchOS og Live Activity kan reducere behovet for at åbne telefonen under træning, og de skal fastholde samme session, completion og progression som hovedappen. Apple HIG understreger, at Live Activities skal vise relevant, tidsfølsom status \cite{apple_hig_live_activities}. Beta-feedbacken bruges senere til at vurdere, om disse flader adresserer praktisk friktion.
 
-Interaktionsdesignet bliver dermed en prioritering af opmærksomhed. Home skal skabe overblik, tracker skal støtte handling i nuet, kataloget skal reducere søgefriktion, og støttefladerne skal give status uden at splitte datagrundlaget. Det er den samlede brugerrejse, der afgør, om appen faktisk understøtter fleksibel progression.
+Interaktionsdesignet bliver dermed en prioritering af opmærksomhed. Home skal skabe overblik, tracker skal støtte handling i nuet, kataloget skal reducere søgefriktion, og støttefladerne skal give status uden at splitte datagrundlaget. Den samlede brugerrejse afgør, om appen faktisk understøtter fleksibel progression.
 
 \subsection{Designvurdering}
 
-Designets styrke er, at de centrale flader forsøger at svare på brugerens næste handling i stedet for at præsentere hele systemet. Det er fagligt relevant, fordi træning foregår i en kontekst med begrænset opmærksomhed, skiftende dagsform og praktiske afbrydelser. Home, tracker og completion fungerer derfor bedst, når de reducerer tvivl uden at skjule, om datagrundlaget er detaljeret eller kun markeret som gennemført.
+Designets styrke er, at de centrale flader forsøger at svare på brugerens næste handling i stedet for at præsentere hele systemet. Det er fagligt relevant, fordi træning foregår i en kontekst med begrænset opmærksomhed, skiftende dagsform og praktiske afbrydelser. Home, tracker og completion fungerer derfor bedst, når de reducerer tvivl og samtidig viser, om datagrundlaget er detaljeret eller markeret som gennemført.
 
-Designets svaghed er, at vurderingen stadig primært bygger på artefakter og begrænset feedback. Skærmbilleder kan vise, at flowet er tænkt og implementeret, men de kan ikke alene dokumentere, at brugeren forstår det i praksis. Derfor bør designet ses som et velbegrundet forslag, der kræver systematisk usabilitytest, især for tracker-off, katalogsøgning, watchOS og Live Activity.
+Designets svaghed er, at vurderingen stadig primært bygger på artefakter og begrænset feedback. Skærmbilleder kan vise, at flowet er tænkt og implementeret. Brugerens forståelse i praksis kræver systematisk usabilitytest, især for tracker-off, katalogsøgning, watchOS og Live Activity.
 
-\tmdelkonklusion{Designets valg}{Det stærke designvalg er at give brugeren en næste handling i stedet for en forklaring på hele systemet. Det svage punkt er stadig forståeligheden i praksis: tracker-off og støtteflader skal testes med rigtige opgaver, før brugeroplevelsen kan vurderes sikkert.}
+\tmdelkonklusion{Designets valg}{Det stærke designvalg er at give brugeren en næste handling i stedet for en forklaring på hele systemet. Det svage punkt er stadig forståeligheden i praksis. Tracker-off og støtteflader skal testes med rigtige opgaver, før brugeroplevelsen kan vurderes sikkert.}

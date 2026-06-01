@@ -1356,7 +1356,8 @@ FUNCTION {presort}
 
 ITERATE {presort}
 
-SORT
+% Keep numeric bibliography in first-citation order.
+% SORT
 
 STRINGS { longest.label last.label next.extra }
 
@@ -1411,7 +1412,8 @@ FUNCTION {bib.sort.order}
 
 ITERATE {bib.sort.order}
 
-SORT
+% Keep numeric bibliography in first-citation order.
+% SORT
 
 FUNCTION {begin.bib}
 {   preamble$ empty$

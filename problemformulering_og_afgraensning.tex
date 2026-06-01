@@ -2,19 +2,19 @@
 
 \subsection{Problemformulering}
 
-Problemfeltet samler fysisk aktivitet, \emph{digital adfærdsstøtte}, \emph{interaktionsdesign} og \emph{softwareudvikling}. Litteraturen viser, at motivation, engagement og frafald er afgørende i \emph{digitale sundhedsinterventioner}, mens styrketræning kræver en model for progression, justering og afvigelser \cite{teixeira2012_sdt_exercise,eysenbach2005_law_of_attrition,acsm2009_progression_models}. På den baggrund formuleres hovedspørgsmålet:
+Indledningen viser et problem i krydsfeltet mellem fysisk aktivitet, digital adfærdsstøtte, interaktionsdesign og softwareudvikling. Motivation, engagement og frafald er centrale i digitale sundhedsinterventioner, mens styrketræning kræver en model for progression, justering og realistiske ændringer i planen \cite{teixeira2012_sdt_exercise,eysenbach2005_law_of_attrition,acsm2009_progression_models}. På den baggrund formuleres hovedspørgsmålet:
 
 \begin{quote}
 Hvordan kan en digital træningsapp designes og implementeres, så programstruktur, progression og feedback understøtter vedvarende motivation og fleksibel håndtering af afvigelser fra et planlagt træningsforløb uden at øge risikoen for demotivation og frafald?
 \end{quote}
 
-Spørgsmålet er design- og implementeringsorienteret. Det handler ikke om at bevise, at TræningsMester statistisk forbedrer fysisk aktivitet, motivation eller \emph{adherence}. Det handler om, hvorvidt appens struktur kan bygges sådan, at motivation, progression, friktion og sikker dataadgang trækker i samme retning.
+Spørgsmålet styrer en design- og implementeringsundersøgelse. TræningsMester vurderes som en udviklet app, hvor struktur, feedback, brugsmæssigt besvær og sikker dataadgang skal hænge sammen. Evidensniveauet er derfor knyttet til appens design, implementering, dokumenterede artefakter og tekniske verifikation.
 
-Afgrænsningen er nødvendig, fordi samme app kan vurderes på flere niveauer. Et effektstudie ville spørge, om brugere træner mere eller falder mindre fra. Et produktstudie ville spørge, om appen kan sælges, skaleres og supporteres. Her er fokus snævrere: om den udviklede iOS-app kan forbinde motivation, progression, friktion og sikker dataadgang i et sammenhængende design- og implementeringsarbejde.
+Rapporten placerer appen på det første nødvendige trin før en senere effektmåling. Før man kan undersøge, om en intervention ændrer fysisk aktivitet eller fastholdelse i en brugerpopulation, skal appens træningsmodel, brugerflows, feedback, datamodel og adgangsregler kunne beskrives og vurderes samlet.
 
 \subsection{Underspørgsmål}
 
-For at kunne svare præcist deles hovedspørgsmålet i fire underspørgsmål:
+Hovedspørgsmålet konkretiseres i fire underspørgsmål:
 
 \begin{enumerate}
     \item Hvordan kan plan, \emph{workout}, \emph{trackerlog}, \emph{completion-event} og \emph{cycle runtime} modelleres, så faktisk træning kan afvige fra planen uden datatab?
@@ -23,22 +23,18 @@ For at kunne svare præcist deles hovedspørgsmålet i fire underspørgsmål:
     \item Hvordan kan \emph{beta-feedback}, skærmbilleder, \emph{build}- og testresultater samt diagrammer bruges som evidens for design- og implementeringsvalg?
 \end{enumerate}
 
-De første to spørgsmål handler om træningsflow og brugeroplevelse. Det tredje handler om sikker dataadgang. Det fjerde handler om belæg: hvad kan appens kilder, skærmbilleder, testspor og feedback faktisk bære?
-
-Spørgsmålene hænger sammen som en kæde. Først skal træningen modelleres, så plan og faktisk udførelse ikke blandes sammen. Dernæst skal modellen være brugbar i en travl træningssituation. Derefter skal dataadgangen sikres, så fleksibilitet ikke bygger på brede klientrettigheder. Til sidst skal belægget vurderes nøgternt: design og implementering kan underbygges, mens effekt og fuld driftssikkerhed kræver mere empiri.
+De fire spørgsmål følger rapportens argument. Først skal træningen modelleres, så plan og faktisk udførelse ikke blandes sammen. Dernæst skal modellen kunne bruges i en travl træningssituation. Derefter skal dataadgangen afgrænses, så fleksibilitet bygger på kontrollerede rettigheder. Til sidst skal belægget vurderes nøgternt, så rapporten skelner mellem dokumenteret systemdesign, kvalitativ brugerindsigt og senere effektstudier.
 
 \subsection{Egenudviklet app og afgrænsning}
 
-TræningsMester fungerer som \emph{design- og implementeringscase}, fordi appen samler planlagt programstruktur, tracker, completion, Home-flow, watchOS, Live Activity, datamodel og backendregler i ét system. Tabel~\ref{tab:tm-use-cases} og Tabel~\ref{tab:tm-krav-traceability} viser de centrale use cases og krav, mens Figur~\ref{fig:tm-tracker-completion-summary} viser koblingen mellem trackerstatus, completion og progression.
+TræningsMester er en egenudviklet træningsapp og fungerer som projektets \emph{design- og implementeringscase}. Appen samler planlagt programstruktur, tracker, completion, Home-flow, watchOS, Live Activity, datamodel og backendregler i ét system. Bilaget samler use cases, krav og tracker/completion-diagram, så de senere kapitler kan koble brugerhandlinger med krav, implementeringsspor og progression.
 
-Afgrænsningen betyder, at SwiftUI, Supabase, RLS, Edge Functions, watchOS og Live Activity ikke er selvstændige hovedproblemer. De er tekniske midler i den udviklede app til at undersøge, hvordan appen kan håndtere afvigelser uden at miste programstruktur, feedback eller sikker dataadgang.
+SwiftUI, Supabase, RLS, Edge Functions, watchOS og Live Activity behandles som dele af den udviklede løsning. De er relevante, når de viser, hvordan appen håndterer ændringer i træningsforløbet, reducerer betjeningsbesvær eller beskytter brugerdata.
 
-Fire grænser holder svaret skarpt. For det første måles appens effekt på motivation, adherence eller fysisk aktivitet ikke; det ville kræve et \emph{klinisk effektstudie}. For det andet vurderes TræningsMester ikke som produktlancering; abonnement, admin, import og trænerfunktioner inddrages kun, når de belyser progression, friktion, datakvalitet eller sikkerhed. For det tredje dokumenteres der ikke fuld sikkerhedscertificering, penetrationstest eller juridisk \emph{compliance}, selv om GDPR, OWASP MASVS og Supabase RLS bruges som rammer \cite{europeanparliament2016_gdpr,owasp2024_masvs,supabase_rls_docs}. For det fjerde behandles HealthKit og platformintegrationer som fitnessnære appintegrationer, ikke som klinisk journaludveksling.
+Afgrænsningen har fire praktiske konsekvenser. Appens sundhedseffekt hører til et senere effektstudie. Abonnement, admin, import og trænerfunktioner indgår som støttefunktioner, når de belyser progression, datakvalitet eller sikkerhed. Sikkerhed vurderes som design, arkitektur og delvis verifikation med GDPR, OWASP MASVS og Supabase RLS som rammer \cite{europeanparliament2016_gdpr,owasp2024_masvs,supabase_rls_docs}. HealthKit og platformintegrationer behandles som fitnessnære appintegrationer, mens klinisk journaludveksling hører uden for den udviklede løsning.
 
-Denne afgrænsning gør ikke effekt, jura eller drift uvæsentlige. Den placerer dem bare rigtigt i rækkefølgen. Før appen kan evalueres som intervention, skal det være tydeligt, hvad den gør med træningsplaner, brugerhandlinger, feedback, data og adgangsregler.
+\subsection{Projektets faglige bidrag}
 
-\subsection{Bidrag}
+Projektets bidrag er en dokumenteret model for at adskille planlagt træning, faktisk logging, completion og næste handling. En almindelig logbog gemmer fortiden. TræningsMester bruger også fortiden til at gøre næste træningsvalg forståeligt. Den adskillelse kan bevare historik og progression, selv når brugeren ikke følger en perfekt lineær plan.
 
-Det faglige bidrag ligger i adskillelsen mellem planlagt træning, faktisk logging, completion og næste handling. En almindelig logbog gemmer fortiden. TræningsMester forsøger også at gøre fortiden brugbar for næste træningsvalg. Den adskillelse kan bevare historik og progression, selv når brugeren ikke følger en perfekt lineær plan. Det er et konkret design- og implementeringsbud på fleksibel træningsstøtte, men ikke dokumenteret sundhedseffekt.
-
-\tmdelkonklusion{Kernevalg}{Kernen i TræningsMester er spændingen mellem struktur og afvigelse. Appen står stærkest, når plan, handling og data hænger sammen, og svagest, hvis teksten eller evalueringen begynder at love effekt uden et egentligt effektstudie.}
+\tmdelkonklusion{Kernevalg}{Kernen i TræningsMester er spændingen mellem struktur og ændringer i praksis. Appen står stærkest, når plan, handling og data hænger sammen, og rapportens konklusioner skal derfor handle om dokumenteret design og implementering frem for at love effekt uden et egentligt effektstudie.}

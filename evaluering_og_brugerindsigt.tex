@@ -1,31 +1,31 @@
 \section{Evaluering og brugerindsigt}
 
-Brugerindsigten bygger på anonymiseret beta-feedback og TestFlight-tidslinjen. Materialet er kvalitativt, begrænset og skævt mod \emph{iOS}-brugere, fordi deltagelse krævede Apples testmiljø. Det kan pege på friktion og designprioriteringer, men ikke dokumentere effekt eller repræsentativ brugeraccept.
+Brugerindsigten bygger på anonymiseret beta-feedback og TestFlight-tidslinjen. Materialet er kvalitativt, begrænset og skævt mod \emph{iOS}-brugere, fordi deltagelse krævede Apples testmiljø. Det bruges derfor til at identificere friktion og designprioriteringer.
 
-Styrken ved materialet er nærhed til faktisk brug. Svagheden er fraværet af systematisk rekruttering, faste opgaver, målinger før og efter samt længere observation. Indsigterne bruges derfor tematisk: de viser, hvor appen bør forbedres, ikke hvor godt den virker i en population.
+Styrken ved materialet er nærhed til faktisk brug. Svagheden er fraværet af systematisk rekruttering, faste opgaver, målinger før og efter samt længere observation. Indsigterne bruges tematisk til at vise, hvor appen bør forbedres.
 
 \subsection{Feedbackgrundlag og iteration}
 
-Tabel~\ref{tab:tm-testflight-timeline} viser, at appen blev distribueret og itereret gennem flere beta-builds. Tidslinjen dokumenterer aktivitet og iteration, men ikke bedre træningsudbytte. Tabel~\ref{tab:tm-beta-feedback} samler anonymiserede observationer uden direkte private citater eller personhenførbare detaljer.
+Tabel~\ref{tab:tm-testflight-timeline} viser, at appen blev distribueret og itereret gennem flere beta-builds. Tidslinjen dokumenterer aktivitet og iteration. Tabel~\ref{tab:tm-beta-feedback} samler anonymiserede observationer uden direkte private citater eller personhenførbare detaljer.
 
-Metodisk skelnes der mellem observation, fortolkning og \emph{designimplikation}. Grundtvig, Gjødsbøl og Clotworthy understøtter denne forsigtige brug af kvalitative data, anonymisering og etik \cite{grundtvig2025_analyse_data,gjoedsboel_grundtvig2025_interview,clotworthy2025_etik_kvalitet_forskning}. Observationerne bruges som designinput, ikke som statistik.
+Metodisk skelnes der mellem observation, fortolkning og \emph{designimplikation}. Grundtvig, Gjødsbøl og Clotworthy understøtter denne forsigtige brug af kvalitative data, anonymisering og etik \cite{grundtvig2025_analyse_data,gjoedsboel_grundtvig2025_interview,clotworthy2025_etik_kvalitet_forskning}. Observationerne bruges som designinput.
 
-Denne skelnen gør feedbacken brugbar uden at overdrive den. En observation om søgning kan pege på et katalogproblem. En observation om TestFlight kan pege på onboardingfriktion. Ingen af delene kan alene sige noget om motivationseffekt, men begge dele kan påvirke, om brugeren når frem til den træning, appen skal støtte.
+Denne skelnen gør feedbacken brugbar uden at overdrive den. En observation om søgning kan pege på et katalogproblem. En observation om TestFlight kan pege på onboardingfriktion. Begge dele kan påvirke, om brugeren når frem til den træning, appen skal støtte.
 
 \subsection{Friktion, katalog og støtteflader}
 
-Feedbacken viser, at friktion både opstod i appen og omkring distributionen. Installation, TestFlight-link, review-status og manuelle opdateringer påvirkede adgangen til selve træningsoplevelsen. Eysenbachs frafaldsperspektiv og Yardley et al.s begreb om \emph{effektivt engagement} gør det relevant at behandle denne adgangsfriktion som en del af brugeroplevelsen \cite{eysenbach2005_law_of_attrition,yardley2016_effective_engagement_dbci}.
+Feedbacken viser, at friktion både opstod i appen og omkring distributionen. Installation, TestFlight-link, review-status og manuelle opdateringer påvirkede adgangen til selve træningsoplevelsen. Frafaldsperspektivet og begrebet \emph{effektivt engagement} gør det relevant at behandle denne adgangsfriktion som en del af brugeroplevelsen \cite{eysenbach2005_law_of_attrition,yardley2016_effective_engagement_dbci}.
 
-Flere observationer handler om øvelseskatalog, søgning, medier og enheder. Figur~\ref{fig:tm-ios-oevelser} og Figur~\ref{fig:tm-ios-match-card} viser de relevante flader. Her er problemet både interaktionsdesign og datakvalitet: øvelser skal kunne findes, forstås og registreres konsistent. Mohammed et al.s datakvalitetsbegreb gør dette til mere end et UI-problem \cite{mohammed2025_five_facets_data_quality}.
+Flere observationer handler om øvelseskatalog, søgning, medier og enheder. Figur~\ref{fig:tm-ios-oevelser} og Figur~\ref{fig:tm-ios-match-card} viser de relevante flader. Her er problemet både interaktionsdesign og datakvalitet. Øvelser skal kunne findes, forstås og registreres konsistent. Datakvalitetsbegrebet gør dette til mere end et UI-problem \cite{mohammed2025_five_facets_data_quality}.
 
-Watch og Live Activity fremstår som mulige lav-friktionsflader, men feedbacken dokumenterer ikke robust runtime på tværs af enheder. Tabel~\ref{tab:tm-test-traceability} fastholder samme begrænsning. Brickwood et al. og Laranjo et al. gør wearables og trackere relevante som bredt evidensspor, men ikke som direkte bevis for TræningsMester \cite{brickwood2019_wearable_trackers_meta,laranjo2021_apps_trackers_meta}.
+Watch og Live Activity fremstår som mulige lav-friktionsflader, mens robust runtime på tværs af enheder kræver mere dokumentation. Tabel~\ref{tab:tm-test-traceability} fastholder samme begrænsning. Wearable- og trackerforskningen gør sporet relevant som bredt evidensgrundlag \cite{brickwood2019_wearable_trackers_meta,laranjo2021_apps_trackers_meta}.
 
-Feedbacken bliver dermed et korrektiv til implementeringen. Den viser, at lav friktion ikke kun handler om færre tryk i trackerflowet, men også om distribution, søgning, katalogforståelse, enheder og støtteflader. Brugeren møder appen som en samlet oplevelse, ikke som separate tekniske moduler.
+Feedbacken bliver dermed et korrektiv til implementeringen. Den viser, at lav friktion handler om både færre tryk i trackerflowet, distribution, søgning, katalogforståelse, enheder og støtteflader. Brugeren møder appen som en samlet oplevelse.
 
 \subsection{Designimplikationer}
 
-Brugerindsigten peger på fem prioriteringer: tydeligere beta-onboarding, bedre søgning og synonymer, stærkere katalogstyring, klarere enhedshåndtering og mere direkte test af runtime for watchOS og Live Activity. Prioriteringerne handler alle om samme problem: at reducere friktion uden at miste programstruktur, datakvalitet eller sikker dataadgang.
+Brugerindsigten peger på fem prioriteringer. Tydeligere beta-onboarding, bedre søgning og synonymer, stærkere katalogstyring, klarere enhedshåndtering og mere direkte test af runtime for watchOS og Live Activity. Prioriteringerne handler alle om samme problem, nemlig at reducere friktion uden at miste programstruktur, datakvalitet eller sikker dataadgang.
 
 Prioriteringerne bør behandles før et eventuelt effektstudie. Hvis søgning, enheder, onboarding eller watch-flow skaber unødig friktion, vil en senere effektmåling blande interventionens potentiale sammen med umoden brugeroplevelse.
 
-\tmdelkonklusion{Brugerindsigtens pointe}{Feedbacken peger ikke på, at appen virker som intervention. Den peger på, hvor brugerens vej ind i træningen stadig knækker: installation, søgning, enheder, katalog og støtteflader. Det er netop de steder, der bør modnes før en større evaluering.}
+\tmdelkonklusion{Brugerindsigtens pointe}{Feedbacken peger på de steder, hvor brugerens vej ind i træningen stadig er svagest. Det gælder installation, søgning, enheder, katalog og støtteflader. Det er netop de steder, der bør modnes før en større evaluering.}

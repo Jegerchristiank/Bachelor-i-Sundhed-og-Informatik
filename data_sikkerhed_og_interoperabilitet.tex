@@ -2,13 +2,13 @@
 
 TræningsMesters \emph{datamodel} skal skelne mellem planlagt træning, faktisk logging, completion og progression. Uden denne skelnen bliver realistiske afvigelser enten datatab eller fejltilstande. Figur~\ref{fig:tm-data-model-er} viser den samlede datamodel, mens Figur~\ref{fig:tm-tracker-completion-summary} viser den del, hvor tracker og completion kobles til progression.
 
-Det afgørende er sammenhæng, ikke flest mulige felter. En app kan have mange tabeller uden at kunne forklare, hvad der sker, når en bruger træner anderledes end planlagt. Modellen skal bevare relationen mellem intention, handling, historik og næste skridt. Ellers bliver data fyldige på papiret og uklare i brug.
+Det afgørende er sammenhæng frem for flest mulige felter. En app kan have mange tabeller uden at kunne forklare, hvad der sker, når en bruger træner anderledes end planlagt. Modellen skal bevare relationen mellem intention, handling, historik og næste skridt. Ellers bliver data fyldige på papiret og uklare i brug.
 
 \subsection{Datamodel og datakvalitet}
 
-En træningsplan beskriver intentionen: workouts, øvelser, sæt, gentagelser og progression. En trackerlog beskriver faktisk registreret træning. Et completion-event beskriver, at et pas er gennemført, også når den detaljerede log er ufuldstændig. Mohammed et al. peger på, at datakvalitet skal vurderes efter formål og kontekst \cite{mohammed2025_five_facets_data_quality}. Derfor er en komplet trackerlog bedst til præcis analyse, mens completion kan være bedre til kontinuitet og næste handling.
+En træningsplan beskriver intentionen med workouts, øvelser, sæt, gentagelser og progression. En trackerlog beskriver faktisk registreret træning. Et completion-event beskriver, at et pas er gennemført, også når den detaljerede log er ufuldstændig. Datakvalitet skal vurderes efter formål og kontekst \cite{mohammed2025_five_facets_data_quality}. Derfor er en komplet trackerlog bedst til præcis analyse, mens completion kan være bedre til kontinuitet og næste handling.
 
-ACSM's progression model gør samme skelnen relevant træningsfagligt: progression kan ikke reduceres til et kalenderindeks, men må kunne tage højde for belastning, volumen og tilpasning \cite{acsm2009_progression_models}. Datamodellen skal derfor repræsentere både plan, udførelse og næste relevante handling.
+ACSM's progression model gør samme skelnen relevant træningsfagligt. Progression kan ikke reduceres til et kalenderindeks, men må kunne tage højde for belastning, volumen og tilpasning \cite{acsm2009_progression_models}. Datamodellen skal derfor repræsentere både plan, udførelse og næste relevante handling.
 
 Denne datalogik skaber et kompromis. Hvis appen kræver fuld trackerlog for at give progression, bliver datakvaliteten højere, men risikoen for friktion og manglende registrering stiger. Hvis appen accepterer completion uden detaljer, bevares kontinuitet, men senere analyse bliver svagere. Begge datatyper skal derfor navngives og bruges efter deres formål.
 
@@ -16,7 +16,7 @@ Denne datalogik skaber et kompromis. Hvis appen kræver fuld trackerlog for at g
 
 \emph{Row Level Security} (RLS) er den primære adgangskontrol. Supabase beskriver, hvordan RLS og \emph{API-regler} kan begrænse adgang efter bruger og rolle, mens OWASP MASVS understøtter princippet om, at klienten ikke bør være eneste sikkerhedsgrænse \cite{supabase_rls_docs,supabase_securing_api_docs,owasp2024_masvs}. Figur~\ref{fig:tm-security-boundary-summary} viser opdelingen mellem mobil klient, RLS og Edge Functions.
 
-\emph{Edge Functions} bruges til flows, der kræver \emph{server-side} vurdering eller privilegerede nøgler, eksempelvis admin, træner-/klientrelationer, import, AI og billing. Figur~\ref{fig:tm-import-ai-edge-boundary} viser denne grænse. Pointen er ikke, at alle disse flows er centrale for problemformuleringen, men at privilegeret logik ikke skal ligge i klienten.
+\emph{Edge Functions} bruges til flows, der kræver \emph{server-side} vurdering eller privilegerede nøgler, eksempelvis admin, træner-/klientrelationer, import, AI og billing. Figur~\ref{fig:tm-import-ai-edge-boundary} viser denne grænse. Fælles for disse flows er, at privilegeret logik placeres uden for klienten.
 
 \emph{Idempotens} er nødvendig, fordi tracker, watchOS og Live Activity kan skrive til samme træningsforløb. Hvis retries eller parallelle handlinger kan skabe dobbeltlogging, svækkes datakvaliteten. Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser Live Activity-sporet, mens Tabel~\ref{tab:tm-sql-fields} viser relevante felter.
 
@@ -24,8 +24,8 @@ GDPR gør formål og adgang til en del af datamodellen \cite{europeanparliament2
 
 \subsection{Interoperabilitetsafgrænsning}
 
-TræningsMester behandler fitnessnære brugerdata, ikke kliniske patientdata. \emph{HealthKit} kan forstås som brugeraktiveret appintegration, ikke som journalintegration \cite{apple_healthkit_docs}. \emph{FHIR} og \emph{HL7} bruges derfor kun som afgrænsende begreber fra \emph{sundhedsinteroperabilitet}, ikke som implementeret funktionalitet \cite{benson2016_principles_health_interoperability,zajac2026_data_quality_interoperability}. GDPR bruges som ramme for persondata, men endelig compliance kræver juridisk review \cite{europeanparliament2016_gdpr}.
+TræningsMester behandler fitnessnære brugerdata frem for kliniske patientdata. \emph{HealthKit} kan forstås som brugeraktiveret appintegration \cite{apple_healthkit_docs}. \emph{FHIR} og \emph{HL7} bruges som afgrænsende begreber fra \emph{sundhedsinteroperabilitet} og som baggrund for at forklare, hvorfor klinisk dataudveksling kræver andre standarder end appens nuværende model \cite{benson2016_principles_health_interoperability,zajac2026_data_quality_interoperability}. GDPR bruges som ramme for persondata, mens endelig compliance kræver juridisk review \cite{europeanparliament2016_gdpr}.
 
 Afgrænsningen er vigtig. Hvis appen senere skal integrere dybere med sundhedsdata, kræver det andre standarder, samtykkemodeller og valideringskrav. I den nuværende version af TræningsMester er interoperabilitet primært relevant som synkronisering mellem brugerens egne flader og som mulighed for fitnessnær dataudveksling.
 
-\tmdelkonklusion{Dataens pris}{Den bedste datamodel er ikke den mest detaljerede model, men den mest forklarlige. TræningsMester skal kunne skelne mellem plan, log og completion, samtidig med at adgang håndhæves i backend. Det giver fleksibilitet uden at gøre klienten til sikkerhedsautoritet.}
+\tmdelkonklusion{Dataens pris}{Den bedste datamodel er den mest forklarlige model til formålet. TræningsMester skal kunne skelne mellem plan, log og completion, samtidig med at adgang håndhæves i backend. Det giver fleksibilitet uden at gøre klienten til sikkerhedsautoritet.}

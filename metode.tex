@@ -1,24 +1,24 @@
 \section{Metode}
 
-TræningsMester behandles som en \emph{design- og implementeringscase}. Metoden kombinerer kildesøgning, kursus- og faggrundlag, \emph{artefaktanalyse}, anonymiseret beta-feedback og teknisk verifikation. Den kan vurdere, om appens design og implementering hænger fagligt og teknisk sammen; den kan ikke måle statistisk effekt på motivation, adherence eller fysisk aktivitet.
+TræningsMester behandles som en \emph{design- og implementeringscase}. Metoden kombinerer kildesøgning, kursus- og faggrundlag, \emph{artefaktanalyse}, anonymiseret beta-feedback og teknisk verifikation. Samlet kan materialet vurdere, om appens design og implementering hænger fagligt og teknisk sammen.
 
-Metodevalget følger problemformuleringen. Spørgsmålet handler om, hvordan en app kan designes og implementeres, ikke om hvor stor en effekt appen har i en brugerpopulation. Derfor vægtes dokumenterede designvalg, implementeringsspor, krav, tests og kvalitativ feedback højere end kvantitative effektmål.
+Metodevalget følger problemformuleringen. Spørgsmålet handler om, hvordan en app kan designes og implementeres, så programstruktur, progression og feedback understøtter fleksibel træning. Derfor vægtes dokumenterede designvalg, implementeringsspor, krav, tests og kvalitativ feedback højere end kvantitative effektmål.
 
 \subsection{Design- og implementeringscase}
 
-\emph{Caseformen} bruges om den egenudviklede app: den gør det muligt at undersøge, hvordan teori om motivation, progression, friktion og sikker dataadgang omsættes til et konkret digitalt system. TræningsMester vurderes derfor gennem appens synlige brugerflader, krav, arkitektur, datamodel og testspor. Tabel~\ref{tab:tm-bilag-materialegennemgang} samler det synlige materiale, mens Figur~\ref{fig:tm-system-context} viser systemkonteksten.
+\emph{Caseformen} bruges om den egenudviklede app. Den gør det muligt at undersøge, hvordan teori om motivation, progression, friktion og sikker dataadgang omsættes til et konkret digitalt system. TræningsMester vurderes gennem synlige brugerflader, krav, arkitektur, datamodel og testspor. Bilagets materialegennemgang samler de synlige artefakter, og systemkontekstdiagrammet viser de centrale platforme og services, jf. Tabel~\ref{tab:tm-bilag-materialegennemgang} og Figur~\ref{fig:tm-system-context}.
 
-Begrænsningen er, at en egenudviklet case ikke kan dokumentere virkning for en bred brugergruppe. Den kan vise design- og implementeringsplausibilitet, men ikke empirisk effekt. Den sondring styrer hele evidensniveauet.
+Evidensniveauet er design- og implementeringsplausibilitet. Det betyder, at rapporten kan vurdere sammenhængen mellem problem, løsning og dokumentation, mens bred brugeraccept og sundhedseffekt kræver senere undersøgelser.
 
-Vurderingen følger en enkel kæde: først det faglige problem, derefter krav og use cases, og til sidst arkitektur, implementering, test og feedback. Kæden er vigtig, fordi en pæn brugerflade ikke er nok, hvis datamodellen ikke kan bære afvigelser, og en solid datamodel ikke er nok, hvis brugeren ikke kan komme igennem træningen uden unødig friktion.
+Vurderingen følger en enkel kæde. Først fastlægges det faglige problem. Derefter omsættes problemet til krav og use cases. Til sidst vurderes arkitektur, implementering, test og feedback. Kæden er vigtig, fordi en pæn brugerflade ikke bærer argumentet alene, og en solid datamodel først får værdi, når brugeren kan komme gennem træningen med lavt betjeningsbesvær.
 
 \subsection{Analysegenstand}
 
-\emph{Analysegenstanden} er den udviklede apps håndtering af afvigelser i et træningsforløb. Det betyder, at appen ikke analyseres som et samlet produkt med alle kommercielle funktioner, men som en kæde af mekanismer: planlagt workout, aktiv tracker, completion-event, cycle runtime, næste handling, brugerfladefeedback og adgangskontrol.
+\emph{Analysegenstanden} er den udviklede apps håndtering af ændringer i et træningsforløb. Appen analyseres som en kæde af mekanismer med planlagt workout, aktiv tracker, completion-event, cycle runtime, næste handling, brugerfladefeedback og adgangskontrol.
 
-Genstanden undersøges på tre niveauer. Det første niveau er det træningsfaglige: om modellen kan bevare progression, når faktisk træning ikke følger planen. Det andet niveau er interaktionsniveauet: om Home, tracker, tracker-off, watchOS og Live Activity kan reducere friktion i selve træningssituationen. Det tredje niveau er det informatiske: om datamodel, RLS, repositories og Edge Functions gør fleksibiliteten sporbar og adgangsmæssigt afgrænset.
+Genstanden undersøges på tre niveauer. Det træningsfaglige niveau handler om, hvorvidt modellen kan bevare progression, når faktisk træning afviger fra planen. Interaktionsniveauet handler om, hvorvidt Home, tracker, tracker-off, watchOS og Live Activity kan reducere betjeningsbesvær i selve træningssituationen. Det informatiske niveau handler om, hvorvidt datamodel, RLS, repositories og Edge Functions gør fleksibiliteten sporbar og adgangsmæssigt afgrænset.
 
-Denne afgrænsning gør analysen snæver nok til at kunne vurderes. Alle appens features er ikke lige vigtige her. De centrale dele er dem, der afgør, om spændingen mellem struktur og afvigelse kan håndteres.
+Denne afgrænsning gør analysen vurderbar. De centrale dele er dem, der afgør, om spændingen mellem struktur og ændringer i praksis kan håndteres.
 
 \subsection{Analysestrategi}
 
@@ -31,8 +31,8 @@ Analysestrategien følger underspørgsmålene. Tabel~\ref{tab:analysestrategi} v
 \toprule
 \tmthead{Underspørgsmål} & \tmthead{Materiale} & \tmthead{Vurderingskriterium} \\
 \midrule
-Plan, trackerlog, completion og cycle runtime & Use cases, kravsporbarhed, datamodel, trackerproces og implementeringsbeskrivelse & Om planlagt og faktisk træning kan adskilles uden datatab, og om næste handling kan forklares efter afvigelser. \\
-\emph{UI} og lav friktion & Skærmbilleder, interaktionsdesign, beta-feedback og støtteflader for watchOS og Live Activity & Om brugeren får tydelig status, feedback og næste handling uden unødig registreringsfriktion. \\
+Plan, trackerlog, completion og cycle runtime & Use cases, kravsporbarhed, datamodel, trackerproces og implementeringsbeskrivelse & Om planlagt og faktisk træning kan adskilles uden datatab, og om næste handling kan forklares efter ændringer i forløbet. \\
+\emph{UI} og lav friktion & Skærmbilleder, interaktionsdesign, beta-feedback og støtteflader for watchOS og Live Activity & Om brugeren får tydelig status, feedback og næste handling uden unødigt registreringsarbejde. \\
 Sikker dataadgang & Sikkerhedsgrænse, RLS-matrix, Edge Function-spor og tekniske primærkilder & Om privilegeret logik holdes uden for klienten, og om påstande afgrænses til dokumenteret design og delvis test. \\
 Evidensgrundlag & Kildesøgning, anonymiseret feedback, build- og testspor, skærmbilleder og diagrammer & Om konklusionen følger af dokumenterede artefakter og tydeligt skelner mellem plausibilitet, brugerindsigt og effektbevis. \\
 \bottomrule
@@ -41,30 +41,30 @@ Evidensgrundlag & Kildesøgning, anonymiseret feedback, build- og testspor, skæ
 \label{tab:analysestrategi}
 \end{table}
 
-Et stærkt belæg kræver mere end mange bilag. Teori, krav, implementering og verifikation skal pege i samme retning. Et svagere belæg kan stadig være relevant, men skal navngives ærligt som plausibilitet, designindsigt eller videre arbejde frem for dokumenteret effekt.
+Et stærkt belæg kræver mere end mange bilag. Teori, krav, implementering og verifikation skal pege i samme retning. Et svagere belæg kan stadig være relevant, når det navngives som plausibilitet, designindsigt eller videre arbejde.
 
 \subsection{Metodisk kvalitet}
 
-Metodens kvalitet vurderes efter gennemsigtighed, sammenhæng og kritisk afgrænsning. Gennemsigtighed betyder, at det er tydeligt, hvilke materialetyper der bærer hvilke påstande. Sammenhæng betyder, at problemformulering, teori, krav, artefakter og verifikation peger mod samme undersøgelse. Kritisk afgrænsning betyder, at svaghederne ikke skjules: beta-feedback er ikke repræsentativ, skærmbilleder dokumenterer ikke effekt, og build/testspor dokumenterer ikke fuld driftssikkerhed.
+Metodens kvalitet vurderes efter gennemsigtighed, sammenhæng og kritisk afgrænsning. Gennemsigtighed betyder, at det er tydeligt, hvilke materialetyper der bærer hvilke påstande. Sammenhæng betyder, at problemformulering, teori, krav, artefakter og verifikation peger mod samme undersøgelse. Kritisk afgrænsning betyder, at beta-feedback, skærmbilleder og build/testspor bruges til de påstande, de faktisk kan bære.
 
-Det metodiske ideal er derfor ikke at fjerne alle usikkerheder, men at gøre dem synlige og bruge dem korrekt. Kvalitativ brugerindsigt kan styrke forståelsen af friktion, mens teknisk verifikation kan styrke vurderingen af implementeret adfærd. Ingen af delene kan alene afgøre, om appen virker som intervention. Clotworthy og Grundtvig bruges netop til denne skelnen mellem observation, fortolkning, validitet og generaliserbarhed \cite{clotworthy2025_etik_kvalitet_forskning,grundtvig2025_analyse_data}.
+Det metodiske ideal er at gøre usikkerheder synlige og bruge dem korrekt. Kvalitativ brugerindsigt kan styrke forståelsen af friktion, mens teknisk verifikation kan styrke vurderingen af implementeret adfærd. Spørgsmålet om interventionseffekt kræver et andet undersøgelsesdesign. Clotworthy og Grundtvig bruges til denne skelnen mellem observation, fortolkning, validitet og generaliserbarhed \cite{clotworthy2025_etik_kvalitet_forskning,grundtvig2025_analyse_data}.
 
 \subsection{Kildesøgning og faggrundlag}
 
-Kildesøgningen blev gennemført som en problemstyret \emph{scoping-søgning}. Rethlefsen et al.s \emph{PRISMA-S} og McGowan et al.s \emph{PRESS}-guideline bruges som pejlemærker for transparent søgning, søgestrenge og kildekritik \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. Søgestrategien kombinerede KB.dk/Primo, PubMed/PMC, DOI/Crossref og udgiversider, fordi problemfeltet både er sundhedsfagligt, designfagligt og teknisk. Tabel~\ref{tab:kildesoegning-platforme} og Tabel~\ref{tab:kildesoegning-appspor} dokumenterer søgesporene i bilaget.
+Kildesøgningen blev gennemført som en problemstyret \emph{scoping-søgning}. PRISMA-S og PRESS-guideline bruges som pejlemærker for transparent søgning, søgestrenge og kildekritik \cite{rethlefsen2021_prisma_s,mcgowan2016_press_guideline_statement}. Søgestrategien kombinerede KB.dk/Primo, PubMed/PMC, DOI/Crossref og udgiversider, fordi problemfeltet både er sundhedsfagligt, designfagligt og teknisk. Bilagets kildesøgning dokumenterer søgeflader, søgespor og kursusmateriale, jf. Tabel~\ref{tab:kildesoegning-platforme}, Tabel~\ref{tab:kildesoegning-appspor} og Tabel~\ref{tab:kursusmateriale-gennemgang}.
 
-Kursusmateriale bruges som metodisk og faglig støtte, ikke som effektbevis. Hornbæks materiale om brugerundersøgelser, prototyper og evaluering støtter interaktionsdesignet, mens Grundtvig, Gjødsbøl og Clotworthy støtter analyse, anonymisering og etik \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering,grundtvig2025_analyse_data,gjoedsboel_grundtvig2025_interview,clotworthy2025_etik_kvalitet_forskning}. Tabel~\ref{tab:kursusmateriale-gennemgang} viser de konkrete kursusspor.
+Kursusmateriale bruges som metodisk og faglig støtte. Hornbæks materiale om brugerundersøgelser, prototyper og evaluering støtter interaktionsdesignet, mens Grundtvig, Gjødsbøl og Clotworthy støtter analyse, anonymisering og etik \cite{hornbaek2024_brugerundersoegelser,hornbaek2024_prototyper,hornbaek2024_evaluering,grundtvig2025_analyse_data,gjoedsboel_grundtvig2025_interview,clotworthy2025_etik_kvalitet_forskning}.
 
-Kilderne blev udvalgt efter funktion. Teixeira, Eysenbach og Yardley dækker motivation, frafald og engagement. ACSM, Currier, Greig og Larsen dækker progression og autoregulering. Laranjo, Romeo og Brickwood dækker apps og trackere. Stoyanov dækker appkvalitet, Mohammed et al. dækker datakvalitet, og OWASP, Supabase og GDPR dækker sikkerhed og persondata. Den opdeling reducerer risikoen for citationer, der kun pynter teksten.
+Kilderne blev udvalgt efter funktion. Motivation, frafald og engagement behandles som adfærdsmæssigt grundlag. ACSM, Currier, Greig og Larsen dækker progression og autoregulering. App- og trackerstudierne dækker det digitale interventionsspor. MARS dækker appkvalitet, datakvalitetskilderne dækker formålsbestemt data, og OWASP, Supabase og GDPR dækker sikkerhed og persondata. Den opdeling reducerer risikoen for citationer, der kun pynter teksten.
 
 \subsection{Artefakter, beta-feedback og verifikation}
 
-Artefaktanalysen undersøger de synlige elementer, der dokumenterer appens design og implementering: skærmbilleder, diagrammer, use cases, krav, datamodel, RLS-matrix og testspor. Figur~\ref{fig:tm-ios-home-ready} bruges som eksempel på Home som næste-handling-flade, mens Figur~\ref{fig:tm-tracker-completion-summary} viser adskillelsen mellem tracker, completion og progression.
+Artefaktanalysen undersøger de synlige elementer, der dokumenterer appens design og implementering. Det omfatter skærmbilleder, diagrammer, use cases, krav, datamodel, RLS-matrix og testspor. Home-skærmen bruges som eksempel på en næste-handling-flade, mens tracker/completion-diagrammet viser adskillelsen mellem tracker, completion og progression, jf. Figur~\ref{fig:tm-ios-home-ready} og Figur~\ref{fig:tm-tracker-completion-summary}.
 
-Beta-feedback behandles som anonymiseret, kvalitativ designindsigt. Den bruges til at identificere friktion, katalogproblemer, enheder, watch-behov og prioriteringer, men ikke til at generalisere til alle brugere. Tabel~\ref{tab:tm-beta-feedback} og Tabel~\ref{tab:tm-testflight-timeline} dokumenterer observationer og iteration.
+Beta-feedback behandles som anonymiseret, kvalitativ designindsigt. Den bruges til at identificere friktion, katalogproblemer, enheder, watch-behov og prioriteringer. Bilaget samler observationer og iterationer uden direkte private citater eller personhenførbare detaljer, jf. Tabel~\ref{tab:tm-beta-feedback} og Tabel~\ref{tab:tm-testflight-timeline}.
 
-Teknisk verifikation vurderer \emph{buildstatus}, \emph{unit tests}, begrænsede integrationstests og kendte mangler. Tabel~\ref{tab:tm-test-traceability} samler de tekniske påstande. Apple-, Supabase- og OWASP-kilder bruges til at vurdere platform- og sikkerhedsvalg \cite{apple_swiftui_docs,apple_activitykit_live_data_docs,apple_watchconnectivity_docs,owasp2024_masvs,supabase_rls_docs}. Verifikationen dokumenterer teknisk plausibilitet, ikke produktionsklarhed, sikkerhedscertificering eller klinisk validering.
+Teknisk verifikation vurderer \emph{buildstatus}, \emph{unit tests}, begrænsede integrationstests og kendte mangler. Verifikationssporet samler de tekniske påstande, jf. Tabel~\ref{tab:tm-test-traceability}. Apple-, Supabase- og OWASP-kilder bruges til at vurdere platform- og sikkerhedsvalg \cite{apple_swiftui_docs,apple_activitykit_live_data_docs,apple_watchconnectivity_docs,owasp2024_masvs,supabase_rls_docs}.
 
-De tre materialetyper supplerer hinanden. Artefakterne viser, hvad der er designet og implementeret. Feedbacken viser, hvor brugen møder friktion. Verifikationen viser, hvilke tekniske påstande der er sandsynliggjort. Ingen af delene kan alene besvare problemformuleringen, men sammen gør de det muligt at diskutere styrker og begrænsninger uden at overdrive evidensniveauet.
+De tre materialetyper supplerer hinanden. Artefakterne viser, hvad der er designet og implementeret. Feedbacken viser, hvor brugen møder friktion. Verifikationen viser, hvilke tekniske påstande der er sandsynliggjort. Tilsammen gør de det muligt at diskutere styrker og begrænsninger uden at overdrive evidensniveauet.
 
-\tmdelkonklusion{Metodisk grænse}{Metoden er stærk til at undersøge sammenhæng mellem idé, design og implementering. Den er svag til at måle virkning hos brugere. Derfor skal de stærkeste konklusioner handle om plausibilitet og dokumenteret systemdesign, ikke om forbedret sundhed eller fastholdelse.}
+\tmdelkonklusion{Metodisk grænse}{Metoden er stærk til at undersøge sammenhæng mellem idé, design og implementering. Den er svag til at måle virkning hos brugere. Derfor skal de stærkeste konklusioner handle om plausibilitet og dokumenteret systemdesign.}

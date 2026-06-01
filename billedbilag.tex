@@ -130,6 +130,26 @@ Figurerne og tabellerne er udvalgt, så argumentationen kun henviser til materia
 \clearpage
 }
 
+\tmlandscapediagramwithsection{Arkitektur- og dataflowdiagrammer}{assets/bilag/diagrammer/system_context.pdf}{0bp 532bp 0bp 0bp}{Systemkontekst for TræningsMester på iOS, watchOS, Supabase og Apple-services.}{fig:tm-system-context}
+
+\tmlandscapewidediagram{assets/bilag/diagrammer/data_model_er.pdf}{0bp 610bp 0bp 0bp}{ER-diagram for programmer, workouts, tracker, completion, settings og cyklusdata.}{fig:tm-data-model-er}
+
+\tmlandscapeerdetail{assets/bilag/diagrammer/data_model_er.pdf}{0bp 610bp 360bp 0bp}{ER-diagram, venstre udsnit: bruger, programmer, workouts og deling.}{fig:tm-data-model-er-left}
+
+\tmlandscapeerdetail{assets/bilag/diagrammer/data_model_er.pdf}{180bp 610bp 180bp 0bp}{ER-diagram, midterudsnit: settings, workouts, øvelser, trackerlog og completion-events.}{fig:tm-data-model-er-middle}
+
+\tmlandscapeerdetail{assets/bilag/diagrammer/data_model_er.pdf}{360bp 610bp 0bp 0bp}{ER-diagram, højre udsnit: træner-/klientrelationer og træningscyklusdata.}{fig:tm-data-model-er-right}
+
+\tmtrackercompletiondiagram
+
+\tmlandscapediagram{assets/bilag/diagrammer/security_boundary_summary.pdf}{0bp 590bp 0bp 0bp}{Sikkerhedsgrænse mellem mobil klient, RLS og Edge Functions.}{fig:tm-security-boundary-summary}
+
+\tmlandscapediagram{assets/bilag/diagrammer/watch_sync_sequence.pdf}{10bp 610bp 10bp 0bp}{Sekvens for iOS/watchOS auth-sync, token-cache og RLS-baseret workoutdata.}{fig:tm-watch-sync-sequence}
+
+\tmlandscapediagram{assets/bilag/diagrammer/live_activity_idempotency_sequence.pdf}{15bp 515bp 15bp 5bp}{Sekvens for Live Activity intent-write, App Group snapshot og idempotent trackerlog.}{fig:tm-live-activity-idempotency-sequence}
+
+\tmlandscapediagram{assets/bilag/diagrammer/import_ai_edge_boundary.pdf}{0bp 585bp 0bp 0bp}{Import/AI-grænse mellem klient, Edge Functions, OpenAI og Supabase.}{fig:tm-import-ai-edge-boundary}
+
 \subsection{App-screenshots}
 
 \tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-01-home-stale-session-testkonto-2026-04-28.jpg}{Home-skærm med advarsel om en forældet tracker-session og mulighed for at fortsætte eller rydde sessionen.}{fig:tm-ios-home-stale-session}
@@ -157,26 +177,6 @@ Figurerne og tabellerne er udvalgt, så argumentationen kun henviser til materia
 \tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-12-home-next-training-testkonto-2026-04-28.jpg}{Home-skærm efter completion, hvor næste træningshandling er rykket frem.}{fig:tm-ios-home-next-training}
 
 \tmscreenshot{Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-13-home-current-xcode-mcp-qa-2026-04-28.jpg}{Home-skærm efter gennemløb med Dagens træning synlig.}{fig:tm-ios-home-current-qa}
-
-\tmlandscapediagramwithsection{Arkitektur- og dataflowdiagrammer}{assets/bilag/diagrammer/system_context.pdf}{0bp 532bp 0bp 0bp}{Systemkontekst for TræningsMester på iOS, watchOS, Supabase og Apple-services.}{fig:tm-system-context}
-
-\tmlandscapewidediagram{assets/bilag/diagrammer/data_model_er.pdf}{0bp 610bp 0bp 0bp}{ER-diagram for programmer, workouts, tracker, completion, settings og cyklusdata.}{fig:tm-data-model-er}
-
-\tmlandscapeerdetail{assets/bilag/diagrammer/data_model_er.pdf}{0bp 610bp 360bp 0bp}{ER-diagram, venstre udsnit: bruger, programmer, workouts og deling.}{fig:tm-data-model-er-left}
-
-\tmlandscapeerdetail{assets/bilag/diagrammer/data_model_er.pdf}{180bp 610bp 180bp 0bp}{ER-diagram, midterudsnit: settings, workouts, øvelser, trackerlog og completion-events.}{fig:tm-data-model-er-middle}
-
-\tmlandscapeerdetail{assets/bilag/diagrammer/data_model_er.pdf}{360bp 610bp 0bp 0bp}{ER-diagram, højre udsnit: træner-/klientrelationer og træningscyklusdata.}{fig:tm-data-model-er-right}
-
-\tmtrackercompletiondiagram
-
-\tmlandscapediagram{assets/bilag/diagrammer/security_boundary_summary.pdf}{0bp 590bp 0bp 0bp}{Sikkerhedsgrænse mellem mobil klient, RLS og Edge Functions.}{fig:tm-security-boundary-summary}
-
-\tmlandscapediagram{assets/bilag/diagrammer/watch_sync_sequence.pdf}{10bp 610bp 10bp 0bp}{Sekvens for iOS/watchOS auth-sync, token-cache og RLS-baseret workoutdata.}{fig:tm-watch-sync-sequence}
-
-\tmlandscapediagram{assets/bilag/diagrammer/live_activity_idempotency_sequence.pdf}{15bp 515bp 15bp 5bp}{Sekvens for Live Activity intent-write, App Group snapshot og idempotent trackerlog.}{fig:tm-live-activity-idempotency-sequence}
-
-\tmlandscapediagram{assets/bilag/diagrammer/import_ai_edge_boundary.pdf}{0bp 585bp 0bp 0bp}{Import/AI-grænse mellem klient, Edge Functions, OpenAI og Supabase.}{fig:tm-import-ai-edge-boundary}
 
 \subsection{Materialegennemgang}
 

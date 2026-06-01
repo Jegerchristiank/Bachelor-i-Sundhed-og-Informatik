@@ -1,10 +1,10 @@
 \section{Systemarkitektur}
 
-\emph{Systemarkitekturen} skal forbinde brugerflade, state, datamodel og backend, så TræningsMester kan håndtere både planlagt og faktisk træning. Figur~\ref{fig:tm-system-context} viser systemet som en native iOS-app med watchOS, Live Activity, Supabase og udvalgte Apple-services. Arkitekturen vurderes på tre valg: lagdeling, backend som sikkerhedsgrænse og støtteflader under træning.
+\emph{Systemarkitekturen} skal forbinde brugerflade, state, datamodel og backend, så TræningsMester kan håndtere både planlagt og faktisk træning. Figur~\ref{fig:tm-system-context} viser systemet som en native iOS-app med watchOS, Live Activity, Supabase og udvalgte Apple-services. Arkitekturen vurderes på lagdeling, backend som sikkerhedsgrænse og støtteflader under træning.
 
-Arkitekturen er derfor ikke kun en teknisk beskrivelse. Den afgør, om appen kan bevare samme træningsforløb på tværs af Home, tracker, database, Apple Watch og Live Activity. Hvis disse flader udvikler hver deres sandhed om session og completion, bliver fleksibel progression usikker.
+Arkitekturen er en teknisk beskrivelse og samtidig en del af svaret på problemformuleringen. Den afgør, om appen kan bevare samme træningsforløb på tværs af Home, tracker, database, Apple Watch og Live Activity. Hvis disse flader udvikler hver deres sandhed om session og completion, bliver fleksibel progression usikker.
 
-Den centrale arbejdsdeling er enkel: klienten skal være hurtig og forståelig, men ikke autoritativ; backendlaget skal være autoritativt, men ikke gøre brugerens træningsflow tungt. Det er balancen mellem de to hensyn, der gør arkitekturen relevant for problemformuleringen.
+Den centrale arbejdsdeling er enkel. Klienten skal være hurtig og forståelig, mens backendlaget skal være autoritativt uden at gøre brugerens træningsflow tungt. Balancen mellem de to hensyn gør arkitekturen relevant for problemformuleringen.
 
 \subsection{Lagdeling mellem brugerflade, state og data}
 
@@ -12,28 +12,28 @@ Den centrale arbejdsdeling er enkel: klienten skal være hurtig og forståelig, 
 
 Lagdelingen er nødvendig, fordi træningsflowet ikke bør afhænge af, at én skærm husker al kontekst. Når workoutstatus, trackerlog, completion og progression ligger i fælles state- og datalag, kan iOS, watchOS og Live Activity arbejde med samme træningsforløb. Tabel~\ref{tab:tm-container-architecture} viser komponentlagene i kondenseret form.
 
-Lagdelingen gør også test og ændring lettere. Domænelogik for cycle runtime og completion kan vurderes adskilt fra den konkrete SwiftUI-visning. Det er vigtigt, fordi problemet handler om systemadfærd, ikke kun om en bestemt knap eller skærm findes.
+Lagdelingen gør også test og ændring lettere. Domænelogik for cycle runtime og completion kan vurderes adskilt fra den konkrete SwiftUI-visning. Det er vigtigt, fordi problemet handler om systemadfærd frem for kun en bestemt knap eller skærm.
 
 \subsection{Backend som sikkerhedsgrænse}
 
 \emph{Backendens} rolle er at være autoritativ data- og sikkerhedsgrænse. \emph{Klienten} kan vise og starte handlinger, men den må ikke alene afgøre, hvilke data brugeren kan læse eller skrive. OWASP MASVS peger på samme princip for mobile apps, og Supabase RLS-dokumentationen beskriver, hvordan adgang kan begrænses efter bruger, rolle og kontekst \cite{owasp2024_masvs,supabase_rls_docs,supabase_securing_api_docs}.
 
-Figur~\ref{fig:tm-security-boundary-summary} viser grænsen mellem mobil klient, RLS og Edge Functions. RLS beskytter almindelige brugerbundne læse- og skriveoperationer. Edge Functions afgrænser privilegerede handlinger, integrationer og nøgler. Det reducerer risikoen for, at en brugerfladefejl bliver til bredere dataadgang, men det dokumenterer ikke fuld sikkerhed i sig selv.
+Figur~\ref{fig:tm-security-boundary-summary} viser grænsen mellem mobil klient, RLS og Edge Functions. RLS beskytter almindelige brugerbundne læse- og skriveoperationer. Edge Functions afgrænser privilegerede handlinger, integrationer og nøgler. Det reducerer risikoen for, at en brugerfladefejl bliver til bredere dataadgang. Den fulde sikkerhedsvurdering kræver dog flere rolle- og integrationstests.
 
-Denne grænse er særlig relevant, fordi træningsdata både er personlige og operationelle. Brugeren skal kunne logge hurtigt, men hurtig logging må ikke betyde, at klienten kan skrive eller læse på tværs af brugergrænser. Arkitekturen placerer derfor hastighed i brugerfladen og autoritet i backendlaget. Det er ikke en akademisk detalje; uden denne arbejdsdeling ville lav friktion kunne blive købt med for brede rettigheder.
+Denne grænse er særlig relevant, fordi træningsdata både er personlige og operationelle. Brugeren skal kunne logge hurtigt, og hurtig logging kræver stadig klare brugergrænser. Arkitekturen placerer derfor hastighed i brugerfladen og autoritet i backendlaget. Uden denne arbejdsdeling ville lav friktion kunne blive købt med for brede rettigheder.
 
 \subsection{Støtteflader under træning}
 
-\emph{watchOS} og \emph{Live Activity} er arkitektoniske støtteflader. Apple beskriver Live Activities som løbende status for tidsfølsomme aktiviteter og \emph{Watch Connectivity} som koordinering mellem iPhone og Apple Watch \cite{apple_activitykit_live_data_docs,apple_hig_live_activities,apple_watchconnectivity_docs}. I den udviklede app skal de reducere friktion under træning, ikke skabe parallelle datamodeller.
+\emph{watchOS} og \emph{Live Activity} er arkitektoniske støtteflader. Apple beskriver Live Activities som løbende status for tidsfølsomme aktiviteter og \emph{Watch Connectivity} som koordinering mellem iPhone og Apple Watch \cite{apple_activitykit_live_data_docs,apple_hig_live_activities,apple_watchconnectivity_docs}. I den udviklede app skal de reducere friktion under træning og pege på samme datamodel.
 
-Figur~\ref{fig:tm-watch-sync-sequence} og Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser, at støttefladerne afhænger af fælles session, auth-sync, snapshot og idempotente writes. Arkitekturens styrke er dermed ikke, at appen findes på flere flader, men at flere flader kan pege på samme træningsmodel.
+Figur~\ref{fig:tm-watch-sync-sequence} og Figur~\ref{fig:tm-live-activity-idempotency-sequence} viser, at støttefladerne afhænger af fælles session, auth-sync, snapshot og idempotente writes. Arkitekturens styrke er, at flere flader kan pege på samme træningsmodel.
 
-Det giver også en klar begrænsning. Hvis watchOS eller Live Activity kun kan bygges, men ikke runtime-verificeres, er arkitekturargumentet stærkere end produktionsbeviset. Støttefladerne skal derfor forstås som en dokumenteret designretning med behov for yderligere test.
+Det giver også en klar begrænsning. Når watchOS eller Live Activity primært er dokumenteret gennem build, kode og arkitektur, er argumentet stærkere som designretning end som produktionsbevis. Støttefladerne kræver derfor yderligere runtime-test.
 
 \subsection{Arkitekturvurdering}
 
 Arkitekturens vigtigste kvalitet er, at den placerer ansvar på de rigtige niveauer. Brugerfladen skal gøre handlinger forståelige, state- og repositorylaget skal samle træningsforløbets logik, og backendlaget skal være autoritativt for dataadgang. Det svarer til problemformuleringens behov for fleksibilitet uden datatab eller brede klientrettigheder.
 
-Den kritiske risiko er kompleksitet. Jo flere støtteflader appen får, desto vigtigere bliver fælles session, \emph{idempotens} og testbare datakontrakter. Arkitekturen er derfor ikke stærk, fordi den indeholder mange komponenter, men fordi komponenterne har en begrundet arbejdsdeling. Det er også her den videre verifikation bør koncentreres.
+Den kritiske risiko er kompleksitet. Jo flere støtteflader appen får, desto vigtigere bliver fælles session, \emph{idempotens} og testbare datakontrakter. Arkitekturen står stærkest, når komponenterne har en begrundet arbejdsdeling. Det er også her den videre verifikation bør koncentreres.
 
-\tmdelkonklusion{Arkitekturens valg}{Arkitekturen løser ikke fleksibilitet ved at give klienten mere magt. Den løser den ved at dele ansvaret: brugerfladen gør handlingen let, state- og repositorylaget holder sammen på forløbet, og backendlaget håndhæver adgang.}
+\tmdelkonklusion{Arkitekturens valg}{Arkitekturen løser fleksibilitet gennem tydelig arbejdsdeling. Brugerfladen gør handlingen let, state- og repositorylaget holder sammen på forløbet, og backendlaget håndhæver adgang.}
