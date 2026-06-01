@@ -12,7 +12,7 @@ Dato: 2026-04-28
 | Renderede Mermaid-diagrammer inkluderet | Ok, 7 SVG |
 | Build/test summaries inkluderet | Ok |
 | Rå buildlogs/tool-output fravalgt | Ok |
-| Manuel visuel screenshot-review | Mangler |
+| Manuel visuel screenshot-review | Ok, 13/13 aktuelle screenshots markeret godkendt i approval-matrix og visuelt kontrolleret i afleveringsaudit |
 | GitHub push | Ok, pushed til `codex/traeningsmester-bachelor-materiale` |
 
 Anbefalet commitbesked:

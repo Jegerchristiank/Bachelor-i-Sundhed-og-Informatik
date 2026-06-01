@@ -20,11 +20,11 @@ Dato: 2026-04-28
 | Xcode MCP screenshot inkluderet | Ja, `TM-iPhone-16-Pro-iOS26` |
 | Historiske screenshots | Fravalgt fra den kuraterede GitHub-pakke |
 | Messenger/Facebook/mail raw screenshots i public folder | Nej |
-| Approval matrix | Alle billeder markeret `needs_final_visual_review` |
+| Approval matrix | De 13 aktuelle billeder er markeret `approved_for_report=true` og `approved_for_appendix` |
 
-## Mangler Før Endelig Rapportbrug
+## Status Før Endelig Rapportbrug
 
-- Gennemgå de 13 screenshots visuelt en sidste gang.
-- Udfyld `approved_for_report`, reviewer og anonymiseringshandling for de billeder, der faktisk bruges i rapporten.
-- Settings-billeder med fixturedata bør enten fravælges eller omtales tydeligt som testkonto-/placeholderdata.
+- De 13 screenshots er visuelt gennemgået i afleveringsaudit.
+- Billederne bruger testkonto-/fixturedata, ikke private rådata.
+- Settings-billeder med fixturedata omtales som testkonto i billedbilaget.
 - WatchOS, Live Activity, admin, onboarding og error/loading states er dokumenteret som kendte screenshot-gaps.

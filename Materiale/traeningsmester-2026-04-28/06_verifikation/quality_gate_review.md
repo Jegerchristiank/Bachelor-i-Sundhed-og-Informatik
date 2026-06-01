@@ -2,7 +2,7 @@
 
 Dato: 2026-04-28
 
-Status: **egnet som kurateret rapportgrundlag, ikke endelig public release uden manuel billedreview.**
+Status: **egnet som kurateret rapportgrundlag for de aktuelle rapportbilag.**
 
 ## Stærke Punkter
 
@@ -19,7 +19,7 @@ Status: **egnet som kurateret rapportgrundlag, ikke endelig public release uden 
 
 | Prioritet | Gap | Håndtering i rapporten |
 | --- | --- | --- |
-| P0 | Manuel visuel godkendelse af screenshots | Brug kun screenshots, der er gennemset og markeret som egnede. |
+| Lukket | Manuel visuel godkendelse af screenshots | De 13 aktuelle screenshots i rapportbilaget er markeret godkendt i approval-matricen og visuelt kontrolleret i afleveringsaudit. |
 | P0 | Clean checkout proof mangler | Skriv at verifikationen er fra lokal freeze-state, ikke clean CI. |
 | P1 | Fuld Supabase/admin integrationstest mangler | Nedton sikkerhedsclaims til dokumenteret design + delvis test. |
 | P1 | watchOS/Live Activity runtime screenshots mangler | Brug build/test/arkitektur som evidens, ikke screenshot-påstand. |
@@ -27,4 +27,4 @@ Status: **egnet som kurateret rapportgrundlag, ikke endelig public release uden 
 
 ## Konklusion
 
-Pakken er nu langt mere egnet til rapportarbejde. Den bør ikke afleveres ukritisk som fuldt bilag; brug README og `01_rapportgrundlag/rapportstruktur/figurudvalg_udkast.md` til at vælge de figurer og dokumenter, der faktisk skal ind i bacheloren.
+Pakken er egnet til rapportarbejde, når kun de udvalgte, godkendte figurer og kondenserede tabeller indgår. Rå private data og ikke-godkendte materialer skal fortsat holdes uden for afleveringen.

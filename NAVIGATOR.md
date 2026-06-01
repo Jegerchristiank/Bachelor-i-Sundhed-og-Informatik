@@ -97,7 +97,7 @@ Start med disse filer i rækkefølge:
 - to forsider: en projektrapportforside inspireret af den eksterne rapportstil og derefter den officielle KU-forside,
 - romertal til metadata/indhold og arabisk sidenummerering fra hovedrapportens første afsnit,
 - udfyldt forfatter, projekttype, arbejdstitel, arbejdssubtitle og vejleder,
-- `Afventer` for dato,
+- udfyldt dato: 4. juni 2026,
 - udfyldt fakultet, institut og afdeling efter KU/IFSV-oplysninger,
 - en kort emnebeskrivelse baseret på den autoritative problemformulering,
 - et engelsk abstract/resumé før indholdsfortegnelsen, der opsummerer problemstilling, metode, hovedresultater, begrænsninger og næste skridt,

@@ -45,7 +45,7 @@ Læs den ved opstart og hold den opdateret, når rapportstruktur, materialekilde
 - Vejleder: Karsten Vrangbæk.
 - Arbejdstitel i LaTeX: `TræningsMester`.
 - Arbejdssubtitle i LaTeX: `Design og implementering af en digital træningsapp til fleksibel progression og motivation`.
-- Afleveringsdato: afventer.
+- Afleveringsdato: 4. juni 2026.
 - Den officielle KU-forsides KU-header skal pege på Det Sundhedsvidenskabelige Fakultet, ikke den oprindelige matematik-template.
 
 ## Rapportens Autoritative Spor
