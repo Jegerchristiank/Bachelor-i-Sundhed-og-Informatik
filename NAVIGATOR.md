@@ -40,6 +40,7 @@ Start med disse filer i rækkefølge:
 - Referencebibliotek: `referencer.bib`, `referencer.md`, lokal numerisk BibTeX-stil `abbrvnat-etal.bst` i første-forekomst-rækkefølge og åbne PDF-kopier i `referencer/`; udvalgt kursusmateriale registreres med præcise slide-/sidetal uden at kopiere lukkede kursusfiler
 - Kildesøgningsafsnit: `kildesoegning.tex`
 - Billed- og materialebilag: `billedbilag.tex` med labels til aktuelle TræningsMester-screenshots, arkitekturdiagrammer, supplerende ER-udsnit og tabeller fra materialepakken
+- Bacheloreksamenspræsentation: `praesentation_bachelor_eksamen_plan.md` med tekstlig slide-for-slide-skitse, manus, tidsramme, backupslides, begreber, kilder og figurvalg
 - Konverterede diagrammer til Overleaf: `assets/bilag/diagrammer/`
 - Materialepakke: `Materiale/traeningsmester-2026-04-28/`
 - Materialepakkens navigator: `Materiale/traeningsmester-2026-04-28/NAVIGATOR.md`
@@ -87,6 +88,7 @@ Start med disse filer i rækkefølge:
 | `referencer/` | Lokale åbne PDF-kopier | Arbejdskopier af åbne kilder, navngivet efter BibTeX-stems; lukkede kursusfiler kopieres ikke hertil |
 | `kildesoegning.tex` | Metodeafsnit om kildesøgning | Kan inputtes i rapportens metodekapitel |
 | `billedbilag.tex` | Billed- og materialebilag | Bilag med aktuelle, kuraterede TræningsMester-billeder, diagrammer, materialetabeller og labels |
+| `praesentation_bachelor_eksamen_plan.md` | Intern præsentationsskitse | Slide-for-slide-plan til bacheloreksamen med manus, timing, begreber, kilder, figurer og backupslides; ikke rapportinput |
 | `Materiale/traeningsmester-2026-04-28/` | Kurateret rapportmateriale | Kilder, bilag og argumentation |
 
 ## Rapportens Nuværende Canvas
@@ -161,6 +163,7 @@ Start med disse filer i rækkefølge:
 ├── diskussion.tex
 ├── konklusion.tex
 ├── skrivematrix.md
+├── praesentation_bachelor_eksamen_plan.md
 ├── referencer.bib
 ├── referencer.md
 ├── abbrvnat-etal.bst
