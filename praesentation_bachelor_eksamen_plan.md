@@ -77,13 +77,36 @@ Hver hovedslide har samme struktur:
 6. **Kilder og evidens**: hvad pointen hviler på.
 7. **Backup**: hvilke backupslides der passer til spørgsmål.
 
+## Hurtig Billedfinder
+
+Figurlabels som `fig:tm-ios-home-ready` kommer fra `billedbilag.tex`. Det er rapportens LaTeX-labels, ikke filnavne. Til PowerPoint skal du bruge filstierne herunder.
+
+Tip: Screenshots ligger som JPG og kan indsættes direkte. Diagrammer findes både som PDF i `assets/bilag/diagrammer/` og som SVG i materialepakken; brug SVG i PowerPoint, hvis du vil skalere skarpt og eventuelt redigere visuelt.
+
+| Label i planen | Fil du skal finde | Brug i præsentationen |
+| --- | --- | --- |
+| `fig:tm-ios-home-ready` | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-02-home-ready-testkonto-2026-04-28.jpg` | Slide 1 og 8: Home med aktuel træningshandling. |
+| `fig:tm-ios-home-next-training` | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-12-home-next-training-testkonto-2026-04-28.jpg` | Slide 8: Home efter completion, hvor næste træning er rykket frem. |
+| `fig:tm-ios-tracker-active` | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-10-tracker-active-testkonto-2026-04-28.jpg` | Slide 9: aktiv tracker-session. |
+| `fig:tm-ios-home-stale-session` | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-01-home-stale-session-testkonto-2026-04-28.jpg` | Backup 24: afbrudt eller gammel tracker-session. |
+| `fig:tm-ios-home-completion-delay` | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-11-home-completion-delay-testkonto-2026-04-28.jpg` | Backup 24: completion-feedback og fortrydelsesvindue. |
+| `fig:tm-system-context` | `assets/bilag/diagrammer/system_context.pdf` eller `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/system_context.svg` | Slide 3: forenklet systemkontekst. |
+| `fig:tm-tracker-completion-summary` | `assets/bilag/diagrammer/tracker_completion_summary.pdf` eller `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg` | Slide 7, 9 og 10: tracker-on/off, completion og næste handling. |
+| `fig:tm-data-model-er-middle` | `assets/bilag/diagrammer/data_model_er.pdf` eller `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/data_model_er.svg` | Slide 7 og backup 21: crop til midterdelen med trackerlog og completion-events. |
+| `fig:tm-data-model-er-right` | `assets/bilag/diagrammer/data_model_er.pdf` eller `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/data_model_er.svg` | Slide 10 og backup 21/23: crop til højre del med cycle runtime. |
+| `fig:tm-security-boundary-summary` | `assets/bilag/diagrammer/security_boundary_summary.pdf` eller `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/security_boundary_summary.svg` | Slide 11 og backup 25: sikkerhedsgrænse, RLS og Edge Functions. |
+| `fig:tm-watch-sync-sequence` | `assets/bilag/diagrammer/watch_sync_sequence.pdf` eller `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/watch_sync_sequence.svg` | Slide 12 og backup 26: watchOS sync. |
+| `fig:tm-live-activity-idempotency-sequence` | `assets/bilag/diagrammer/live_activity_idempotency_sequence.pdf` eller `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/live_activity_idempotency_sequence.svg` | Slide 12 og backup 27: Live Activity og idempotens. |
+
+Tabel-labels som `tab:tm-use-cases`, `tab:tm-krav-traceability`, `tab:tm-test-traceability`, `tab:tm-beta-feedback` og `tab:tm-testflight-timeline` er ikke separate billedfiler. De ligger som LaTeX-tabeller i `billedbilag.tex` og bør genskabes som korte PowerPoint-tabeller med 3-6 udvalgte rækker.
+
 ## Hovedslides
 
 ### Slide 1: Når træning ikke følger planen
 
 **Tid:** manus 1:11, anbefalet slide-tid 1:15
 **Synligt på slide:** "Når træning ikke følger planen" + TræningsMester-logo + Home-screenshot.
-**Visuel:** `fig:tm-ios-home-ready`, stort og rent. Brug kun én callout: "Næste handling".
+**Visuel:** `fig:tm-ios-home-ready`. Fil: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-02-home-ready-testkonto-2026-04-28.jpg`. Brug den stort og rent med én callout: "Næste handling".
 
 **Ankre:** hverdag, afvigelser, næste handling, case.
 
