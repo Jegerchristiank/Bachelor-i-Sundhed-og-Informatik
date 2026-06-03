@@ -94,15 +94,15 @@ Denne tabel er den praktiske arbejdsliste, når du bygger PowerPointen.
 | 3 | Forenklet systemkontekst | Brug helst `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/system_context.svg`. Alternativ: `assets/bilag/diagrammer/system_context.pdf`. |
 | 4 | Evidenstrekant med artefakter, beta-feedback og teknisk verifikation | Ingen billedfil. Byg som trekant/model direkte i PowerPoint. |
 | 5 | 2x2-model med fire faglige spor | Ingen billedfil. Byg som 2x2-model direkte i PowerPoint. |
-| 6 | Mini-traceability fra problem til krav og appbevis | Ingen billedfil. Genskab som kort PowerPoint-tabel ud fra `billedbilag.tex`, især `tab:tm-use-cases` og `tab:tm-krav-traceability`. |
+| 6 | Mini-traceability fra problem til krav og appbevis | Ingen billedfil. Genskab som kort PowerPoint-tabel ud fra rapporttabellerne "Kondenseret use case-overblik for TræningsMester" og "Sporbarhed mellem use cases, krav og implementeringsspor". |
 | 7 | Tracker/completion-flow og eventuelt ER-udsnit | Brug helst `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg`. Alternativt/crop: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/data_model_er.svg`. |
 | 8 | Home før og efter completion | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-02-home-ready-testkonto-2026-04-28.jpg` og `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-12-home-next-training-testkonto-2026-04-28.jpg` |
 | 9 | Aktiv tracker + tracker/completion-flow | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-10-tracker-active-testkonto-2026-04-28.jpg` og `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg` |
 | 10 | Runtime-udsnit fra tracker/completion eller ER-diagram | Brug `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg`; crop til runtime/næste handling. Alternativt crop `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/data_model_er.svg` til højre del. |
 | 11 | Sikkerhedsgrænse | Brug helst `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/security_boundary_summary.svg`. Alternativ: `assets/bilag/diagrammer/security_boundary_summary.pdf`. |
 | 12 | Watch sync + Live Activity idempotens | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/watch_sync_sequence.svg` og `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/live_activity_idempotency_sequence.svg` |
-| 13 | Teststatus i grøn/gul struktur | Ingen billedfil. Genskab som kort PowerPoint-tabel ud fra `billedbilag.tex` og `Materiale/traeningsmester-2026-04-28/06_verifikation/test_traceability_matrix.md`. |
-| 14 | Beta-feedbacktemaer | Ingen billedfil. Genskab som kort PowerPoint-tabel ud fra `billedbilag.tex`, `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/feedbackkatalog.md`, `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/beta_tester_rapport.md` og `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/testflight_tidslinje.md`. |
+| 13 | Teststatus i grøn/gul struktur | Ingen billedfil. Genskab som kort PowerPoint-tabel ud fra rapporttabellen "Verifikationsspor for tekniske claims" og `Materiale/traeningsmester-2026-04-28/06_verifikation/test_traceability_matrix.md`. |
+| 14 | Beta-feedbacktemaer | Ingen billedfil. Genskab som kort PowerPoint-tabel ud fra rapporttabellerne "Udvalgte anonymiserede betaobservationer" og "TestFlight-tidslinje for TræningsMester" samt materialefilerne `feedbackkatalog.md`, `beta_tester_rapport.md` og `testflight_tidslinje.md`. |
 | 15 | Konklusions-roadmap med fire svarlinjer | Ingen billedfil. Byg som simpel roadmap/model direkte i PowerPoint. |
 
 ### Label-Til-Fil Opslag
@@ -124,7 +124,24 @@ Brug denne tabel, hvis du møder en `fig:...`-label længere nede i planen.
 | `fig:tm-watch-sync-sequence` | `assets/bilag/diagrammer/watch_sync_sequence.pdf` eller `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/watch_sync_sequence.svg` | Slide 12 og backup 26: watchOS sync. |
 | `fig:tm-live-activity-idempotency-sequence` | `assets/bilag/diagrammer/live_activity_idempotency_sequence.pdf` eller `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/live_activity_idempotency_sequence.svg` | Slide 12 og backup 27: Live Activity og idempotens. |
 
-Tabel-labels som `tab:tm-use-cases`, `tab:tm-krav-traceability`, `tab:tm-test-traceability`, `tab:tm-beta-feedback` og `tab:tm-testflight-timeline` er ikke separate billedfiler. De ligger som LaTeX-tabeller i `billedbilag.tex` og bør genskabes som korte PowerPoint-tabeller med 3-6 udvalgte rækker.
+## Hurtig Tabelfinder
+
+Tabel-labels som `tab:tm-use-cases` er rapportens LaTeX-labels, ikke de navne du nemmest finder i PDF'en. Brug derfor først rapportnavnet/captionen, når du søger i rapporten. Brug kildefilen, hvis du vil hente eller forkorte indholdet til PowerPoint.
+
+| Label i planen | Rapportnavn/caption du kan søge efter | Kilde i repoet | Brug i præsentationen |
+| --- | --- | --- | --- |
+| `tab:analysestrategi` | Analysestrategi for koblingen mellem underspørgsmål, materiale og vurderingskriterier | `metode.tex:41` | Slide 4 og backup 19: metode, empiri og vurderingskriterier. |
+| `tab:tm-use-cases` | Kondenseret use case-overblik for TræningsMester | `billedbilag.tex:229` | Slide 6 og backup 20: vælg især UC-06, UC-07 og UC-08. |
+| `tab:tm-krav-traceability` | Sporbarhed mellem use cases, krav og implementeringsspor | `billedbilag.tex:253` | Slide 6 og backup 20: vis koblingen fra problem til krav og appbevis. |
+| `tab:tm-tracker-flow-bpmn` | Tracker- og completionproces for TræningsMester | `billedbilag.tex:297` | Slide 9: brug som forklaringsgrundlag for tracker/completion-flowet. |
+| `tab:tm-sql-domain-overblik` | Centrale SQL-domæner i TræningsMesters datamodel | `billedbilag.tex:341` | Backup 21: datadomæner og afgrænsning af datamodellen. |
+| `tab:tm-sql-fields` | Særligt relevante SQL-felter i TræningsMesters datamodel | `billedbilag.tex:361` | Slide 7 samt backup 21 og 23: completion, idempotens og runtime-felter. |
+| `tab:tm-rls-matrix` | RLS- og sikkerhedsmatrix for TræningsMester | `billedbilag.tex:385` | Slide 11 og backup 25: sikkerhedsgrænse og adgangslogik. |
+| `tab:tm-testflight-timeline` | TestFlight-tidslinje for TræningsMester | `billedbilag.tex:418` | Slide 14 og backup 29: distribution, iteration og feedbackkontekst. |
+| `tab:tm-beta-feedback` | Udvalgte anonymiserede betaobservationer | `billedbilag.tex:441` | Slide 14 og backup 29: feedbacktemaer og designinput. |
+| `tab:tm-test-traceability` | Verifikationsspor for tekniske claims | `billedbilag.tex:461` | Slide 13 og backup 28: teststatus, styrker og åbne gaps. |
+
+De her tabeller er ikke separate billedfiler. Til PowerPoint bør du derfor genskabe dem som korte, læsbare tabeller med 3-6 udvalgte rækker i stedet for at tage et screenshot af hele rapporttabellen.
 
 ## Hovedslides
 
@@ -223,7 +240,7 @@ Design- og implementeringsplausibilitet: at løsningen er fagligt og teknisk san
 Artefaktanalyse: analyse af appskærme, diagrammer, krav, testspor og implementeringsmateriale.
 Outcome: et målt resultat, for eksempel øget fysisk aktivitet eller fastholdelse.
 
-**Kilder og evidens:** `metode.tex`; `tab:analysestrategi`; Rethlefsen et al. om PRISMA-S; McGowan et al. om PRESS; Grundtvig og Clotworthy om analyse, etik og generaliserbarhed.
+**Kilder og evidens:** `metode.tex`; "Analysestrategi for koblingen mellem underspørgsmål, materiale og vurderingskriterier" (`tab:analysestrategi`); Rethlefsen et al. om PRISMA-S; McGowan et al. om PRESS; Grundtvig og Clotworthy om analyse, etik og generaliserbarhed.
 
 **Backup:** 18, 30.
 
@@ -256,7 +273,7 @@ Datakvalitet: om data er gode nok til deres konkrete formål.
 
 **Tid:** manus 1:17, anbefalet slide-tid 1:21
 **Synligt på slide:** Mini-traceability: problem -> underspørgsmål -> use cases -> krav -> appbevis.
-**Visuel:** kondenseret udsnit af `tab:tm-use-cases` og `tab:tm-krav-traceability`. Ingen billedfil; genskab som kort PowerPoint-tabel ud fra `billedbilag.tex`.
+**Visuel:** kondenseret udsnit af rapporttabellerne "Kondenseret use case-overblik for TræningsMester" (`tab:tm-use-cases`) og "Sporbarhed mellem use cases, krav og implementeringsspor" (`tab:tm-krav-traceability`). Ingen billedfil; genskab som kort PowerPoint-tabel ud fra `billedbilag.tex`.
 
 **Ankre:** sporbarhed, UC-06, UC-08, krav, vurderbarhed.
 
@@ -273,7 +290,7 @@ Use case: et bruger- eller systemforløb, appen skal understøtte.
 Traceability: sporbarhed mellem problem, krav, implementering og test.
 Funktionelt krav: krav til hvad systemet skal kunne gøre.
 
-**Kilder og evidens:** `tab:tm-use-cases`; `tab:tm-krav-traceability`; `use_cases.md`; `krav_traceability.md`.
+**Kilder og evidens:** "Kondenseret use case-overblik for TræningsMester" (`tab:tm-use-cases`); "Sporbarhed mellem use cases, krav og implementeringsspor" (`tab:tm-krav-traceability`); `use_cases.md`; `krav_traceability.md`.
 
 **Backup:** 19.
 
@@ -299,7 +316,7 @@ Completion-event: registrering af at et træningspas er gennemført.
 Cycle runtime: den aktive cyklustilstand, der afgør næste workout efter faktisk gennemførelse.
 Datagranularitet: hvor detaljerede data er.
 
-**Kilder og evidens:** `fig:tm-tracker-completion-summary`; `fig:tm-data-model-er-middle`; `tab:tm-sql-fields`; Mohammed et al.; Greig et al.; ACSM.
+**Kilder og evidens:** `fig:tm-tracker-completion-summary`; `fig:tm-data-model-er-middle`; "Særligt relevante SQL-felter i TræningsMesters datamodel" (`tab:tm-sql-fields`); Mohammed et al.; Greig et al.; ACSM.
 
 **Backup:** 20, 21, 23.
 
@@ -349,7 +366,7 @@ Selvmonitorering: brugerens registrering af egen adfærd eller performance.
 Lav friktion: lavt betjeningsbesvær i træningssituationen.
 Tradeoff: en afvejning hvor én kvalitet styrkes på bekostning af en anden.
 
-**Kilder og evidens:** Michie BCT Taxonomy; Stoyanov MARS; Mohammed et al.; `fig:tm-ios-tracker-active`; `fig:tm-tracker-completion-summary`; `tab:tm-tracker-flow-bpmn`.
+**Kilder og evidens:** Michie BCT Taxonomy; Stoyanov MARS; Mohammed et al.; `fig:tm-ios-tracker-active`; `fig:tm-tracker-completion-summary`; "Tracker- og completionproces for TræningsMester" (`tab:tm-tracker-flow-bpmn`).
 
 **Backup:** 21.
 
@@ -400,7 +417,7 @@ Anon key: klient-sikker Supabase-nøgle, som først får brugeradgang sammen med
 Edge Function: server-side funktion til privilegeret eller ekstern logik.
 Least privilege: princippet om mindst nødvendige rettigheder.
 
-**Kilder og evidens:** `fig:tm-security-boundary-summary`; `tab:tm-rls-matrix`; Supabase RLS docs; Supabase API security docs; OWASP MASVS; GDPR.
+**Kilder og evidens:** `fig:tm-security-boundary-summary`; "RLS- og sikkerhedsmatrix for TræningsMester" (`tab:tm-rls-matrix`); Supabase RLS docs; Supabase API security docs; OWASP MASVS; GDPR.
 
 **Backup:** 25.
 
@@ -433,7 +450,7 @@ Runtime: faktisk kørsel i brug, ikke kun build eller diagram.
 
 **Tid:** manus 1:10, anbefalet slide-tid 1:18
 **Synligt på slide:** Beskåret teststatus: iOS build, watchOS build, Live Activity build, 556 unit tests, integration gaps.
-**Visuel:** `tab:tm-test-traceability` i grøn/gul struktur. Ingen billedfil; genskab som kort PowerPoint-tabel ud fra `billedbilag.tex` og `Materiale/traeningsmester-2026-04-28/06_verifikation/test_traceability_matrix.md`.
+**Visuel:** rapporttabellen "Verifikationsspor for tekniske claims" (`tab:tm-test-traceability`) i grøn/gul struktur. Ingen billedfil; genskab som kort PowerPoint-tabel ud fra `billedbilag.tex` og `Materiale/traeningsmester-2026-04-28/06_verifikation/test_traceability_matrix.md`.
 
 **Ankre:** build, 556 tests, delvis integration, clean checkout, gaps.
 
@@ -451,7 +468,7 @@ Integrationstest: test af om flere systemdele virker sammen.
 Clean checkout: reproducerbar test fra en ren kodebase uden lokale ændringer.
 Verifikationsgrænse: hvad testene kan og ikke kan dokumentere.
 
-**Kilder og evidens:** `verifikationsrapport.md`; `test_traceability_matrix.md`; `quality_gate_review.md`; `tab:tm-test-traceability`.
+**Kilder og evidens:** `verifikationsrapport.md`; `test_traceability_matrix.md`; `quality_gate_review.md`; "Verifikationsspor for tekniske claims" (`tab:tm-test-traceability`).
 
 **Backup:** 28.
 
@@ -459,7 +476,7 @@ Verifikationsgrænse: hvad testene kan og ikke kan dokumentere.
 
 **Tid:** manus 1:15, anbefalet slide-tid 1:20
 **Synligt på slide:** Tre feedbacktemaer: TestFlight/installation, katalog/søgning/enheder, støtteflader. Nederst: "Designinput, ikke effektbevis".
-**Visuel:** `tab:tm-beta-feedback` og `tab:tm-testflight-timeline`, stærkt kondenseret. Ingen billedfil; genskab som kort PowerPoint-tabel ud fra `billedbilag.tex`, `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/feedbackkatalog.md`, `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/beta_tester_rapport.md` og `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/testflight_tidslinje.md`.
+**Visuel:** rapporttabellerne "Udvalgte anonymiserede betaobservationer" (`tab:tm-beta-feedback`) og "TestFlight-tidslinje for TræningsMester" (`tab:tm-testflight-timeline`), stærkt kondenseret. Ingen billedfil; genskab som kort PowerPoint-tabel ud fra `billedbilag.tex`, `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/feedbackkatalog.md`, `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/beta_tester_rapport.md` og `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/testflight_tidslinje.md`.
 
 **Ankre:** beta, friktion, katalog, kg/lbs, usability, effektgrænse.
 
@@ -476,7 +493,7 @@ Kvalitativ designindsigt: brugerobservationer der peger på problemer, behov og 
 iOS-skævhed: skævhed fordi betaen primært dækker iOS-brugere.
 Usabilitytest: systematisk test af om brugere kan forstå og udføre centrale handlinger.
 
-**Kilder og evidens:** `feedbackkatalog.md`; `beta_tester_rapport.md`; `testflight_tidslinje.md`; `tab:tm-beta-feedback`; `tab:tm-testflight-timeline`; Grundtvig; Clotworthy; Yardley.
+**Kilder og evidens:** `feedbackkatalog.md`; `beta_tester_rapport.md`; `testflight_tidslinje.md`; "Udvalgte anonymiserede betaobservationer" (`tab:tm-beta-feedback`); "TestFlight-tidslinje for TræningsMester" (`tab:tm-testflight-timeline`); Grundtvig; Clotworthy; Yardley.
 
 **Backup:** 29, 30.
 
@@ -536,10 +553,10 @@ Backupslides ligger efter konklusionen. De skal ikke gennemgås fast, men de ska
 ### Backup 19: Analysestrategi
 
 **Brug ved spørgsmål om:** metode, materialer eller evidensniveau.
-**Synligt:** `tab:analysestrategi` kondenseret til underspørgsmål, materiale og vurderingskriterium.
+**Synligt:** rapporttabellen "Analysestrategi for koblingen mellem underspørgsmål, materiale og vurderingskriterier" (`tab:analysestrategi`) kondenseret til underspørgsmål, materiale og vurderingskriterium.
 **Kort svar i notes:** Hvert underspørgsmål har egne materialer og egne vurderingskriterier. Det forhindrer, at screenshots bruges som effektbevis eller at tekniske tests bruges som brugeraccept.
 **Begreber:** artefaktanalyse, plausibilitet, brugerindsigt, effektgrænse.
-**Kilder:** `metode.tex`; `tab:analysestrategi`.
+**Kilder:** `metode.tex`; "Analysestrategi for koblingen mellem underspørgsmål, materiale og vurderingskriterier" (`tab:analysestrategi`).
 
 ### Backup 20: Use cases og kravsporbarhed
 
@@ -547,7 +564,7 @@ Backupslides ligger efter konklusionen. De skal ikke gennemgås fast, men de ska
 **Synligt:** UC-06, UC-07, UC-08 og krav F-08, F-09, F-13, F-14, F-15.
 **Kort svar i notes:** Kerneflowet er sporbar fra problem til krav og implementering: tracker, completion, cycle runtime, watch og Live Activity. Admin, import og App Store-spor er sekundære i bachelorens hovedargument.
 **Begreber:** use case, funktionelt krav, ikke-funktionelt krav, traceability.
-**Kilder:** `tab:tm-use-cases`; `tab:tm-krav-traceability`; `use_cases.md`; `krav_traceability.md`.
+**Kilder:** "Kondenseret use case-overblik for TræningsMester" (`tab:tm-use-cases`); "Sporbarhed mellem use cases, krav og implementeringsspor" (`tab:tm-krav-traceability`); `use_cases.md`; `krav_traceability.md`.
 
 ### Backup 21: Datamodel for plan, log og completion
 
@@ -555,7 +572,7 @@ Backupslides ligger efter konklusionen. De skal ikke gennemgås fast, men de ska
 **Synligt:** ER-udsnit med program, workout, workout_exercises, trackerlog, workout_completion_events og training_cycle_runtime.
 **Kort svar i notes:** Planen beskriver intentionen. Trackerlog beskriver detaljeret udførelse. Completion beskriver gennemførelse. Cycle runtime forbinder gennemførelsen med næste træning.
 **Begreber:** datamodel, datagranularitet, completion-event, cycle runtime.
-**Kilder:** `fig:tm-data-model-er-middle`; `fig:tm-data-model-er-right`; `tab:tm-sql-domain-overblik`; `tab:tm-sql-fields`.
+**Kilder:** `fig:tm-data-model-er-middle`; `fig:tm-data-model-er-right`; "Centrale SQL-domæner i TræningsMesters datamodel" (`tab:tm-sql-domain-overblik`); "Særligt relevante SQL-felter i TræningsMesters datamodel" (`tab:tm-sql-fields`).
 
 ### Backup 22: Tracker-on, tracker-off og datakvalitet
 
@@ -571,7 +588,7 @@ Backupslides ligger efter konklusionen. De skal ikke gennemgås fast, men de ska
 **Synligt:** completion-event -> aktiv training cycle runtime -> RPC/næste slot -> Home/Tracker/Watch.
 **Kort svar i notes:** Cycle runtime gør progression afhængig af faktisk gennemførelse. Det er her appen bevæger sig fra kalenderlogik til fleksibel progression.
 **Begreber:** cycle runtime, RPC, planindeks, progression.
-**Kilder:** `fig:tm-tracker-completion-summary`; `fig:tm-data-model-er-right`; `tab:tm-sql-fields`.
+**Kilder:** `fig:tm-tracker-completion-summary`; `fig:tm-data-model-er-right`; "Særligt relevante SQL-felter i TræningsMesters datamodel" (`tab:tm-sql-fields`).
 
 ### Backup 24: Home-states ved afvigelse
 
@@ -587,7 +604,7 @@ Backupslides ligger efter konklusionen. De skal ikke gennemgås fast, men de ska
 **Synligt:** sikkerhedsboundary + RLS-matrix.
 **Kort svar i notes:** Klienten bruger anon key og bruger-session. Egne data afgrænses med RLS. Privilegerede flows flyttes til Edge Functions, hvor serveren validerer brugeren før service-role eller eksterne secrets bruges.
 **Begreber:** RLS, anon key, bearer token, service-role, Edge Function, least privilege.
-**Kilder:** Supabase docs; OWASP MASVS; GDPR; `fig:tm-security-boundary-summary`; `tab:tm-rls-matrix`.
+**Kilder:** Supabase docs; OWASP MASVS; GDPR; `fig:tm-security-boundary-summary`; "RLS- og sikkerhedsmatrix for TræningsMester" (`tab:tm-rls-matrix`).
 
 ### Backup 26: Watch sync
 
@@ -619,7 +636,7 @@ Backupslides ligger efter konklusionen. De skal ikke gennemgås fast, men de ska
 **Synligt:** B01, B11, B13, B15, B16 med temaer: TestFlight, søgning, katalog, kg/lbs, watch/Live Activity.
 **Kort svar i notes:** Feedbacken viser praktisk friktion og modningsbehov. Den bruges som kvalitativ designindsigt, ikke som dokumentation for effekt på motivation eller adherence.
 **Begreber:** kvalitativ feedback, iOS-skævhed, designimplikation, convenience sample.
-**Kilder:** `feedbackkatalog.md`; `beta_tester_rapport.md`; `tab:tm-beta-feedback`.
+**Kilder:** `feedbackkatalog.md`; `beta_tester_rapport.md`; "Udvalgte anonymiserede betaobservationer" (`tab:tm-beta-feedback`).
 
 ### Backup 30: Begrænsninger og næste studie
 
@@ -646,15 +663,15 @@ Backupslides ligger efter konklusionen. De skal ikke gennemgås fast, men de ska
 | 3 | beskåret `fig:tm-system-context` | Systembeskrivelse; KU-kursusside |
 | 4 | evidenstrekant | Metode; PRISMA-S; PRESS; Grundtvig; Clotworthy |
 | 5 | 2x2 faglig ramme | Teixeira; Laranjo; Stoyanov; ACSM; Mohammed; OWASP/Supabase |
-| 6 | `tab:tm-use-cases`, `tab:tm-krav-traceability` | Use cases; kravtraceability |
+| 6 | "Kondenseret use case-overblik" (`tab:tm-use-cases`) og "Sporbarhed mellem use cases, krav og implementeringsspor" (`tab:tm-krav-traceability`) | Use cases; kravtraceability |
 | 7 | `fig:tm-tracker-completion-summary`, `fig:tm-data-model-er-middle` | Mohammed; Greig; ACSM |
 | 8 | `fig:tm-ios-home-ready`, `fig:tm-ios-home-next-training` | Teixeira; Yardley; Hornbæk |
 | 9 | `fig:tm-ios-tracker-active`, `fig:tm-tracker-completion-summary` | Michie; MARS; Mohammed |
 | 10 | runtime-udsnit fra tracker/completion | ACSM; Currier; Greig; Larsen |
 | 11 | `fig:tm-security-boundary-summary` | Supabase; OWASP; GDPR |
 | 12 | `fig:tm-watch-sync-sequence`, `fig:tm-live-activity-idempotency-sequence` | Apple ActivityKit; Apple WatchConnectivity |
-| 13 | `tab:tm-test-traceability` | Verifikation; quality gate |
-| 14 | `tab:tm-beta-feedback`, `tab:tm-testflight-timeline` | Feedbackkatalog; beta-rapport; Grundtvig; Clotworthy |
+| 13 | "Verifikationsspor for tekniske claims" (`tab:tm-test-traceability`) | Verifikation; quality gate |
+| 14 | "Udvalgte anonymiserede betaobservationer" (`tab:tm-beta-feedback`) og "TestFlight-tidslinje for TræningsMester" (`tab:tm-testflight-timeline`) | Feedbackkatalog; beta-rapport; Grundtvig; Clotworthy |
 | 15 | konklusions-roadmap | Diskussion; konklusion |
 
 ## Designnoter
