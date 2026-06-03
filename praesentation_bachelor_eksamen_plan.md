@@ -83,6 +83,32 @@ Figurlabels som `fig:tm-ios-home-ready` kommer fra `billedbilag.tex`. Det er rap
 
 Tip: Screenshots ligger som JPG og kan indsættes direkte. Diagrammer findes både som PDF i `assets/bilag/diagrammer/` og som SVG i materialepakken; brug SVG i PowerPoint, hvis du vil skalere skarpt og eventuelt redigere visuelt.
 
+### Slide-For-Slide Visuel Finder
+
+Denne tabel er den praktiske arbejdsliste, når du bygger PowerPointen.
+
+| Slide | Hvad skal ind på sliden | Fil eller kilde |
+| ---: | --- | --- |
+| 1 | Home-screenshot med aktuel træningshandling | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-02-home-ready-testkonto-2026-04-28.jpg` |
+| 2 | Enkel model med fire felter: plan, faktisk træning, feedback, næste handling | Ingen billedfil. Byg som fire bokse direkte i PowerPoint. |
+| 3 | Forenklet systemkontekst | Brug helst `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/system_context.svg`. Alternativ: `assets/bilag/diagrammer/system_context.pdf`. |
+| 4 | Evidenstrekant med artefakter, beta-feedback og teknisk verifikation | Ingen billedfil. Byg som trekant/model direkte i PowerPoint. |
+| 5 | 2x2-model med fire faglige spor | Ingen billedfil. Byg som 2x2-model direkte i PowerPoint. |
+| 6 | Mini-traceability fra problem til krav og appbevis | Ingen billedfil. Genskab som kort PowerPoint-tabel ud fra `billedbilag.tex`, især `tab:tm-use-cases` og `tab:tm-krav-traceability`. |
+| 7 | Tracker/completion-flow og eventuelt ER-udsnit | Brug helst `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg`. Alternativt/crop: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/data_model_er.svg`. |
+| 8 | Home før og efter completion | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-02-home-ready-testkonto-2026-04-28.jpg` og `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-12-home-next-training-testkonto-2026-04-28.jpg` |
+| 9 | Aktiv tracker + tracker/completion-flow | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-10-tracker-active-testkonto-2026-04-28.jpg` og `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg` |
+| 10 | Runtime-udsnit fra tracker/completion eller ER-diagram | Brug `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg`; crop til runtime/næste handling. Alternativt crop `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/data_model_er.svg` til højre del. |
+| 11 | Sikkerhedsgrænse | Brug helst `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/security_boundary_summary.svg`. Alternativ: `assets/bilag/diagrammer/security_boundary_summary.pdf`. |
+| 12 | Watch sync + Live Activity idempotens | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/watch_sync_sequence.svg` og `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/live_activity_idempotency_sequence.svg` |
+| 13 | Teststatus i grøn/gul struktur | Ingen billedfil. Genskab som kort PowerPoint-tabel ud fra `billedbilag.tex` og `Materiale/traeningsmester-2026-04-28/06_verifikation/test_traceability_matrix.md`. |
+| 14 | Beta-feedbacktemaer | Ingen billedfil. Genskab som kort PowerPoint-tabel ud fra `billedbilag.tex`, `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/feedbackkatalog.md`, `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/beta_tester_rapport.md` og `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/testflight_tidslinje.md`. |
+| 15 | Konklusions-roadmap med fire svarlinjer | Ingen billedfil. Byg som simpel roadmap/model direkte i PowerPoint. |
+
+### Label-Til-Fil Opslag
+
+Brug denne tabel, hvis du møder en `fig:...`-label længere nede i planen.
+
 | Label i planen | Fil du skal finde | Brug i præsentationen |
 | --- | --- | --- |
 | `fig:tm-ios-home-ready` | `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-02-home-ready-testkonto-2026-04-28.jpg` | Slide 1 og 8: Home med aktuel træningshandling. |
@@ -155,7 +181,7 @@ Designkrav: et krav der omsætter problemformuleringen til noget systemet skal k
 
 **Tid:** manus 1:07, anbefalet slide-tid 1:11
 **Synligt på slide:** "Caseartefakt: iOS, watchOS, Live Activity, Supabase" + roligt systemkort.
-**Visuel:** forenklet `fig:tm-system-context`, kun de centrale platforme.
+**Visuel:** forenklet `fig:tm-system-context`. Fil: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/system_context.svg`. Brug kun de centrale platforme.
 
 **Ankre:** egenudviklet app, artefakt, afgrænsning, ikke featureliste.
 
@@ -230,7 +256,7 @@ Datakvalitet: om data er gode nok til deres konkrete formål.
 
 **Tid:** manus 1:17, anbefalet slide-tid 1:21
 **Synligt på slide:** Mini-traceability: problem -> underspørgsmål -> use cases -> krav -> appbevis.
-**Visuel:** kondenseret udsnit af `tab:tm-use-cases` og `tab:tm-krav-traceability`.
+**Visuel:** kondenseret udsnit af `tab:tm-use-cases` og `tab:tm-krav-traceability`. Ingen billedfil; genskab som kort PowerPoint-tabel ud fra `billedbilag.tex`.
 
 **Ankre:** sporbarhed, UC-06, UC-08, krav, vurderbarhed.
 
@@ -255,7 +281,7 @@ Funktionelt krav: krav til hvad systemet skal kunne gøre.
 
 **Tid:** manus 1:18, anbefalet slide-tid 1:27
 **Synligt på slide:** Datakæde: planlagt workout -> trackerlog -> completion-event -> cycle runtime -> næste handling.
-**Visuel:** beskåret `fig:tm-tracker-completion-summary` eller forenklet ER-udsnit fra `fig:tm-data-model-er-middle`.
+**Visuel:** beskåret `fig:tm-tracker-completion-summary`. Fil: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg`. Alternativ/crop: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/data_model_er.svg` til `fig:tm-data-model-er-middle`.
 
 **Ankre:** plan, faktisk træning, completion, runtime, data.
 
@@ -281,7 +307,7 @@ Datagranularitet: hvor detaljerede data er.
 
 **Tid:** manus 1:13, anbefalet slide-tid 1:18
 **Synligt på slide:** Home før og efter completion: "Dag 1 af 3" -> "Dag 2 af 3".
-**Visuel:** `fig:tm-ios-home-ready` og `fig:tm-ios-home-next-training` side om side.
+**Visuel:** `fig:tm-ios-home-ready` og `fig:tm-ios-home-next-training` side om side. Filer: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-02-home-ready-testkonto-2026-04-28.jpg` og `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-12-home-next-training-testkonto-2026-04-28.jpg`.
 
 **Ankre:** overblik, feedback, kompetence, næste skridt.
 
@@ -306,7 +332,7 @@ Feedback: tilbagemelding der hjælper brugeren eller systemet videre.
 
 **Tid:** manus 1:18, anbefalet slide-tid 1:27
 **Synligt på slide:** Aktiv tracker til venstre, tracker-on/off-flow til højre. Overskrift: "Mere data er ikke altid bedre i situationen."
-**Visuel:** `fig:tm-ios-tracker-active` + `fig:tm-tracker-completion-summary`.
+**Visuel:** `fig:tm-ios-tracker-active` + `fig:tm-tracker-completion-summary`. Filer: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/app_screenshots/aktuel_ios26/ios26-10-tracker-active-testkonto-2026-04-28.jpg` og `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg`.
 
 **Ankre:** selvmonitorering, friktion, datakvalitet, tradeoff.
 
@@ -331,7 +357,7 @@ Tradeoff: en afvejning hvor én kvalitet styrkes på bekostning af en anden.
 
 **Tid:** manus 1:16, anbefalet slide-tid 1:24
 **Synligt på slide:** Cycle runtime: completion -> næste slot -> Home/Tracker/Watch.
-**Visuel:** udsnit fra tracker/completion-diagrammet med runtime og næste handling fremhævet.
+**Visuel:** udsnit fra tracker/completion-diagrammet med runtime og næste handling fremhævet. Fil: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/tracker_completion_summary.svg`.
 
 **Ankre:** cycle runtime, faktisk adfærd, robust progression, normal systemtilstand.
 
@@ -356,7 +382,7 @@ Systemtilstand: systemets aktuelle forståelse af status og næste handling.
 
 **Tid:** manus 1:15, anbefalet slide-tid 1:23
 **Synligt på slide:** Klient -> RLS/RPC -> database og klient -> Edge Function -> servervalidering.
-**Visuel:** `fig:tm-security-boundary-summary`.
+**Visuel:** `fig:tm-security-boundary-summary`. Fil: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/security_boundary_summary.svg`.
 
 **Ankre:** klient, RLS, Edge Functions, least privilege, persondata.
 
@@ -382,7 +408,7 @@ Least privilege: princippet om mindst nødvendige rettigheder.
 
 **Tid:** manus 1:08, anbefalet slide-tid 1:13
 **Synligt på slide:** "Samme session, mindre telefonfriktion" + watch sync og Live Activity idempotens.
-**Visuel:** `fig:tm-watch-sync-sequence` og `fig:tm-live-activity-idempotency-sequence`.
+**Visuel:** `fig:tm-watch-sync-sequence` og `fig:tm-live-activity-idempotency-sequence`. Filer: `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/watch_sync_sequence.svg` og `Materiale/traeningsmester-2026-04-28/02_figurer_og_screenshots/diagrammer/renderede_svg/live_activity_idempotency_sequence.svg`.
 
 **Ankre:** watchOS, Live Activity, idempotens, støtteflader, afgrænsning.
 
@@ -407,7 +433,7 @@ Runtime: faktisk kørsel i brug, ikke kun build eller diagram.
 
 **Tid:** manus 1:10, anbefalet slide-tid 1:18
 **Synligt på slide:** Beskåret teststatus: iOS build, watchOS build, Live Activity build, 556 unit tests, integration gaps.
-**Visuel:** `tab:tm-test-traceability` i grøn/gul struktur.
+**Visuel:** `tab:tm-test-traceability` i grøn/gul struktur. Ingen billedfil; genskab som kort PowerPoint-tabel ud fra `billedbilag.tex` og `Materiale/traeningsmester-2026-04-28/06_verifikation/test_traceability_matrix.md`.
 
 **Ankre:** build, 556 tests, delvis integration, clean checkout, gaps.
 
@@ -433,7 +459,7 @@ Verifikationsgrænse: hvad testene kan og ikke kan dokumentere.
 
 **Tid:** manus 1:15, anbefalet slide-tid 1:20
 **Synligt på slide:** Tre feedbacktemaer: TestFlight/installation, katalog/søgning/enheder, støtteflader. Nederst: "Designinput, ikke effektbevis".
-**Visuel:** `tab:tm-beta-feedback` og `tab:tm-testflight-timeline`, stærkt kondenseret.
+**Visuel:** `tab:tm-beta-feedback` og `tab:tm-testflight-timeline`, stærkt kondenseret. Ingen billedfil; genskab som kort PowerPoint-tabel ud fra `billedbilag.tex`, `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/feedbackkatalog.md`, `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/beta_tester_rapport.md` og `Materiale/traeningsmester-2026-04-28/04_brugerindsigt_beta/testflight_tidslinje.md`.
 
 **Ankre:** beta, friktion, katalog, kg/lbs, usability, effektgrænse.
 
